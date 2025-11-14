@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --background: 255, 255, 255;
+  --foreground: 24, 24, 27;
+  --card-bg: 249, 249, 249;
+  --card-border: 228, 228, 231;
+  --muted: 113, 113, 122;
+
+  /* Header base values */
+  --header-bg-light: 220, 232, 255;
+  --header-bg-dark: 12, 15, 25;
+
+  /* fallback so header never breaks */
+  --header-bg: 255, 255, 255;
+}
+
+html.light {
+  --background: 255, 255, 255;
+  --foreground: 24, 24, 27;
+  --card-bg: 249, 249, 249;
+  --card-border: 228, 228, 231;
+  --muted: 113, 113, 122;
+
+  --header-bg: var(--header-bg-light);
+}
+
+html.dark {
+  --background: 1, 5, 18;
+  --foreground: 244, 244, 245;
+  --card-bg: 12, 15, 25;
+  --card-border: 39, 39, 42;
+  --muted: 161, 161, 170;
+
+  --header-bg: var(--header-bg-dark);
+}
+
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.blog-header {
+  background-color: rgb(var(--header-bg));
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.25s ease;
+}
+
+.blog-content h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: rgb(var(--foreground));
+}
+.blog-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: rgb(var(--foreground));
+}
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+  color: rgb(var(--muted));
+}
+.blog-content blockquote {
+  border-left: 4px solid #00f6ff;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  font-size: 1.125rem;
+  color: rgb(var(--muted));
+}
+.blog-content ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+.blog-content li {
+  margin-bottom: 0.5rem;
+  color: rgb(var(--muted));
+}
+.blog-content strong {
+  font-weight: 600;
+  color: rgb(var(--foreground));
+}
