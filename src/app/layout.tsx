@@ -68,9 +68,11 @@ export default function RootLayout({
         const saved = localStorage.getItem('ziglaTheme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = saved || (prefersDark ? 'dark' : 'light');
-        document.documentElement.classList.remove('light','dark');
+        document.documentElement.classList.remove('light', 'dark');
         document.documentElement.classList.add(theme);
-      } catch (_) {}
+      } catch (e) {
+        console.error('Error setting initial theme:', e);
+      }
     })();
   `;
 
@@ -85,8 +87,7 @@ export default function RootLayout({
         "https://twitter.com/ZiglaCity",
         "https://www.linkedin.com/in/ziglacity",
         "https://github.com/ZiglaCity",
-        "https://brght.org/profile/zigla-city/",
-
+        "https://brght.org/profile/zigla-city/"
       ],
       "jobTitle": "Software Engineer",
       "image": "https://ziglacity.tech/zigla.png"
