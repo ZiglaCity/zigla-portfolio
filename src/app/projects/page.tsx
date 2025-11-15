@@ -5,6 +5,7 @@ import { ExternalLink, Github, Shield, Code, Brain, Globe } from "lucide-react";
 import ClientWrapper from "@@/components/ClientWrapper";
 import ParticleCanvas from "@@/components/ui/ParticleCanvas";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
+import { Metadata } from "next";
 
 interface Project {
   id: number;
@@ -358,3 +359,31 @@ export default function ProjectsPage() {
     </ClientWrapper>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Projects | Zigla City",
+  description:
+    "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+  openGraph: {
+    title: "Projects | Zigla City",
+    description:
+      "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+    url: "https://ziglacity.tech/projects",
+    images: [
+      {
+        url: "/zigla.png",
+        width: 800,
+        height: 800,
+        alt: "Zigla City Projects",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Zigla City",
+    description:
+      "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+    images: ["/zigla.png"],
+  },
+};

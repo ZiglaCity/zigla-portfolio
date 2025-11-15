@@ -14,6 +14,7 @@ import {
 import ClientWrapper from "@@/components/ClientWrapper";
 import ParticleCanvas from "@@/components/ui/ParticleCanvas";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
+import { Metadata } from "next";
 type FormData = {
   name: string;
   email: string;
@@ -298,3 +299,26 @@ export default function ContactPage() {
     </ClientWrapper>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Contact | Zigla City",
+  description:
+    "Get in touch with Solomon Dzah — Software Engineer, AI/ML Developer, Cybersecurity Learner. Reach out for collaborations or inquiries.",
+  openGraph: {
+    title: "Contact | Zigla City",
+    description:
+      "Get in touch with Solomon Dzah — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+    url: "https://ziglacity.tech/contact",
+    images: [
+      { url: "/zigla.png", width: 800, height: 800, alt: "Zigla City Contact" },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Zigla City",
+    description:
+      "Get in touch with Solomon Dzah — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+    images: ["/zigla.png"],
+  },
+};

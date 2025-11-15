@@ -9,6 +9,7 @@ import Skills from "@@/components/sections/Skills";
 import Experience from "@@/components/sections/Experience";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
 import ClientWrapper from "@@/components/ClientWrapper";
+import { Metadata } from "next";
 
 export default function Page() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,3 +44,25 @@ export default function Page() {
     </ClientWrapper>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Zigla City | Software Engineer & AI/ML Enthusiast",
+  description:
+    "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer. Projects, blogs, and contact information.",
+  openGraph: {
+    title: "Zigla City | Portfolio",
+    description:
+      "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer.",
+    url: "https://ziglacity.tech",
+    images: [
+      { url: "/zigla.png", width: 800, height: 800, alt: "Zigla City Logo" },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zigla City | Portfolio",
+    description: "Solomon Dzah — Software Engineer & AI/ML Developer",
+    images: ["/zigla.png"],
+  },
+};

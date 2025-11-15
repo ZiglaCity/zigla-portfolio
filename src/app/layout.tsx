@@ -74,10 +74,34 @@ export default function RootLayout({
     })();
   `;
 
+  // JSON-LD structured data for SEO (Person schema)
+  const jsonLd = `
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Solomon Dzah",
+      "url": "https://ziglacity.tech",
+      "sameAs": [
+        "https://twitter.com/ZiglaCity",
+        "https://www.linkedin.com/in/ziglacity",
+        "https://github.com/ZiglaCity",
+        "https://brght.org/profile/zigla-city/",
+
+      ],
+      "jobTitle": "Software Engineer",
+      "image": "https://ziglacity.tech/zigla.png"
+    }
+  `;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="manifest" href="/manifest.json" />
         <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd }}
+        />
       </head>
       <body
         className={`${inter.className} min-h-screen bg-[rgb(var(--background))] text-[rgb(var(--foreground))] transition-colors duration-300`}
