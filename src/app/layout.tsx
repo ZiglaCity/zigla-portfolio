@@ -6,9 +6,54 @@ import { ThemeProvider } from "@@/components/providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zigla City",
+  title: "Zigla City | Software Engineer & AI/ML Enthusiast",
   description:
-    "Software Engineer. Cybersecurity. Builder of Things That Think.",
+    "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer. Projects, blogs, and contact information.",
+  keywords: [
+    "Zigla City",
+    "ZiglaCity",
+    "ziglacity",
+    "Solomon Dzah",
+    "software engineer",
+    "AI developer",
+    "ML developer",
+    "cybersecurity",
+    "portfolio",
+    "@Zigla_City",
+    "@ZiglaCity",
+  ],
+  authors: [{ name: "Solomon Dzah", url: "https://ziglacity.tech" }],
+  creator: "Zigla City",
+  openGraph: {
+    title: "Zigla City | Portfolio",
+    description:
+      "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer.",
+    url: "https://ziglacity.tech",
+    siteName: "Zigla City Portfolio",
+    images: [
+      {
+        url: "/zigla.png",
+        width: 800,
+        height: 800,
+        alt: "Zigla City Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zigla City | Portfolio",
+    description: "Solomon Dzah — Software Engineer & AI/ML Developer",
+    images: ["/zigla.png"],
+    site: "@ZiglaCity",
+    creator: "@ZiglaCity",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
