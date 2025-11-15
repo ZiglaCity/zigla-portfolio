@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         brand: {
           blue: {
-            DEFAULT: "#2EA8FF", // your signature blue 💙
+            DEFAULT: "#2EA8FF",
             light: "#57B8FF",
             dark: "#1786DB",
           },

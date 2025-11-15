@@ -32,7 +32,7 @@ const projects: Project[] = [
     ).href,
     tags: ["Next.js", "TypeScript", "WebSocket", "Encryption", "Supabase"],
     github: "https://github.com/ziglacity/enzypher",
-    demo: "https://enzypher.ziglacity.dev",
+    demo: "#",
     featured: true,
   },
   {
@@ -47,7 +47,7 @@ const projects: Project[] = [
     ).href,
     tags: ["Node.js", "Security", "Static Analysis", "React"],
     github: "https://github.com/ziglacity/safestcode",
-    demo: "https://safestcode.ziglacity.dev",
+    demo: "https://safest-code.vercel.app/",
     featured: true,
   },
   {
@@ -74,7 +74,7 @@ const projects: Project[] = [
     ).href,
     tags: ["Python", "Machine Learning", "Cybersecurity", "Flask"],
     github: "https://github.com/ziglacity/proxyphish",
-    demo: "https://proxyphish.ziglacity.dev",
+    demo: "#",
     featured: true,
   },
   {
@@ -98,7 +98,7 @@ const projects: Project[] = [
       "A fast and reliable URL shortener that provides link analytics and easy management for shared links.",
     tags: ["Next.js", "TypeScript", "Vercel", "Analytics"],
     github: "https://github.com/ziglacity/zigly",
-    demo: "https://zigly.ziglacity.dev",
+    demo: "#",
     featured: false,
   },
   {
@@ -143,13 +143,28 @@ const projects: Project[] = [
   },
   {
     id: 10,
+    title: "Prosper Constructions Ltd",
+    categories: ["Website"],
+    description:
+      "The official website of a constructions company based in Ghana",
+    image: new URL(
+      "../../../public/assets/projects/pc-ltd.png",
+      import.meta.url
+    ),
+    tags: ["Next.js", "Typescript", "Tailwind CSS"],
+    github: "https://github.com/ZiglaCity/prosper-constructions-ltd",
+    demo: "https://prosper-constructions-ltd.vercel.app/",
+    featured: true,
+  },
+  {
+    id: 11,
     title: "Neural Task Manager",
-    categories: ["AI/ML"],
+    categories: ["AI/ML", "WIP"],
     description:
       "Intelligent task management system that learns from user behavior to optimize productivity and suggest task prioritization.",
     tags: ["Python", "TensorFlow", "React", "PostgreSQL"],
-    github: "https://github.com/ziglacity/neural-tasks",
-    demo: "https://tasks.ziglacity.dev",
+    github: "#",
+    demo: "#",
     featured: false,
   },
 ];
@@ -164,6 +179,8 @@ const categories = [
   "Desktop App",
   "Chrome Extension",
   "Messaging / Security",
+  "WIP",
+  "Website",
 ];
 
 export default function ProjectsPage() {
