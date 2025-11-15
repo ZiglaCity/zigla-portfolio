@@ -44,25 +44,3 @@ export default function Page() {
     </ClientWrapper>
   );
 }
-
-export const metadata: Metadata = {
-  title: "Zigla City | Software Engineer & AI/ML Enthusiast",
-  description:
-    "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer. Projects, blogs, and contact information.",
-  openGraph: {
-    title: "Zigla City | Portfolio",
-    description:
-      "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer.",
-    url: "https://ziglacity.tech",
-    images: [
-      { url: "/zigla.png", width: 800, height: 800, alt: "Zigla City Logo" },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Zigla City | Portfolio",
-    description: "Solomon Dzah — Software Engineer & AI/ML Developer",
-    images: ["/zigla.png"],
-  },
-};
