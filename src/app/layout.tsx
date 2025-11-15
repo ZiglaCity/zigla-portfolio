@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Zigla City | Software Engineer & AI/ML Enthusiast",
   description:
-    "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer. Projects, blogs, and contact information.",
+    "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Enthusiast, AI/ML Developer. Projects, blogs, and contact information.",
   keywords: [
     "Zigla City",
     "ZiglaCity",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Zigla City | Portfolio",
     description:
-      "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer.",
+      "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Enthusiast, AI/ML Developer.",
     url: "https://ziglacity.tech",
     siteName: "Zigla City Portfolio",
     images: [

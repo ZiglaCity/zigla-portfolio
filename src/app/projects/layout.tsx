@@ -3,11 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects | Zigla City",
   description:
-    "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+    "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Enthusiast.",
   openGraph: {
     title: "Projects | Zigla City",
     description:
-      "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+      "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Enthusiast.",
     url: "https://ziglacity.tech/projects",
     images: [
       {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Projects | Zigla City",
     description:
-      "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
+      "Explore Solomon Dzah's projects — Software Engineer, AI/ML Developer, Cybersecurity Enthusiast.",
     images: ["/zigla.png"],
   },
 };

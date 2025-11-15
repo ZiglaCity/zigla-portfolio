@@ -2,7 +2,7 @@
 
 **URL:** [https://ziglacity.tech](https://ziglacity.tech)  
 **Author:** Solomon Dzah  
-**Role:** Software Engineer | AI/ML Enthusiast | Cybersecurity Learner
+**Role:** Software Engineer | AI/ML Developer | Cybersecurity Enthusiast
 
 ---
 
