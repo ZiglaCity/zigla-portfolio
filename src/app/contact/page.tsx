@@ -299,26 +299,3 @@ export default function ContactPage() {
     </ClientWrapper>
   );
 }
-
-export const metadata: Metadata = {
-  title: "Contact | Zigla City",
-  description:
-    "Get in touch with Solomon Dzah — Software Engineer, AI/ML Developer, Cybersecurity Learner. Reach out for collaborations or inquiries.",
-  openGraph: {
-    title: "Contact | Zigla City",
-    description:
-      "Get in touch with Solomon Dzah — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
-    url: "https://ziglacity.tech/contact",
-    images: [
-      { url: "/zigla.png", width: 800, height: 800, alt: "Zigla City Contact" },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact | Zigla City",
-    description:
-      "Get in touch with Solomon Dzah — Software Engineer, AI/ML Developer, Cybersecurity Learner.",
-    images: ["/zigla.png"],
-  },
-};
