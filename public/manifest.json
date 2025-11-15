@@ -1,0 +1,21 @@
+{
+  "name": "Zigla City Portfolio",
+  "short_name": "ZiglaCity",
+  "description": "Portfolio of Solomon Dzah — Software Engineer, Cybersecurity Learner, AI/ML Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/zigla.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
