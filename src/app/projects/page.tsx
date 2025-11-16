@@ -93,12 +93,14 @@ const projects: Project[] = [
   {
     id: 6,
     title: "Zigly",
-    categories: ["Full-Stack"],
+    categories: ["Full-Stack", "System Design", "Website"],
     description:
-      "A fast and reliable URL shortener that provides link analytics and easy management for shared links.",
-    tags: ["Next.js", "TypeScript", "Vercel", "Analytics"],
+      "A clean, fast, and developer-friendly URL shortener which allows custom aliases and provides detailed analytics.",
+    image: new URL("../../../public/assets/projects/zigly.png", import.meta.url)
+      .href,
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/ziglacity/zigly",
-    demo: "#",
+    demo: "https://zig-ly.vercel.app/",
     featured: false,
   },
   {
