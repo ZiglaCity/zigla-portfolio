@@ -56,12 +56,27 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLdObject = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Solomon Dzah",
+  url: "https://ziglacity.tech",
+  sameAs: [
+    "https://twitter.com/ZiglaCity",
+    "https://www.linkedin.com/in/ziglacity",
+    "https://github.com/ZiglaCity",
+    "https://brght.org/profile/zigla-city/",
+  ],
+  jobTitle: "Software Engineer",
+  image: "https://ziglacity.tech/zigla.png",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Pre-hydration theme script to prevent FOUC
+  // Pre-hydration theme script
   const setInitialTheme = `
     (function() {
       try {
@@ -76,24 +91,6 @@ export default function RootLayout({
     })();
   `;
 
-  // JSON-LD structured data for SEO (Person schema)
-  const jsonLd = `
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Solomon Dzah",
-      "url": "https://ziglacity.tech",
-      "sameAs": [
-        "https://twitter.com/ZiglaCity",
-        "https://www.linkedin.com/in/ziglacity",
-        "https://github.com/ZiglaCity",
-        "https://brght.org/profile/zigla-city/"
-      ],
-      "jobTitle": "Software Engineer",
-      "image": "https://ziglacity.tech/zigla.png"
-    }
-  `;
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -101,7 +98,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdObject) }}
         />
       </head>
       <body
