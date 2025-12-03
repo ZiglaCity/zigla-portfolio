@@ -32,7 +32,7 @@ const projects: Project[] = [
     ).href,
     tags: ["Next.js", "TypeScript", "WebSocket", "Encryption", "Supabase"],
     github: "https://github.com/ziglacity/enzypher",
-    demo: "#",
+    demo: "https://enzypher.vercel.app",
     featured: true,
   },
   {

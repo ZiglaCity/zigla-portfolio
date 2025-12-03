@@ -9,7 +9,6 @@ import Skills from "@@/components/sections/Skills";
 import Experience from "@@/components/sections/Experience";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
 import ClientWrapper from "@@/components/ClientWrapper";
-import { Metadata } from "next";
 
 export default function Page() {
   const containerRef = useRef<HTMLDivElement>(null);
