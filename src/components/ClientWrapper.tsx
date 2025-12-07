@@ -4,7 +4,6 @@ import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import FloatingNav from "@@/components/ui/FloatingNav";
 import TerminalOverlay from "@@/components/ui/TerminalOverlay";
-import { ThemeProvider } from "@@/components/providers/ThemeProvider";
 
 export default function ClientWrapper({
   children,
@@ -49,7 +48,7 @@ export default function ClientWrapper({
   };
 
   return (
-    <ThemeProvider>
+    <>
       <FloatingNav
         activeIndex={activeIndex}
         onNavigate={handleNavigate}
@@ -61,6 +60,6 @@ export default function ClientWrapper({
         onClose={() => setTerminalOpen(false)}
       />
       {children}
-    </ThemeProvider>
+    </>
   );
 }
