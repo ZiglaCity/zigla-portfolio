@@ -47,12 +47,20 @@ export const blogs = [
       <p>They say dreams should scare you.<br />
       Mine? They terrify me — and that's how I know they're real.</p>
 
+      <h2>Building the Vision</h2>
       <p>I don't just want to write code.<br />
       I want to architect systems that power the future.<br />
       AI-driven platforms. Secure infrastructures. Tools that redefine how we interact with technology.</p>
 
       <p>I imagine a world where my solutions run silently in the background of your life, making things faster, safer, smarter.<br />
       A world where someone says, "Who built this?" — and my name comes up.</p>
+
+      <h2>The Impact Checklist</h2>
+      <ul>
+        <li>Create AI-driven platforms that solve real problems, not just hype.</li>
+        <li>Ship secure infrastructures that are boring in the best way: reliable.</li>
+        <li>Design tools that feel invisible because they just work.</li>
+      </ul>
 
       <p>The big dream isn't fame. It's impact.<br />
       I don't need the spotlight. I need legacy.<br />
@@ -82,16 +90,19 @@ export const blogs = [
       <p>Most people know me as Zigla — the guy building systems and chasing big tech dreams.<br />
       But let me pull back the curtain: <strong>I wasn't always just about code.</strong></p>
 
+      <h2>Freestyle Era</h2>
       <p>Before the screens, I lived in motion.<br />
       Freestyle football wasn't a side thing — it was my obsession.<br />
       I'd spend hours perfecting spins and flicks, posting videos that hit thousands of views.<br />
       At my peak, I had <strong>3K Instagram followers</strong> just watching me turn a ball into art.</p>
 
+      <h2>Music and Rhythm</h2>
       <p>And then there was music.<br />
       Back in high school, I lived in the studio.<br />
       Writing lyrics that felt like truth, spitting bars over beats that shook the classroom walls.<br />
       I wasn't just coding — I was rhyming, flowing, building verses with the same precision I now put into my functions.</p>
 
+      <h2>Dancer and Skater</h2>
       <p>But that's not all.<br />
       I was a dancer — and not just any dancer.<br />
       Back in junior high, I was <strong>the best in my area</strong>.<br />
@@ -102,13 +113,13 @@ export const blogs = [
       The thrill of gliding, the freedom of motion — I lived for it.<br />
       I used to do a lot, because life was about expression, not limits.</p>
 
-      <p>Now, people ask: "What happened to all that?"<br />
-      Truth is, nothing happened.<br />
-      Those worlds live in me. They taught me rhythm, creativity, and flow — the same energy I bring to every line of code today.</p>
+      <blockquote>
+        "Those worlds live in me. They taught me rhythm, creativity, and flow — the same energy I bring to every line of code today."
+      </blockquote>
 
-      <p>So, if you think you know me because you've seen my code?<br />
-      Think again.<br />
-      There's always another side.</p>
+      <h3>So, Do You Know Me?</h3>
+      <p>Now, people ask: "What happened to all that?"<br />
+      Truth is, nothing happened. If you think you know me because you've seen my code? Think again. There's always another side.</p>
     `,
   },
   {
@@ -124,18 +135,27 @@ export const blogs = [
       <p>There's something about silence that turns my mind into a supercomputer.<br />
       No pings. No calls. No noise. Just me, my screen, and infinite possibilities.</p>
 
+      <h2>Why the Night Works</h2>
       <p>Most people chase productivity in the daylight.<br />
       I find mine in the dark — in those sacred hours when the world forgets me, and I forget the world.</p>
 
       <p>Lo-fi beats in my ears. Cursor blinking like a heartbeat.<br />
       It's not just coding. It's a vibe. A ritual. A way of life.</p>
 
+      <h3>The Ritual</h3>
+      <ul>
+        <li>Kill the notifications; leave only the music.</li>
+        <li>One goal per night — no multitasking.</li>
+        <li>Ship something small before sunrise.</li>
+      </ul>
+
       <p>People ask why I stay up late.<br />
       Because this is when I feel most alive.<br />
       When ideas flow like rivers and time stops existing.</p>
 
-      <p>My silent hours aren't lonely.<br />
-      They're the loudest conversations I'll ever have — with my thoughts, my dreams, and my code.</p>
+      <blockquote>
+        "My silent hours aren't lonely. They're the loudest conversations I'll ever have — with my thoughts, my dreams, and my code."
+      </blockquote>
     `,
   },
   {
@@ -159,12 +179,21 @@ export const blogs = [
       <p>I've spent hours staring at the same block of code, wondering why reality doesn't match logic.<br />
       And then, <em>click</em> — the realization hits. That dopamine rush is addictive.</p>
 
+      <h2>The Process I Trust</h2>
+      <ol>
+        <li>Reproduce the bug — if you can't see it, you can't fix it.</li>
+        <li>Isolate variables — strip the code until only the failing path remains.</li>
+        <li>Read the logs — they tell you what the code won't.</li>
+        <li>Fix, then write a test — future-proof the win.</li>
+      </ol>
+
       <p>The art of debugging isn't about speed.<br />
       It's about precision. Curiosity. The mindset that says:<br />
       "I'm not leaving until I understand."</p>
 
-      <p>For me, debugging is meditation in chaos.<br />
-      It's me versus the unknown — and I love the fight.</p>
+      <blockquote>
+        For me, debugging is meditation in chaos. It's me versus the unknown — and I love the fight.
+      </blockquote>
     `,
   },
   {
@@ -181,16 +210,20 @@ export const blogs = [
       It was a battlefield.<br />
       And I loved every second of the fight.</p>
 
-      <p>From brainstorming on rough notes to deploying on a live server,<br />
+      <h2>From Idea to Architecture</h2>
+      <p>From brainstorming on rough notes to deploying on a live server,<n />
       every step tested our skills, our patience, and our drive.</p>
 
       <p>I took on backend and DevOps.<br />
       Node.js, Express, PostgreSQL, Prisma — all wired together with care.<br />
       Secure APIs, clean architecture, automation — the works.</p>
 
-      <p>Then came deployment.<br />
-      VPS setup. NGINX configs. GitHub Actions for CI/CD.<br />
-      It wasn't glamorous, but it was real engineering — and it worked.</p>
+      <h2>Shipping It</h2>
+      <ul>
+        <li>VPS setup with hardened defaults.</li>
+        <li>NGINX reverse proxy and TLS.</li>
+        <li>GitHub Actions for CI/CD with migrations baked in.</li>
+      </ul>
 
       <p>Merrylow taught me what it takes to build from zero.<br />
       It's not just code.<br />
@@ -277,9 +310,14 @@ export const blogs = [
       Faster typing means faster thinking.<br />
       It means fewer bottlenecks between your brain and the screen.</p>
 
-      <p>I trained like an athlete.<br />
-      Hours on Monkeytype. Finger drills. Consistency.<br />
-      And when I hit my goal, it wasn't just numbers — it was a mindset shift.</p>
+      <h2>Training Like an Athlete</h2>
+      <ul>
+        <li>Daily Monkeytype runs to sharpen accuracy first, speed second.</li>
+        <li>Finger drills to kill weak spots — ring fingers get no excuses.</li>
+        <li>Posture and ergonomic tweaks to prevent burnout.</li>
+      </ul>
+
+      <p>And when I hit my goal, it wasn't just numbers — it was a mindset shift.</p>
 
       <p>The Typing Grind taught me something bigger:<br />
       Small habits, done daily, compound into mastery.<br />
@@ -301,6 +339,7 @@ export const blogs = [
       They expect me to say a name. A face. A memory.<br />
       They never expect me to say this.</p>
 
+      <h2>The Craft Over Everything</h2>
       <p>The love of my life isn't a person.<br />
       It's the craft.<br />
       The art of building something out of nothing.<br />
@@ -311,13 +350,14 @@ export const blogs = [
       It's creation disguised as computation.<br />
       Every function, every loop, every little decision — that's intimacy to me.</p>
 
+      <h2>Why It Feels Complicated</h2>
       <p>And maybe that's why relationships feel... complicated.<br />
       Because I'm already in one — with the work, the grind, the late nights, the big dreams.<br />
       It's a love that doesn't betray me. A love that rewards effort with results.</p>
 
-      <p>So, the love of my life?<br />
-      It's not who. It's what.<br />
-      And until someone understands that — this love isn't negotiable.</p>
+      <blockquote>
+        "So, the love of my life? It's not who. It's what. And until someone understands that — this love isn't negotiable."
+      </blockquote>
     `,
   },
   {
@@ -334,12 +374,20 @@ export const blogs = [
       <p>The world sleeps at 2 AM.<br />
       I don't. That's when I wake up inside.</p>
 
+      <h2>The Quiet Advantage</h2>
       <p>No notifications. No chaos. Just silence and the soft glow of a screen.<br />
       For some, it's insomnia. For me, it's clarity.</p>
 
       <p>At 2 AM, ideas stop competing with noise.<br />
       The world feels slower. My thoughts feel faster.<br />
       Every bug I fix, every feature I build — it all feels louder in the quiet.</p>
+
+      <h3>What I Do at 2 AM</h3>
+      <ul>
+        <li>Refactor the messy bits I avoided in the day.</li>
+        <li>Write notes for tomorrow while the context is fresh.</li>
+        <li>Ship small wins so I sleep with momentum.</li>
+      </ul>
 
       <p>People say, "Work-life balance."<br />
       But for me, this <em>is</em> balance.<br />
@@ -371,13 +419,14 @@ export const blogs = [
       <p>We build to hide complexity, but we live in it.<br />
       We love problems that others run from. We take pride in solving the unseen.</p>
 
+      <h2>Living in the Layers</h2>
       <p>The paradox? We chase perfection knowing it doesn't exist.<br />
       We debug bugs that were born from fixing other bugs.<br />
       It's a loop — and we love the loop.</p>
 
-      <p>The developer's paradox isn't a curse.<br />
-      It's what makes us creators, not just coders.<br />
-      Complexity is our canvas. Simplicity is our art.</p>
+      <blockquote>
+        The developer's paradox isn't a curse. It's what makes us creators, not just coders. Complexity is our canvas. Simplicity is our art.
+      </blockquote>
     `,
   },
   {
@@ -457,6 +506,7 @@ export const blogs = [
       If you're not learning, you're falling behind.<br />
       That's the brutal truth.</p>
 
+      <h2>The Daily Rule</h2>
       <p>I live by a simple rule:<br />
       <strong>Every day, learn something new.</strong><br />
       It doesn't have to be huge — a new API, a fresh concept, a tiny optimization.<br />
@@ -465,6 +515,13 @@ export const blogs = [
       <p>Learning isn't a phase.<br />
       It's survival.<br />
       And beyond survival, it's growth.</p>
+
+      <h3>How I Keep Pace</h3>
+      <ul>
+        <li>Read docs before blog posts — source over noise.</li>
+        <li>Build tiny experiments weekly to stress new ideas.</li>
+        <li>Teach someone else; it cements the knowledge.</li>
+      </ul>
 
       <p>The world doesn't slow down for anyone.<br />
       You either move with it or watch it leave you in the dust.<br />
@@ -488,12 +545,20 @@ export const blogs = [
       <p>When you've written APIs for a while, you start craving one thing: <strong>speed without pain</strong>.<br />
       FastAPI delivers that — and more.</p>
 
+      <h2>What Makes It Click</h2>
       <p>I've used frameworks that made me feel like I was dragging an anchor uphill.<br />
       With FastAPI, everything flows.<br />
       Type hints. Auto docs. Async support out of the box. It feels like Python — but leveled up.</p>
 
       <p>The beauty of FastAPI isn't just speed; it's elegance.<br />
       You write less, achieve more, and the code looks clean enough to frame on your wall.</p>
+
+      <h3>Developer Perks</h3>
+      <ul>
+        <li>Automatic OpenAPI docs without extra work.</li>
+        <li>Type-safety that plays nice with editors.</li>
+        <li>Async-first design that scales without hacks.</li>
+      </ul>
 
       <p>For someone who loves building scalable systems and AI-driven backends, this framework is a cheat code.<br />
       It just gets out of your way and lets you <em>create</em>.</p>
@@ -513,52 +578,26 @@ export const blogs = [
       "Bugs, coffee, and questionable life choices — here's my honest truth.",
     readTime: "6 min read",
     content: `
-   <p>We developers like to act like we've got everything under control.<br />
+    <p>We developers like to act like we've got everything under control.<br />
     But the truth? We're a walking collection of bugs and coping mechanisms.<br />
     Here are my <strong>10 real confessions</strong>:</p>
 
-    <p><strong>Confession #1:</strong><br />
-    I've Googled "How to center a div" more times than I've Googled my own name.<br />
-    And yes, I still forget sometimes.</p>
+    <ol>
+      <li><strong>Confession #1:</strong> I've Googled "How to center a div" more times than I've Googled my own name.</li>
+      <li><strong>Confession #2:</strong> I drink coffee for "focus"… but really, it's just part of the aesthetic.</li>
+      <li><strong>Confession #3:</strong> I've broken production more than once and blamed it on "the API". (Sorry, API.)</li>
+      <li><strong>Confession #4:</strong> I once spent six hours debugging a bug that didn't exist because I forgot to save the file.</li>
+      <li><strong>Confession #5:</strong> Sometimes I write <em>// TODO</em> just to feel organized. Do I come back? Nope.</li>
+      <li><strong>Confession #6:</strong> I've used console.log as a debugging tool in a million-dollar codebase—and I'd do it again.</li>
+      <li><strong>Confession #7:</strong> I've deployed without testing because "it should work". It didn't.</li>
+      <li><strong>Confession #8:</strong> I once fixed a bug by accident… and pushed it like I knew what I was doing.</li>
+      <li><strong>Confession #9:</strong> I still copy-paste from Stack Overflow like it's a sacred ritual.</li>
+      <li><strong>Confession #10:</strong> Sometimes I rename variables from <em>x</em> to <em>data</em> and call it "refactoring".</li>
+    </ol>
 
-    <p><strong>Confession #2:</strong><br />
-    I drink coffee for "focus"… but really, it's just part of the aesthetic.<br />
-    Hacker movie vibes, you know?</p>
-
-    <p><strong>Confession #3:</strong><br />
-    I've broken production more than once and blamed it on "the API".<br />
-    (Sorry, API.)</p>
-
-    <p><strong>Confession #4:</strong><br />
-    I once spent six hours debugging a bug that didn't exist.<br />
-    The real issue? I forgot to save the file.</p>
-
-    <p><strong>Confession #5:</strong><br />
-    Sometimes I write <em>// TODO</em> in my code just to feel organized.<br />
-    Do I ever come back to it? Nope.</p>
-
-    <p><strong>Confession #6:</strong><br />
-    I've used console.log as a debugging tool in a million-dollar codebase.<br />
-    And I'd do it again.</p>
-
-    <p><strong>Confession #7:</strong><br />
-    I've deployed something without testing because "it should work".<br />
-    Guess what? It didn't.</p>
-
-    <p><strong>Confession #8:</strong><br />
-    I once fixed a bug by accident… and pushed it like I knew what I was doing.</p>
-
-    <p><strong>Confession #9:</strong><br />
-    I still copy-paste from Stack Overflow like it's a sacred ritual.<br />
-    The real MVP? Ctrl + C and Ctrl + V.</p>
-
-    <p><strong>Confession #10:</strong><br />
-    Sometimes I rename variables from <em>x</em> to <em>data</em> and call it "refactoring".<br />
-    Don't judge me.</p>
-
-    <p>So yeah, these are my confessions.<br />
-    If you're a developer and you didn't relate to at least three of these…<br />
-    you're lying.</p>
+    <blockquote>
+      If you're a developer and you didn't relate to at least three of these… you're lying.
+    </blockquote>
   `,
   },
   {
@@ -575,14 +614,15 @@ export const blogs = [
       <p>I stumbled on this track called <em>"I'm SOLO"</em>, and let me tell you—it's not just a song; 
       it's an anthem for anyone grinding silently, questioning the norms, and chasing a vision bigger than themselves.</p>
 
+      <h2>The Line That Hit</h2>
       <p>
       The lyrics hit home:  
       <em>"They try to tell me get a job, and pick a realistic goal  
       I would rather die young than live for anybody else."</em>
-        
-      That line? That's everything. Because I've been there—the constant pressure to "fit in," to follow a predictable script, when deep down you know you're built for something different.
       </p>
+      <p>That line? That's everything. Because I've been there—the constant pressure to "fit in," to follow a predictable script, when deep down you know you're built for something different.</p>
 
+      <h2>Why Solitude Works</h2>
       <p>
       Ever since I started building, I've been mostly by myself. Not because I hate people. Not because I can't vibe. But because purpose demands solitude. It's where the real work happens.  
       Like the hook says:  
@@ -590,14 +630,19 @@ export const blogs = [
       I'm DOLO... It's not a lot of people that I like I know."</em>
       </p>
 
-      <p>
-      And honestly, I relate. This path can be isolating. I've lost relationships. Missed out on weekends. Turned down parties. But every sacrifice is a brick in the foundation of the future I'm building.  
-      Would I change it? No. Because the truth is, I find peace in the work. It's not punishment—it's passion.
-      </p>
+      <h3>Tradeoffs I Accept</h3>
+      <ul>
+        <li>Lost relationships and missed weekends.</li>
+        <li>Fewer parties, more prototypes.</li>
+        <li>Peace from progress, not permission.</li>
+      </ul>
 
-      <p>
-      So if you're out there feeling the same—different, distant, driven—remember this: You're not crazy for wanting more. You're just SOLO. And maybe that's exactly what you need to win.
-      </p>
+      <p>And honestly, I relate. This path can be isolating. I've lost relationships. Missed out on weekends. Turned down parties. But every sacrifice is a brick in the foundation of the future I'm building.  
+      Would I change it? No. Because the truth is, I find peace in the work. It's not punishment—it's passion.</p>
+
+      <blockquote>
+        If you're out there feeling the same—different, distant, driven—remember this: You're not crazy for wanting more. You're just SOLO.
+      </blockquote>
     `,
   },
   {
@@ -615,6 +660,7 @@ export const blogs = [
       We live in a time where freedom is at its peak. You can work remotely from a beach, start a business from your bedroom, date anyone across the globe, and learn anything online for free. Sounds like paradise, right?
       </p>
 
+      <h2>Choice Overload</h2>
       <p>
       But here's the paradox: Unlimited options don't make us free. They make us anxious.
       </p>
@@ -623,13 +669,20 @@ export const blogs = [
       Modern life comes with an unspoken pressure: <strong>"If you're not successful, it's your fault because you had every opportunity."</strong> So we scroll through Instagram, comparing our behind-the-scenes to someone else's highlight reel, thinking, <em>"Why am I not living like that?"</em>
       </p>
 
+      <h3>How It Shows Up</h3>
+      <ul>
+        <li>Infinite scrolling replacing intentional rest.</li>
+        <li>Decision fatigue from tiny, constant choices.</li>
+        <li>Guilt when we aren't maximizing every minute.</li>
+      </ul>
+
       <p>
       We've replaced simplicity with a constant chase for what's next. We don't sit with boredom anymore; we binge, scroll, consume. We've mistaken access for meaning, and now we're paying the price.
       </p>
 
-      <p>
-      Maybe freedom was never about endless options. Maybe it's about making a few choices that matter—and shutting the rest out.
-      </p>
+      <blockquote>
+        Maybe freedom was never about endless options. Maybe it's about making a few choices that matter—and shutting the rest out.
+      </blockquote>
     `,
   },
   {
@@ -646,6 +699,7 @@ export const blogs = [
       Tech loves buzzwords: AI, Blockchain, Innovation. And now? <strong>Diversity.</strong>
       </p>
 
+      <h2>Impact or Image?</h2>
       <p>
       Companies plaster "We support women in tech" all over their job posts. Sounds great. But here's the uncomfortable question: Are they doing it for impact… or for image?
       </p>
@@ -654,13 +708,20 @@ export const blogs = [
       Don't get me wrong—progress is real. Women are coding, leading, and building empires in tech like never before. But sometimes it feels like the movement has been hijacked by corporate virtue signaling. Diversity without inclusion is just a checkbox.
       </p>
 
+      <h3>What Real Support Looks Like</h3>
+      <ul>
+        <li>Mentorship and sponsorship that open doors, not just panel slots.</li>
+        <li>Equal pay and transparent promotion paths.</li>
+        <li>Psychological safety so no one has to "prove" they belong.</li>
+      </ul>
+
       <p>
       Empowerment should never be about token seats in boardrooms or PR campaigns during Women's Month. It's about mentorship, equal pay, real growth opportunities—and not making women feel like they have to "prove" they belong.
       </p>
 
-      <p>
-      So here's to the real builders—the women who don't just want a seat at the table but are building their own tables. Respect where it's due.
-      </p>
+      <blockquote>
+        So here's to the real builders—the women who don't just want a seat at the table but are building their own tables.
+      </blockquote>
     `,
   },
   {
@@ -682,10 +743,12 @@ export const blogs = [
       Online, I'm loud. Funny. The guy dropping memes and one-liners like confetti. The type of dude who makes everyone laugh in the group chat, who seems like he's got endless energy. But offline? 
       </p>
 
+      <h2>Two Modes, Same Person</h2>
       <p>
       Let's just say… if social energy was a battery, mine dies faster than an iPhone on 2% playing TikToks. Suddenly, I'm the quiet guy in the corner, overthinking if I should even wave at someone I know. Talking to a girl? Might as well ask me to solve world hunger first.
       </p>
 
+      <h3>Owning Both Sides</h3>
       <p>
       So which one is the real me? The truth is… both. We've all got layers. Maybe the internet just lets me be the version of me that doesn't need to fight social anxiety, judgment, or awkward stares. Maybe being "me" isn't about picking one side. It's about owning every side.
       </p>
@@ -718,13 +781,17 @@ export const blogs = [
       Fast forward a few months—life seemed like it was finally picking up. I landed internships, started preparing for exams, and had projects lined up that I was genuinely excited about. Then it happened again. Got robbed. Lost my phone, my SIM cards (goodbye, 2FA logins), and my mini MiFi—the one thing that keeps me connected and working online.
       </p>
 
+      <h2>Reality Check</h2>
       <p>
       At first, it felt like the final straw. Like, how many times can life hit you before you tap out? But then I realized something: nobody cares. Harsh? Yeah. True? Absolutely. The world doesn't stop spinning because Zigla had a bad day. Deadlines don't care about your Wi-Fi. Clients don't care about your stolen phone. And opportunities? They don't wait for anyone.
       </p>
 
-      <p>
-      So, what now? You get up. You show up. You put in the work—even when it sucks. Because giving up doesn't make the pain go away. It just adds regret to the list. And I refuse to live with that.
-      </p>
+      <h3>How I Respond</h3>
+      <ul>
+        <li>Rebuild the setup piece by piece; momentum matters more than gear.</li>
+        <li>Keep commitments even when it's inconvenient.</li>
+        <li>Document the lessons so the next hit hurts less.</li>
+      </ul>
 
       <p>
       Life sucks sometimes. But quitting sucks more. And if this storm doesn't break me, then it's only making my grind legendary. So yeah… still here. Still coding. Still dreaming. Still building. Because the only way out is through.
@@ -762,13 +829,14 @@ export const blogs = [
       And this doesn't end with academics or coding. My life has always been about making the most out of the least. Personality-wise? I'm the guy who can stay indoors for weeks. People in the same house can go months without seeing me. But that isolation? It's not weakness. It's where I build myself. A year ago, my typing speed was barely 30 WPM. I had a friend hitting 90+. Today? I type faster than him. Why? Because every second I get, I invest in me- not just typing tho!.
     </p>
 
+    <h2>Pressure, But Still Here</h2>
     <p>
       None of this is to brag. It's a survival story. I've had every reason to quit, but here I am. Because circumstances don't define me — mindset does. Like NF said, "There's millions of us just like you..." But here's the question: how many make it through?
     </p>
 
-    <p>
+    <blockquote>
       So I ask again — could you survive being me?
-    </p>
+    </blockquote>
   `,
   },
   {
@@ -802,9 +870,16 @@ export const blogs = [
     But when I enter a coding contest or solve a real-world logic puzzle, it's like Hikaru playing bullet chess with 2 seconds on the clock. Everything connects instantly. I see through the noise, I bend rules (safely), and I create solutions that weren't even in the textbook.
   </p>
 
-  <p>
-    It's a weird paradox to live in — being brilliant in chaos and yet forgetful in calm. But I've learned to embrace it. Because even if I can't remember what day it is, when the real challenge hits… I show up with answers no one else saw coming.
-  </p>
+  <h3>How I Manage It</h3>
+  <ul>
+    <li>Lean on notes and spaced repetition for memory gaps.</li>
+    <li>Trust deep work for logic-heavy problems.</li>
+    <li>Laugh at the forgetfulness — it keeps me humble.</li>
+  </ul>
+
+  <blockquote>
+    It's a weird paradox to live in — being brilliant in chaos and yet forgetful in calm. But I've learned to embrace it.
+  </blockquote>
   `,
   },
   {
