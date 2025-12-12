@@ -150,6 +150,16 @@ export default function BlogPostPage() {
           </div>
         </div>
 
+        {blog.image && (
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <img
+              src={blog.image}
+              alt={blog.title}
+              className="w-full h-auto rounded-xl border border-[rgb(var(--card-border))]"
+            />
+          </div>
+        )}
+
         {/* Blog Content */}
         <div className="py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
