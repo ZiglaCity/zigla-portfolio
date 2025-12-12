@@ -325,7 +325,7 @@ export const blogs = [
     slug: "why-i-code-at-2am",
     title: "Why I Code at 2 AM",
     date: "March 10, 2025",
-    image: "/assets/blogs/code-at-2am.jpg",
+    image: "",
     tags: ["Life", "Mindset"],
     excerpt:
       "People think it's unhealthy. For me, it's therapy. Here's why 2 AM is when I'm most alive.",
@@ -479,7 +479,7 @@ export const blogs = [
     slug: "why-i-love-fastapi",
     title: "Why I Love FastAPI",
     date: "July 10, 2025",
-    image: "/assets/blogs/fastapi-love.jpg",
+    image: "",
     tags: ["Tech", "Backend"],
     excerpt:
       "Fast. Modern. Elegant. Here's why FastAPI has my developer heart.",
@@ -755,7 +755,7 @@ export const blogs = [
     </p>
 
     <p>
-      But the grind didn't stop there. While juggling all that, I still fought for opportunities. And that's how I became one of only TWO Level 200 students in my department to join A2SV — a program that handpicks the best coders on campus. I was competing against Level 300 and 400 CS and Engineering students, and in 12 of their weekly contests, I participated in 10 and finished top 3 in 8 of them. Not luck. Not privilege. Just pure willpower and work ethic.
+      But the grind didn't stop there. While juggling all that, I still fought for opportunities. And that's how I became one of only TWO Level 200 students in my department to join A2SV — a program that handpicks the best coders on campus. I was competing against Level 300 and 400 CS and Engineering students, and in 12 of their weekly contests, I participated in 10 and finished top 3 in 8 of them. And currently sitting at 2nd in ranking. Not luck. Not privilege. Just pure willpower and work ethic.
     </p>
 
     <p>
@@ -810,7 +810,7 @@ export const blogs = [
   {
     id: 23,
     slug: "nobody-is-literally-safe-online",
-    title: "Nobody is *Literally* Safe Online. Here's Why.",
+    title: "Nobody is Literally Safe Online. Here's Why.",
     date: "July 29, 2025",
     image: "/assets/blogs/nobody-safe.png",
     tags: ["Cybersecurity", "Privacy", "Internet", "Mindset"],
@@ -943,7 +943,7 @@ export const blogs = [
     slug: "is-comparison-really-the-thief",
     title: "Is Comparison Really the Thief of Joy?",
     date: "July 30, 2025",
-    image: "/assets/blogs/comparison-thief.png",
+    image: "",
     tags: ["Mindset", "Growth", "Coding Journey", "Real Talk"],
     excerpt:
       "One second you're working, next you're deep in someone else's GitHub portfolio, questioning your whole existence. So is comparison killing your joy… or is it fueling the grind?",
@@ -1202,7 +1202,7 @@ export const blogs = [
     slug: "wrong-branch-moment",
     title: "That Moment You Realize You've Been on the Wrong Branch",
     date: "August 2, 2025",
-    image: "/assets/blogs/wrong-branch.png",
+    image: "",
     tags: ["Dev Life", "Git", "Funny", "Real Talk"],
     excerpt:
       "You spent 4 hours refactoring, fixing, pushing commits... just to realize it was all on the wrong branch. Congrats. You played yourself.",
@@ -1251,7 +1251,7 @@ export const blogs = [
     slug: "10-minute-break-lie",
     title: "I Told Myself I Was Taking a 10-Minute Break…",
     date: "August 3, 2025",
-    image: "/assets/blogs/10-minute-break.png",
+    image: "",
     tags: ["Productivity", "Distraction", "Dev Life", "Relatable"],
     excerpt:
       "Started with a short break. Ended up watching a guy build a hut in the forest using only a spoon. Typical Tuesday.",
@@ -1303,7 +1303,7 @@ export const blogs = [
     slug: "i-dont-remember-writing-this",
     title: "I Don't Remember Writing This Code…",
     date: "August 3, 2025",
-    image: "/assets/blogs/code-amnesia.png",
+    image: "",
     tags: ["Dev Life", "Relatable", "Late Night Coding", "WTF Moments"],
     excerpt:
       "There's nothing more humbling than opening your own code and thinking, 'Who tf wrote this?'… and it was you. Last night. At 2AM.",
@@ -1521,7 +1521,7 @@ export const blogs = [
     slug: "recursion-that-helpful-menace",
     title: "Recursion: That Helpful Menace You Can't Quit.",
     date: "August 16, 2025",
-    image: "/assets/blogs/recursion.png",
+    image: "/assets/blogs/recursion-menace.png",
     tags: ["Algorithms", "Recursion", "LeetCode", "Humor"],
     excerpt:
       "Recursion is elegant, powerful—and the reason your brain melts trying to trace the call stack.",
