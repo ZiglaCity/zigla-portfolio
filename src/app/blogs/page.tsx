@@ -6,12 +6,12 @@ import { getBlogs, getAllTags } from "@@/data/blogs";
 import ClientWrapper from "@@/components/ClientWrapper";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
 import ParticleCanvas from "@@/components/ui/ParticleCanvas";
-import { Metadata } from "next";
 
 export default function BlogsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<"newest" | "oldest" | "title">("newest");
+  const [showAllTags, setShowAllTags] = useState(false);
 
   const blogs = getBlogs();
   const allTags = getAllTags();
@@ -84,7 +84,7 @@ export default function BlogsPage() {
             {/* Tag Filters + Sort */}
             <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
               <div className="flex flex-wrap gap-2">
-                {allTags.map((tag) => (
+                {(showAllTags ? allTags : allTags.slice(0, 15)).map((tag) => (
                   <button
                     key={tag}
                     onClick={() => toggleTag(tag)}
@@ -99,6 +99,27 @@ export default function BlogsPage() {
                     {tag}
                   </button>
                 ))}
+
+                {allTags.length > 15 &&
+                  (showAllTags ? (
+                    <button
+                      onClick={() => setShowAllTags(false)}
+                      className="px-3 py-1 rounded-full text-sm font-medium bg-[rgb(var(--card-border))] text-[rgb(var(--muted))] hover:bg-opacity-80 transition-all duration-300"
+                      aria-expanded="true"
+                      aria-label="Show fewer tags"
+                    >
+                      Less...
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => setShowAllTags(true)}
+                      className="px-3 py-1 rounded-full text-sm font-medium bg-[rgb(var(--card-border))] text-[rgb(var(--muted))] hover:bg-opacity-80 transition-all duration-300"
+                      aria-expanded="false"
+                      aria-label="Show more tags"
+                    >
+                      More...
+                    </button>
+                  ))}
               </div>
 
               <select
