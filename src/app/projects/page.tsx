@@ -26,10 +26,7 @@ const projects: Project[] = [
     categories: ["Messaging / Security", "Full-Stack"],
     description:
       "End-to-end encrypted chat application where messages are securely stored and transmitted as cypher text, ensuring complete privacy and confidentiality.",
-    image: [
-      new URL("../../../public/assets/projects/enzypher1.png", import.meta.url)
-        .href,
-    ],
+    image: ["/assets/projects/enzypher1.png"],
     tags: ["Next.js", "TypeScript", "WebSocket", "Encryption", "Supabase"],
     github: "https://github.com/ziglacity/enzypher",
     demo: "https://enzypher.vercel.app",
@@ -42,14 +39,8 @@ const projects: Project[] = [
     description:
       "Static code analysis platform that scans codebases for security vulnerabilities and provides actionable remediation suggestions.",
     image: [
-      new URL(
-        "../../../public/assets/projects/safestcode-light.png",
-        import.meta.url
-      ).href,
-      new URL(
-        "../../../public/assets/projects/safestcode-dark.png",
-        import.meta.url
-      ).href,
+      "/assets/projects/safestcode-light.png",
+      "/assets/projects/safestcode-dark.png",
     ],
     tags: ["Node.js", "Security", "Static Analysis", "React"],
     github: "https://github.com/ziglacity/safestcode",
@@ -61,9 +52,7 @@ const projects: Project[] = [
     title: "LMS",
     categories: ["Desktop App", "Full-Stack"],
     description: "Full-featured Library Management System for Universities.",
-    image: [
-      new URL("../../../public/assets/projects/lms.png", import.meta.url).href,
-    ],
+    image: ["/assets/projects/lms.png"],
     tags: ["Python", "MySQL", "Tkinter"],
     demo: "#",
     github: "#",
@@ -75,10 +64,7 @@ const projects: Project[] = [
     categories: ["CyberOps"],
     description:
       "Advanced phishing detection and prevention tool using machine learning algorithms to identify and block malicious websites in real-time.",
-    image: [
-      new URL("../../../public/assets/projects/proxyphish.png", import.meta.url)
-        .href,
-    ],
+    image: ["/assets/projects/proxyphish.png"],
     tags: ["Python", "Machine Learning", "Cybersecurity", "Flask"],
     github: "https://github.com/ziglacity/proxyphish",
     demo: "#",
@@ -91,12 +77,8 @@ const projects: Project[] = [
     description:
       "Desktop app for streaming and downloading videos, providing a clean interface and smooth media playback experience.",
     image: [
-      new URL(
-        "../../../public/assets/projects/ztube-light.png",
-        import.meta.url
-      ).href,
-      new URL("../../../public/assets/projects/ztube-dark.png", import.meta.url)
-        .href,
+      "/assets/projects/ztube-light.png",
+      "/assets/projects/ztube-dark.png",
     ],
     tags: ["Python", "Tkinter", "Pytube"],
     github: "https://github.com/ziglacity/ztube",
@@ -109,10 +91,7 @@ const projects: Project[] = [
     categories: ["Full-Stack", "System Design", "Website"],
     description:
       "A clean, fast, and developer-friendly URL shortener which allows custom aliases and provides detailed analytics.",
-    image: [
-      new URL("../../../public/assets/projects/zigly.png", import.meta.url)
-        .href,
-    ],
+    image: ["/assets/projects/zigly.png"],
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/ziglacity/zigly",
     demo: "https://zig-ly.vercel.app/",
@@ -135,10 +114,7 @@ const projects: Project[] = [
     categories: ["AI/ML"],
     description:
       "Backend System for an AI-powered crop disease detection app for farmers.",
-    image: [
-      new URL("../../../public/assets/projects/cropdoc.png", import.meta.url)
-        .href,
-    ],
+    image: ["/assets/projects/cropdoc.png"],
     tags: ["Python", "Torch", "FastAPI", "Supabase"],
     demo: "#",
     github: "#",
@@ -149,10 +125,7 @@ const projects: Project[] = [
     title: "ScreenRecorder",
     categories: ["Desktop App"],
     description: "Lightweight screen recording tool with quick share options.",
-    image: [
-      new URL("../../../public/assets/projects/zscreen.png", import.meta.url)
-        .href,
-    ],
+    image: ["/assets/projects/zscreen.png"],
     tags: ["Python", "Tkinter"],
     demo: "#",
     github: "#",
@@ -164,10 +137,7 @@ const projects: Project[] = [
     categories: ["Website"],
     description:
       "The official website of a constructions company based in Ghana",
-    image: [
-      new URL("../../../public/assets/projects/pc-ltd.png", import.meta.url)
-        .href,
-    ],
+    image: ["/assets/projects/pc-ltd.png"],
     tags: ["Next.js", "Typescript", "Tailwind CSS"],
     github: "https://github.com/ZiglaCity/prosper-constructions-ltd",
     demo: "https://prosper-constructions-ltd.vercel.app/",
