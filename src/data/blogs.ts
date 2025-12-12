@@ -931,8 +931,8 @@ export const blogs = [
     </ul>
   </p>
 
+  <h2>The Illusion of Privacy</h2>
   <p>
-    <strong>The Illusion of Privacy</strong><br />
     "But I've never posted anything about myself."  
     Cool. But… your number exists in a database somewhere.  
     Your name is on some graduation list.  
@@ -946,14 +946,15 @@ export const blogs = [
     The web is connected in crazy, invisible ways.
   </p>
 
+  <h3>So Who's Safe?</h3>
   <p>
-    So who's safe?<br />
     Nobody.  
     Not me. Not you. Not your grandma who only likes church flyers on Facebook.  
     The question isn't <strong>"Am I vulnerable?"</strong>  
     It's <strong>"How well can I protect myself?"</strong>
   </p>
 
+  <h3>Basic Defense Checklist</h3>
   <p>
     Start here:
     <ul>
@@ -976,12 +977,9 @@ export const blogs = [
     It's about <strong>minimizing risk</strong>.
   </p>
 
-  <p>
-    So next time you see someone sharing their life online, stop saying, "they're making themselves vulnerable."  
-    <strong>We all already are.</strong><br />
-    The real flex?  
-    <strong>Knowing how to play defense.</strong>
-  </p>
+  <blockquote>
+    So next time you see someone sharing their life online, stop saying, "they're making themselves vulnerable." We all already are. The real flex? Knowing how to play defense.
+  </blockquote>
   `,
   },
   {
@@ -995,22 +993,28 @@ export const blogs = [
       "I used to live for the joy of dusty football and cheap ice cream. Now, I barely answer my phone. This one's a reflection, raw and real.",
     readTime: "7 min read",
     content: `
-    <p><em>"Sorry ain't answer I've been busy, lot of things been bothering me lately wish I could go back in time and erase it."</em><br/>— GTW Mik</p>
+    <blockquote>"Sorry ain't answer I've been busy, lot of things been bothering me lately wish I could go back in time and erase it."<br/>— GTW Mik</blockquote>
 
     <p>This line been ringing in my head all day. You know, I've been thinking about how good I had it as a kid. Charlie, Life's been moving too fast lately. Like I'm strapped to a rocket I didn't even ask to ride.</p>
 
+    <h2>When Life Was Simple</h2>
     <p>Like...<br/>I really used to live. Life wasn't fancy or perfect or anything like that, but I swear it felt like I had the whole world in my palm. Back then, after school? Football every single day Shoes off, socks brown, hearts racing, legs running wild. We didn't have a stadium — we had a dusty field, two stones as goalposts, and a reason to feel alive.
     We'd chase that ball till the sun disappeared and our shadows faded into dust.</p>
 
+    <h3>Hood Parties and Ice Cream Wins</h3>
     <p>And brooo, if you ever heard about a party in the hood? Best believe I was there. Not for drinks. Not for girls. But for those dancing competitions. I remember winning 1 cedi one time — deadass felt like I just hit the lottery. Split it with my boys, gave 20 pesewas each to two of them, and we ran straight to the ice cream seller like kings. </p>
 
+    <h3>Weekends with Grandpa</h3>
     <p>Weekends? Skating. Biking. Skating again. And then maybe gambling with rubber bands like our lives depended on it. Grandpa would call me over and we'd play cards — not even for the game's sake, but just to laugh, talk, and feel alive. I had my lil bro with me too, and we'd turn the house upside down with made-up games that made zero sense but felt like everything, break random things and then run from random beatings. </p>
 
+    <h2>The Silence Now</h2>
     <p>Now? It's like I'm here, but also… not really. <br>I barely want to talk to anyone. Not out of hate, just… don't feel like it. My phone could ring twenty times and I wouldn't flinch. Earphones in, heart locked, mind drowning in music and these dreams bigger than my head can even carry. I just stare at my dark screen — not sad, not depressed or anything like that, just… floating. </p>
     
     <p>We all wanted to grow up. Chase something bigger. Live something better. But truth is, I'd trade a thousand "busy" days for one more sunny afternoon with a rubber band in my pocket and a coin in my shoe, waiting for the next party beat to drop. </p>
 
-    <p>But hey… <br>I ain't sad. <br>I'm just soaking in the silence. <br>Till then…<br/>I'll just keep floating in my own world.<br/>Shoot my shot at the grind —<br/>Hope I don't miss it.</p>
+    <blockquote>
+      But hey… I ain't sad. I'm just soaking in the silence. Till then… I'll just keep floating in my own world. Shoot my shot at the grind — Hope I don't miss it.
+    </blockquote>
   `,
   },
   {
@@ -1140,6 +1144,7 @@ export const blogs = [
       "Male friends? Got a few. Female friends? Got none. So does that mean I'm gay? Maybe. Or maybe I'm just... happy as hell. Let's unpack it.",
     readTime: "5 min read",
     content: `
+  <h2>Wait, Am I Gay?</h2>
   <p>
     Male friends, I got a few of them. Female friends? <strong>Zero.</strong> So does that mean I'm gay?
   </p>
@@ -1156,6 +1161,7 @@ export const blogs = [
     See, we'll probably never know. But let me be honest — the idea of having a female friend has never even crossed my mind.
   </p>
 
+  <h3>The PDF Incident</h3>
   <p>
     That's why I could collect the number of the nicest girl on campus <em>during an exam</em>... and instead of texting "Hi 👋", I sent her... a file. <br>
     A whole <strong>PDF dossier of herself.</strong>
@@ -1212,11 +1218,9 @@ export const blogs = [
     Will I stay gay forever? Maybe yes. But the <em>other</em> gay? Definitely not. I just know this isn't the season for that.
   </p>
 
-  <p>
-    So to any girl out there I might be ignoring: <br>
-    <strong>I hope you forget me.</strong><br>
-    I'm just gay.
-  </p>
+  <blockquote>
+    So to any girl out there I might be ignoring: I hope you forget me. I'm just gay.
+  </blockquote>
   `,
   },
   {
@@ -1232,6 +1236,7 @@ export const blogs = [
     content: `
     <p>(...asking for a friend — that friend is me.)</p>
 
+    <h2>Living in Offline Beast Mode</h2>
     <p>Let's be honest. In this modern age, life without the internet sounds like some survivalist reality TV challenge. Everyone's connected — your toaster probably has Wi-Fi. But me? I'm thriving in what I like to call: <strong>Offline Beast Mode</strong>.</p>
 
     <p>See, I'm not boycotting the internet on purpose. It's not some deep philosophical stand. I just literally don't have any. No Wi-Fi. No mobile data. Just vibes. The only time I get access is when I hike my ass to campus, and then it's a full-on downloading frenzy: docs, packages, StackOverflow threads, random dev memes — you name it.</p>
@@ -1270,6 +1275,10 @@ export const blogs = [
 
     <p>So yeah, I may not have constant internet access, but I've got drive, focus, and some very aggressive <code>console.log</code>s. Offline Zigla is still beast mode Zigla. And when midnight hits and I steal Mom's phone for a quick Google search?<br />
     That's just called balance. 😌</p>
+
+    <blockquote>
+      Internet is a beautiful thing — but learning to code without it every now and then? That's a superpower.
+    </blockquote>
   `,
   },
   {
@@ -1283,6 +1292,7 @@ export const blogs = [
       "You spent 4 hours refactoring, fixing, pushing commits... just to realize it was all on the wrong branch. Congrats. You played yourself.",
     readTime: "3 min read",
     content: `
+  <h2>The Realization</h2>
   <p>
     Everything's flowing. You're coding like a beast, making commits like "final-final-fix-really-this-time", pushing every 15 minutes like GitHub is a diary.
   </p>
@@ -1316,9 +1326,9 @@ export const blogs = [
     Honestly? At this point, you deserve a badge of survival. Git is powerful, yeah — but Git is also petty. And it will humble you.
   </p>
 
-  <p>
-    So next time? <strong>Check the branch</strong> first. Before you write a single line. Or don't — and enjoy the adrenaline rush like the rest of us.
-  </p>
+  <blockquote>
+    So next time? Check the branch first. Before you write a single line. Or don't — and enjoy the adrenaline rush like the rest of us.
+  </blockquote>
   `,
   },
   {
@@ -1332,6 +1342,7 @@ export const blogs = [
       "Started with a short break. Ended up watching a guy build a hut in the forest using only a spoon. Typical Tuesday.",
     readTime: "4 min read",
     content: `
+  <h2>The Spiral Begins</h2>
   <p>
     "Just 10 minutes" — the greatest lie I've ever told myself.
   </p>
@@ -1364,13 +1375,9 @@ export const blogs = [
     So here's my advice — if you ever tell yourself "10 minutes"… set a damn timer. Or better yet, don't touch your phone. Or better-better yet, just accept the fact that that break is gonna be a whole damn journey.
   </p>
 
-  <p>
-    Because let's face it: you don't take 10-minute breaks. You take quests.
-  </p>
-
-  <p>
-    But hey — if you come back with a cleared head and a couple laughs… maybe that spoon hut wasn't such a bad detour after all.
-  </p>
+  <blockquote>
+    Because let's face it: you don't take 10-minute breaks. You take quests. But hey — if you come back with a cleared head and a couple laughs… maybe that spoon hut wasn't such a bad detour after all.
+  </blockquote>
   `,
   },
   {
@@ -1384,6 +1391,7 @@ export const blogs = [
       "There's nothing more humbling than opening your own code and thinking, 'Who tf wrote this?'… and it was you. Last night. At 2AM.",
     readTime: "3 min read",
     content: `
+  <h2>Who Wrote This?</h2>
   <p>
     So I open a file from a project I was working on last week — something light. Just reviewing old logic. But as I scroll through the code, I freeze. This ain't mine.
   </p>
@@ -1396,6 +1404,7 @@ export const blogs = [
     Comments? Nowhere to be found. Variable names? Bro, what the hell is <code>flaggedGhostChunk</code> supposed to mean??
   </p>
 
+  <h3>The Flow State Trap</h3>
   <p>
     Then it hits me… this is one of those 2AM masterpieces. You know the ones — you were vibing, maybe playing lo-fi or deep trap, slightly sleep-deprived, completely locked in. You enter a flow state so dangerous you start feeling like a God.
   </p>
@@ -1412,13 +1421,9 @@ export const blogs = [
     So you just close the file slowly, whisper "don't break," and move on with your life like it never happened.
   </p>
 
-  <p>
-    Lesson learned: Late-night code is like drunk texts — sometimes you gotta just accept it, hope for the best, and pray you don't have to explain it in an interview.
-  </p>
-
-  <p>
-    Until then… flaggedGhostChunk stays untouched.
-  </p>
+  <blockquote>
+    Lesson learned: Late-night code is like drunk texts — sometimes you gotta just accept it, hope for the best, and pray you don't have to explain it in an interview. Until then… flaggedGhostChunk stays untouched.
+  </blockquote>
   `,
   },
   {
@@ -1432,6 +1437,7 @@ export const blogs = [
       "One missing semicolon and I'm treating the situation like I'm in Mission Impossible — sweating, whispering to the code, scared to touch anything.",
     readTime: "4 min read",
     content: `
+  <h2>The Console.log Ritual</h2>
   <p>
     Bro… have you ever debugged so cautiously, you started whispering like the code could hear you?
   </p>
@@ -1460,13 +1466,9 @@ export const blogs = [
     Debugging is supposed to be logical. Step-by-step. But nah… I'm out here treating it like spiritual warfare.
   </p>
 
-  <p>
-    Midnight Coding never prepared me for the emotional damage.
-  </p>
-
-  <p>
-    But we move. Bug-free. For now.
-  </p>
+  <blockquote>
+    Midnight Coding never prepared me for the emotional damage. But we move. Bug-free. For now.
+  </blockquote>
   `,
   },
   {
@@ -1480,6 +1482,7 @@ export const blogs = [
       "Built an app from scratch? Solved 300+ LeetCode problems? Debugged an entire backend? Cool. Now… explain why you still feel like a fraud.",
     readTime: "5 min read",
     content: `
+  <h2>When You Feel Like a Fraud</h2>
   <p>
     You ever just sit there after solving a hard-ass problem or finishing a clean-ass project… and still feel like you know <strong>absolutely nothing</strong>?
   </p>
@@ -1496,6 +1499,7 @@ export const blogs = [
     And don't even get me started on tech interviews. One minute you're running Docker containers, the next you're like, "Wait… what's the difference between a process and a thread again?" 💀
   </p>
 
+  <h3>Your Terminal History Doesn't Lie</h3>
   <p>
     It's like my inner monologue is a whole performance:
     <em>"Act like you know what you're doing. You're the dev. You got this. Don't let them know you're just out here winging it and reading docs mid-meeting."</em>
@@ -1523,14 +1527,9 @@ export const blogs = [
     I might downplay my wins, question my progress, and even compare myself to people who've been in the game longer than I've been alive.
   </p>
 
-  <p>
-    But one thing's for sure — I'm still here.
-    Still building. Still solving. Still showing up.
-  </p>
-
-  <p>
-    Imposter or not… <strong>I'm in the damn arena.</strong>
-  </p>
+  <blockquote>
+    But one thing's for sure — I'm still here. Still building. Still solving. Still showing up. Imposter or not… I'm in the damn arena.
+  </blockquote>
   `,
   },
   {
@@ -1544,6 +1543,7 @@ export const blogs = [
       "Some people bite their nails. Some scroll TikTok all day. Me? I accidentally turn LeetCode into a lullaby and debug in my dreams. It's not funny. Or maybe it is?",
     readTime: "4 min read",
     content: `
+  <h2>The Midnight Code Spiral</h2>
   <p>
     Bro... everyone has that one <strong>bad habit</strong> they ain't proud of but still do anyway. You know, the type you swear you'll fix by next week but you're already planning to do it again tonight?
   </p>
@@ -1581,14 +1581,9 @@ export const blogs = [
     I just want a single night of peace, not <code>O(n log n)</code> dreams.
   </p>
 
-  <p>
-    How do I stop this? No idea.
-    But one day, I'll write a sleep-tracking app that detects if I start thinking in code… and zaps me back to rest mode 💀.
-  </p>
-
-  <p>
-    Until then, pray for me. Or better yet — send melatonin.
-  </p>
+  <blockquote>
+    How do I stop this? No idea. But one day, I'll write a sleep-tracking app that detects if I start thinking in code… and zaps me back to rest mode 💀. Until then, pray for me. Or better yet — send melatonin.
+  </blockquote>
   `,
   },
   {
