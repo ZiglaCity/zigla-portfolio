@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import { Search, Calendar, Clock, Tag, ArrowRight } from "lucide-react";
 import { getBlogs, getAllTags } from "@@/data/blogs";
 import ClientWrapper from "@@/components/ClientWrapper";
@@ -173,10 +174,14 @@ export default function BlogsPage() {
                 >
                   <div className="h-48 bg-[rgb(var(--card-border))] flex items-center justify-center overflow-hidden">
                     {blog.image ? (
-                      <img
+                      <Image
                         src={blog.image}
                         alt={blog.title}
-                        className="w-full h-full object-cover"
+                        width={800}
+                        height={400}
+                        className="object-cover w-full h-full"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        priority
                       />
                     ) : (
                       <div className="text-4xl text-cyan-500 dark:text-cyan-400 font-mono">

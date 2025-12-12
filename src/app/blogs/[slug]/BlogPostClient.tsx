@@ -17,6 +17,7 @@ import {
 import { getBlogBySlug } from "@@/data/blogs";
 import ClientWrapper from "@@/components/ClientWrapper";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
+import Image from "next/image";
 
 export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
   const [copied, setCopied] = useState(false);
@@ -185,11 +186,17 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
         </div>
 
         {blog.image && (
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <img
+          <div
+            className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative w-full"
+            style={{ aspectRatio: "16 / 10" }}
+          >
+            <Image
               src={blog.image}
               alt={blog.title}
-              className="w-full h-auto rounded-xl border border-[rgb(var(--card-border))]"
+              fill
+              className="rounded-xl border border-[rgb(var(--card-border))] object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
+              priority
             />
           </div>
         )}
