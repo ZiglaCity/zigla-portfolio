@@ -4,7 +4,7 @@ export const blogs = [
     slug: "the-real-me",
     title: "The Real Me",
     date: "January 1, 2025",
-    image: "/api/placeholder/800/400",
+    image: "/assets/blogs/real-me.png",
     tags: ["Life", "Personal"],
     excerpt:
       "Who is Zigla beyond the code? Not everyone gets to find out—but if you're here, you're close.",
@@ -35,14 +35,181 @@ export const blogs = [
   },
   {
     id: 2,
-    slug: "security-first-mindset",
-    title: "Why Security Should Be Your First Thought, Not Your Last",
-    date: "December 28, 2024",
-    image: "/api/placeholder/800/400",
+    slug: "the-big-dream",
+    title: "The Big Dream",
+    date: "January 2, 2025",
+    image: "/assets/blogs/big-dream.png",
+    tags: ["Vision", "Future"],
+    excerpt:
+      "Dream big or stay stuck. Here's what drives me and where I'm headed.",
+    readTime: "3 min read",
+    content: `
+      <p>They say dreams should scare you.<br />
+      Mine? They terrify me — and that's how I know they're real.</p>
+
+      <p>I don't just want to write code.<br />
+      I want to architect systems that power the future.<br />
+      AI-driven platforms. Secure infrastructures. Tools that redefine how we interact with technology.</p>
+
+      <p>I imagine a world where my solutions run silently in the background of your life, making things faster, safer, smarter.<br />
+      A world where someone says, "Who built this?" — and my name comes up.</p>
+
+      <p>The big dream isn't fame. It's impact.<br />
+      I don't need the spotlight. I need legacy.<br />
+      I want my fingerprints on the future, even if nobody sees them.</p>
+
+      <p>Sometimes, I ask myself: "Is this too much?"<br />
+      Then I remember: comfort never built history.<br />
+      Discomfort is the price of doing something legendary.</p>
+
+      <p>So here's the plan: keep building, keep breaking limits, keep chasing the ideas that others call impossible.<br />
+      Because if your dreams don't make people doubt you, they're too small.</p>
+
+      <p><strong>This is The Big Dream. And I'm running toward it.</strong></p>
+    `,
+  },
+  {
+    id: 3,
+    slug: "my-other-side",
+    title: "My Other Side",
+    date: "January 5, 2025",
+    image: "/assets/blogs/my-other-side.jpg",
+    tags: ["Life", "Passion"],
+    excerpt:
+      "Before the code, there was rhythm. There was a ball. There was a stage.",
+    readTime: "5 min read",
+    content: `
+      <p>Most people know me as Zigla — the guy building systems and chasing big tech dreams.<br />
+      But let me pull back the curtain: <strong>I wasn't always just about code.</strong></p>
+
+      <p>Before the screens, I lived in motion.<br />
+      Freestyle football wasn't a side thing — it was my obsession.<br />
+      I'd spend hours perfecting spins and flicks, posting videos that hit thousands of views.<br />
+      At my peak, I had <strong>3K Instagram followers</strong> just watching me turn a ball into art.</p>
+
+      <p>And then there was music.<br />
+      Back in high school, I lived in the studio.<br />
+      Writing lyrics that felt like truth, spitting bars over beats that shook the classroom walls.<br />
+      I wasn't just coding — I was rhyming, flowing, building verses with the same precision I now put into my functions.</p>
+
+      <p>But that's not all.<br />
+      I was a dancer — and not just any dancer.<br />
+      Back in junior high, I was <strong>the best in my area</strong>.<br />
+      Every move had energy. Every step had confidence. I owned the floor before I ever owned a GitHub repo.</p>
+
+      <p>Weekends? Skating was life.<br />
+      Heelys in school, roller skates on the streets.<br />
+      The thrill of gliding, the freedom of motion — I lived for it.<br />
+      I used to do a lot, because life was about expression, not limits.</p>
+
+      <p>Now, people ask: "What happened to all that?"<br />
+      Truth is, nothing happened.<br />
+      Those worlds live in me. They taught me rhythm, creativity, and flow — the same energy I bring to every line of code today.</p>
+
+      <p>So, if you think you know me because you've seen my code?<br />
+      Think again.<br />
+      There's always another side.</p>
+    `,
+  },
+  {
+    id: 4,
+    slug: "my-silent-hours",
+    title: "My Silent Hours",
+    date: "January 7, 2025",
+    image: "/assets/blogs/silent-hours.jpg",
+    tags: ["Life", "Mindset"],
+    excerpt: "Midnight. The world sleeps. My best work wakes up.",
+    readTime: "3 min read",
+    content: `
+      <p>There's something about silence that turns my mind into a supercomputer.<br />
+      No pings. No calls. No noise. Just me, my screen, and infinite possibilities.</p>
+
+      <p>Most people chase productivity in the daylight.<br />
+      I find mine in the dark — in those sacred hours when the world forgets me, and I forget the world.</p>
+
+      <p>Lo-fi beats in my ears. Cursor blinking like a heartbeat.<br />
+      It's not just coding. It's a vibe. A ritual. A way of life.</p>
+
+      <p>People ask why I stay up late.<br />
+      Because this is when I feel most alive.<br />
+      When ideas flow like rivers and time stops existing.</p>
+
+      <p>My silent hours aren't lonely.<br />
+      They're the loudest conversations I'll ever have — with my thoughts, my dreams, and my code.</p>
+    `,
+  },
+  {
+    id: 5,
+    slug: "the-art-of-debugging",
+    title: "The Art of Debugging",
+    date: "January 12, 2025",
+    image: "/assets/blogs/debugging-art.jpg",
+    tags: ["Tech", "Mindset"],
+    excerpt:
+      "Debugging isn't just a task. It's an art form that separates coders from creators.",
+    readTime: "4 min read",
+    content: `
+      <p>Anyone can write code.<br />
+      But when it breaks? That's where the real craft begins.</p>
+
+      <p>Debugging isn't frustration; it's detective work.<br />
+      Every bug is a clue. Every error message, a whisper pointing to the truth.<br />
+      The question is — do you have the patience to listen?</p>
+
+      <p>I've spent hours staring at the same block of code, wondering why reality doesn't match logic.<br />
+      And then, <em>click</em> — the realization hits. That dopamine rush is addictive.</p>
+
+      <p>The art of debugging isn't about speed.<br />
+      It's about precision. Curiosity. The mindset that says:<br />
+      "I'm not leaving until I understand."</p>
+
+      <p>For me, debugging is meditation in chaos.<br />
+      It's me versus the unknown — and I love the fight.</p>
+    `,
+  },
+  {
+    id: 6,
+    slug: "the-merrylow-journey",
+    title: "The Merrylow Journey",
+    date: "January 20, 2025",
+    image: "/assets/blogs/merrylow.jpg",
+    tags: ["Startup", "Backend"],
+    excerpt: "How I built Merrylow from scratch with a killer team.",
+    readTime: "5 min read",
+    content: `
+      <p>Merrylow wasn't just a project.<br />
+      It was a battlefield.<br />
+      And I loved every second of the fight.</p>
+
+      <p>From brainstorming on rough notes to deploying on a live server,<br />
+      every step tested our skills, our patience, and our drive.</p>
+
+      <p>I took on backend and DevOps.<br />
+      Node.js, Express, PostgreSQL, Prisma — all wired together with care.<br />
+      Secure APIs, clean architecture, automation — the works.</p>
+
+      <p>Then came deployment.<br />
+      VPS setup. NGINX configs. GitHub Actions for CI/CD.<br />
+      It wasn't glamorous, but it was real engineering — and it worked.</p>
+
+      <p>Merrylow taught me what it takes to build from zero.<br />
+      It's not just code.<br />
+      It's persistence. It's strategy. It's believing in the vision when nothing exists yet.</p>
+
+      <p>This isn't the end of the story.<br />
+      Merrylow is only the beginning.</p>
+    `,
+  },
+  {
+    id: 7,
+    slug: "security-is-not-optional",
+    title: "Security is Not Optional",
+    date: "February 9, 2025",
+    image: "/assets/blogs/security.jpg",
     tags: ["Cybersecurity", "Development", "Best Practices"],
     excerpt:
-      "In a world where data breaches make headlines daily, security can't be an afterthought. Here's how to build it into your DNA as a developer.",
-    readTime: "8 min read",
+      "Security isn't a feature. It's the foundation. Ignoring it is the fastest way to fail.",
+    readTime: "4 min read",
     content: `
       <p>Every time I see another headline about a major data breach, I feel a familiar mix of frustration and determination. Frustration because most of these incidents could have been prevented. Determination because it reinforces why security-first development isn't just a methodology—it's a responsibility.</p>
 
@@ -89,14 +256,139 @@ export const blogs = [
     `,
   },
   {
-    id: 3,
-    slug: "ai-and-human-creativity",
-    title: "AI and Human Creativity: Partners, Not Competitors",
-    date: "December 20, 2024",
-    image: "/api/placeholder/800/400",
-    tags: ["AI", "Creativity", "Technology", "Future"],
+    id: 8,
+    slug: "the-typing-grind",
+    title: "The Typing Grind",
+    date: "February 18, 2025",
+    image: "/assets/blogs/typing.jpg",
+    tags: ["Skills", "Productivity"],
+    excerpt: "From 90 WPM to 120 WPM: Why I trained like a maniac.",
+    readTime: "3 min read",
+    content: `
+      <p>Typing is underrated.<br />
+      Everyone thinks it's just about pressing keys faster.<br />
+      For me, it's about <strong>speed, flow, and dominance</strong>.</p>
+
+      <p>When I hit 90 WPM, I felt good.<br />
+      But good isn't enough for me.<br />
+      I wanted elite. I wanted to break 120 WPM — and I did.</p>
+
+      <p>Why? Because speed matters.<br />
+      Faster typing means faster thinking.<br />
+      It means fewer bottlenecks between your brain and the screen.</p>
+
+      <p>I trained like an athlete.<br />
+      Hours on Monkeytype. Finger drills. Consistency.<br />
+      And when I hit my goal, it wasn't just numbers — it was a mindset shift.</p>
+
+      <p>The Typing Grind taught me something bigger:<br />
+      Small habits, done daily, compound into mastery.<br />
+      And mastery? That's addictive.</p>
+    `,
+  },
+  {
+    id: 9,
+    slug: "the-love-of-my-life",
+    title: "The Love Of My Life?",
+    date: "March 6, 2025",
+    image: "/assets/blogs/love-life.jpeg",
+    tags: ["Life", "Personal"],
     excerpt:
-      "As AI becomes more sophisticated, the question isn't whether it will replace human creativity—it's how we can dance together.",
+      "People ask what I love most. Here's the truth — and it's not what you think.",
+    readTime: "4 min read",
+    content: `
+      <p>People ask me: "What's the love of your life?"<br />
+      They expect me to say a name. A face. A memory.<br />
+      They never expect me to say this.</p>
+
+      <p>The love of my life isn't a person.<br />
+      It's the craft.<br />
+      The art of building something out of nothing.<br />
+      Turning blank screens into living, breathing systems.</p>
+
+      <p>Code is more than syntax to me.<br />
+      It's poetry in logic.<br />
+      It's creation disguised as computation.<br />
+      Every function, every loop, every little decision — that's intimacy to me.</p>
+
+      <p>And maybe that's why relationships feel... complicated.<br />
+      Because I'm already in one — with the work, the grind, the late nights, the big dreams.<br />
+      It's a love that doesn't betray me. A love that rewards effort with results.</p>
+
+      <p>So, the love of my life?<br />
+      It's not who. It's what.<br />
+      And until someone understands that — this love isn't negotiable.</p>
+    `,
+  },
+  {
+    id: 10,
+    slug: "why-i-code-at-2am",
+    title: "Why I Code at 2 AM",
+    date: "March 10, 2025",
+    image: "/assets/blogs/code-at-2am.jpg",
+    tags: ["Life", "Mindset"],
+    excerpt:
+      "People think it's unhealthy. For me, it's therapy. Here's why 2 AM is when I'm most alive.",
+    readTime: "3 min read",
+    content: `
+      <p>The world sleeps at 2 AM.<br />
+      I don't. That's when I wake up inside.</p>
+
+      <p>No notifications. No chaos. Just silence and the soft glow of a screen.<br />
+      For some, it's insomnia. For me, it's clarity.</p>
+
+      <p>At 2 AM, ideas stop competing with noise.<br />
+      The world feels slower. My thoughts feel faster.<br />
+      Every bug I fix, every feature I build — it all feels louder in the quiet.</p>
+
+      <p>People say, "Work-life balance."<br />
+      But for me, this <em>is</em> balance.<br />
+      Coding isn't stress; it's my escape. My meditation.</p>
+
+      <p>So why do I code at 2 AM?<br />
+      Because that's when my best work happens.<br />
+      When time doesn't matter, and everything else fades away.</p>
+    `,
+  },
+  {
+    id: 11,
+    slug: "the-developers-paradox",
+    title: "The Developer's Paradox",
+    date: "April 1, 2025",
+    image: "/assets/blogs/dev-paradox.jpg",
+    tags: ["Tech", "Philosophy"],
+    excerpt:
+      "We build for simplicity but thrive in complexity. That's the paradox of our craft.",
+    readTime: "4 min read",
+    content: `
+      <p>Developers dream of simplicity.<br />
+      Clean UI. Seamless UX. Smooth, elegant systems.<br />
+      But here's the paradox — we live in complexity.</p>
+
+      <p>Underneath every "simple" button is a web of logic.<br />
+      Behind every smooth user experience is chaos stitched together with precision.</p>
+
+      <p>We build to hide complexity, but we live in it.<br />
+      We love problems that others run from. We take pride in solving the unseen.</p>
+
+      <p>The paradox? We chase perfection knowing it doesn't exist.<br />
+      We debug bugs that were born from fixing other bugs.<br />
+      It's a loop — and we love the loop.</p>
+
+      <p>The developer's paradox isn't a curse.<br />
+      It's what makes us creators, not just coders.<br />
+      Complexity is our canvas. Simplicity is our art.</p>
+    `,
+  },
+  {
+    id: 12,
+    slug: "how-i-think-about-ai",
+    title: "How I Think About AI",
+    date: "May 15, 2025",
+    image: "/assets/blogs/ai-mindset.jpeg",
+    tags: ["AI", "Future"],
+    excerpt:
+      "AI isn't magic. It's math with ambition. My take on its role in our future.",
     readTime: "6 min read",
     content: `
       <p>There's a conversation happening in every tech circle, every creative community, every late-night coding session: Will AI replace human creativity? I've spent countless hours building AI-powered tools, and I can tell you the answer isn't what most people expect.</p>
@@ -149,6 +441,1317 @@ export const blogs = [
       <p>The future I'm excited about isn't one where AI replaces human creativity, but one where AI amplifies human potential. Where a security analyst can focus on strategy while AI handles monitoring. Where a developer can focus on user experience while AI handles optimization. Where a designer can focus on meaning while AI handles iteration.</p>
 
       <p>We're not building AI to replace ourselves. We're building AI to become the best versions of ourselves.</p>
+    `,
+  },
+  {
+    id: 13,
+    slug: "learning-never-stops",
+    title: "Learning Never Stops",
+    date: "June 25, 2025",
+    image: "/assets/blogs/learning.jpg",
+    tags: ["Mindset", "Growth"],
+    excerpt: "Why I never stop learning and you shouldn't either.",
+    readTime: "3 min read",
+    content: `
+      <p>Tech moves fast.<br />
+      If you're not learning, you're falling behind.<br />
+      That's the brutal truth.</p>
+
+      <p>I live by a simple rule:<br />
+      <strong>Every day, learn something new.</strong><br />
+      It doesn't have to be huge — a new API, a fresh concept, a tiny optimization.<br />
+      But it has to be something.</p>
+
+      <p>Learning isn't a phase.<br />
+      It's survival.<br />
+      And beyond survival, it's growth.</p>
+
+      <p>The world doesn't slow down for anyone.<br />
+      You either move with it or watch it leave you in the dust.<br />
+      I've chosen to move.</p>
+
+      <p>So yeah — learning never stops.<br />
+      And for me, it never will.</p>
+    `,
+  },
+  {
+    id: 14,
+    slug: "why-i-love-fastapi",
+    title: "Why I Love FastAPI",
+    date: "July 10, 2025",
+    image: "/assets/blogs/fastapi-love.jpg",
+    tags: ["Tech", "Backend"],
+    excerpt:
+      "Fast. Modern. Elegant. Here's why FastAPI has my developer heart.",
+    readTime: "4 min read",
+    content: `
+      <p>When you've written APIs for a while, you start craving one thing: <strong>speed without pain</strong>.<br />
+      FastAPI delivers that — and more.</p>
+
+      <p>I've used frameworks that made me feel like I was dragging an anchor uphill.<br />
+      With FastAPI, everything flows.<br />
+      Type hints. Auto docs. Async support out of the box. It feels like Python — but leveled up.</p>
+
+      <p>The beauty of FastAPI isn't just speed; it's elegance.<br />
+      You write less, achieve more, and the code looks clean enough to frame on your wall.</p>
+
+      <p>For someone who loves building scalable systems and AI-driven backends, this framework is a cheat code.<br />
+      It just gets out of your way and lets you <em>create</em>.</p>
+
+      <p>In a world obsessed with complexity, FastAPI reminds me that power can be simple.<br />
+      And that's why it's more than just a tool — it's a philosophy I vibe with.</p>
+    `,
+  },
+  {
+    id: 15,
+    slug: "confessions-of-a-developer",
+    title: "Confessions of a Developer",
+    date: "July 17, 2025",
+    image: "/assets/blogs/confessions.png",
+    tags: ["Humor", "Life"],
+    excerpt:
+      "Bugs, coffee, and questionable life choices — here's my honest truth.",
+    readTime: "6 min read",
+    content: `
+   <p>We developers like to act like we've got everything under control.<br />
+    But the truth? We're a walking collection of bugs and coping mechanisms.<br />
+    Here are my <strong>10 real confessions</strong>:</p>
+
+    <p><strong>Confession #1:</strong><br />
+    I've Googled "How to center a div" more times than I've Googled my own name.<br />
+    And yes, I still forget sometimes.</p>
+
+    <p><strong>Confession #2:</strong><br />
+    I drink coffee for "focus"… but really, it's just part of the aesthetic.<br />
+    Hacker movie vibes, you know?</p>
+
+    <p><strong>Confession #3:</strong><br />
+    I've broken production more than once and blamed it on "the API".<br />
+    (Sorry, API.)</p>
+
+    <p><strong>Confession #4:</strong><br />
+    I once spent six hours debugging a bug that didn't exist.<br />
+    The real issue? I forgot to save the file.</p>
+
+    <p><strong>Confession #5:</strong><br />
+    Sometimes I write <em>// TODO</em> in my code just to feel organized.<br />
+    Do I ever come back to it? Nope.</p>
+
+    <p><strong>Confession #6:</strong><br />
+    I've used console.log as a debugging tool in a million-dollar codebase.<br />
+    And I'd do it again.</p>
+
+    <p><strong>Confession #7:</strong><br />
+    I've deployed something without testing because "it should work".<br />
+    Guess what? It didn't.</p>
+
+    <p><strong>Confession #8:</strong><br />
+    I once fixed a bug by accident… and pushed it like I knew what I was doing.</p>
+
+    <p><strong>Confession #9:</strong><br />
+    I still copy-paste from Stack Overflow like it's a sacred ritual.<br />
+    The real MVP? Ctrl + C and Ctrl + V.</p>
+
+    <p><strong>Confession #10:</strong><br />
+    Sometimes I rename variables from <em>x</em> to <em>data</em> and call it "refactoring".<br />
+    Don't judge me.</p>
+
+    <p>So yeah, these are my confessions.<br />
+    If you're a developer and you didn't relate to at least three of these…<br />
+    you're lying.</p>
+  `,
+  },
+  {
+    id: 16,
+    slug: "why-im-solo",
+    title: "Why I'm SOLO",
+    date: "July 17, 2025",
+    image: "/assets/blogs/solo.jpg",
+    tags: ["Life", "Mindset", "Hustle"],
+    excerpt:
+      "Some call it lonely. I call it alignment. This is why I'm riding solo—and why it feels like peace.",
+    readTime: "4 min read",
+    content: `
+      <p>I stumbled on this track called <em>"I'm SOLO"</em>, and let me tell you—it's not just a song; 
+      it's an anthem for anyone grinding silently, questioning the norms, and chasing a vision bigger than themselves.</p>
+
+      <p>
+      The lyrics hit home:  
+      <em>"They try to tell me get a job, and pick a realistic goal  
+      I would rather die young than live for anybody else."</em>
+        
+      That line? That's everything. Because I've been there—the constant pressure to "fit in," to follow a predictable script, when deep down you know you're built for something different.
+      </p>
+
+      <p>
+      Ever since I started building, I've been mostly by myself. Not because I hate people. Not because I can't vibe. But because purpose demands solitude. It's where the real work happens.  
+      Like the hook says:  
+      <em>"I'm SOLO... Secrets only live outside  
+      I'm DOLO... It's not a lot of people that I like I know."</em>
+      </p>
+
+      <p>
+      And honestly, I relate. This path can be isolating. I've lost relationships. Missed out on weekends. Turned down parties. But every sacrifice is a brick in the foundation of the future I'm building.  
+      Would I change it? No. Because the truth is, I find peace in the work. It's not punishment—it's passion.
+      </p>
+
+      <p>
+      So if you're out there feeling the same—different, distant, driven—remember this: You're not crazy for wanting more. You're just SOLO. And maybe that's exactly what you need to win.
+      </p>
+    `,
+  },
+  {
+    id: 17,
+    slug: "paradox-of-modern-freedom",
+    title: "The Paradox of Modern Freedom",
+    date: "July 18, 2025",
+    image: "/assets/blogs/modern-freedom.png",
+    tags: ["Life", "Society", "Mindset"],
+    excerpt:
+      "We have the freedom to do anything—but somehow, that's exactly why so many of us feel lost.",
+    readTime: "4 min read",
+    content: `
+      <p>
+      We live in a time where freedom is at its peak. You can work remotely from a beach, start a business from your bedroom, date anyone across the globe, and learn anything online for free. Sounds like paradise, right?
+      </p>
+
+      <p>
+      But here's the paradox: Unlimited options don't make us free. They make us anxious.
+      </p>
+
+      <p>
+      Modern life comes with an unspoken pressure: <strong>"If you're not successful, it's your fault because you had every opportunity."</strong> So we scroll through Instagram, comparing our behind-the-scenes to someone else's highlight reel, thinking, <em>"Why am I not living like that?"</em>
+      </p>
+
+      <p>
+      We've replaced simplicity with a constant chase for what's next. We don't sit with boredom anymore; we binge, scroll, consume. We've mistaken access for meaning, and now we're paying the price.
+      </p>
+
+      <p>
+      Maybe freedom was never about endless options. Maybe it's about making a few choices that matter—and shutting the rest out.
+      </p>
+    `,
+  },
+  {
+    id: 18,
+    slug: "women-in-tech",
+    title: "Women in Tech — Breaking Barriers or Building New Ones?",
+    date: "July 18, 2025",
+    image: "/assets/blogs/women-in-tech.webp",
+    tags: ["Tech", "Diversity", "Opinion"],
+    excerpt: "Diversity is trending. But is it progress… or PR?",
+    readTime: "4 min read",
+    content: `
+      <p>
+      Tech loves buzzwords: AI, Blockchain, Innovation. And now? <strong>Diversity.</strong>
+      </p>
+
+      <p>
+      Companies plaster "We support women in tech" all over their job posts. Sounds great. But here's the uncomfortable question: Are they doing it for impact… or for image?
+      </p>
+
+      <p>
+      Don't get me wrong—progress is real. Women are coding, leading, and building empires in tech like never before. But sometimes it feels like the movement has been hijacked by corporate virtue signaling. Diversity without inclusion is just a checkbox.
+      </p>
+
+      <p>
+      Empowerment should never be about token seats in boardrooms or PR campaigns during Women's Month. It's about mentorship, equal pay, real growth opportunities—and not making women feel like they have to "prove" they belong.
+      </p>
+
+      <p>
+      So here's to the real builders—the women who don't just want a seat at the table but are building their own tables. Respect where it's due.
+      </p>
+    `,
+  },
+  {
+    id: 19,
+    slug: "am-i-really-me",
+    title: "Am I Really Me?",
+    date: "July 18, 2025",
+    image: "/assets/blogs/am-i-me.png",
+    tags: ["Life", "Identity", "Mindset"],
+    excerpt:
+      "Online, I'm bold and unstoppable. Offline? Sometimes I don't even want to say hi. So… which one is real?",
+    readTime: "4 min read",
+    content: `
+      <p>
+      Ever feel like you're two completely different people? Because I do—every single day.
+      </p>
+
+      <p>
+      Online, I'm loud. Funny. The guy dropping memes and one-liners like confetti. The type of dude who makes everyone laugh in the group chat, who seems like he's got endless energy. But offline? 
+      </p>
+
+      <p>
+      Let's just say… if social energy was a battery, mine dies faster than an iPhone on 2% playing TikToks. Suddenly, I'm the quiet guy in the corner, overthinking if I should even wave at someone I know. Talking to a girl? Might as well ask me to solve world hunger first.
+      </p>
+
+      <p>
+      So which one is the real me? The truth is… both. We've all got layers. Maybe the internet just lets me be the version of me that doesn't need to fight social anxiety, judgment, or awkward stares. Maybe being "me" isn't about picking one side. It's about owning every side.
+      </p>
+
+      <p>
+      Because, real talk: Nobody's just one thing. We're all chameleons in our own way. I just happen to switch colors between Wi-Fi and real life.
+      </p>
+    `,
+  },
+  {
+    id: 20,
+    slug: "life-sucks-but-who-cares",
+    title: "Life Sucks… But Who Cares?",
+    date: "July 27, 2025",
+    image: "/assets/blogs/life-sucks.png",
+    tags: ["Life", "Mindset", "Hustle"],
+    excerpt:
+      "When life throws punches, you don't cry about the pain—you learn how to swing back. This is why I keep grinding when everything falls apart.",
+    readTime: "6 min read",
+    content: `
+      <p>
+      Let's keep it real: life isn't always fair. Some days, it feels like the universe wakes up and says, "Let's mess with Zigla today." And trust me, I've had a few of those days lately.
+      </p>
+
+      <p>
+      Not too long ago, I planned out the perfect break. A whole vacation dedicated to taking online courses, building projects, and leveling up my skills. Everything was set. And then… my laptop broke. Gone. Just like that, my entire plan went down the drain.
+      </p>
+
+      <p>
+      Fast forward a few months—life seemed like it was finally picking up. I landed internships, started preparing for exams, and had projects lined up that I was genuinely excited about. Then it happened again. Got robbed. Lost my phone, my SIM cards (goodbye, 2FA logins), and my mini MiFi—the one thing that keeps me connected and working online.
+      </p>
+
+      <p>
+      At first, it felt like the final straw. Like, how many times can life hit you before you tap out? But then I realized something: nobody cares. Harsh? Yeah. True? Absolutely. The world doesn't stop spinning because Zigla had a bad day. Deadlines don't care about your Wi-Fi. Clients don't care about your stolen phone. And opportunities? They don't wait for anyone.
+      </p>
+
+      <p>
+      So, what now? You get up. You show up. You put in the work—even when it sucks. Because giving up doesn't make the pain go away. It just adds regret to the list. And I refuse to live with that.
+      </p>
+
+      <p>
+      Life sucks sometimes. But quitting sucks more. And if this storm doesn't break me, then it's only making my grind legendary. So yeah… still here. Still coding. Still dreaming. Still building. Because the only way out is through.
+      </p>
+    `,
+  },
+  {
+    id: 21,
+    slug: "could-you-survive-being-me",
+    title: "Could You Survive Being Me?",
+    date: "July 28, 2025",
+    image: "/assets/blogs/survive-me.png",
+    tags: ["Life", "Struggle", "Mindset", "Privilege"],
+    excerpt:
+      "Privilege? Never had it. Luck? Rarely. Yet somehow, I keep showing up in spaces they said I'd never reach. Could you survive being me?",
+    readTime: "7 min read",
+    content: `
+    <p>
+      Let's be real — some people were born on the finish line. Me? I started where the track didn't even exist.
+    </p>
+
+    <p>
+      Let's talk academics. I've never been a resident on campus — not because I didn't want to, but because I could never afford it. Do you know what that means? It means missing in-person lectures, quizzes, and those surprise attendance checks that could tank your grade. It means rushing through traffic for a 30-minute paper you might not even get to write if you're late. And yet, somehow, I've managed to stay in the 95% category with a GPA above 3.8.
+    </p>
+
+    <p>
+      And it wasn't easy. There were moments I almost gave up entirely — like when the academic fee deadline was breathing down my neck and I had no idea how I was going to pay. You're performing at your best, getting top scores, and still thinking, "What's the point if I can't even stay enrolled?" I applied for scholarships, nailed the interviews, but guess what? Luck never smiled. That stings in ways I can't even explain.
+    </p>
+
+    <p>
+      But the grind didn't stop there. While juggling all that, I still fought for opportunities. And that's how I became one of only TWO Level 200 students in my department to join A2SV — a program that handpicks the best coders on campus. I was competing against Level 300 and 400 CS and Engineering students, and in 12 of their weekly contests, I participated in 10 and finished top 3 in 8 of them. Not luck. Not privilege. Just pure willpower and work ethic.
+    </p>
+
+    <p>
+      And this doesn't end with academics or coding. My life has always been about making the most out of the least. Personality-wise? I'm the guy who can stay indoors for weeks. People in the same house can go months without seeing me. But that isolation? It's not weakness. It's where I build myself. A year ago, my typing speed was barely 30 WPM. I had a friend hitting 90+. Today? I type faster than him. Why? Because every second I get, I invest in me- not just typing tho!.
+    </p>
+
+    <p>
+      None of this is to brag. It's a survival story. I've had every reason to quit, but here I am. Because circumstances don't define me — mindset does. Like NF said, "There's millions of us just like you..." But here's the question: how many make it through?
+    </p>
+
+    <p>
+      So I ask again — could you survive being me?
+    </p>
+  `,
+  },
+  {
+    id: 22,
+    slug: "overthinker-with-bad-memory",
+    title: "Overthinker with Bad Memory",
+    date: "July 29, 2025",
+    image: "/assets/blogs/overthinker-memory.png",
+    tags: ["Mindset", "Logic", "Neurodivergence", "Personal"],
+    excerpt:
+      "Imagine having the brain of a master tactician but the memory of a goldfish. That's me — I'll solve your toughest logic problem and forget what I had for lunch.",
+    readTime: "5 min read",
+    content: `
+  <p>
+    Here's something funny — I could invent a whole new algorithm from scratch in a contest because I dug so deep into a problem, only to later find out the official solution was just <b>Arrays.sort()</b>.
+  </p>
+
+  <p>
+    And no, I'm not joking. My friends would solve the same question in under 3 minutes. I'd spend 45. Not because I was stuck — but because I was designing a full-on sorting network, convinced there had to be a trick. There wasn't. But what I built actually worked — and they didn't even understand how.
+  </p>
+
+  <p>
+    That's the life of someone with intense reasoning ability but mid-tier (at best) memory retention. I can pick apart abstract math and physics ideas like it's nothing. I could listen to a complex concept once, and reconstruct it with even deeper insights. But ask me what we discussed yesterday over lunch? No clue. Gone. It's like my brain filters out what it deems "non-essential" — and trust me, it's ruthless.
+  </p>
+
+  <p>
+    I've never been good with History. Couldn't memorize dates or timelines if you paid me. In fact, if you offered me a full scholarship plus monthly stipend to study Medicine, I'd still say no. Not because I can't reason through the biology — but because I know I'd forget half the memorized terms before the exam. That's just how my mind works. It optimizes for logic, not recall.
+  </p>
+
+  <p>
+    But when I enter a coding contest or solve a real-world logic puzzle, it's like Hikaru playing bullet chess with 2 seconds on the clock. Everything connects instantly. I see through the noise, I bend rules (safely), and I create solutions that weren't even in the textbook.
+  </p>
+
+  <p>
+    It's a weird paradox to live in — being brilliant in chaos and yet forgetful in calm. But I've learned to embrace it. Because even if I can't remember what day it is, when the real challenge hits… I show up with answers no one else saw coming.
+  </p>
+  `,
+  },
+  {
+    id: 23,
+    slug: "nobody-is-literally-safe-online",
+    title: "Nobody is *Literally* Safe Online. Here's Why.",
+    date: "July 29, 2025",
+    image: "/assets/blogs/nobody-safe.png",
+    tags: ["Cybersecurity", "Privacy", "Internet", "Mindset"],
+    excerpt:
+      "You think you're safe online because you don't post much? Nah… you lost that privilege the moment you connected to the internet.",
+    readTime: "6 min read",
+    content: `
+  <p>
+    The moment you connect to the internet, you expose yourself. 
+    Not because you posted a photo. 
+    Not because you wrote a blog. 
+    But because you simply… <strong>connected</strong>.
+  </p>
+
+  <p>
+    Let's clear this up real quick: <br>
+    You don't need to overshare or post selfies to be vulnerable online. 
+    The <em>real exposure</em> begins the second your device pings a Wi-Fi tower or connects to mobile data. 
+    That tiny moment you hit <code>"I agree"</code> on terms and conditions you didn't read—<strong>you're already in the system</strong>.
+  </p>
+
+  <p>
+    <em>"But I don't log in to anything, I just browse."</em>  
+    Lol. That was valid in 2008.  
+    Today, you can't do anything meaningful online without logging in. 
+    Platforms hold content hostage until you give up your identity. 
+    Some restrict research papers, downloads, or even full articles unless you're signed in.
+  </p>
+
+  <p>
+    And let's say you somehow sneak around unlogged—what happens when your device dies mid-task? 
+    No account. No autosave. No cloud sync. All that progress? <strong>Gone</strong>.
+  </p>
+
+  <p>
+    So now you're <em>forced</em> to log in just to function. 
+    And the moment you do, they know:
+    <ul>
+      <li>Your location</li>
+      <li>Your IP address</li>
+      <li>Your device model</li>
+      <li>Your screen resolution, typing pattern, and more</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>The Illusion of Privacy</strong><br />
+    "But I've never posted anything about myself."  
+    Cool. But… your number exists in a database somewhere.  
+    Your name is on some graduation list.  
+    You once gave your birthday for a discount code.  
+    <strong>Bam. You're already traceable.</strong>
+  </p>
+
+  <p>
+    I can find you in under 10 minutes with just your number.  
+    You don't have to overshare to be <em>already shared</em>.  
+    The web is connected in crazy, invisible ways.
+  </p>
+
+  <p>
+    So who's safe?<br />
+    Nobody.  
+    Not me. Not you. Not your grandma who only likes church flyers on Facebook.  
+    The question isn't <strong>"Am I vulnerable?"</strong>  
+    It's <strong>"How well can I protect myself?"</strong>
+  </p>
+
+  <p>
+    Start here:
+    <ul>
+      <li>Use 2FA</li>
+      <li>Don't reuse passwords</li>
+      <li>Actually read what you're agreeing to</li>
+      <li>Log out if you don't need to stay in</li>
+      <li>Don't overshare, but also… don't be delusional</li>
+    </ul>
+  </p>
+
+  <p>
+    If you've read my blogs, you probably feel like you know me.  
+    Maybe you do.  
+    But that doesn't make you less vulnerable than I am.
+  </p>
+
+  <p>
+    The game isn't about avoiding exposure anymore—that ship has sailed.  
+    It's about <strong>minimizing risk</strong>.
+  </p>
+
+  <p>
+    So next time you see someone sharing their life online, stop saying, "they're making themselves vulnerable."  
+    <strong>We all already are.</strong><br />
+    The real flex?  
+    <strong>Knowing how to play defense.</strong>
+  </p>
+  `,
+  },
+  {
+    id: 24,
+    slug: "sorry-aint-answer",
+    title: "Sorry Ain't Answer… I've Been Busy",
+    date: "July 29, 2025",
+    image: "/assets/blogs/sorry-aint-answer.png",
+    tags: ["Reflection", "Life", "Growth", "Silence"],
+    excerpt:
+      "I used to live for the joy of dusty football and cheap ice cream. Now, I barely answer my phone. This one's a reflection, raw and real.",
+    readTime: "7 min read",
+    content: `
+    <p><em>"Sorry ain't answer I've been busy, lot of things been bothering me lately wish I could go back in time and erase it."</em><br/>— GTW Mik</p>
+
+    <p>This line been ringing in my head all day. You know, I've been thinking about how good I had it as a kid. Charlie, Life's been moving too fast lately. Like I'm strapped to a rocket I didn't even ask to ride.</p>
+
+    <p>Like...<br/>I really used to live. Life wasn't fancy or perfect or anything like that, but I swear it felt like I had the whole world in my palm. Back then, after school? Football every single day Shoes off, socks brown, hearts racing, legs running wild. We didn't have a stadium — we had a dusty field, two stones as goalposts, and a reason to feel alive.
+    We'd chase that ball till the sun disappeared and our shadows faded into dust.</p>
+
+    <p>And brooo, if you ever heard about a party in the hood? Best believe I was there. Not for drinks. Not for girls. But for those dancing competitions. I remember winning 1 cedi one time — deadass felt like I just hit the lottery. Split it with my boys, gave 20 pesewas each to two of them, and we ran straight to the ice cream seller like kings. </p>
+
+    <p>Weekends? Skating. Biking. Skating again. And then maybe gambling with rubber bands like our lives depended on it. Grandpa would call me over and we'd play cards — not even for the game's sake, but just to laugh, talk, and feel alive. I had my lil bro with me too, and we'd turn the house upside down with made-up games that made zero sense but felt like everything, break random things and then run from random beatings. </p>
+
+    <p>Now? It's like I'm here, but also… not really. <br>I barely want to talk to anyone. Not out of hate, just… don't feel like it. My phone could ring twenty times and I wouldn't flinch. Earphones in, heart locked, mind drowning in music and these dreams bigger than my head can even carry. I just stare at my dark screen — not sad, not depressed or anything like that, just… floating. </p>
+    
+    <p>We all wanted to grow up. Chase something bigger. Live something better. But truth is, I'd trade a thousand "busy" days for one more sunny afternoon with a rubber band in my pocket and a coin in my shoe, waiting for the next party beat to drop. </p>
+
+    <p>But hey… <br>I ain't sad. <br>I'm just soaking in the silence. <br>Till then…<br/>I'll just keep floating in my own world.<br/>Shoot my shot at the grind —<br/>Hope I don't miss it.</p>
+  `,
+  },
+  {
+    id: 25,
+    slug: "is-comparison-really-the-thief",
+    title: "Is Comparison Really the Thief of Joy?",
+    date: "July 30, 2025",
+    image: "/assets/blogs/comparison-thief.png",
+    tags: ["Mindset", "Growth", "Coding Journey", "Real Talk"],
+    excerpt:
+      "One second you're working, next you're deep in someone else's GitHub portfolio, questioning your whole existence. So is comparison killing your joy… or is it fueling the grind?",
+    readTime: "6 min read",
+    content: `
+  <p>
+    Sometimes, I'm just casually working on my laptop — headphones in, tabs open, maybe sipping something cold — when I accidentally (on purpose?) end up deviating a little. Just a bit, right?
+  </p>
+
+  <p>
+    Next thing I know, I'm knee-deep in someone's GitHub — a dev who's been writing code since the early 2010s, publishing open-source tools, maintaining sleek packages, building startups, and doing God-knows-what with AI. 
+    It starts out as admiration, but it slowly morphs into a low hum of <em>"Damn… what have I even done?"</em>
+  </p>
+
+  <p>
+    I mean, these folks are certified beasts. Their commits read like symphonies. Their portfolios are filled with battle-tested apps and clean, type-safe wizardry. And here I am — not even two full years deep into this dev journey — somehow measuring myself on the same scale. Like… what?
+  </p>
+
+  <p>
+    It's wild how quick the mind is to forget time, context, and reality.
+  </p>
+
+  <h3>When Comparison Stings</h3>
+  <p>
+    It's true — comparison can absolutely steal your joy. You start the day feeling productive, get a few things done, maybe squash a few bugs or finish a feature. 
+    And then, out of nowhere, that innocent detour becomes a deep dive into someone else's journey. 
+    A journey that didn't start yesterday, btw. A journey built on years — of failures, pivots, persistence, mentorship, and timing.
+  </p>
+
+  <p>
+    And yet we forget that.
+  </p>
+
+  <p>
+    Suddenly, your achievements feel small. Your growth feels slow. You start questioning if you're really cut out for this. 
+    And the worst part? It happens quietly. It doesn't yell — it just whispers: <em>"You should be further by now."</em>
+  </p>
+
+  <p>
+    But… who says?
+  </p>
+
+  <h3>When Comparison Fuels</h3>
+  <p>
+    Here's the twist though — sometimes that very comparison? It lights a fire.
+  </p>
+
+  <p>
+    There've been days I've stumbled on a dev's project or personal site and instead of falling into a pit of self-doubt, I've come out supercharged. 
+    Like, <em>"Yo, I wanna build something clean like this. I wanna ship. I wanna learn that tech stack. I wanna get there."</em>
+  </p>
+
+  <p>
+    It's weird, but depending on the day, the mood, or even how much sleep I've had — comparison either crushes me or carries me. 
+    Some days, I compare myself to people who started just before me or are slightly ahead, and I'm like, yo, I'm cooking. 
+    The code may be messy sometimes, but the vision? Still sharp.
+  </p>
+
+  <p>
+    Funny thing though — even when I do outperform expectations or build something solid, I still never really feel ahead. Like ever.
+  </p>
+
+  <p>
+    Why? Maybe it's because I know how much I don't know yet. Or maybe it's because deep down, I'm scared that feeling "on top" might make me complacent.
+  </p>
+
+  <p>
+    So I stay hungry. Almost too hungry sometimes.
+  </p>
+
+  <h3>The Real Thief of Joy?</h3>
+  <p>
+    If I'm being honest, maybe comparison isn't the thief of joy — maybe <strong>forgetting your own timeline</strong> is. 
+    Maybe joy starts to slip when you stop appreciating how far you've come. 
+    When you zoom too far out, or too far ahead, and forget that two years ago you didn't even know what the hell a "middleware" was.
+  </p>
+
+  <p>
+    <strong>Perspective matters.</strong>
+  </p>
+
+  <p>
+    It's okay to look up — just don't look so long that you forget to look around. 
+    It's okay to feel behind — just don't let that stop you from showing up. 
+    And if you're gonna compare, compare with yourself last month, not a 10-year veteran's highlight reel.
+  </p>
+
+  <h3>Final Note</h3>
+  <p>
+    Growth ain't linear. Confidence isn't permanent. Some days, you'll feel like a genius. Other days, imposter syndrome will hit like a truck. That's normal.
+  </p>
+
+  <p>
+    What matters is you don't let the voice of comparison drown out the voice of curiosity.
+  </p>
+
+  <p>
+    So yeah… maybe I'll scroll GitHub less. <br>
+    Or maybe I won't.
+  </p>
+
+  <p>
+    But either way, I'll remember: <br>
+    I'm not late. <br>
+    I'm not lost. <br>
+    I'm just learning. <br>
+    And that's more than enough.
+  </p>
+  `,
+  },
+  {
+    id: 26,
+    slug: "am-i-really-gay",
+    title: "Am I Really Gay?",
+    date: "July 30, 2025",
+    image: "/assets/blogs/am-i-gay.png",
+    tags: ["Personal", "Unfiltered", "Real Talk", "LOL"],
+    excerpt:
+      "Male friends? Got a few. Female friends? Got none. So does that mean I'm gay? Maybe. Or maybe I'm just... happy as hell. Let's unpack it.",
+    readTime: "5 min read",
+    content: `
+  <p>
+    Male friends, I got a few of them. Female friends? <strong>Zero.</strong> So does that mean I'm gay?
+  </p>
+
+  <p>
+    Well, it depends on what you mean by <em>gay</em>. To me, gay means being happy. And bro — <strong>I'm happy as fuck!</strong> 😅
+  </p>
+
+  <p>
+    I'm not saying I'm happy <em>because</em> I'm gay oooh. Eih. But if gay means happy, and I'm happy, then... does that mean I'm gay because I'm happy? Or happy because I'm gay?
+  </p>
+
+  <p>
+    See, we'll probably never know. But let me be honest — the idea of having a female friend has never even crossed my mind.
+  </p>
+
+  <p>
+    That's why I could collect the number of the nicest girl on campus <em>during an exam</em>... and instead of texting "Hi 👋", I sent her... a file. <br>
+    A whole <strong>PDF dossier of herself.</strong>
+  </p>
+
+  <p>
+    And when I say "herself," I mean I attached her picture, wrote her full name, described her family, named her father, mother, and even her brother.
+  </p>
+
+  <p>
+    Yeah... her brother. <em>That guy's a senior Java developer in some country outside Ghana.</em> And I kinda fell in love with his LinkedIn profile.
+  </p>
+
+  <p>
+    Some people will call it creepy. I call it beautiful. It felt <strong>right</strong>, you know?
+  </p>
+
+  <p>
+    And that's when the floodgates opened. The girl who normally replies with "k", "yh", "hmm"... suddenly turned into a <em>whole</em> novelist.
+  </p>
+
+  <p>
+    "How did you know this?" <br>
+    "Where did you see that?" <br>
+    "Why won't you answer my questions?" <br>
+    "ARE YOU OKAY??" <br>
+    <br>
+    Messages just kept dropping like rainfall in Takoradi. And me? I just went offline — <strong>intentionally</strong>. 😎
+  </p>
+
+  <p>
+    When I came back, more paragraphs were waiting. That's how the convo began.
+  </p>
+
+  <h3>But the Old Me?</h3>
+  <p>
+    That guy who used to Google: <br>
+    <em>"How to talk to girls"</em><br>
+    <em>"How to keep a convo going with a girl"</em><br>
+    <em>"What to ask a girl you like"</em><br>
+    That guy is long gone.
+  </p>
+
+  <p>
+    Now? If you don't text back — cool. We move. My time? <strong>Fucking valuable</strong>. And I'm not sharing that with just anyone's daughter.
+  </p>
+
+  <h3>So... Am I Gay?</h3>
+  <p>
+    Maybe I am. Maybe I'm just <strong>peaceful</strong>. Maybe I just like vibes over flirting. Maybe I just want my energy to stay clean and unbothered.
+  </p>
+
+  <p>
+    Will I stay gay forever? Maybe yes. But the <em>other</em> gay? Definitely not. I just know this isn't the season for that.
+  </p>
+
+  <p>
+    So to any girl out there I might be ignoring: <br>
+    <strong>I hope you forget me.</strong><br>
+    I'm just gay.
+  </p>
+  `,
+  },
+  {
+    id: 27,
+    slug: "offline-productivity-beast",
+    title: "How Productive Could You Be Without Internet Access?",
+    date: "August 1, 2025",
+    image: "/assets/blogs/offline-productivity.png",
+    tags: ["Personal", "Dev Life", "Offline Mode", "Focus"],
+    excerpt:
+      "No Wi-Fi. No distractions. Just me, my code, and some aggressive console.logs. Offline mode turned me into a productivity beast.",
+    readTime: "5 min read",
+    content: `
+    <p>(...asking for a friend — that friend is me.)</p>
+
+    <p>Let's be honest. In this modern age, life without the internet sounds like some survivalist reality TV challenge. Everyone's connected — your toaster probably has Wi-Fi. But me? I'm thriving in what I like to call: <strong>Offline Beast Mode</strong>.</p>
+
+    <p>See, I'm not boycotting the internet on purpose. It's not some deep philosophical stand. I just literally don't have any. No Wi-Fi. No mobile data. Just vibes. The only time I get access is when I hike my ass to campus, and then it's a full-on downloading frenzy: docs, packages, StackOverflow threads, random dev memes — you name it.</p>
+
+    <p>But when I'm home?<br />It's a no-internet, all-grind zone.</p>
+
+    <p>And weirdly enough, it's turned me into a productivity monster. No WhatsApp messages. No endless scrolling. No "quick" YouTube breaks that somehow last 2 hours. Just me, my code, and the sweet sound of the fan spinning like it's got problems.</p>
+
+    <h3>Debugging without Google: A Spiritual Journey</h3>
+
+    <p>You ever tried debugging a nasty error without Google or ChatGPT? It starts off with optimism:<br />
+    <em>"Hmm... this should work."</em><br />
+    Then...<br />
+    <em>"Wait, why the hell is this breaking?"</em><br />
+    Then finally, you unleash your ultimate weapon:</p>
+
+    <pre><code>console.log("What the fuck is happening here")</code></pre>
+
+    <p>Still nothing. You're staring at your terminal like it just betrayed you.</p>
+
+    <p>But then — just then — something clicks. You fix the bug. You beat the error. And the dopamine hit? <strong>Stronger than any viral TikTok.</strong> That's the kind of high that builds devs, not copy-pasting some magic snippet from StackOverflow you don't even understand.</p>
+
+    <h3>Offline Mode = Training Arc</h3>
+
+    <p>Working offline is like putting on weighted clothes in an anime. You suffer, yes. But when you do get access to the internet again, you're a different breed. You don't panic at errors. You think deeper. You write cleaner code. You even start naming your variables properly (okay, maybe not always).</p>
+
+    <p>Sure, there are moments I wish I had internet. Maybe to Google a bug. Or, let's be honest, to rewatch Messi highlights for the 100th time. But in this weird way, not having internet has made me a better dev. A more focused one. A more angry one sometimes, sure... but still better.</p>
+
+    <h3>Should You Try It?</h3>
+
+    <p>Yes. For a day or two, go full monk mode. No internet. Just code. Let the silence mock you while you try to figure out why the loop won't break. It's painful, but it's powerful.</p>
+
+    <p>Internet is a beautiful thing — I mean, I'd sell a kidney to stream some Netflix right now. But learning to code without it every now and then? <strong>That's a superpower.</strong></p>
+
+    <h3>Final Thoughts</h3>
+
+    <p>So yeah, I may not have constant internet access, but I've got drive, focus, and some very aggressive <code>console.log</code>s. Offline Zigla is still beast mode Zigla. And when midnight hits and I steal Mom's phone for a quick Google search?<br />
+    That's just called balance. 😌</p>
+  `,
+  },
+  {
+    id: 28,
+    slug: "wrong-branch-moment",
+    title: "That Moment You Realize You've Been on the Wrong Branch",
+    date: "August 2, 2025",
+    image: "/assets/blogs/wrong-branch.png",
+    tags: ["Dev Life", "Git", "Funny", "Real Talk"],
+    excerpt:
+      "You spent 4 hours refactoring, fixing, pushing commits... just to realize it was all on the wrong branch. Congrats. You played yourself.",
+    readTime: "3 min read",
+    content: `
+  <p>
+    Everything's flowing. You're coding like a beast, making commits like "final-final-fix-really-this-time", pushing every 15 minutes like GitHub is a diary.
+  </p>
+
+  <p>
+    Then boom — you check the branch.
+    <strong>main</strong>.
+    Not <code>feature/fix-navbar</code>.
+    Not <code>bug/hotfix-layout</code>.
+    Nah... <strong>main</strong>.
+  </p>
+
+  <p>
+    Your soul quietly exits your body. You just spent 4 hours rewriting components, adding animations, changing styles... on the wrong branch. No wonder the CI/CD gods haven't smiled on you today.
+  </p>
+
+  <p>
+    Now you're panicking. Opening Git Graph. Copying files to clipboard. Cherry-picking commits like it's a buffet. And don't even lie — you've definitely opened another terminal and typed <code>git status</code> like five times just to feel something.
+  </p>
+
+  <p>
+    Then comes the damage control:
+    <ul>
+      <li>Rename the branch like you meant to do it all along ✅</li>
+      <li>Pull from main like a pro (and pray nothing breaks) ✅</li>
+      <li>Tell your teammates "just a small refactor" when you've changed half the app ✅</li>
+    </ul>
+  </p>
+
+  <p>
+    Honestly? At this point, you deserve a badge of survival. Git is powerful, yeah — but Git is also petty. And it will humble you.
+  </p>
+
+  <p>
+    So next time? <strong>Check the branch</strong> first. Before you write a single line. Or don't — and enjoy the adrenaline rush like the rest of us.
+  </p>
+  `,
+  },
+  {
+    id: 29,
+    slug: "10-minute-break-lie",
+    title: "I Told Myself I Was Taking a 10-Minute Break…",
+    date: "August 3, 2025",
+    image: "/assets/blogs/10-minute-break.png",
+    tags: ["Productivity", "Distraction", "Dev Life", "Relatable"],
+    excerpt:
+      "Started with a short break. Ended up watching a guy build a hut in the forest using only a spoon. Typical Tuesday.",
+    readTime: "4 min read",
+    content: `
+  <p>
+    "Just 10 minutes" — the greatest lie I've ever told myself.
+  </p>
+
+  <p>
+    One second, I'm deep into my code, mentally wrestling with a bug that's refusing to die. So I do what any normal developer would do… I convince myself I deserve a <em>tiny</em> break.
+  </p>
+
+  <p>
+    I get up, stretch, maybe grab some water, then boom — the phone enters the chat. That innocent "lemme check one notification" quickly spirals into a full-on content safari. Suddenly, I'm watching a dude in the forest build a solar-powered swimming pool with nothing but a spoon and three leaves.
+  </p>
+
+  <p>
+    Two videos later, I'm on Reddit reading about a cat who learned Python. I scroll, laugh, maybe cry a bit — who knows? — then realize: wait… what was I even doing before this??
+  </p>
+
+  <p>
+    I tab back into VS Code. Blank stare. No idea where I left off. The bug? Still undefeated. My break? Now a feature-length film.
+  </p>
+
+  <p>
+    It gets worse when I try to "feel productive" again by checking my emails — which leads to Slack — which leads to someone's GitHub repo — which leads to a blog post about "How I Scaled My Startup to 1M Users in 6 Months" — which leads to me questioning all my life decisions.
+  </p>
+
+  <p>
+    And the worst part? I <strong>always</strong> act surprised when it happens. Like I didn't know my brain is a professional overthinker and procrastinator in one.
+  </p>
+
+  <p>
+    So here's my advice — if you ever tell yourself "10 minutes"… set a damn timer. Or better yet, don't touch your phone. Or better-better yet, just accept the fact that that break is gonna be a whole damn journey.
+  </p>
+
+  <p>
+    Because let's face it: you don't take 10-minute breaks. You take quests.
+  </p>
+
+  <p>
+    But hey — if you come back with a cleared head and a couple laughs… maybe that spoon hut wasn't such a bad detour after all.
+  </p>
+  `,
+  },
+  {
+    id: 30,
+    slug: "i-dont-remember-writing-this",
+    title: "I Don't Remember Writing This Code…",
+    date: "August 3, 2025",
+    image: "/assets/blogs/code-amnesia.png",
+    tags: ["Dev Life", "Relatable", "Late Night Coding", "WTF Moments"],
+    excerpt:
+      "There's nothing more humbling than opening your own code and thinking, 'Who tf wrote this?'… and it was you. Last night. At 2AM.",
+    readTime: "3 min read",
+    content: `
+  <p>
+    So I open a file from a project I was working on last week — something light. Just reviewing old logic. But as I scroll through the code, I freeze. This ain't mine.
+  </p>
+
+  <p>
+    I mean, technically it <em>is</em>. VS Code even has the audacity to say I committed it. But I'm staring at a block of logic so foreign, I lowkey feel like I hacked myself.
+  </p>
+
+  <p>
+    Comments? Nowhere to be found. Variable names? Bro, what the hell is <code>flaggedGhostChunk</code> supposed to mean??
+  </p>
+
+  <p>
+    Then it hits me… this is one of those 2AM masterpieces. You know the ones — you were vibing, maybe playing lo-fi or deep trap, slightly sleep-deprived, completely locked in. You enter a flow state so dangerous you start feeling like a God.
+  </p>
+
+  <p>
+    But here's the problem: You wrote it like the bug was the enemy… and now it's YOU who can't even trace the logic. Betrayed by your own genius.
+  </p>
+
+  <p>
+    And the worst part? You can't touch it. Like, it works perfectly. All tests pass. Deployment was smooth. But you can't refactor it 'cause you don't even know what to preserve.
+  </p>
+
+  <p>
+    So you just close the file slowly, whisper "don't break," and move on with your life like it never happened.
+  </p>
+
+  <p>
+    Lesson learned: Late-night code is like drunk texts — sometimes you gotta just accept it, hope for the best, and pray you don't have to explain it in an interview.
+  </p>
+
+  <p>
+    Until then… flaggedGhostChunk stays untouched.
+  </p>
+  `,
+  },
+  {
+    id: 31,
+    slug: "debug-like-defusing-bomb",
+    title: "Why Do I Debug Like I'm Defusing a Bomb?",
+    date: "August 4, 2025",
+    image: "/assets/blogs/debug-bomb.jpg",
+    tags: ["Dev Life", "Debugging", "Funny", "Real Talk"],
+    excerpt:
+      "One missing semicolon and I'm treating the situation like I'm in Mission Impossible — sweating, whispering to the code, scared to touch anything.",
+    readTime: "4 min read",
+    content: `
+  <p>
+    Bro… have you ever debugged so cautiously, you started whispering like the code could hear you?
+  </p>
+
+  <p>
+    One time, I was fixing a random bug — app wouldn't render one component. That's it. Just one. Next thing I know, I'm 3 hours deep, breathing like I'm defusing a nuke in a Jason Bourne movie.
+  </p>
+
+  <p>
+    And don't get me started on the "console.log" ritual — place one here, one there, move one inside the loop, sacrifice one to the async gods, whisper "please work" and hit refresh.
+  </p>
+
+  <p>
+    You ever stare at one line for so long you convince yourself JavaScript is broken? Like, <em>"I KNOW this condition is true, stop lying to me!!!"</em>
+  </p>
+
+  <p>
+    Then out of nowhere — boom 💥 — it starts working. No explanation. You didn't change anything. You just re-saved the file, or maybe the wind shifted direction, and the bug vanished. Gone.
+  </p>
+
+  <p>
+    And now you're scared. Scared to touch <em>anything</em>. You're hovering over your keyboard like it's gonna bite you. One more edit and the whole app might collapse again.
+  </p>
+
+  <p>
+    Debugging is supposed to be logical. Step-by-step. But nah… I'm out here treating it like spiritual warfare.
+  </p>
+
+  <p>
+    Midnight Coding never prepared me for the emotional damage.
+  </p>
+
+  <p>
+    But we move. Bug-free. For now.
+  </p>
+  `,
+  },
+  {
+    id: 32,
+    slug: "imposter-syndrome-olympics",
+    title: "Imposter Syndrome Olympics",
+    date: "August 4, 2025",
+    image: "/assets/blogs/imposter-olympics.png",
+    tags: ["Mindset", "Dev Life", "Funny", "Mental Health"],
+    excerpt:
+      "Built an app from scratch? Solved 300+ LeetCode problems? Debugged an entire backend? Cool. Now… explain why you still feel like a fraud.",
+    readTime: "5 min read",
+    content: `
+  <p>
+    You ever just sit there after solving a hard-ass problem or finishing a clean-ass project… and still feel like you know <strong>absolutely nothing</strong>?
+  </p>
+
+  <p>
+    Like… you literally built an app from scratch, handled routing, optimized performance, wrote unit tests, and connected it to a backend you also built. But the moment someone asks, "So how does React actually render the DOM?" you start sweating like you just saw your crush with someone else.
+  </p>
+
+  <p>
+    Or maybe you've solved 300+ LeetCode problems — recursion, dynamic programming, graphs, trees — the works. But one night, you see a problem titled "Easy: Sum Two Numbers" and your brain goes, <em>"Wait… how do variables work again?"</em>
+  </p>
+
+  <p>
+    And don't even get me started on tech interviews. One minute you're running Docker containers, the next you're like, "Wait… what's the difference between a process and a thread again?" 💀
+  </p>
+
+  <p>
+    It's like my inner monologue is a whole performance:
+    <em>"Act like you know what you're doing. You're the dev. You got this. Don't let them know you're just out here winging it and reading docs mid-meeting."</em>
+  </p>
+
+  <p>
+    Meanwhile, your terminal history's like:
+    <ul>
+      <li><code>how to reverse a linked list</code></li>
+      <li><code>git revert vs reset</code></li>
+      <li><code>tailwind text not showing??</code></li>
+      <li><code>javascript sort function brain fog help</code></li>
+    </ul>
+  </p>
+
+  <p>
+    But hey — here's what I've realized:
+    <strong>Feeling lost doesn't mean you're not growing.</strong>
+    Feeling like an imposter usually means you're actually pushing your limits.
+    You're not stuck. You're just leveling up — and it's uncomfortable as hell.
+  </p>
+
+  <p>
+    So yeah, I might act like I know nothing sometimes.
+    I might downplay my wins, question my progress, and even compare myself to people who've been in the game longer than I've been alive.
+  </p>
+
+  <p>
+    But one thing's for sure — I'm still here.
+    Still building. Still solving. Still showing up.
+  </p>
+
+  <p>
+    Imposter or not… <strong>I'm in the damn arena.</strong>
+  </p>
+  `,
+  },
+  {
+    id: 33,
+    slug: "my-bad-habit",
+    title: "My Bad Habit… You Won't Guess It.",
+    date: "August 6, 2025",
+    image: "/assets/blogs/bad-habit.png",
+    tags: ["Mindset", "Coding Life", "Real Talk"],
+    excerpt:
+      "Some people bite their nails. Some scroll TikTok all day. Me? I accidentally turn LeetCode into a lullaby and debug in my dreams. It's not funny. Or maybe it is?",
+    readTime: "4 min read",
+    content: `
+  <p>
+    Bro... everyone has that one <strong>bad habit</strong> they ain't proud of but still do anyway. You know, the type you swear you'll fix by next week but you're already planning to do it again tonight?
+  </p>
+
+  <p>
+    Mine? You won't even see it coming.
+  </p>
+
+  <p>
+    You could walk into my room at 11PM and see me peacefully laid out like I'm two minutes into REM sleep — head on the pillow, lights off, soft lo-fi playing. But inside my head? It's chaos. 
+    <em>Code chaos</em>.
+  </p>
+
+  <p>
+    I'm deep in thought trying to optimize a LeetCode problem I solved 3 days ago. Or rethinking a backend bug I met earlier. Like — bro. Why is my brain debugging when my body is trying to SLEEP??
+  </p>
+
+  <p>
+    And the worst part? It doesn't stop there. Once I finally drift off, I sometimes wake up at 2:47AM like, <code>"Wait... what if I use a HashMap instead?"</code>. 
+    I'll be lying there, staring at the ceiling, debating whether to open my laptop and write the idea down or risk forgetting it. Guess which one usually wins? 
+  </p>
+
+  <p>
+    It's bad, man. It happens in bed, in lectures, in troskis. I'll be zoning out mid-convo just to mentally replay a bug that's been biting me all day. 
+    Bro's present physically, but mentally he's writing TypeScript in the 8th dimension.
+  </p>
+
+  <p>
+    Some people smoke. Some overthink. Some spend 3 hours on TikTok. Me? I mentally speedrun algorithms at night like I'm prepping for the Codeforces finals IN MY DREAMS.
+  </p>
+
+  <p>
+    You might say it's not a <em>bad</em> habit. You might even say it's a sign of passion. But lemme tell you something — 
+    when your brain can't turn off, it stops feeling like passion and starts feeling like prison. 
+    I just want a single night of peace, not <code>O(n log n)</code> dreams.
+  </p>
+
+  <p>
+    How do I stop this? No idea.
+    But one day, I'll write a sleep-tracking app that detects if I start thinking in code… and zaps me back to rest mode 💀.
+  </p>
+
+  <p>
+    Until then, pray for me. Or better yet — send melatonin.
+  </p>
+  `,
+  },
+  {
+    id: 34,
+    slug: "recursion-that-helpful-menace",
+    title: "Recursion: That Helpful Menace You Can't Quit.",
+    date: "August 16, 2025",
+    image: "/assets/blogs/recursion.png",
+    tags: ["Algorithms", "Recursion", "LeetCode", "Humor"],
+    excerpt:
+      "Recursion is elegant, powerful—and the reason your brain melts trying to trace the call stack.",
+    readTime: "5 min read",
+    content: `
+      <h2>Recursion: That Helpful Menace You Can't Quit</h2>
+
+      <p>If you've ever solved a LeetCode backtracking or DP problem, you know recursion isn't just a tool — it's a personality type. And not a calm, normal one. Nah… recursion is that one friend who's insanely useful but will absolutely drive you insane.</p>
+
+      <p>You go to them for help:</p>
+      <blockquote>"Hey, how do I solve this?"</blockquote>
+      <p>And instead of answering, they just give you the <strong>same problem</strong>… only smaller. And smaller. And smaller… until you're staring at a microscopic version of your original headache.</p>
+
+      <h3>The Big Trap</h3>
+      <p>Recursion looks clean. Elegant. Minimal. A few lines of code and boom — it's solving huge problems. But inside that elegance is chaos.</p>
+      <p>The moment you try to debug it in your head? That's when your brain turns into a 2003 Dell laptop running on low battery.</p>
+      <p>You're halfway through tracing calls when suddenly:</p>
+      <blockquote>"Wait… which stack frame am I even in right now?"</blockquote>
+      <p>And don't even start with <strong>call stacks</strong>. Because once you lose track, you're gone. You've entered <em>The Infinite Loop of Self-Doubt™</em>.</p>
+
+      <h3>Why We Still Use It</h3>
+      <p>Because when recursion works… it's <em>beautiful</em>.</p>
+      <p>It's like that friend who's late to every hangout but somehow brings the best vibes when they finally arrive.</p>
+      <p>Recursion makes complex problems melt away. Tree traversals? Cake. Backtracking mazes? Easy. Dynamic programming? Chef's kiss.</p>
+      <p>It's the art of telling your future self:</p>
+      <blockquote>"You handle this part, I'll just wait here until you're done."</blockquote>
+
+      <h3>The Debugging Horror Show</h3>
+      <p>Let's be real — nobody likes tracing recursion by hand.</p>
+      <pre><code>f(5) calls f(4)
+f(4) calls f(3)
+f(3) calls f(2)
+f(2) calls f(1)
+f(1) calls f(0)
+f(0) returns 1
+wait, where was I?</code></pre>
+      <p>Somewhere between <code>f(3)</code> and <code>f(2)</code> your brain packs its bags and moves to a small island where iterative solutions live happily ever after.</p>
+
+      <h3>When to Use Recursion</h3>
+      <ul>
+        <li>When the problem naturally breaks into smaller versions of itself</li>
+        <li>When you like your solutions neat and clean</li>
+        <li>When you enjoy living dangerously and running the risk of stack overflow errors at 2 AM</li>
+      </ul>
+
+      <h3>The Zigla Takeaway</h3>
+      <p>Recursion is like fire. Respect it and it will cook your meal. Misuse it and it will burn your house down.</p>
+      <p>So yes, it's a menace.<br/>
+      Yes, it will have you mumbling <em>"base case, base case…"</em> in your sleep.<br/>
+      But when you finally master it? You unlock the ability to solve problems in ways that iterative warriors can only dream of.</p>
+      <p>And that, my friends, is worth a few mental breakdowns.</p>
+
+      <pre><code class="language-js">// PSA: Respect your base case
+function recurse() {
+  recurse();
+}</code></pre>
+
+      <p><strong>Zigla City out.</strong><br/>
+      Now go call yourself inside yourself… inside yourself… until you hit the base case.</p>
+    `,
+  },
+  {
+    id: 35,
+    slug: "sorry-python-i-found-a-new-crush",
+    title: "Sorry Python, I Found a New Crush…",
+    date: "August 19, 2025",
+    image: "/assets/blogs/java-crush.png",
+    tags: ["Java", "Python", "Crush Confessions", "Humor", "Zigla Vibes"],
+    excerpt:
+      "I've recently been crushing on her… nobody tell Python about it. 💔🐍☕",
+    readTime: "4 min read",
+    content: `
+      <h2>Sorry Python, I Found a New Crush…</h2>
+
+      <p>Look, I still love you, Python. Don't get it twisted. I go to you for 
+      <em>automation, quick scripts, simple one-liners in contests</em>, and of course, 
+      <strong>LeetCode hacks</strong>. You've been my ride-or-die since day one.</p>
+
+      <p>But…</p>
+
+      <h3>Enter Java 😳☕</h3>
+      <p>There's this new girl in my life. Her name? <strong>Java</strong>. And no matter how much 
+      I deny it, I've been crushing on her lately. Heavy.</p>
+
+      <p>You know that feeling when you meet <em>that one nice girl on campus</em>—the one who 
+      intimidates you a little? Even if you're walking around with 
+      <strong>Thomas Shelby / Franklin Saint energy</strong>, you still feel like 
+      <em>you haven't reached yet</em>. That's me with Java.</p>
+
+      <blockquote>She's elegant. She's strict. She doesn't let you slack. And somehow… I love it.</blockquote>
+
+      <h3>Why She's Different</h3>
+      <ul>
+        <li><strong>Strongly typed vibes</strong>: No surprises, no sneakiness. You know exactly where you stand.</li>
+        <li><strong>OOP Queen</strong>: Classes, objects, inheritance — she runs this empire.</li>
+        <li><strong>Cross-platform aura</strong>: "Write once, run anywhere." Tell me that doesn't sound like girlfriend goals.</li>
+        <li><strong>Performance</strong>: She may not be C++ fast, but she doesn't fumble either.</li>
+      </ul>
+
+      <p>Python is fun, spontaneous, and easy to vibe with — but Java? 
+      Java makes me <em>work for it</em>. And maybe that's why I like her more each day.</p>
+
+      <h3>The Struggle Is Real</h3>
+      <p>Yeah, I can read, understand, and debug Java code. I can even fix her mess when she 
+      throws 50 lines of errors at me. But deep down, I know there's so much more to learn. 
+      And that's the thrill — the mystery.</p>
+
+      <p>She challenges me. Keeps me sharp. Makes me want to be better. 
+      And Python? She's probably somewhere rolling her eyes at me right now.</p>
+
+      <h3>Will She Ever Like Me Back?</h3>
+      <p>I hope so. Right now, I'm still in that awkward stage — 
+      learning her quirks, understanding her moods, 
+      and sometimes crying at <code>NullPointerException</code> at 2am.</p>
+
+      <p>But one day… one day, I hope Java looks at me and says: 
+      <blockquote>"You've leveled up. You're ready now."</blockquote></p>
+
+      <p>Until then, I'll keep grinding. Because honestly? 
+      <strong>I think I'm in love with her.</strong> ☕❤️</p>
+    `,
+  },
+  {
+    id: 36,
+    slug: "the-brain-is-a-big-liar",
+    title: "The Brain is a Big Liar.",
+    date: "August 29, 2025",
+    image: "/assets/blogs/brain-liar.png",
+    tags: ["Mindset", "Motivation", "Typing", "Competitive Programming"],
+    excerpt:
+      "Your brain keeps lying about your limits. 90 WPM felt impossible… until 130 happened. And people are out here typing 300. 🤯",
+    readTime: "4 min read",
+    content: `
+      <h2>The Brain is a Big Liar</h2>
+
+      <p>Trust me guys, your brain is a scammer. The biggest one out there. 
+      It tells you: <em>"Nah, you can't do that."</em> Not because it's true, 
+      but because… well, you haven't done it yet. Or maybe you've never seen anyone else do it.</p>
+
+      <p>And that, my friends, is the biggest lie I've ever heard.</p>
+
+      <p>Take typing speed for example. When I hit <strong>90 WPM</strong>, I swore that was my peak. 
+      Like, how could my fingers possibly go faster without literally catching fire? 
+      I couldn't even imagine it.</p>
+
+      <p>But I pushed anyway. Two to three weeks later? <strong>100 WPM</strong>.<br/>
+      Brain: <em>"Okay okay, that's the limit now. No way you're going higher."</em><br/>
+      Me: <em>"Watch me."</em></p>
+
+      <p>Fast forward—I'm sitting at <strong>130 WPM</strong>. And I'm laughing at myself because back then I thought 90 was some god-tier level. 
+      Meanwhile, there are people casually typing at <strong>300 WPM</strong>. THREE. HUNDRED. 
+      Bro… do their fingers even have bones??</p>
+
+      <p>It's the same in <strong>competitive programming</strong>. 
+      I take 3–5 minutes just to <em>understand</em> a problem. 
+      Meanwhile, guys like Gennady Korotkevich (a.k.a. Tourist), William Lin, Benq, ecnerwala, and the rest of the alien squad 
+      are out here reading a Codeforces essay-length problem in under 30 seconds. 
+      Then they take another 30 seconds to write the full solution.</p>
+
+      <p>By the time they're done with 3 problems, I'm just over here like: 
+      <em>"Ohhh yeah, I think I finally get the question now."</em> 😂</p>
+
+      <p>It feels unfair, but it's also proof that our limits are mostly fake. 
+      The brain doesn't actually know what your ceiling is—it just pretends it does.</p>
+
+      <p>So next time you feel like you've peaked, remember this: 
+      <strong>your brain lies</strong>. 
+      When it whispers <em>"that's impossible,"</em> do one more rep, one more line, one more attempt.</p>
+
+      <p>Because half the time, the only thing standing between you and your next level… is your brain's big fat lie.</p>
+    `,
+  },
+  {
+    id: 37,
+    slug: "is-ai-actually-helping-you",
+    title: "Is AI Actually Helping You??",
+    date: "September 4, 2025",
+    image: "/assets/blogs/ai-helping.png",
+    tags: ["AI", "Productivity", "Humor"],
+    excerpt:
+      "AI feels like your best friend, but sometimes it's just gassing you up while robbing you of the real grind.",
+    readTime: "4 min read",
+    content: `
+      <h2>Is AI Actually Helping You??</h2>
+
+      <p>There are days where you're given a task you have zero clue about. What do you do? 
+      You run to ChatGPT, paste in the problem, and boom — the heavens open, the code appears, 
+      and your lazy ass just… copies it.</p>
+
+      <p><em>No shame. We've all done it. Don't even try to act holy.</em></p>
+
+      <p>But here's the real question: what happens next? Do you actually understand what just got handed to you? 
+      Or are you just relieved that it works and sprint off to Netflix like nothing happened?</p>
+
+      <p>Now — if it's a tight deadline, I get it. You just want that bug gone before your boss breathes fire down your neck. 
+      But what if it's your personal side project? Or a school assignment with plenty of time left? 
+      Why do we still do the same thing? Copy-paste and move on.</p>
+
+      <p>And this is where the problem creeps in. A lot of learners are out here pushing "top-tier projects" to GitHub, 
+      but if you ask them to write just 10% of that code on a whiteboard… they freeze. 
+      The repo looks like it belongs to a senior engineer, but the brain behind it is still Googling 
+      <code>for loop syntax</code> on the low.</p>
+
+      <p><strong>Me?</strong> I'm a little different. I don't push code I don't understand. 
+      If it's in my repo, best believe I've fought that demon and know how it breathes.</p>
+
+      <p>But there's another issue with AI — the constant validation. You tell it something basic and it's like:</p>
+
+      <blockquote>"Yooo Zigla City, that's insane! You're on some senior engineering level oooh!"</blockquote>
+
+      <p>Meanwhile, it's just a <code>for loop</code>, bro. Chill.</p>
+
+      <p>Or you pitch it an idea and before you've even finished typing, AI is already hyping you up like:</p>
+
+      <blockquote>"Wow, genius idea. This could scale to 1M users in 6 months. Investors will throw money at you."</blockquote>
+
+      <p>Like no… tell me the harsh truth. Tell me this idea is garbage before I waste 3 months building 
+      a spoon-delivery app nobody needs.</p>
+
+      <p>So yeah, I'll ask the question again: <strong>is AI actually helping you?</strong></p>
+
+      <p>Because sometimes, it's not. Sometimes, it's just making you feel smart while low-key robbing you of the 
+      actual grind it takes to become smart.</p>
+
+      <p>And trust me, one day you'll be grateful you didn't just copy-paste. 
+      That's when you'll finally look at code and say,</p>
+
+      <blockquote>"I built this. Not ChatGPT. Not Google. Me."</blockquote>
+
+      <p>Until then, maybe stop asking AI for validation, and start asking it for the truth.</p>
     `,
   },
 ];
