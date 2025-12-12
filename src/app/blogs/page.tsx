@@ -150,10 +150,18 @@ export default function BlogsPage() {
                   key={blog.id}
                   className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl dark:hover:shadow-cyan-400/10 transition-all duration-300 transform hover:-translate-y-2 bg-[rgb(var(--card-bg))] border border-[rgb(var(--card-border))]"
                 >
-                  <div className="h-48 bg-[rgb(var(--card-border))] flex items-center justify-center">
-                    <div className="text-4xl text-cyan-500 dark:text-cyan-400 font-mono">
-                      {blog.title.charAt(0)}
-                    </div>
+                  <div className="h-48 bg-[rgb(var(--card-border))] flex items-center justify-center overflow-hidden">
+                    {blog.image ? (
+                      <img
+                        src={blog.image}
+                        alt={blog.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="text-4xl text-cyan-500 dark:text-cyan-400 font-mono">
+                        {blog.title.charAt(0)}
+                      </div>
+                    )}
                   </div>
 
                   <div className="p-6">
