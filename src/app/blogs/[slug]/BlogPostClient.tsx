@@ -9,8 +9,10 @@ import {
   ArrowLeft,
   Twitter,
   Linkedin,
+  Facebook,
   Copy,
   Check,
+  // MessageCircle,
 } from "lucide-react";
 import { getBlogBySlug } from "@@/data/blogs";
 import ClientWrapper from "@@/components/ClientWrapper";
@@ -52,6 +54,24 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
       "_blank"
     );
   };
+
+  const shareOnFacebook = () => {
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        shareUrl
+      )}`,
+      "_blank"
+    );
+  };
+
+  // const shareOnTelegram = () => {
+  //   window.open(
+  //     `https://t.me/share/url?url=${encodeURIComponent(
+  //       shareUrl
+  //     )}&text=${encodeURIComponent(shareText)}`,
+  //     "_blank"
+  //   );
+  // };
 
   if (!blog) {
     return (
@@ -121,6 +141,20 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
             {/* Share Buttons */}
             <div className="flex items-center gap-4 mb-8">
               <span className="text-sm text-[rgb(var(--muted))]">Share:</span>
+              <button
+                onClick={shareOnFacebook}
+                className="p-2 bg-[rgb(var(--card-bg))] rounded-lg border border-[rgb(var(--card-border))] hover:bg-[rgb(var(--background))] transition-colors"
+                aria-label="Share on Facebook"
+              >
+                <Facebook className="w-4 h-4 text-blue-500" />
+              </button>
+              {/* <button
+                onClick={shareOnTelegram}
+                className="p-2 bg-[rgb(var(--card-bg))] rounded-lg border border-[rgb(var(--card-border))] hover:bg-[rgb(var(--background))] transition-colors"
+                aria-label="Share on Telegram"
+              >
+                <MessageCircle className="w-4 h-4 text-blue-600" />
+              </button> */}
               <button
                 onClick={shareOnTwitter}
                 className="p-2 bg-[rgb(var(--card-bg))] rounded-lg border border-[rgb(var(--card-border))] hover:bg-[rgb(var(--background))] transition-colors"
