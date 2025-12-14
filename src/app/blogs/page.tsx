@@ -16,6 +16,7 @@ export default function BlogsPage() {
 
   const blogs = getBlogs();
   const allTags = getAllTags();
+  const MAX_TAGS_DISPLAYED = 10;
 
   const filteredAndSortedBlogs = useMemo(() => {
     let filtered = blogs.filter((blog) => {
@@ -85,7 +86,10 @@ export default function BlogsPage() {
             {/* Tag Filters + Sort */}
             <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
               <div className="flex flex-wrap gap-2">
-                {(showAllTags ? allTags : allTags.slice(0, 15)).map((tag) => (
+                {(showAllTags
+                  ? allTags
+                  : allTags.slice(0, MAX_TAGS_DISPLAYED)
+                ).map((tag) => (
                   <button
                     key={tag}
                     onClick={() => toggleTag(tag)}
@@ -101,7 +105,7 @@ export default function BlogsPage() {
                   </button>
                 ))}
 
-                {allTags.length > 15 &&
+                {allTags.length > MAX_TAGS_DISPLAYED &&
                   (showAllTags ? (
                     <button
                       onClick={() => setShowAllTags(false)}
