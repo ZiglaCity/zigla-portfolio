@@ -1931,6 +1931,124 @@ function recurse() {
     Welcome to secured freedom.</p>
   `,
   },
+  {
+    id: 39,
+    slug: "how-fucked-up-is-modern-society",
+    title: "How Fucked Up Is Modern Society?",
+    date: "December 14, 2025",
+    image: "/assets/blogs/modern-society.png",
+    tags: ["Society", "Opinion", "Rant"],
+    excerpt:
+      "Bro, what the hell happened? Why shame, privacy and accountability are collapsing.",
+    readTime: "5 min read",
+    content: `
+    <h2>How Fucked Up Is Modern Society?</h2>
+
+    <p><em>(Bro, What the Hell Happened?)</em></p>
+
+    <p>Let’s stop pretending.</p>
+
+    <p><strong>Modern society is cooked.</strong><br />
+    Not “a little broken.” Not “needs therapy.”<br />
+    Cooked. Burnt. Left on the stove too long.</p>
+
+    <blockquote>
+      "People are now proud of things that would’ve gotten you quietly disowned 20 years ago."
+    </blockquote>
+
+    <h3>Oversharing Isn’t Confidence — It’s Madness</h3>
+    <p>We’re in an era where:</p>
+    <ul>
+      <li>Girls casually tweet their body counts</li>
+      <li>“Story time” includes sleeping with married men, relatives, or whoever was nearby</li>
+      <li>The comment section goes: “Yasss queen, live your truth 😭🔥”</li>
+    </ul>
+
+    <p><strong>Live your truth??</strong> Bro, some truths are supposed to die with you.</p>
+
+    <h3>Respect Used To Look Like This</h3>
+    <ol>
+      <li>Having self-control</li>
+      <li>Carrying yourself with dignity</li>
+      <li>Being selective, not available</li>
+    </ol>
+
+    <p>Now? The louder, messier, and more chaotic your past is — the more “real” you’re considered.</p>
+
+    <hr />
+
+    <h2>Everyone Wants Freedom, Nobody Wants Responsibility</h2>
+    <p>Here’s the scam modern society sold:</p>
+    <blockquote>
+      "Do whatever you want now — it won’t affect your future."
+    </blockquote>
+
+    <p>That’s the biggest lie of this generation.</p>
+
+    <p><mark>Newsflash:</mark></p>
+    <table>
+      <thead>
+        <tr><th>Then</th><th>Now</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Privacy & shame</td><td>Public receipts & applause</td></tr>
+        <tr><td>Discrete mistakes</td><td>Viral confessions</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Marriage Is Where History Meets Future</h3>
+    <p>You can scream “the past doesn’t matter” all you want — but nobody wants to discover your partner’s worst phase through Google or Twitter threads. Imagine marrying someone and later finding old videos, deleted tweets, or "I was wild back then 😂" podcasts. Bro… that’s disgust loading slowly.</p>
+
+    <h2>Dating Now Feels Like Background Checks</h2>
+    <p>I’m not scared of commitment. I’m scared of:</p>
+    <ul>
+      <li>Hidden lore</li>
+      <li>Unarchived madness</li>
+      <li>"You weren’t supposed to see that" moments</li>
+    </ul>
+
+    <p>Before feelings, you need: timeline reviews, mutual friend audits, vibe + history compatibility. Because people don’t just come with baggage anymore — they come with receipts.</p>
+
+    <h3>Quick Checklist — Dating 2025</h3>
+    <pre><code>{
+  "timelineReview": true,
+  "mutualFriendAudit": true,
+  "vibeHistoryCompatibility": "required"
+}
+</code></pre>
+
+    <h2>Traditional Women Didn’t Disappear — They Got Mocked</h2>
+    <p>Traditional, responsible women still exist — they’re just called “boring,” labeled “pick-me,” and mocked for having standards. Meanwhile, chaos is branded empowerment. We swapped:</p>
+    <ul>
+      <li>Modesty → attention</li>
+      <li>Discipline → “self-expression”</li>
+      <li>Values → vibes</li>
+    </ul>
+
+    <blockquote>
+      "Actions have consequences — even when society pretends they don’t."
+    </blockquote>
+
+    <h2>This Isn’t About Hating Women — It’s About Reality</h2>
+    <p>Men mess up too. Men cheat. Men lie. Men destroy homes. But here’s the difference: men aren’t asking society to clap for it. Modern culture doesn’t just tolerate bad behavior — it celebrates it, monetizes it, and calls it growth. That’s the sickness.</p>
+
+    <h3>Final Truth</h3>
+    <p>Modern society is fucked up because:</p>
+    <ul>
+      <li>Shame is gone</li>
+      <li>Privacy is dead</li>
+      <li>Accountability is "toxic"</li>
+    </ul>
+
+    <p>Not everything needs to be normalized. Not everything deserves applause. And not every lifestyle leads to peace. Some roads look fun at 20 — and horrifying at 35.</p>
+
+    <blockquote>
+      Bro said what he said.
+    </blockquote>
+
+    <small>• Author: ZiglaCity </small>
+    `,
+  },
 ];
 
 export const getBlogs = () => blogs;
