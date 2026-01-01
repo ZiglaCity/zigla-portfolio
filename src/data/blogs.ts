@@ -2053,7 +2053,7 @@ function recurse() {
     id: 40,
     slug: "2025-recap-success-or-failure",
     title: "2025 Recap: Success or Failure??",
-    date: "December 31, 2026",
+    date: "December 31, 2025",
     image: "/assets/blogs/2025-recap.png",
     tags: ["Life", "Personal", "Growth", "Mindset", "Hustle", "Tech", "Career"],
     excerpt:
@@ -2346,6 +2346,251 @@ function recurse() {
     <p><strong>You're built for more.</strong></p>
 
     <p>— <em>Zigla City</em> 🖤</p>
+    `,
+  },
+  {
+    id: 41,
+    slug: "2026-plan-no-more-warming-up",
+    title: "2026 Plan: No More Warming Up",
+    date: "January 1, 2026",
+    image: "/assets/blogs/2026-plan.png",
+    tags: [
+      "Life",
+      "Goals",
+      "Growth",
+      "Mindset",
+      "Hustle",
+      "Tech",
+      "Career",
+      "AI",
+    ],
+    excerpt:
+      "I've already proven I can survive chaos and still deliver. 2026 isn't about trying things out — it's about becoming undeniable.",
+    readTime: "10 min read",
+    content: `
+    <p>If 2025 taught me anything, it's this:</p>
+
+    <blockquote>
+      I don't need motivation.<br />
+      I need <strong>direction</strong>.
+    </blockquote>
+
+    <p>I've already proven I can show up, survive chaos, and still deliver.<br />
+    Now it's time to <strong>refine, sharpen, and dominate.</strong></p>
+
+    <p>2026 isn't about "trying things out."<br />
+    <mark>It's about becoming undeniable.</mark></p>
+
+    <hr />
+
+    <h2> The Mindset Going In</h2>
+
+    <p>I'm no longer building potential.<br />
+    <strong>I'm building leverage.</strong></p>
+
+    <p>Every goal this year answers one question:</p>
+
+    <blockquote>
+      Does this move me closer to being a <strong>world-class engineer</strong>?
+    </blockquote>
+
+    <p>If the answer is no — it doesn't make the list.</p>
+
+    <hr />
+
+    <h2>1️⃣ Typing: From Fast to Effortless</h2>
+
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Current</th><th>Target</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Typing Speed</td><td>120 WPM</td><td>150 WPM</td></tr>
+      </tbody>
+    </table>
+
+    <p>This isn't vanity.</p>
+
+    <h3>Speed equals:</h3>
+    <ul>
+      <li> Faster thinking-to-code translation</li>
+      <li> Less friction during interviews</li>
+      <li> Better flow during deep work</li>
+    </ul>
+
+    <p>Typing should disappear into the background.<br />
+    <strong>My hands should keep up with my mind — effortlessly.</strong></p>
+
+    <hr />
+
+    <h2>2️⃣ Become an Advanced Software Engineer (For Real)</h2>
+
+    <p>Not "framework-hopping."<br />
+    Not "tutorial-certified."</p>
+
+    <h3>Real mastery means:</h3>
+    <ul>
+      <li> Clean architecture</li>
+      <li> Scalable system design</li>
+      <li> Readable, maintainable code</li>
+      <li> Knowing <em>why</em> patterns exist, not just how to use them</li>
+      <li> Writing code that other engineers <strong>respect</strong></li>
+    </ul>
+
+    <h3>2026 Focus Areas:</h3>
+    <ol>
+      <li>Best practices</li>
+      <li>Trade-offs</li>
+      <li>Performance vs readability</li>
+      <li>Systems thinking</li>
+    </ol>
+
+    <blockquote>
+      I'm done being "good."<br />
+      I want to be <strong>trusted</strong>.
+    </blockquote>
+
+    <hr />
+
+    <h2>3️⃣ Competitive Programming: Enter the Upper Room</h2>
+
+    <h3> Goals:</h3>
+    <table>
+      <thead>
+        <tr><th>Platform</th><th>Target</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Codeforces</td><td>Expert Rating</td></tr>
+        <tr><td>LeetCode</td><td>Top 5% (Globally)</td></tr>
+      </tbody>
+    </table>
+
+    <p>This isn't just about algorithms.</p>
+
+    <h3>Competitive programming trains:</h3>
+    <ul>
+      <li> Precision under pressure</li>
+      <li> Pattern recognition</li>
+      <li> Mental stamina</li>
+      <li> Problem decomposition at speed</li>
+    </ul>
+
+    <blockquote>
+      I want hard problems to feel <strong>familiar</strong>.<br />
+      I want interviews to feel like practice — not fear.
+    </blockquote>
+
+    <hr />
+
+    <h2>4️⃣ Master Advanced AI Concepts</h2>
+
+    <p><strong>AI is no longer optional.</strong></p>
+
+    <h3>2026 Focus:</h3>
+    <ul>
+      <li> RAG (Retrieval-Augmented Generation)</li>
+      <li> LangChain and orchestration frameworks</li>
+      <li> Prompt engineering + system-level thinking</li>
+      <li> Understanding <em>limitations</em>, not just capabilities</li>
+    </ul>
+
+    <p>Not "AI hype."</p>
+
+    <blockquote>
+      AI literacy that actually <strong>ships products</strong>.
+    </blockquote>
+
+    <hr />
+
+    <h2>5️⃣ Projects That Mean Something</h2>
+
+    <p>Projects this year won't be demos.<br />
+    <strong>They'll be statements.</strong></p>
+
+    <h3> Core Focus:</h3>
+    <table>
+      <thead>
+        <tr><th>Project</th><th>Type</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Enzypher</td><td>Keep evolving</td></tr>
+        <tr><td>Python Library</td><td>Publish to PyPI</td></tr>
+        <tr><td>Custom Programming Language</td><td>For Systems Equation</td></tr>
+      </tbody>
+    </table>
+
+    <p>These projects aren't for clout.</p>
+
+    <h3>They're proof of:</h3>
+    <ul>
+      <li> Depth</li>
+      <li> Original thinking</li>
+      <li> Engineering maturity</li>
+    </ul>
+
+    <hr />
+
+    <h2>6️⃣ Career: Global or Nothing</h2>
+
+    <h3> Goals:</h3>
+    <ol>
+      <li>Bag an <strong>international internship</strong></li>
+      <li>Start working in a local or international tech company <strong>that pays</strong></li>
+    </ol>
+
+    <p><strong>No unpaid grind.</strong><br />
+    <strong>No "exposure."</strong></p>
+
+    <blockquote>
+      Skill deserves compensation.
+    </blockquote>
+
+    <p>I'm done preparing in silence — <mark>it's time to convert skill into opportunity.</mark></p>
+
+    <hr />
+
+    <h2>📊 How I'm Measuring Success</h2>
+
+    <p><strong>2026 will be a success if:</strong></p>
+
+    <ul>
+      <li>✅ My skills feel <strong>sharp</strong>, not scattered</li>
+      <li>✅ I can walk into interviews with <strong>calm confidence</strong></li>
+      <li>✅ My projects speak louder than my CV</li>
+      <li>✅ I'm <strong>earning</strong> from my craft</li>
+      <li>✅ I respect the engineer I'm becoming</li>
+    </ul>
+
+    <hr />
+
+    <h2>💭 Final Note to Myself</h2>
+
+    <blockquote>
+      No more underestimating yourself.
+    </blockquote>
+
+    <p>You've survived:</p>
+    <ul>
+      <li>❌ Rejection</li>
+      <li>💔 Loss</li>
+      <li>🔌 Disconnection</li>
+      <li>⚡ Pressure</li>
+    </ul>
+
+    <p><strong>And you still leveled up.</strong></p>
+
+    <p>2026 isn't about proving people wrong.<br />
+    <mark>It's about becoming who you already know you can be.</mark></p>
+
+    <blockquote>
+      No noise.<br />
+      No rush.<br />
+      <strong>Just execution.</strong>
+    </blockquote>
+
+    <p>— <em>Zigla City</em> 🖤</p>
+
+    <small>• Author: ZiglaCity </small>
     `,
   },
 ];
