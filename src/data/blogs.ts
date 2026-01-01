@@ -2049,6 +2049,305 @@ function recurse() {
     <small>• Author: ZiglaCity </small>
     `,
   },
+  {
+    id: 40,
+    slug: "2025-recap-success-or-failure",
+    title: "2025 Recap: Success or Failure??",
+    date: "December 31, 2026",
+    image: "/assets/blogs/2025-recap.png",
+    tags: ["Life", "Personal", "Growth", "Mindset", "Hustle", "Tech", "Career"],
+    excerpt:
+      "A year of pain, rejection, and growth. I set out with a plan — reality gave me so much more.",
+    readTime: "12 min read",
+    content: `
+    <p>Before 2025 even started, I already knew one thing:</p>
+
+    <p><strong>I was lacking.</strong></p>
+
+    <p>Not potential — <em>skill coverage</em>.</p>
+
+    <p>I looked at myself honestly and said,<br />
+    <mark>"Yeah… if I continue like this, life will humble me."</mark></p>
+
+    <p>So I did what I always do when reality hits hard.</p>
+
+    <blockquote>
+      I made a plan.
+    </blockquote>
+
+    <hr />
+
+    <h2> The Plan (aka Me Underestimating Myself)</h2>
+
+    <p>At the start of the year, I wasn't even passionate about web development.</p>
+
+    <p>But passion doesn't pay rent.</p>
+
+    <p>I knew one hard truth:<br />
+    <strong>If I wanted to survive the Ghanaian economy, I needed a skill that could get me hired.</strong></p>
+
+    <p>Web development checked that box.</p>
+
+    <p>And even beyond survival — if I truly wanted to become a <em>systems and security engineer</em>, I had to understand how the web actually works. <strong>No shortcuts.</strong></p>
+
+    <p>So what did I do?</p>
+
+    <p>I added it to the plan.</p>
+
+    <p>Same with <strong>DSA</strong>.<br />
+    I was "okay" at it — but <em>okay</em> doesn't win contests or interviews.<br />
+    So I pushed for competitive programming.</p>
+
+    <p><strong>Typing?</strong><br />
+    Yeah, I had to fix that too.<br />
+    You can't be a serious developer and type like you're arguing with the keyboard.</p>
+
+    <p>So I wrote everything down.</p>
+
+    <p>And here's the funny part…</p>
+
+    <blockquote>
+      The plan I made for 2025 was actually <strong>too small</strong> for me.
+    </blockquote>
+
+    <hr />
+
+    <h2> The Original 2025 Plan (Short Version)</h2>
+
+    <h3> Typing</h3>
+    <ul>
+      <li>Daily practice</li>
+      <li>Target: 100 → 120+ WPM</li>
+    </ul>
+
+    <h3> DSA & LeetCode</h3>
+    <ul>
+      <li>Start easy</li>
+      <li>Move to medium</li>
+      <li>Eventually hard problems & mock interviews</li>
+    </ul>
+
+    <h3> Web Development</h3>
+    <ul>
+      <li>Basics → React → Full-stack</li>
+      <li>Projects every phase</li>
+      <li>Portfolio-ready by year end</li>
+    </ul>
+
+    <h3> Extras</h3>
+    <ul>
+      <li>Hackathons</li>
+      <li>Internships</li>
+      <li>Interview prep</li>
+    </ul>
+
+    <p><strong>Simple. Structured. Reasonable.</strong></p>
+
+    <p><em>Or so I thought.</em></p>
+
+    <hr />
+
+    <h2> Reality Check: What Actually Happened</h2>
+
+    <p>Fast forward to the last month of the year…</p>
+
+    <p>I can confidently say this:</p>
+
+    <blockquote>
+      The plan underestimated my capacity.
+    </blockquote>
+
+    <p>Because 2025 didn't just give progress —<br />
+    <strong>it gave results.</strong></p>
+
+    <hr />
+
+    <h2> The Wins</h2>
+
+    <table>
+      <thead>
+        <tr><th>Achievement</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Secured an internship</td><td>✅</td></tr>
+        <tr><td>Got into A2SV</td><td>✅</td></tr>
+        <tr><td>Ranked 2nd in contests</td><td>✅</td></tr>
+        <tr><td>Shipped Merrylow (Backend & DevOps)</td><td>✅</td></tr>
+        <tr><td>Polished my portfolio</td><td>✅</td></tr>
+        <tr><td>Secured my own .tech domain</td><td>✅</td></tr>
+      </tbody>
+    </table>
+
+    <h3> Projects Built</h3>
+    <ul>
+      <li><strong>SafestCode</strong> — Security-first code analysis</li>
+      <li><strong>ProxyPhish</strong> — Phishing detection tool</li>
+      <li><strong>Zigly</strong> — Personal assistant platform</li>
+      <li><strong>Enzypher</strong> — A full-fledged encrypted chat app ready to compete with big tech</li>
+    </ul>
+
+    <p>On paper?</p>
+
+    <blockquote>
+      That looks like a movie.
+    </blockquote>
+
+    <p>But life doesn't show you the bloopers.</p>
+
+    <hr />
+
+    <h2> The Part Nobody Posts About</h2>
+
+    <p>Let's talk about the pain.</p>
+
+    <p><strong>Mid-semester</strong> — right in the middle of everything — <mark>I got robbed.</mark></p>
+
+    <h3>What I Lost:</h3>
+    <ul>
+      <li> My phone</li>
+      <li> My SIM card (registered long before I turned 18)</li>
+      <li> My MiFi — my entire internet lifeline</li>
+    </ul>
+
+    <p>And yes… this happened <em>during</em> the semester.</p>
+
+    <h3>What That Meant:</h3>
+    <ol>
+      <li>No internet</li>
+      <li>Missed almost all online classes</li>
+      <li>Missed surprise quizzes that were meant to boost grades</li>
+      <li>Disappeared from people's lives for months</li>
+      <li>Felt completely disconnected and stuck</li>
+    </ol>
+
+    <p>That period?</p>
+
+    <blockquote>
+      Mentally brutal.
+    </blockquote>
+
+    <hr />
+
+    <h2> Rejections Hit Too</h2>
+
+    <p>I applied to <strong>Polymorph</strong>.<br />
+    Got the interview.<br />
+    Wasn't skilled enough yet.</p>
+
+    <p><em>Rejected.</em></p>
+
+    <p>Applied to <strong>Palantir</strong>.<br />
+    Got the online assessment.<br />
+    Didn't embarrass myself — but still…</p>
+
+    <p><em>Rejected.</em></p>
+
+    <table>
+      <thead>
+        <tr><th>Outcome</th><th>Expected?</th><th>Painful?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Polymorph Rejection</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Palantir Rejection</td><td>Yes</td><td>Also Yes</td></tr>
+      </tbody>
+    </table>
+
+    <p>But here's the thing.</p>
+
+    <blockquote>
+      I didn't stop.
+    </blockquote>
+
+    <hr />
+
+    <h2> Beast Mode Activated</h2>
+
+    <p>During the final semester vacation (3+ months), I made a decision:</p>
+
+    <blockquote>
+      <strong>"No more excuses."</strong>
+    </blockquote>
+
+    <p>I locked in.</p>
+
+    <h3>The Grind:</h3>
+    <ul>
+      <li> Advanced DSA</li>
+      <li> Deep systems thinking</li>
+      <li> Built Enzypher from scratch</li>
+      <li> Leveled up technically and mentally</li>
+    </ul>
+
+    <p>Right now?</p>
+
+    <p><strong>I can confidently say I'm ready for any technical interview you throw at me.</strong></p>
+
+    <p>And that confidence didn't come from hype.</p>
+
+    <blockquote>
+      It came from work.
+    </blockquote>
+
+    <hr />
+
+    <h2>🤔 So… Success or Failure?</h2>
+
+    <p>Let's be honest.</p>
+
+    <p>2025 was:</p>
+    <ul>
+      <li>😣 Painful</li>
+      <li>🙏 Humbling</li>
+      <li>😩 Exhausting</li>
+      <li>💪 Empowering</li>
+    </ul>
+
+    <p>I lost things.<br />
+    I missed things.<br />
+    I got rejected.</p>
+
+    <p>But I also <strong>grew beyond the version of myself</strong> that made the original plan.</p>
+
+    <blockquote>
+      So no — this year wasn't a failure.<br />
+      <strong>It was proof.</strong>
+    </blockquote>
+
+    <hr />
+
+    <h2> What's Next?</h2>
+
+    <ol>
+      <li>Update my resume</li>
+      <li>Apply to top tech roles</li>
+      <li>Nail interviews</li>
+      <li>See what's next on the path</li>
+    </ol>
+
+    <p><strong>No rush.</strong><br />
+    <strong>No fear.</strong></p>
+
+    <blockquote>
+      Just momentum.
+    </blockquote>
+
+    <hr />
+
+    <h2>💭 Final Thought</h2>
+
+    <p>If future me ever reads this:</p>
+
+    <blockquote>
+      Don't forget how much you survived.<br />
+      Don't forget how hard you worked.<br />
+      And don't ever underestimate yourself again.
+    </blockquote>
+
+    <p><strong>You're built for more.</strong></p>
+
+    <p>— <em>Zigla City</em> 🖤</p>
+    `,
+  },
 ];
 
 export const getBlogs = () => blogs;
