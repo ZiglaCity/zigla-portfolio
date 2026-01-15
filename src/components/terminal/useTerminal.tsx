@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { findClosest } from "@@/utils/levenshtein";
 import { blogs } from "@@/data/blogs";
 import { projects } from "@@/data/projects";
+import { useGameSession } from "./useGameSession";
 
 const COMMANDS: string[] = [
   "help",
@@ -17,6 +18,8 @@ const COMMANDS: string[] = [
   "search",
   "clear",
   "theme",
+  "game",
+  "exc",
   "quit",
   "exit",
   "close",
@@ -58,6 +61,9 @@ export function useTerminal(
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+
+  // Game session hook
+  const gameSession = useGameSession();
 
   const hasBooted = useRef(false);
   const bootLineIndex = useRef(0);
@@ -193,6 +199,15 @@ export function useTerminal(
             <li>
               <strong>search &lt;term&gt;</strong> — fuzzy search blogs &
               projects
+            </li>
+            <li>
+              <strong>game</strong> — list available games
+            </li>
+            <li>
+              <strong>game play &lt;id|name&gt;</strong> — start a game
+            </li>
+            <li>
+              <strong>exc</strong> — exit current game
             </li>
             <li>
               <strong>clear</strong> — clear screen
@@ -527,6 +542,106 @@ export function useTerminal(
         localStorage.setItem("ziglaTheme", arg);
         pushLine(<div className="text-green-400">Theme set to {arg}</div>);
       }
+    } else if (head === "game") {
+      const [subCmd, ...gameArgs] = rest;
+      const gameName = gameArgs.join(" ");
+
+      if (!subCmd) {
+        // List all games
+        const games = gameSession.listGames();
+        pushLine(
+          <div className="font-mono text-sm space-y-2">
+            <div className="text-cyan-300 font-bold">🎮 Available Games:</div>
+            <div className="border border-zinc-700 rounded overflow-hidden">
+              {games.map((game, index) => (
+                <div
+                  key={game.id}
+                  className={`p-2 ${
+                    index % 2 === 0 ? "bg-zinc-800/50" : "bg-zinc-900/50"
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-400 font-bold">#{game.id}</span>
+                    <span className="text-zinc-100">{game.name}</span>
+                    {game.version === "0.0.0" ? (
+                      <span className="text-xs px-1.5 py-0.5 bg-yellow-500/20 text-yellow-400 rounded">
+                        Coming Soon
+                      </span>
+                    ) : (
+                      <span className="text-xs px-1.5 py-0.5 bg-green-500/20 text-green-400 rounded">
+                        v{game.version}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-zinc-500 text-xs ml-4 mt-1">
+                    {game.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="text-zinc-400 text-xs mt-2">
+              Use{" "}
+              <code className="text-cyan-300">game play &lt;id|name&gt;</code>{" "}
+              to start a game
+            </div>
+          </div>
+        );
+      } else if (subCmd === "play") {
+        if (!gameName) {
+          pushLine(
+            <div className="text-red-400">
+              Usage: game play &lt;id|name&gt;
+              <div className="text-zinc-400 text-xs mt-1">
+                Example: <code className="text-cyan-300">game play snake</code>
+              </div>
+            </div>
+          );
+          return false;
+        }
+
+        const result = gameSession.startGame(gameName);
+        if (result.success) {
+          // Game will be shown in GameCanvas, terminal output is replaced
+          // No need to push lines here, the UI will switch to GameCanvas
+        } else {
+          pushLine(<div className="text-red-400">{result.message}</div>);
+        }
+      } else {
+        pushLine(
+          <div className="text-red-400">
+            Unknown game command: <strong>{subCmd}</strong>
+            <div className="text-zinc-400 text-xs mt-1">
+              Available: <code className="text-cyan-300">game</code> or{" "}
+              <code className="text-cyan-300">game play &lt;id|name&gt;</code>
+            </div>
+          </div>
+        );
+      }
+    } else if (head === "exc") {
+      if (!gameSession.isInGameMode()) {
+        pushLine(
+          <div className="text-yellow-400">
+            No game is currently running.
+            <div className="text-zinc-400 text-xs mt-1">
+              Use{" "}
+              <code className="text-cyan-300">game play &lt;id|name&gt;</code>{" "}
+              to start a game.
+            </div>
+          </div>
+        );
+      } else {
+        const result = gameSession.exitGame();
+        setLines([]); // Clear the game display
+        pushLine(
+          <div className="text-cyan-300">
+            {result.message}
+            <div className="text-zinc-400 text-xs mt-1">
+              Type <code className="text-cyan-300">game</code> to see available
+              games.
+            </div>
+          </div>
+        );
+      }
     } else if (["quit", "exit", "close"].includes(head)) {
       pushLine(
         <div className="text-zinc-400">Terminal closed. Ctrl+` to reopen.</div>
@@ -556,6 +671,9 @@ export function useTerminal(
   };
 
   const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // In game mode, input is disabled and GameCanvas handles keys
+    // So we only need to handle terminal commands here
+
     if (e.key === "Enter") {
       const shouldClose = await runCommand(input);
       setInput("");
@@ -599,5 +717,6 @@ export function useTerminal(
     handleKeyDown,
     pushLine,
     isBooting,
+    gameSession,
   };
 }
