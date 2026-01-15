@@ -46,7 +46,7 @@ export const projects: Project[] = [
     image: ["/assets/projects/lms.png"],
     tags: ["Python", "MySQL", "Tkinter"],
     demo: "#",
-    github: "#",
+    github: "https://github.com/ZiglaCity/LMS",
     featured: true,
   },
   {
