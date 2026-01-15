@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTerminal } from "../terminal/useTerminal";
 import GameCanvas from "../terminal/games/GameCanvas";
