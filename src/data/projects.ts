@@ -107,8 +107,8 @@ export const projects: Project[] = [
       "Backend System for an AI-powered crop disease detection app for farmers.",
     image: ["/assets/projects/cropdoc.png"],
     tags: ["Python", "Torch", "FastAPI", "Supabase"],
-    demo: "#",
-    github: "#",
+    demo: "https://medium.com/@stephenazongo77/building-a-context-aware-crop-disease-detection-app-for-ghanaian-farmers-dbbc99cec888",
+    github: "https://github.com/npquestlabs/crop-doc-backend",
     featured: true,
   },
   {
