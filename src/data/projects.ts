@@ -118,8 +118,8 @@ export const projects: Project[] = [
     description: "Lightweight screen recording tool with quick share options.",
     image: ["/assets/projects/zscreen.png"],
     tags: ["Python", "Tkinter"],
-    demo: "#",
-    github: "#",
+    demo: "https://drive.google.com/file/d/1s7AAUcXGk_d2yIDXSmohriD4stpduVzx/view",
+    github: "https://github.com/ZiglaCity/Z-Screen",
     featured: true,
   },
   {
