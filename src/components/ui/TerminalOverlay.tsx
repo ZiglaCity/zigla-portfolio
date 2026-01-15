@@ -15,7 +15,8 @@ export default function TerminalOverlay({
     useTerminal(
       typeof window !== "undefined"
         ? JSON.parse(localStorage.getItem("terminalHistory") || "[]")
-        : []
+        : [],
+      onClose
     );
 
   return (
@@ -32,9 +33,9 @@ export default function TerminalOverlay({
             initial={{ scale: 0.95, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
-            className="flex items-center justify-center h-full p-0 sm:p-6"
+            className="flex items-center justify-center h-full p-0 sm:p-8 lg:p-12"
           >
-            <div className="w-full h-full sm:h-auto sm:max-w-4xl bg-zinc-900/95 sm:border border-zinc-800 sm:rounded-xl shadow-2xl overflow-hidden flex flex-col">
+            <div className="w-full h-full sm:h-[80vh] sm:max-w-6xl lg:max-w-7xl bg-zinc-900/95 sm:border border-zinc-800 sm:rounded-xl shadow-2xl overflow-hidden flex flex-col">
               <div className="flex items-center justify-between p-3 sm:p-3 bg-zinc-800/50 border-b border-zinc-700 shrink-0">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -56,7 +57,7 @@ export default function TerminalOverlay({
               {/* Terminal Output */}
               <div
                 ref={scrollRef}
-                className="flex-1 overflow-y-auto p-3 sm:p-4 font-mono text-xs sm:text-sm text-zinc-100 min-h-0 sm:h-96 sm:flex-none"
+                className="flex-1 overflow-y-auto p-3 sm:p-4 font-mono text-xs sm:text-sm text-zinc-100 min-h-0"
               >
                 {lines.map((line) => (
                   <div key={line.id} className="mb-1 break-all">

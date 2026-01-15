@@ -22,11 +22,18 @@ const COMMANDS: string[] = [
   "close",
 ] as const;
 
-type OutputLine = { id: number; content: React.ReactNode };
-let OUT_ID = 1;
-const makeLine = (content: React.ReactNode) => ({ id: OUT_ID++, content });
+type OutputLine = { id: string; content: React.ReactNode };
+const generateId = () =>
+  `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+const makeLine = (content: React.ReactNode): OutputLine => ({
+  id: generateId(),
+  content,
+});
 
-export function useTerminal(initialHistory: string[] = []) {
+export function useTerminal(
+  initialHistory: string[] = [],
+  onClose: () => void
+) {
   const [lines, setLines] = useState<OutputLine[]>([
     makeLine(
       <div className="font-mono text-green-400">
@@ -445,6 +452,7 @@ export function useTerminal(initialHistory: string[] = []) {
       pushLine(
         <div className="text-zinc-400">Terminal closed. Ctrl+` to reopen.</div>
       );
+      setTimeout(() => onClose(), 1000);
       return true;
     } else {
       const suggestion = findClosest(head, COMMANDS);
