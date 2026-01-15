@@ -50,7 +50,7 @@ export default function FloatingNav({
         {/* Terminal entry button */}
         <button
           onClick={onEnterTerminal}
-          className="w-12 h-12 rounded-md bg-[rgb(var(--card-bg))/80] border border-[rgb(var(--card-border))] flex items-center justify-center text-cyan-400 font-mono"
+          className="w-12 h-12 rounded-md bg-[rgb(var(--card-bg))/80] border border-cyan-500/50 flex items-center justify-center text-cyan-300 font-mono text-lg font-bold hover:text-cyan-200 hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition-all duration-200"
         >
           &gt;_
         </button>
