@@ -32,29 +32,31 @@ export default function TerminalOverlay({
             initial={{ scale: 0.95, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
-            className="flex items-center justify-center h-full p-6"
+            className="flex items-center justify-center h-full p-0 sm:p-6"
           >
-            <div className="w-full max-w-4xl bg-zinc-900/95 border border-zinc-800 rounded-xl shadow-2xl overflow-hidden">
-              <div className="flex items-center justify-between p-3 bg-zinc-800/50 border-b border-zinc-700">
+            <div className="w-full h-full sm:h-auto sm:max-w-4xl bg-zinc-900/95 sm:border border-zinc-800 sm:rounded-xl shadow-2xl overflow-hidden flex flex-col">
+              <div className="flex items-center justify-between p-3 sm:p-3 bg-zinc-800/50 border-b border-zinc-700 shrink-0">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="font-mono text-sm text-cyan-300">
+                <div className="font-mono text-xs sm:text-sm text-cyan-300">
                   ZiglaOS Terminal
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-1 hover:bg-zinc-700 rounded"
+                  className="p-2 sm:p-1 hover:bg-zinc-700 rounded-lg sm:rounded bg-zinc-700/50 sm:bg-transparent"
+                  aria-label="Close terminal"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-5 h-5 sm:w-4 sm:h-4" />
                 </button>
               </div>
 
+              {/* Terminal Output */}
               <div
                 ref={scrollRef}
-                className="h-96 overflow-y-auto p-4 font-mono text-sm text-zinc-100"
+                className="flex-1 overflow-y-auto p-3 sm:p-4 font-mono text-xs sm:text-sm text-zinc-100 min-h-0 sm:h-96 sm:flex-none"
               >
                 {lines.map((line) => (
                   <div key={line.id} className="mb-1 break-all">
@@ -63,15 +65,17 @@ export default function TerminalOverlay({
                 ))}
               </div>
 
-              <div className="flex items-center gap-3 p-3 bg-zinc-800/50 border-t border-zinc-700">
-                <span className="text-cyan-300">zigla@enzypher:~$</span>
+              <div className="flex items-center gap-2 sm:gap-3 p-3 bg-zinc-800/50 border-t border-zinc-700 shrink-0">
+                <span className="text-cyan-300 text-xs sm:text-sm whitespace-nowrap">
+                  zigla@enzypher:~$
+                </span>
                 <input
                   ref={inputRef}
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="flex-1 bg-transparent outline-none font-mono text-sm"
+                  className="flex-1 bg-transparent outline-none font-mono text-xs sm:text-sm min-w-0"
                   autoFocus
                   spellCheck={false}
                   autoComplete="off"
