@@ -67,7 +67,7 @@ const projects: Project[] = [
     image: ["/assets/projects/proxyphish.png"],
     tags: ["Python", "Machine Learning", "Cybersecurity", "Flask"],
     github: "https://github.com/ziglacity/proxyphish",
-    demo: "#",
+    demo: "https://proxyphish.vercel.app/",
     featured: true,
   },
   {
