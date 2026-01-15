@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { findClosest } from "@@/utils/levenshtein";
 import { blogs } from "@@/data/blogs";
+import { projects } from "@@/data/projects";
 
 const COMMANDS: string[] = [
   "help",
@@ -12,6 +13,7 @@ const COMMANDS: string[] = [
   "projects",
   "blogs",
   "open",
+  "read",
   "search",
   "clear",
   "theme",
@@ -36,6 +38,7 @@ export function useTerminal(initialHistory: string[] = []) {
   const [history, setHistory] = useState<string[]>(initialHistory);
   const [historyIndex, setHistoryIndex] = useState<number | null>(null);
   const [cachedBlogs] = useState(blogs);
+  const [cachedProjects] = useState(projects);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
@@ -88,16 +91,22 @@ export function useTerminal(initialHistory: string[] = []) {
               <strong>experience</strong> — journey timeline
             </li>
             <li>
-              <strong>projects</strong> — list projects
+              <strong>projects</strong> — list all projects
             </li>
             <li>
-              <strong>blogs</strong> — list blog posts
+              <strong>blogs</strong> — list all blog posts
             </li>
             <li>
-              <strong>open &lt;id|slug&gt;</strong> — open blog
+              <strong>open &lt;blog|project&gt; &lt;id|slug&gt;</strong> —
+              navigate to blog/project
             </li>
             <li>
-              <strong>search &lt;term&gt;</strong> — fuzzy search
+              <strong>read &lt;blog|project&gt; &lt;id|slug&gt;</strong> — view
+              details in terminal
+            </li>
+            <li>
+              <strong>search &lt;term&gt;</strong> — fuzzy search blogs &
+              projects
             </li>
             <li>
               <strong>clear</strong> — clear screen
@@ -135,49 +144,228 @@ export function useTerminal(initialHistory: string[] = []) {
             • <strong>Merrylow — Founder</strong> — Production platform
           </div>
           <div>
-            • <strong>Enzypher — In stealth</strong> — AI comms layer
+            • <strong>Enzypher — In stealth</strong> — Encrypted Chat System{" "}
           </div>
         </div>
       );
     } else if (head === "projects") {
       pushLine(
-        <div className="font-mono text-sm">
-          <div>- Merrylow — Restaurant OS</div>
-          <div>- ProxyPhish — Phishing detector</div>
-          <div>- SafestCode — AI code review</div>
-          <div>- Enzypher — Encrypted AI layer</div>
+        <div className="font-mono text-sm space-y-1">
+          {cachedProjects.map((p) => (
+            <div key={p.title}>
+              <strong>#{p.id}</strong> — {p.title}{" "}
+              <span className="text-zinc-500">({p.categories.join(", ")})</span>
+              {p.featured && <span className="text-yellow-400 ml-1">★</span>}
+            </div>
+          ))}
+          <div className="mt-2 text-zinc-400">
+            Use <code>read project &lt;id&gt;</code> to view details or{" "}
+            <code>open project &lt;id&gt;</code> to visit
+          </div>
         </div>
       );
     } else if (head === "blogs") {
       pushLine(
         <div className="font-mono text-sm space-y-1">
           {cachedBlogs.map((b) => (
-            <div key={b.id}>
+            <div key={b.slug}>
               <strong>#{b.id}</strong> — {b.title}{" "}
               <span className="text-zinc-500">({b.date})</span>
             </div>
           ))}
           <div className="mt-2 text-zinc-400">
-            Use <code>open &lt;id|slug&gt;</code> to read
+            Use <code>read blog &lt;id|slug&gt;</code> to view or{" "}
+            <code>open blog &lt;id|slug&gt;</code> to visit
           </div>
         </div>
       );
     } else if (head === "open") {
-      if (!arg) {
+      const [type, ...identifierParts] = rest;
+      const identifier = identifierParts.join(" ");
+
+      if (!type || !identifier) {
         pushLine(
-          <div className="text-red-400">Usage: open &lt;id|slug&gt;</div>
+          <div className="text-red-400">
+            Usage: open &lt;blog|project&gt; &lt;id|slug&gt;
+          </div>
         );
         return false;
       }
-      const blog = cachedBlogs.find(
-        (b) => b.id === Number(arg) || b.slug === arg
-      );
-      if (blog) {
-        pushLine(<div className="text-cyan-300">Opening: {blog.title}...</div>);
-        router.push(`/blogs/${blog.slug}`);
-        return true;
+
+      if (type === "blog") {
+        const blog = cachedBlogs.find(
+          (b) => b.id === Number(identifier) || b.slug === identifier
+        );
+        if (blog) {
+          pushLine(
+            <div className="text-cyan-300">Opening: {blog.title}...</div>
+          );
+          router.push(`/blogs/${blog.slug}`);
+          return true;
+        } else {
+          pushLine(
+            <div className="text-red-400">Blog not found: "{identifier}"</div>
+          );
+        }
+      } else if (type === "project") {
+        const project = cachedProjects.find(
+          (p) =>
+            p.id === Number(identifier) ||
+            p.title.toLowerCase() === identifier.toLowerCase()
+        );
+        if (project) {
+          pushLine(
+            <div className="text-cyan-300">Opening: {project.title}...</div>
+          );
+          if (project.demo && project.demo !== "#") {
+            window.open(project.demo, "_blank");
+          } else if (project.github && project.github !== "#") {
+            window.open(project.github, "_blank");
+          } else {
+            pushLine(
+              <div className="text-yellow-400">
+                No demo or repo link available for this project.
+              </div>
+            );
+            return false;
+          }
+          return false;
+        } else {
+          pushLine(
+            <div className="text-red-400">
+              Project not found: "{identifier}"
+            </div>
+          );
+        }
       } else {
-        pushLine(<div className="text-red-400">Blog not found: "{arg}"</div>);
+        pushLine(
+          <div className="text-red-400">
+            Unknown type: "{type}". Use <code>blog</code> or{" "}
+            <code>project</code>.
+          </div>
+        );
+      }
+    } else if (head === "read") {
+      const [type, ...identifierParts] = rest;
+      const identifier = identifierParts.join(" ");
+
+      if (!type || !identifier) {
+        pushLine(
+          <div className="text-red-400">
+            Usage: read &lt;blog|project&gt; &lt;id|slug&gt;
+          </div>
+        );
+        return false;
+      }
+
+      if (type === "blog") {
+        const blog = cachedBlogs.find(
+          (b) => b.id === Number(identifier) || b.slug === identifier
+        );
+        if (blog) {
+          pushLine(
+            <div className="font-mono text-sm space-y-2 border-l-2 border-cyan-500 pl-3 my-2">
+              <div className="text-lg font-bold text-cyan-300">
+                {blog.title}
+              </div>
+              <div className="text-zinc-400 text-xs">
+                <span className="uppercase tracking-wider">{blog.date}</span>
+                <span className="mx-2 text-zinc-600">|</span>
+                <span>{blog.readTime}</span>
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {blog.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 bg-zinc-700 text-cyan-300 rounded text-xs"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+              <div className="text-zinc-300 italic border-t border-zinc-700 pt-2 mt-2">
+                "{blog.excerpt}"
+              </div>
+              <div className="text-zinc-500 text-xs mt-2">
+                <span className="text-zinc-600">[TIP]</span> Use{" "}
+                <code className="text-cyan-300">open blog {blog.id}</code> to
+                read the full article
+              </div>
+            </div>
+          );
+        } else {
+          pushLine(
+            <div className="text-red-400">Blog not found: "{identifier}"</div>
+          );
+        }
+      } else if (type === "project") {
+        const project = cachedProjects.find(
+          (p) =>
+            p.id === Number(identifier) ||
+            p.title.toLowerCase() === identifier.toLowerCase()
+        );
+        if (project) {
+          pushLine(
+            <div className="font-mono text-sm space-y-2 border-l-2 border-green-500 pl-3 my-2">
+              <div className="text-lg font-bold text-green-300">
+                {project.title}
+                {project.featured && (
+                  <span className="text-yellow-400 ml-2">★ Featured</span>
+                )}
+              </div>
+              <div className="text-zinc-400 text-xs uppercase tracking-wider">
+                {project.categories.join(" / ")}
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {project.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 bg-zinc-700 text-green-300 rounded text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="text-zinc-300 border-t border-zinc-700 pt-2 mt-2">
+                {project.description}
+              </div>
+              <div className="flex gap-4 text-xs mt-2">
+                {project.github && project.github !== "#" && (
+                  <span className="text-zinc-400">
+                    GitHub:{" "}
+                    <span className="text-cyan-300">
+                      {project.github.replace("https://github.com/", "")}
+                    </span>
+                  </span>
+                )}
+                {project.demo && project.demo !== "#" && (
+                  <span className="text-zinc-400">
+                    <span className="text-green-400">[LIVE]</span> Demo
+                    available
+                  </span>
+                )}
+              </div>
+              <div className="text-zinc-500 text-xs mt-2">
+                <span className="text-zinc-600">[TIP]</span> Use{" "}
+                <code className="text-cyan-300">open project {project.id}</code>{" "}
+                to visit
+              </div>
+            </div>
+          );
+        } else {
+          pushLine(
+            <div className="text-red-400">
+              Project not found: "{identifier}"
+            </div>
+          );
+        }
+      } else {
+        pushLine(
+          <div className="text-red-400">
+            Unknown type: "{type}". Use <code>blog</code> or{" "}
+            <code>project</code>.
+          </div>
+        );
       }
     } else if (head === "search") {
       if (!arg) {
@@ -186,22 +374,58 @@ export function useTerminal(initialHistory: string[] = []) {
         );
         return false;
       }
-      const matches = cachedBlogs.filter(
+      const blogMatches = cachedBlogs.filter(
         (b) =>
           b.title.toLowerCase().includes(arg.toLowerCase()) ||
           b.excerpt.toLowerCase().includes(arg.toLowerCase()) ||
           b.tags.some((t) => t.toLowerCase().includes(arg.toLowerCase()))
       );
-      if (matches.length === 0) {
+      const projectMatches = cachedProjects.filter(
+        (p) =>
+          p.title.toLowerCase().includes(arg.toLowerCase()) ||
+          p.description.toLowerCase().includes(arg.toLowerCase()) ||
+          p.tags.some((t) => t.toLowerCase().includes(arg.toLowerCase())) ||
+          p.categories.some((c) => c.toLowerCase().includes(arg.toLowerCase()))
+      );
+
+      if (blogMatches.length === 0 && projectMatches.length === 0) {
         pushLine(<div className="text-red-400">No results for "{arg}"</div>);
       } else {
         pushLine(
-          <div className="font-mono text-sm space-y-1">
-            {matches.map((b) => (
-              <div key={b.id}>
-                <strong>#{b.id}</strong> — {b.title}
+          <div className="font-mono text-sm space-y-2">
+            {blogMatches.length > 0 && (
+              <div>
+                <div className="text-cyan-400 font-bold mb-1 uppercase tracking-wider text-xs">
+                  [ Blogs ]{" "}
+                  <span className="font-normal normal-case">
+                    ({blogMatches.length} found)
+                  </span>
+                </div>
+                {blogMatches.map((b) => (
+                  <div key={b.slug} className="ml-2">
+                    <strong>#{b.id}</strong> — {b.title}
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
+            {projectMatches.length > 0 && (
+              <div>
+                <div className="text-green-400 font-bold mb-1 uppercase tracking-wider text-xs">
+                  [ Projects ]{" "}
+                  <span className="font-normal normal-case">
+                    ({projectMatches.length} found)
+                  </span>
+                </div>
+                {projectMatches.map((p) => (
+                  <div key={p.title} className="ml-2">
+                    <strong>#{p.id}</strong> — {p.title}
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="text-zinc-500 text-xs mt-2">
+              Use <code>read blog/project &lt;id&gt;</code> to view details
+            </div>
           </div>
         );
       }
@@ -233,8 +457,10 @@ export function useTerminal(initialHistory: string[] = []) {
               ?
             </>
           )}
-          {". Type "}
-          <code>help</code> for commands.
+          <div className="text-zinc-400 text-xs mt-1">
+            Type <code className="text-cyan-300">help</code> to view all valid
+            commands.
+          </div>
         </div>
       );
     }

@@ -46,7 +46,7 @@ export default function TerminalOverlay({
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 sm:p-1 hover:bg-zinc-700 rounded-lg sm:rounded bg-zinc-700/50 sm:bg-transparent"
+                  className="p-2 sm:p-1.5 hover:bg-red-500/20 rounded-lg sm:rounded bg-zinc-700 sm:bg-zinc-700/80 border border-zinc-600 text-zinc-100 hover:text-red-400 transition-colors"
                   aria-label="Close terminal"
                 >
                   <X className="w-5 h-5 sm:w-4 sm:h-4" />
@@ -75,10 +75,11 @@ export default function TerminalOverlay({
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="flex-1 bg-transparent outline-none font-mono text-xs sm:text-sm min-w-0"
+                  className="flex-1 bg-transparent outline-none font-mono text-xs sm:text-sm min-w-0 text-zinc-100 caret-cyan-300 placeholder:text-zinc-500"
                   autoFocus
                   spellCheck={false}
                   autoComplete="off"
+                  placeholder="Type a command..."
                 />
               </div>
             </div>
