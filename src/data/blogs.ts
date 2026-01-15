@@ -202,35 +202,247 @@ export const blogs = [
     title: "The Merrylow Journey",
     date: "January 20, 2025",
     image: "/assets/blogs/merrylow.jpg",
-    tags: ["Startup", "Backend"],
-    excerpt: "How I built Merrylow from scratch with a killer team.",
-    readTime: "5 min read",
+    tags: ["Startup", "Backend", "Team", "Life Lessons"],
+    excerpt:
+      "Blood, sweat, code, and cancelled orders. The real story of Merrylow and the legendary team behind it.",
+    readTime: "12 min read",
     content: `
       <p>Merrylow wasn't just a project.<br />
-      It was a battlefield.<br />
-      And I loved every second of the fight.</p>
+      It was a <strong>battlefield</strong>.<br />
+      A family. A heartbreak. And one hell of a ride.<br />
+      Grab some popcorn — this is the <em>real</em> story.</p>
 
-      <h2>From Idea to Architecture</h2>
-      <p>From brainstorming on rough notes to deploying on a live server,<n />
-      every step tested our skills, our patience, and our drive.</p>
+      <hr />
 
-      <p>I took on backend and DevOps.<br />
-      Node.js, Express, PostgreSQL, Prisma — all wired together with care.<br />
-      Secure APIs, clean architecture, automation — the works.</p>
+      <h2>🔥 Meet The Squad</h2>
+      <p>Before I get into the madness, let me introduce you to the absolute <strong>legends</strong> who made Merrylow possible. These aren't just teammates — these are brothers forged in the fire of startup chaos.</p>
 
-      <h2>Shipping It</h2>
+      <h3>👑 @Mackey — The Mastermind (a.k.a. "The Scrum Master")</h3>
+      <p>First up, we gotta give it up for <strong>Mackey</strong> — the brain behind the entire operation. This guy doesn't just <em>think</em>... he <strong>overthinks</strong>. And I mean that as a compliment.</p>
+      <blockquote>
+        "Yo, I've been thinking about this for 3 weeks... and here's the plan."<br />
+        <em>— Mackey, casually dropping a fully-formed business strategy on a random Tuesday</em>
+      </blockquote>
+      <p>Mackey is the type of guy who reads business books for <strong>fun</strong>. While we were scrolling TikTok, he was deep in some "7 Habits of Highly Effective Entrepreneurs" type of content. Sharp mind, calculated decisions, and an obsession with structure. He kept us on track when we wanted to chase shiny features.</p>
+      <p>But here's the funny part — bro would think through something for <em>weeks</em>, then drop the decision on us in a <strong>single day</strong> and expect instant buy-in. 😭</p>
+      <p><em>"Guys, I've decided we're pivoting the entire delivery model."</em><br />
+      Us: <strong>"...today?"</strong></p>
+
+      <h3>💪 @Chief — The Resilient One</h3>
+      <p>If there was ever a living definition of <strong>"F*** my background, I'm doing this regardless"</strong> — it's <strong>Chief</strong>.</p>
+      <p>This man is built <em>different</em>. Full-stack developer by trade, but during Merrylow? He became our entire <strong>design department</strong>. Logos, UI mockups, brand identity — Chief handled it all.</p>
+      <p>But what really sets Chief apart isn't his skills. It's his <strong>mentality</strong>.</p>
       <ul>
-        <li>VPS setup with hardened defaults.</li>
-        <li>NGINX reverse proxy and TLS.</li>
-        <li>GitHub Actions for CI/CD with migrations baked in.</li>
+        <li>Obstacles? He walks through them.</li>
+        <li>Doubters? He ignores them.</li>
+        <li>Setbacks? He laughs at them.</li>
       </ul>
+      <p>When things got tough (and trust me, they <em>got tough</em>), Chief was the one reminding us why we started. Bro literally embodies resilience. If you ever feel like giving up on your dreams, just channel your inner Chief.</p>
 
-      <p>Merrylow taught me what it takes to build from zero.<br />
-      It's not just code.<br />
-      It's persistence. It's strategy. It's believing in the vision when nothing exists yet.</p>
+      <h3>🧠 @Kelvin — The Physics Prodigy Who Chose Code</h3>
+      <p>Now here's a plot twist for you: <strong>Kelvin</strong> is a <strong>Physics student</strong>. Yeah, you read that right. Not Computer Science. <strong>Physics</strong>.</p>
+      <p>But this man looked at physics equations, looked at programming, and said: <em>"Why not both?"</em></p>
+      <p>He taught himself to code. No bootcamp. No hand-holding. Just pure <strong>curiosity</strong> and YouTube tutorials at 2 AM.</p>
+      <p>Oh, and he was the <strong>only 3rd-year student</strong> on the team. Technically our senior. Did he act like it? Nope. Kelvin was humble, always learning, always contributing. Respect. 🫡</p>
 
-      <p>This isn't the end of the story.<br />
-      Merrylow is only the beginning.</p>
+      <h3>📢 @Nathaniel — The Hype Man</h3>
+      <p>Every startup needs someone who can <strong>sell the vision</strong>. Enter <strong>Nathaniel</strong>.</p>
+      <p>Our last official member, Nathaniel took charge of something we developers often neglect: <strong>the social game</strong>. Marketing. Outreach. Making sure people actually <em>knew</em> Merrylow existed.</p>
+      <p>While we were buried in code and server configs, Nathaniel was out there:</p>
+      <ol>
+        <li>Crafting social media content</li>
+        <li>Networking with potential partners</li>
+        <li>Spreading the Merrylow gospel across campus</li>
+      </ol>
+      <p>Without him, we would've built the dopest platform that <em>nobody knew about</em>. Real MVP energy.</p>
+
+      <h3>⚡ @ZiglaCity — Yeah, That's Me</h3>
+      <p>And then there's me. <strong>ZiglaCity</strong>. You already know the vibe.</p>
+      <p>My job? <strong>Build the entire backend system from scratch.</strong> No pressure, right? 😅</p>
+      <p>Here's what was on my plate:</p>
+      <ul>
+        <li><strong>Migrate everything</strong> from WordPress/WooCommerce to our custom platform</li>
+        <li><strong>Clean the data</strong> — and trust me, WordPress data is <em>messy</em></li>
+        <li><strong>Set up the VPS</strong> — Ubuntu, NGINX, SSL, the whole nine yards</li>
+        <li><strong>Build secure APIs</strong> with Node.js, Express, PostgreSQL, and Prisma</li>
+        <li><strong>Implement CI/CD</strong> with GitHub Actions</li>
+      </ul>
+      <p>Before I joined, the team already had Merrylow running on WordPress. It worked, but we needed <strong>control</strong>. We needed to handle custom logic, optimize performance, and scale properly. That's where I came in.</p>
+
+      <hr />
+
+      <h2>🏃 The Grind Was Real</h2>
+      <p>Let me paint you a picture.</p>
+      <p>It's <strong>vacation time</strong>. Our colleagues are at home chilling, binge-watching shows, sleeping in till noon. Normal student stuff.</p>
+      <p><strong>Us?</strong> We were on campus. <strong>Two to three times every week.</strong></p>
+      <p>Not because we had to. Because we <em>believed</em>.</p>
+
+      <h3>🚶 Walking the Walk (Literally)</h3>
+      <p>We didn't just build the app and pray for users. Nah, we went <strong>ground-level marketing</strong>.</p>
+      <p>Picture this: five university students walking through <strong>every single hostel</strong>, knocking on doors, pitching Merrylow to anyone who would listen.</p>
+      <blockquote>
+        "Hey, have you heard of Merrylow? You can order food straight to your hostel!"<br />
+        <em>— Us, for the 200th time that day</em>
+      </blockquote>
+      <p>We walked for <strong>entire days</strong>. My legs were crying. My voice was dying. But the hustle? The hustle was <em>thriving</em>.</p>
+
+      <h3>🍔 Partnering With Restaurants</h3>
+      <p>Getting students was one thing. Getting <strong>restaurants</strong> on board? That was a whole different game.</p>
+      <p>We walked into local restaurants with nothing but confidence and a vision:</p>
+      <p><em>"Partner with us. We'll bring you more customers. Digital ordering. Easy."</em></p>
+      <p>Some said yes. Some laughed us off. But we kept pushing.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>What We Offered</th>
+            <th>What Restaurants Got</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Digital menu on our platform</td>
+            <td>Exposure to hungry students</td>
+          </tr>
+          <tr>
+            <td>Order management system</td>
+            <td>Less phone call chaos</td>
+          </tr>
+          <tr>
+            <td>Marketing support</td>
+            <td>Free promotion across campus</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>👨‍👩‍👧‍👦 More Than a Team — A Family</h2>
+      <p>Somewhere along the way, something beautiful happened.</p>
+      <p>Merrylow stopped being just a startup. It became a <strong>family</strong>.</p>
+      <p>We weren't just coding and hustling. We were:</p>
+      <ul>
+        <li>✅ Checking up on each other</li>
+        <li>✅ Supporting each other through personal struggles</li>
+        <li>✅ Celebrating small wins like they were major victories</li>
+        <li>✅ Sharing meals (sometimes the ones customers cancelled 💀)</li>
+      </ul>
+      <p>That bond? That's something code can't create. That's <strong>real life</strong>.</p>
+
+      <hr />
+
+      <h2>💔 The Heartbreak</h2>
+      <p>Okay. Deep breath. This is the hard part.</p>
+      <p>Everything was going... <em>okay</em>. Not great. Not terrible. Just okay. But the cracks were showing.</p>
+
+      <h3>The Logistics Problem</h3>
+      <p>Here's what nobody tells you about food delivery startups: <strong>the logistics will eat you alive</strong>.</p>
+      <p>We came in as <strong>software guys</strong>. We wanted to build cool tech, optimize systems, create seamless user experiences.</p>
+      <p>But reality hit different.</p>
+      <p>The <strong>logistics</strong> — the actual <em>delivering of food</em> — became bigger than the software itself.</p>
+
+      <h3>🎓 Skipping Lectures to Deliver Food</h3>
+      <p>Yeah, you read that right.</p>
+      <p>We were <strong>university students</strong> skipping <strong>lectures</strong> to personally deliver orders. Not because we wanted to play delivery driver — because we had <em>no choice</em>.</p>
+      <ul>
+        <li>Riders were unreliable</li>
+        <li>Orders kept coming in</li>
+        <li>Customers were waiting</li>
+      </ul>
+      <p>So there we were — supposed-to-be developers — running across campus with bags of food. 😭</p>
+
+      <h3>😤 The Cancelled Orders That Broke Us</h3>
+      <p>But here's what really hurt.</p>
+      <p>Imagine this scenario:</p>
+      <ol>
+        <li>Customer places an order ✅</li>
+        <li>We confirm and start preparing ✅</li>
+        <li>We're literally <em>on our way</em> to deliver ✅</li>
+        <li>Customer cancels the order ❌</li>
+      </ol>
+      <p><strong>Guess who pays for that food?</strong></p>
+      <p><em>Us.</em></p>
+      <p>Out of our own pockets. Over and over again.</p>
+      <blockquote>
+        "Bro, another cancellation."<br />
+        "How much?"<br />
+        "..."<br />
+        <em>*silence*</em>
+      </blockquote>
+      <p>We weren't making profit. We were making <strong>losses</strong>. Daily. Consistently.</p>
+
+      <h3>The Rider Situation</h3>
+      <p>Finding reliable riders was a <strong>nightmare</strong>.</p>
+      <ul>
+        <li>Some didn't show up</li>
+        <li>Some took forever</li>
+        <li>Some just... disappeared mid-delivery?</li>
+      </ul>
+      <p>We tried everything. But without proper funding for a dedicated logistics team, we were fighting a losing battle.</p>
+
+      <hr />
+
+      <h2>🛑 The Decision</h2>
+      <p>One day, the boys came to me. I could see it in their eyes before they even spoke.</p>
+      <p><em>"We can't continue."</em></p>
+      <p>It wasn't easy to hear. It wasn't easy to accept.</p>
+      <p>But they were right.</p>
+      <p>We came in to <strong>build software</strong>. We ended up running a logistics company with our bare hands. That wasn't the dream.</p>
+      <p>We discussed. We debated. We even tried to find solutions. But the math didn't add up.</p>
+      <ul>
+        <li>❌ No profit</li>
+        <li>❌ Daily losses</li>
+        <li>❌ Burning out</li>
+        <li>❌ Affecting our academics</li>
+      </ul>
+      <p>Finally, we made the call.</p>
+      <p><strong>Merrylow was done.</strong></p>
+
+      <hr />
+
+      <h2> What Merrylow Taught Me</h2>
+      <p>Did Merrylow fail? By traditional metrics, yeah. We shut it down. No exit. No acquisition. No glory story.</p>
+      <p>But let me tell you what I <em>gained</em>:</p>
+
+      <h3>1. Real-World Backend Experience</h3>
+      <p>Migrating from WordPress to a custom Node.js backend taught me more than any course ever could. Handling real users, real data, real problems.</p>
+
+      <h3>2. DevOps Under Pressure</h3>
+      <p>Setting up VPS, configuring NGINX, managing databases — all while people were actively using the platform. Trial by fire.</p>
+
+      <h3>3. The Value of Team</h3>
+      <p>Mackey's strategic thinking. Chief's resilience. Kelvin's curiosity. Nathaniel's hustle. Together, we were unstoppable. Individually, none of us could've gone this far.</p>
+
+      <h3>4. Startup Reality Check</h3>
+      <p>Not every startup is about coding cool features. Sometimes it's about delivery logistics, customer service, and cash flow. I learned that the hard way.</p>
+
+      <h3>5. Emotional Intelligence</h3>
+      <p>Knowing when to push forward and when to step back. Accepting failure without losing hope. That's a skill no tutorial teaches.</p>
+
+      <hr />
+
+      <h2> The Legacy Lives On</h2>
+      <p>Merrylow is gone, but it's far from forgotten.</p>
+      <p>Every project I build now carries a piece of Merrylow in it:</p>
+      <ul>
+        <li>The discipline from those late-night coding sessions</li>
+        <li>The humility from watching things fall apart</li>
+        <li>The confidence from knowing I can build from zero</li>
+        <li>The brotherhood from working with a team that became family</li>
+      </ul>
+      <blockquote>
+        "Merrylow didn't fail. It graduated me."
+      </blockquote>
+
+      <p>To <strong>Mackey</strong>, <strong>Chief</strong>, <strong>Kelvin</strong>, and <strong>Nathaniel</strong> — if you're reading this: thank you. For believing. For building. For everything.</p>
+
+      <p>And to anyone out there with a startup idea that seems crazy? <strong>Do it anyway.</strong></p>
+      <p>You might not succeed. But you'll <em>grow</em>. And growth? That's the real win.</p>
+
+      <hr />
+
+      <p><strong>This was The Merrylow Journey.</strong><br />
+      Messy. Beautiful. Painful. Legendary.<br />
+      And I wouldn't trade it for anything. 💜</p>
     `,
   },
   {
