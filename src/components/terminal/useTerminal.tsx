@@ -23,32 +23,111 @@ const COMMANDS: string[] = [
 ] as const;
 
 type OutputLine = { id: string; content: React.ReactNode };
+let lineCounter = 0;
 const generateId = () =>
-  `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+  `line-${++lineCounter}-${Math.random().toString(36).slice(2, 9)}`;
 const makeLine = (content: React.ReactNode): OutputLine => ({
   id: generateId(),
   content,
 });
 
+const BOOT_MESSAGES = [
+  { text: "Initializing ZiglaOS...", color: "text-zinc-500" },
+  { text: "[OK] Loading kernel modules", color: "text-green-400" },
+  { text: "[OK] Mounting file systems", color: "text-green-400" },
+  { text: "[OK] Starting network services", color: "text-green-400" },
+  { text: "[OK] Loading user profile: zigla", color: "text-green-400" },
+  { text: "─".repeat(40), color: "text-zinc-700" },
+  { text: "Welcome to ZiglaOS v2.0", color: "text-cyan-300 font-bold" },
+  { text: "Type 'help' to see available commands.", color: "text-zinc-400" },
+  { text: "─".repeat(40), color: "text-zinc-700" },
+];
+
 export function useTerminal(
   initialHistory: string[] = [],
-  onClose: () => void
+  onClose: () => void,
+  isOpen: boolean
 ) {
-  const [lines, setLines] = useState<OutputLine[]>([
-    makeLine(
-      <div className="font-mono text-green-400">
-        ZiglaOS booting... welcome.
-      </div>
-    ),
-  ]);
+  const [lines, setLines] = useState<OutputLine[]>([]);
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>(initialHistory);
   const [historyIndex, setHistoryIndex] = useState<number | null>(null);
+  const [isBooting, setIsBooting] = useState(true);
   const [cachedBlogs] = useState(blogs);
   const [cachedProjects] = useState(projects);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+
+  const hasBooted = useRef(false);
+  const bootLineIndex = useRef(0);
+  const bootCharIndex = useRef(0);
+  const currentBootText = useRef("");
+  const bootIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Typewriter boot effect - only runs on first open
+  useEffect(() => {
+    if (!isOpen || hasBooted.current) return;
+
+    hasBooted.current = true;
+    setLines([]);
+    setIsBooting(true);
+    bootLineIndex.current = 0;
+    bootCharIndex.current = 0;
+    currentBootText.current = "";
+
+    const typeNext = () => {
+      const currentMessage = BOOT_MESSAGES[bootLineIndex.current];
+      if (!currentMessage) {
+        bootIntervalRef.current && clearInterval(bootIntervalRef.current);
+        setIsBooting(false);
+        return;
+      }
+
+      const { text, color } = currentMessage;
+
+      // Start new line
+      if (bootCharIndex.current === 0) {
+        setLines((prev) => [
+          ...prev,
+          makeLine(<div className={`font-mono ${color}`}></div>),
+        ]);
+      }
+
+      // Type character
+      if (bootCharIndex.current < text.length) {
+        currentBootText.current += text[bootCharIndex.current];
+        bootCharIndex.current++;
+
+        setLines((prev) => {
+          const next = [...prev];
+          const lastIndex = next.length - 1;
+          next[lastIndex] = makeLine(
+            <div className={`font-mono ${color}`}>
+              {currentBootText.current}
+            </div>
+          );
+          return next;
+        });
+      } else {
+        // Move to next line
+        currentBootText.current = "";
+        bootCharIndex.current = 0;
+        bootLineIndex.current++;
+
+        if (bootLineIndex.current >= BOOT_MESSAGES.length) {
+          bootIntervalRef.current && clearInterval(bootIntervalRef.current);
+          setIsBooting(false);
+        }
+      }
+    };
+
+    bootIntervalRef.current = setInterval(typeNext, 30);
+
+    return () => {
+      bootIntervalRef.current && clearInterval(bootIntervalRef.current);
+    };
+  }, [isOpen]);
 
   // Auto-scroll
   useEffect(() => {
@@ -519,5 +598,6 @@ export function useTerminal(
     inputRef,
     handleKeyDown,
     pushLine,
+    isBooting,
   };
 }

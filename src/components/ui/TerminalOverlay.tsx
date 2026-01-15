@@ -11,13 +11,21 @@ export default function TerminalOverlay({
   open: boolean;
   onClose: () => void;
 }) {
-  const { lines, input, setInput, handleKeyDown, scrollRef, inputRef } =
-    useTerminal(
-      typeof window !== "undefined"
-        ? JSON.parse(localStorage.getItem("terminalHistory") || "[]")
-        : [],
-      onClose
-    );
+  const {
+    lines,
+    input,
+    setInput,
+    handleKeyDown,
+    scrollRef,
+    inputRef,
+    isBooting,
+  } = useTerminal(
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("terminalHistory") || "[]")
+      : [],
+    onClose,
+    open
+  );
 
   return (
     <AnimatePresence>
@@ -68,7 +76,7 @@ export default function TerminalOverlay({
 
               <div className="flex items-center gap-2 sm:gap-3 p-3 bg-zinc-800/50 border-t border-zinc-700 shrink-0">
                 <span className="text-cyan-300 text-xs sm:text-sm whitespace-nowrap">
-                  zigla@enzypher:~$
+                  {isBooting ? "booting..." : "zigla@enzypher:~$"}
                 </span>
                 <input
                   ref={inputRef}
@@ -76,11 +84,14 @@ export default function TerminalOverlay({
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="flex-1 bg-transparent outline-none font-mono text-xs sm:text-sm min-w-0 text-zinc-100 caret-cyan-300 placeholder:text-zinc-500"
+                  className="flex-1 bg-transparent outline-none font-mono text-xs sm:text-sm min-w-0 text-zinc-100 caret-cyan-300 placeholder:text-zinc-500 disabled:opacity-50"
                   autoFocus
                   spellCheck={false}
                   autoComplete="off"
-                  placeholder="Type a command..."
+                  placeholder={
+                    isBooting ? "Please wait..." : "Type a command..."
+                  }
+                  disabled={isBooting}
                 />
               </div>
             </div>
