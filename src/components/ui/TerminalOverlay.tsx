@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTerminal } from "../terminal/useTerminal";
+import GameCanvas from "../terminal/games/GameCanvas";
 import { X } from "lucide-react";
 
 export default function TerminalOverlay({
@@ -19,6 +21,7 @@ export default function TerminalOverlay({
     scrollRef,
     inputRef,
     isBooting,
+    gameSession,
   } = useTerminal(
     typeof window !== "undefined"
       ? JSON.parse(localStorage.getItem("terminalHistory") || "[]")
@@ -26,6 +29,17 @@ export default function TerminalOverlay({
     onClose,
     open
   );
+
+  const terminalContainerRef = useRef<HTMLDivElement>(null);
+  const isInGame = gameSession.isGameActive;
+
+  // Handle exiting game mode
+  const handleGameExit = useCallback(() => {
+    gameSession.exitGame();
+  }, [gameSession]);
+
+  // Handle keyboard events for game mode - now handled by GameCanvas
+  // No need for global handler here anymore
 
   return (
     <AnimatePresence>
@@ -43,15 +57,26 @@ export default function TerminalOverlay({
             exit={{ scale: 0.95, y: 20 }}
             className="flex items-center justify-center h-full p-0 sm:p-8 lg:p-12"
           >
-            <div className="w-full h-full sm:h-[80vh] sm:max-w-6xl lg:max-w-7xl bg-zinc-900/95 sm:border border-zinc-800 sm:rounded-xl shadow-2xl overflow-hidden flex flex-col">
+            <div
+              ref={terminalContainerRef}
+              className="w-full h-full sm:h-[80vh] sm:max-w-6xl lg:max-w-7xl bg-zinc-900/95 sm:border border-zinc-800 sm:rounded-xl shadow-2xl overflow-hidden flex flex-col"
+            >
               <div className="flex items-center justify-between p-3 sm:p-3 bg-zinc-800/50 border-b border-zinc-700 shrink-0">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="font-mono text-xs sm:text-sm text-cyan-300">
+                <div className="font-mono text-xs sm:text-sm text-cyan-300 flex items-center gap-2">
+                  {isInGame && (
+                    <span className="text-green-400 animate-pulse">🎮</span>
+                  )}
                   ZiglaOS Terminal
+                  {isInGame && (
+                    <span className="text-xs px-1.5 py-0.5 bg-green-500/20 text-green-400 rounded">
+                      GAME MODE
+                    </span>
+                  )}
                 </div>
                 <button
                   onClick={onClose}
@@ -62,21 +87,31 @@ export default function TerminalOverlay({
                 </button>
               </div>
 
-              {/* Terminal Output */}
-              <div
-                ref={scrollRef}
-                className="flex-1 overflow-y-auto p-3 sm:p-4 font-mono text-xs sm:text-sm text-zinc-100 min-h-0"
-              >
-                {lines.map((line) => (
-                  <div key={line.id} className="mb-1 break-all">
-                    {line.content}
-                  </div>
-                ))}
-              </div>
+              {/* Terminal Output or Game Canvas */}
+              {isInGame ? (
+                <div className="flex-1 overflow-hidden min-h-0">
+                  <GameCanvas onExit={handleGameExit} />
+                </div>
+              ) : (
+                <div
+                  ref={scrollRef}
+                  className="flex-1 overflow-y-auto p-3 sm:p-4 font-mono text-xs sm:text-sm text-zinc-100 min-h-0"
+                >
+                  {lines.map((line) => (
+                    <div key={line.id} className="mb-1 break-all">
+                      {line.content}
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="flex items-center gap-2 sm:gap-3 p-3 bg-zinc-800/50 border-t border-zinc-700 shrink-0">
                 <span className="text-cyan-300 text-xs sm:text-sm whitespace-nowrap">
-                  {isBooting ? "booting..." : "zigla@enzypher:~$"}
+                  {isBooting
+                    ? "booting..."
+                    : isInGame
+                    ? "🎮 playing..."
+                    : "zigla@enzypher:~$"}
                 </span>
                 <input
                   ref={inputRef}
@@ -89,9 +124,13 @@ export default function TerminalOverlay({
                   spellCheck={false}
                   autoComplete="off"
                   placeholder={
-                    isBooting ? "Please wait..." : "Type a command..."
+                    isBooting
+                      ? "Please wait..."
+                      : isInGame
+                      ? "Use WASD/Arrows to play, ESC to exit..."
+                      : "Type a command..."
                   }
-                  disabled={isBooting}
+                  disabled={isBooting || isInGame}
                 />
               </div>
             </div>
