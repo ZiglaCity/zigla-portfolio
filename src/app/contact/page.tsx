@@ -14,7 +14,6 @@ import {
 import ClientWrapper from "@@/components/ClientWrapper";
 import ParticleCanvas from "@@/components/ui/ParticleCanvas";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
-import { Metadata } from "next";
 type FormData = {
   name: string;
   email: string;
@@ -95,7 +94,7 @@ export default function ContactPage() {
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -103,16 +102,37 @@ export default function ContactPage() {
     }));
   };
 
+  const [error, setError] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1800));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 3000);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: "", email: "", message: "" });
+      }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -199,7 +219,11 @@ export default function ContactPage() {
                   <Terminal className="w-6 h-6 text-cyan-400" />
                   <h2 className="text-2xl font-bold">Send Message</h2>
                 </div>
-
+                {error && (
+                  <div className="mb-6 p-4 bg-red-900/30 border border-red-500/50 rounded-lg text-red-400 text-sm">
+                    {error}
+                  </div>
+                )}
                 {submitted ? (
                   <div className="text-center py-10">
                     <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-900/40 flex items-center justify-center">
