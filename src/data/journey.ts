@@ -32,5 +32,16 @@ export const journeys = [
       "Backend API Design",
       "Team Collaboration",
     ],
-  }
+  },
+  {
+    title: "AgbeyTech – Accra, Ghana | Software Engineering",
+    period: "January 2026 – Present",
+    description: `Design and develop custom internal software systems for business clients. Delivered and maintained POS and production management solutions for retail and manufacturing companies. Translate business requirements into scalable, maintainable, and production-ready software.`,
+    focus: [
+      "Software Development",
+      "POS & Production Management",
+      "Requirements Analysis",
+      "System Design",
+    ],
+  },
 ];
