@@ -2805,6 +2805,101 @@ function recurse() {
     <small>• Author: ZiglaCity </small>
     `,
   },
+  {
+    id: 42,
+    slug: "first-month-2026-recap",
+    title: "First Month of 2026: Paid, Progressing, and Slightly Overcooked",
+    date: "February 5, 2026",
+    image: "/assets/blogs/first-month-2026.png",
+    tags: [
+      "2026 Plan",
+      "Career",
+      "Funny",
+      "Life",
+      "A2SV",
+      "Competitive Programming",
+    ],
+    excerpt:
+      "First month of 2026 done. First software engineering paycheck secured, A2SV G7 unlocked, contests survived, school trying to humble me. Let's talk about progress, pressure, and controlled chaos.",
+    readTime: "6 min read",
+    content: `
+      <p>Remember <a href="/blogs/2026-plan-no-more-warming-up">the 2026 plan</a>? Yeah — the one where I said, "This is the year I stop warming up and start getting paid for my craft." Well, January just ended, and your boy is officially a <strong>paid software engineer</strong>. Not theory. Not practice projects. Real software. Real users. Real money. (Cue the confetti.)</p>
+
+      <h2>First Paycheck Vibes</h2>
+      <p>For the first time ever, I went weeks without calling my dad for transport money. No announcement. No dramatic speech. Just quiet independence. If you know, you know.</p>
+
+      <p>I promised myself I’d start becoming financially independent in my 3rd year — even if just a little. January basically said, <em>"Say less."</em> Shoutout to <a href="https://agbeytech.com">AgbeyTech</a> for trusting me with real production work from day one.</p>
+
+      <h2>Three Projects, One Brain, No Sleep Schedule</h2>
+      <p>Within my first role, I got assigned <strong>three custom software systems</strong> for three different businesses. Because apparently, we enjoy pressure.</p>
+
+      <ul>
+        <li><strong>POS for Spicy Thrifts (Clothing Company):</strong> Completed in <strong>5 days</strong>. Locked in. No noise. Just shipping.</li>
+        <li><strong>Production Management Software for a Soap Company:</strong> Currently in development. My brain basically lives here now.</li>
+        <li><strong>Veterinary Hospital Software (Accra):</strong> Coming up next. Future me is already tired.</li>
+      </ul>
+
+      <p>It’s still January… and one major 2026 goal is already checked off. Progress? Yes. Peace? Absolutely not.</p>
+
+      <h2>A2SV Update: Welcome to G7</h2>
+      <p>Now here’s something I refuse to downplay.</p>
+
+      <p>As A2SV G6 wrapped up, I went through interviews — one easy problem, one medium problem — and yeah… let’s just say they didn’t survive. I got promoted to <strong>A2SV G7</strong>, which is fully remote, with <strong>150+ engineers across Africa</strong>.</p>
+
+      <p>We’ve already had two contests:</p>
+
+      <ul>
+        <li><strong>Contest 1:</strong> Joined with about <strong>20 minutes left</strong> and still solved <strong>3 out of 5 problems</strong>. Not bad for a late spawn.</li>
+        <li><strong>Contest 2:</strong> Fully active. Fully locked in. Finished <strong>5th out of ~120 strong competitive programmers across Africa</strong>.</li>
+      </ul>
+
+      <p>That right there? That’s us moving closer to the <strong>Competitive Programming goals for 2026</strong>.</p>
+
+      <h2>The Schedule From Hell</h2>
+      <p>Let me explain why I look permanently tired.</p>
+
+      <p>A2SV G7 runs every weekday (except Wednesdays) from <strong>5 PM – 8 PM</strong>. My lectures end at <strong>7:30 PM</strong>. And immediately after A2SV, I go straight into <strong>COMPSSA DSA Club</strong> meetings from <strong>8 PM – 10 PM</strong>.</p>
+
+      <p>I co-founded the DSA club with my A2SV colleagues, and I genuinely love teaching. But sometimes it feels like we’re dragging motivation out of people. Not everyone is excited about DSA the way I am — and that’s okay — but it definitely adds to the mental load.</p>
+
+      <h2>School Said “Good Luck”</h2>
+      <p>And then… there’s school.</p>
+
+      <p>Machine Learning assignments stacked like debt. Discrete Math quizzes that somehow now require AI assistance — which is crazy because on a normal day, I wouldn’t even blink before choosing answers.</p>
+
+      <p>Four weeks into the semester and I’m behind on coursework, overloaded, and wondering how January alone managed to age me mentally.</p>
+
+      <h2>January Recap: Success & Stress</h2>
+      <p>So was January successful?</p>
+
+      <ul>
+        <li>✅ First Software Engineering Paycheck</li>
+        <li>✅ Real Production Software Shipped</li>
+        <li>✅ Promoted to A2SV G7</li>
+        <li>✅ Top 5 in a Continental Competitive Programming Contest</li>
+      </ul>
+
+      <p>But also:</p>
+
+      <ul>
+        <li>❌ Mentally stretched</li>
+        <li>❌ Physically tired</li>
+        <li>❌ Academically behind (for now)</li>
+      </ul>
+
+      <p>Still… I’ll take it. This is what growth without comfort feels like.</p>
+
+      <blockquote>
+        "January 2026: Got paid, got promoted, got stressed, but we move."
+      </blockquote>
+
+      <p>February? We bounce back. Smarter. Sharper. Less chaotic.</p>
+
+      <p>If you missed the plan for this year, check it out <a href="/blogs/2026-plan-no-more-warming-up">here</a>. And if you want to see how my journey at AgbeyTech is going, check the <a href="/#journey">Journey</a> page.</p>
+
+      <p><strong>Let’s go.</strong> 🔥</p>
+    `,
+  },
 ];
 
 export const getBlogs = () => blogs;

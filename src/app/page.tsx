@@ -37,7 +37,7 @@ export default function Page() {
         </div>
 
         <footer className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-zinc-400">
-          © 2025 Zigla City — Built with intent
+          © 2025 Zigla City
         </footer>
       </div>
     </ClientWrapper>

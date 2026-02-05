@@ -25,6 +25,18 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Spicy Thrifts POS",
+    categories: ["Full-Stack", "Retail", "Business"],
+    description:
+      "A custom Point-of-Sale system built for Spicy Thrifts (clothing company). Features inventory management, sales tracking, and real-time reporting. Delivered in 5 days for a fast-paced retail environment.",
+    image: ["/assets/projects/spicy-thrifts-pos.png"],
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
+    github: "#",
+    demo: "https://spicythrifts.com/",
+    featured: true,
+  },
+  {
+    id: 3,
     title: "SafestCode",
     categories: ["Security Tools", "AI/ML"],
     description:
@@ -39,7 +51,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "LMS",
     categories: ["Desktop App", "Full-Stack"],
     description: "Full-featured Library Management System for Universities.",
@@ -50,7 +62,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "ProxyPhish",
     categories: ["CyberOps"],
     description:
@@ -62,7 +74,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 5,
+    id: 6,
     title: "ZTube",
     categories: ["Desktop App", "Full-Stack"],
     description:
@@ -77,7 +89,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "Zigly",
     categories: ["Full-Stack", "System Design", "Website"],
     description:
@@ -89,7 +101,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 7,
+    id: 8,
     title: "Focus Drain",
     categories: ["Chrome Extension"],
     description:
@@ -100,7 +112,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 8,
+    id: 9,
     title: "CropDoc",
     categories: ["AI/ML"],
     description:
@@ -112,7 +124,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 9,
+    id: 10,
     title: "ScreenRecorder",
     categories: ["Desktop App"],
     description: "Lightweight screen recording tool with quick share options.",
@@ -123,7 +135,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 10,
+    id: 11,
     title: "Prosper Constructions Ltd",
     categories: ["Website"],
     description:
@@ -135,7 +147,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 11,
+    id: 12,
     title: "Neural Task Manager",
     categories: ["AI/ML", "WIP"],
     description:
