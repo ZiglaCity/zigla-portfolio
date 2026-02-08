@@ -49,7 +49,7 @@ const BOOT_MESSAGES = [
 export function useTerminal(
   initialHistory: string[] = [],
   onClose: () => void,
-  isOpen: boolean
+  isOpen: boolean,
 ) {
   const [lines, setLines] = useState<OutputLine[]>([]);
   const [input, setInput] = useState("");
@@ -111,7 +111,7 @@ export function useTerminal(
           next[lastIndex] = makeLine(
             <div className={`font-mono ${color}`}>
               {currentBootText.current}
-            </div>
+            </div>,
           );
           return next;
         });
@@ -154,7 +154,7 @@ export function useTerminal(
     pushLine(
       <div className="font-mono">
         <span className="text-cyan-300">zigla@enzypher:~$</span> {cmd}
-      </div>
+      </div>,
     );
 
   const runCommand = async (raw: string): Promise<boolean> => {
@@ -219,35 +219,43 @@ export function useTerminal(
               <strong>quit/exit/close</strong> — exit terminal
             </li>
           </ul>
-        </div>
+        </div>,
       );
     } else if (head === "about") {
       pushLine(
         <div className="prose prose-invert text-sm">
           <p>
-            <strong>Hey, I’m Zigla</strong> (Solomon Dzah). I build intelligent,
-            secure, and scalable systems.
+            Hey, I’m <strong>ZiglaCity</strong> or <strong>Solomon Dzah</strong>{" "}
+            if we're being formal. I build intelligent, secure, and scalable
+            systems.
           </p>
           <p>
-            CS @ University of Ghana. Currently grinding A2SV, shipping
-            Merrylow, and cooking Enzypher.
+            A CS student @ University of Ghana. Currently grinding A2SV,
+            shipping AgbeyTech, cooking Enzypher and some other projects...
           </p>
           <p className="mt-2 italic">"Innovation Over Imitation, Always!"</p>
-        </div>
+        </div>,
       );
     } else if (head === "experience") {
       pushLine(
         <div className="font-mono text-sm space-y-2">
           <div>
-            • <strong>A2SV — Fellow</strong> — 2025
+            • <strong>A2SV — Software Engineer Fellow</strong> — Competitive
+            programming, system design, and real-world projects with top-tier
+            mentorship.
           </div>
           <div>
-            • <strong>Merrylow — Founder</strong> — Production platform
+            • <strong>Merrylow — Co-founder</strong> — Production platform
           </div>
           <div>
-            • <strong>Enzypher — In stealth</strong> — Encrypted Chat System{" "}
+            • <strong>Enzypher — In stealth</strong> — Encrypted Chat
+            System{" "}
           </div>
-        </div>
+          <div>
+            • <strong>Agbey Tech — Software Engineer</strong> — Building custom
+            POS and management systems for retail businesses.{" "}
+          </div>
+        </div>,
       );
     } else if (head === "projects") {
       pushLine(
@@ -263,7 +271,7 @@ export function useTerminal(
             Use <code>read project &lt;id&gt;</code> to view details or{" "}
             <code>open project &lt;id&gt;</code> to visit
           </div>
-        </div>
+        </div>,
       );
     } else if (head === "blogs") {
       pushLine(
@@ -278,7 +286,7 @@ export function useTerminal(
             Use <code>read blog &lt;id|slug&gt;</code> to view or{" "}
             <code>open blog &lt;id|slug&gt;</code> to visit
           </div>
-        </div>
+        </div>,
       );
     } else if (head === "open") {
       const [type, ...identifierParts] = rest;
@@ -288,35 +296,35 @@ export function useTerminal(
         pushLine(
           <div className="text-red-400">
             Usage: open &lt;blog|project&gt; &lt;id|slug&gt;
-          </div>
+          </div>,
         );
         return false;
       }
 
       if (type === "blog") {
         const blog = cachedBlogs.find(
-          (b) => b.id === Number(identifier) || b.slug === identifier
+          (b) => b.id === Number(identifier) || b.slug === identifier,
         );
         if (blog) {
           pushLine(
-            <div className="text-cyan-300">Opening: {blog.title}...</div>
+            <div className="text-cyan-300">Opening: {blog.title}...</div>,
           );
           router.push(`/blogs/${blog.slug}`);
           return true;
         } else {
           pushLine(
-            <div className="text-red-400">Blog not found: "{identifier}"</div>
+            <div className="text-red-400">Blog not found: "{identifier}"</div>,
           );
         }
       } else if (type === "project") {
         const project = cachedProjects.find(
           (p) =>
             p.id === Number(identifier) ||
-            p.title.toLowerCase() === identifier.toLowerCase()
+            p.title.toLowerCase() === identifier.toLowerCase(),
         );
         if (project) {
           pushLine(
-            <div className="text-cyan-300">Opening: {project.title}...</div>
+            <div className="text-cyan-300">Opening: {project.title}...</div>,
           );
           if (project.demo && project.demo !== "#") {
             window.open(project.demo, "_blank");
@@ -326,7 +334,7 @@ export function useTerminal(
             pushLine(
               <div className="text-yellow-400">
                 No demo or repo link available for this project.
-              </div>
+              </div>,
             );
             return false;
           }
@@ -335,7 +343,7 @@ export function useTerminal(
           pushLine(
             <div className="text-red-400">
               Project not found: "{identifier}"
-            </div>
+            </div>,
           );
         }
       } else {
@@ -343,7 +351,7 @@ export function useTerminal(
           <div className="text-red-400">
             Unknown type: "{type}". Use <code>blog</code> or{" "}
             <code>project</code>.
-          </div>
+          </div>,
         );
       }
     } else if (head === "read") {
@@ -354,14 +362,14 @@ export function useTerminal(
         pushLine(
           <div className="text-red-400">
             Usage: read &lt;blog|project&gt; &lt;id|slug&gt;
-          </div>
+          </div>,
         );
         return false;
       }
 
       if (type === "blog") {
         const blog = cachedBlogs.find(
-          (b) => b.id === Number(identifier) || b.slug === identifier
+          (b) => b.id === Number(identifier) || b.slug === identifier,
         );
         if (blog) {
           pushLine(
@@ -392,18 +400,18 @@ export function useTerminal(
                 <code className="text-cyan-300">open blog {blog.id}</code> to
                 read the full article
               </div>
-            </div>
+            </div>,
           );
         } else {
           pushLine(
-            <div className="text-red-400">Blog not found: "{identifier}"</div>
+            <div className="text-red-400">Blog not found: "{identifier}"</div>,
           );
         }
       } else if (type === "project") {
         const project = cachedProjects.find(
           (p) =>
             p.id === Number(identifier) ||
-            p.title.toLowerCase() === identifier.toLowerCase()
+            p.title.toLowerCase() === identifier.toLowerCase(),
         );
         if (project) {
           pushLine(
@@ -451,13 +459,13 @@ export function useTerminal(
                 <code className="text-cyan-300">open project {project.id}</code>{" "}
                 to visit
               </div>
-            </div>
+            </div>,
           );
         } else {
           pushLine(
             <div className="text-red-400">
               Project not found: "{identifier}"
-            </div>
+            </div>,
           );
         }
       } else {
@@ -465,13 +473,13 @@ export function useTerminal(
           <div className="text-red-400">
             Unknown type: "{type}". Use <code>blog</code> or{" "}
             <code>project</code>.
-          </div>
+          </div>,
         );
       }
     } else if (head === "search") {
       if (!arg) {
         pushLine(
-          <div className="text-red-400">Usage: search &lt;term&gt;</div>
+          <div className="text-red-400">Usage: search &lt;term&gt;</div>,
         );
         return false;
       }
@@ -479,14 +487,14 @@ export function useTerminal(
         (b) =>
           b.title.toLowerCase().includes(arg.toLowerCase()) ||
           b.excerpt.toLowerCase().includes(arg.toLowerCase()) ||
-          b.tags.some((t) => t.toLowerCase().includes(arg.toLowerCase()))
+          b.tags.some((t) => t.toLowerCase().includes(arg.toLowerCase())),
       );
       const projectMatches = cachedProjects.filter(
         (p) =>
           p.title.toLowerCase().includes(arg.toLowerCase()) ||
           p.description.toLowerCase().includes(arg.toLowerCase()) ||
           p.tags.some((t) => t.toLowerCase().includes(arg.toLowerCase())) ||
-          p.categories.some((c) => c.toLowerCase().includes(arg.toLowerCase()))
+          p.categories.some((c) => c.toLowerCase().includes(arg.toLowerCase())),
       );
 
       if (blogMatches.length === 0 && projectMatches.length === 0) {
@@ -527,7 +535,7 @@ export function useTerminal(
             <div className="text-zinc-500 text-xs mt-2">
               Use <code>read blog/project &lt;id&gt;</code> to view details
             </div>
-          </div>
+          </div>,
         );
       }
     } else if (head === "clear") {
@@ -535,7 +543,7 @@ export function useTerminal(
     } else if (head === "theme") {
       if (!arg || !["dark", "light"].includes(arg)) {
         pushLine(
-          <div className="text-red-400">Usage: theme &lt;dark|light&gt;</div>
+          <div className="text-red-400">Usage: theme &lt;dark|light&gt;</div>,
         );
       } else {
         document.documentElement.classList.toggle("light", arg === "light");
@@ -584,7 +592,7 @@ export function useTerminal(
               <code className="text-cyan-300">game play &lt;id|name&gt;</code>{" "}
               to start a game
             </div>
-          </div>
+          </div>,
         );
       } else if (subCmd === "play") {
         if (!gameName) {
@@ -594,7 +602,7 @@ export function useTerminal(
               <div className="text-zinc-400 text-xs mt-1">
                 Example: <code className="text-cyan-300">game play snake</code>
               </div>
-            </div>
+            </div>,
           );
           return false;
         }
@@ -614,7 +622,7 @@ export function useTerminal(
               Available: <code className="text-cyan-300">game</code> or{" "}
               <code className="text-cyan-300">game play &lt;id|name&gt;</code>
             </div>
-          </div>
+          </div>,
         );
       }
     } else if (head === "exc") {
@@ -627,7 +635,7 @@ export function useTerminal(
               <code className="text-cyan-300">game play &lt;id|name&gt;</code>{" "}
               to start a game.
             </div>
-          </div>
+          </div>,
         );
       } else {
         const result = gameSession.exitGame();
@@ -639,12 +647,12 @@ export function useTerminal(
               Type <code className="text-cyan-300">game</code> to see available
               games.
             </div>
-          </div>
+          </div>,
         );
       }
     } else if (["quit", "exit", "close"].includes(head)) {
       pushLine(
-        <div className="text-zinc-400">Terminal closed. Ctrl+` to reopen.</div>
+        <div className="text-zinc-400">Terminal closed. Ctrl+` to reopen.</div>,
       );
       setTimeout(() => onClose(), 1000);
       return true;
@@ -663,7 +671,7 @@ export function useTerminal(
             Type <code className="text-cyan-300">help</code> to view all valid
             commands.
           </div>
-        </div>
+        </div>,
       );
     }
 
