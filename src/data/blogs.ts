@@ -2900,6 +2900,98 @@ function recurse() {
       <p><strong>Let’s go.</strong> 🔥</p>
     `,
   },
+
+  {
+    id: 43,
+    slug: "i-tried-being-an-extrovert",
+    title:
+      "I Tried Being an Extrovert for 3 Weeks. Worst Side Quest of My Life.",
+    date: "February 24, 2026",
+    image: "/assets/blogs/extrovert-quest.png",
+    tags: [
+      "Life",
+      "Personal",
+      "Growth",
+      "Humor",
+      "Productivity",
+      "Mental Health",
+    ],
+    excerpt:
+      "There’s a version of me that should never be allowed outside. And unfortunately… I unlocked him. Here’s what happened when I tried being an extrovert for 3 weeks.",
+    readTime: "7 min read",
+    other: "Supports all HTML tags and custom styling.",
+    content: `
+      <article>
+        <h1 style="font-size:2rem;font-weight:bold;">I Tried Being an Extrovert for 3 Weeks. Worst Side Quest of My Life.</h1>
+        <section>
+          <p>There’s a version of me that should never be allowed outside.</p>
+          <p><strong>And unfortunately… I unlocked him.</strong></p>
+          <p>For the past few weeks, I tried to become “more extroverted.” You know. Talk more. Post more. Be funny. Be visible. Be that guy.</p>
+          <p style="color:#e53e3e;font-weight:bold;">Worst mistake.</p>
+          <p>Not the kind of mistake where your life explodes.<br>But the kind where you sit alone at night and whisper to yourself:</p>
+          <blockquote style="border-left:4px solid #e53e3e;padding-left:1em;">“Bro… what the hell was that?”</blockquote>
+          <p>Because the extrovert version of me? He doesn’t think. He just acts. He posts anything that enters his brain just to make people laugh. He wants attention. He wants reactions. He wants to be seen as funny, cool, unpredictable.</p>
+          <p><em>He’s an idiot.</em></p>
+          <p>This guy was making the most unhinged jokes. Wild jokes. Questionable jokes. Even gay jokes — not because that’s who I am, but because the extrovert version of me thought it was funny in the moment.</p>
+          <p>And now?</p>
+          <p>Now everyone is confused.</p>
+          <ul style="margin-left:1em;">
+            <li>My Machine Learning lecturer views my status.</li>
+            <li>My SHS IT teacher views my status.</li>
+            <li>Prominent people. Professionals. Mentors.</li>
+          </ul>
+          <p>And there I am, posting nonsense like I have no future to protect.</p>
+          <p style="font-style:italic;">What is wrong with me?</p>
+          <p>It’s like watching yourself sabotage your own character build.<br>Not fatally.<br>But enough to take damage.</p>
+        </section>
+        <h2>The Punishment</h2>
+        <section>
+          <p>So I’ve made a decision.</p>
+          <p>For the next 1–2 months, I disappear.<br>No posting.<br>No unnecessary noise.<br>No performing.</p>
+          <p style="color:#718096;">This isn’t sadness.<br>This is correction.<br>This is me returning to factory settings.</p>
+          <p>Because the real Zigla doesn’t perform.<br>The real Zigla builds.<br>The real Zigla learns like his life depends on it.<br>The real Zigla locks in so hard the outside world starts to feel irrelevant.</p>
+        </section>
+        <h2>Meanwhile… Something Dangerous Happened.</h2>
+        <section>
+          <p>While I was busy being socially stupid, something else was happening quietly.</p>
+          <p>I became a paid software engineer at <a href="/journey" style="color:#3182ce;">AgbeyTech</a>.</p>
+          <p>Yeah.<br>That still sounds illegal to say.</p>
+          <p>We visited a client’s shop in Kasoa — Misszay Importation Hub.<br>We gathered requirements.<br>Came home.<br>Designed everything.<br>Planned everything.<br>Confirmed the UI.<br>And then built the entire system.</p>
+          <ul style="margin-left:1em;">
+            <li>Landing page.</li>
+            <li>Product browsing.</li>
+            <li>Admin dashboard.</li>
+            <li>Customer dashboard.</li>
+            <li>Management system.</li>
+            <li>Everything.</li>
+          </ul>
+          <p>In less than a week.<br>Three days of pure building.<br>Three days of entering a mental state where time stopped existing.<br>Three days of becoming someone else.</p>
+          <p>You can see the test version here:<br><a href="https://misszay-importation-hub.vercel.app" target="_blank" style="color:#3182ce;">https://misszay-importation-hub.vercel.app</a></p>
+          <p>That moment reminded me of something important.<br>When I build, I feel dangerous.<br>Not loud.<br>Not visible.<br><span style="font-weight:bold;color:#e53e3e;">Dangerous.</span></p>
+        </section>
+        <h2>This Is the Part of the Anime Where He Disappears</h2>
+        <section>
+          <p>Every serious character has that phase.<br>Where they stop talking.<br>Stop explaining.<br>Stop showing themselves.<br>They disappear.<br>Not because they’re weak.<br>But because they’re preparing.</p>
+          <p>This is that phase.</p>
+          <ul style="margin-left:1em;">
+            <li>The version of me that posts nonsense is dead.</li>
+            <li>The version of me that plays chess alone for fun is alive.</li>
+            <li>The version of me that learns obsessively is alive.</li>
+            <li>The version of me that builds things faster than people expect is alive.</li>
+            <li>The version of me that becomes impossible to ignore without trying to be noticed…<br><strong>Is alive.</strong></li>
+          </ul>
+        </section>
+        <h2>To Anyone I Might Be Ignoring</h2>
+        <section>
+          <p>I’m not ignoring you because I don’t care.<br>I’m ignoring you because I’m building someone I’ll need for the rest of my life.</p>
+          <p>This is temporary.<br>This is intentional.<br>This is necessary.</p>
+          <p>I’ll be back.<br>Stronger.<br>Quieter.<br>Sharper.<br>More precise.</p>
+          <p>Until then…<br><span style="font-size:1.2em;font-weight:bold;">I’m in training.</span></p>
+          <p style="text-align:right;font-style:italic;">— Zigla City</p>
+        </section>
+      </article>
+    `,
+  },
 ];
 
 export const getBlogs = () => blogs;
