@@ -2992,6 +2992,87 @@ function recurse() {
       </article>
     `,
   },
+  {
+    id: 44,
+    slug: "bro-what-happened-i-used-to-love-coding",
+    title: "Bro, What Happened? I Used to Love Coding.",
+    date: "March 11, 2026",
+    image: "/assets/blogs/bro-what-happened.png",
+    tags: [
+      "AI",
+      "Coding",
+      "Burnout",
+      "Life",
+      "Competitive Programming",
+      "Motivation",
+      "Personal",
+    ],
+    excerpt:
+      "A raw reflection on how coding, AI, and competitive programming changed my motivation. From obsession to burnout, and the strange evolution of what it means to be a developer in 2026.",
+    readTime: "8 min read",
+    content: `
+      <article>
+        <h1>Bro, What Happened? I Used to Love Coding.</h1>
+        <p>There was a time — not long ago — when coding was my entire personality.</p>
+        <p>I’m talking serious obsession. The type where you sit alone for hours learning some random concept just so you can reach that level. You know the level I mean — the one where you walk into an interview so confident you don’t even revise anything. Just vibes. Just code. Just raw belief in your brain.</p>
+        <p>And lately… I’ve been feeling like that guy. Not him yet. But dangerously close.</p>
+        <p>But here’s the twist. I don’t even enjoy coding anymore. Not the way I used to.</p>
+        <p>These days my job is basically:</p>
+        <ul>
+          <li>telling AI what to do</li>
+          <li>telling AI not to do something it keeps doing</li>
+          <li>telling AI to please calm down and fix the bug properly</li>
+          <li>waiting for AI to finish cooking</li>
+        </ul>
+        <p>If you’re not using AI for development in 2026, just know something. Bro… You’re still in the 1990s.</p>
+        <p>Because with:</p>
+        <ul>
+          <li>a well-written prompt</li>
+          <li>a glass of coffee</li>
+          <li>and patience (which I no longer have)</li>
+        </ul>
+        <p>AI can:</p>
+        <ul>
+          <li>build new features</li>
+          <li>improve UI</li>
+          <li>refactor code</li>
+          <li>fix bugs</li>
+          <li>basically do all the annoying things that used to take developers days.</li>
+        </ul>
+        <p>And trust me… that process is boring.</p>
+        <p>Let me give you a crazy example.</p>
+        <p>I built an entire preorder website for a client. Frontend. Dashboard. Admin tools. Everything.</p>
+        <p>Time taken? One week. Then the client came back with testing feedback and feature requests. That took another week. But still. Two weeks total.</p>
+        <p>This is the type of project that a team of 7+ developers could easily spend a month on. Meanwhile I’m just sitting there like:</p>
+        <ul>
+          <li>“AI… add this feature.”</li>
+          <li>“AI… remove this bug.”</li>
+          <li>“AI… bro stop touching that file.”</li>
+          <li>“AI… bro please.”</li>
+        </ul>
+        <p>And the weird part? Even competitive programming started feeling strange. I used to grind it like crazy. LeetCode. Codeforces. Problems everywhere.</p>
+        <p>Now? My momentum randomly dropped. But somehow I still end up near the top of A2SV remote contests. Which makes absolutely no sense. I’m literally competing with people who have solved 1000+ Codeforces problems. Meanwhile me? I come out of the toilet. Wash my hands. Sip some water. Join the contest. And somehow:</p>
+        <ul>
+          <li>solved 5/5</li>
+          <li>solved 4/5</li>
+          <li>worst day → solved 3/5</li>
+        </ul>
+        <p>At some point I even beat the guy who used to top our A2SV G6 Ghana phase. Without trying. Which is confusing. Because the real question becomes: Why am I bored of this now?</p>
+        <p>Maybe it’s burnout. Maybe it’s because I’ve been grinding too long. Or maybe it’s something worse: When you stop seeing too many people ahead of you, the motivation changes. Not because you’re the best. But because the chase becomes less clear.</p>
+        <p>I used to have the Google dream too. But recently I started thinking about it realistically. Bro the requirements are insane. It’s like competing with some Chinese guy who started coding at age 4. How am I supposed to compete with people like:</p>
+        <ul>
+          <li>Janly</li>
+          <li>Benq</li>
+        </ul>
+        <p>Those dudes are solving Codeforces problems like they’re eating cereal.</p>
+        <p>So yeah… I’ve given up. Just kidding. Relax. I’m just on slow motion mode right now. The comeback is loading.</p>
+        <p>Right now I’m exploring AI and Machine Learning more seriously. If that path works? Beautiful. If it doesn’t? No problem. I’ll come back to coding like a retired anime character returning for the final arc.</p>
+        <p>So yeah. If you’re reading this and feeling the same way… Maybe nothing is wrong. Maybe you're just evolving. Or maybe… You just need sleep.</p>
+        <p>Either way. Pray for me bro.</p>
+        <p style="text-align:right;font-style:italic;">— Zigla City</p>
+      </article>
+    `,
+  },
 ];
 
 export const getBlogs = () => blogs;
