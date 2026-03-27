@@ -6,6 +6,7 @@ import { findClosest } from "@@/utils/levenshtein";
 import { blogs } from "@@/data/blogs";
 import { projects } from "@@/data/projects";
 import { useGameSession } from "./useGameSession";
+import { preloadZiglaPortraitAsset } from "./simulations/AsciiSimulation";
 
 const COMMANDS: string[] = [
   "help",
@@ -670,6 +671,26 @@ export function useTerminal(
         lowerWord === "linreg" ||
         lowerWord === "zigla" ||
         lowerWord === "ziglacity";
+
+      if (lowerWord === "zigla" || lowerWord === "ziglacity") {
+        pushLine(
+          <div className="text-zinc-500 text-xs">
+            Booting Zigla portrait engine...
+          </div>,
+        );
+
+        const ok = await preloadZiglaPortraitAsset();
+        if (!ok) {
+          pushLine(
+            <div className="text-yellow-300 text-xs">
+              can't simulate zigla right now, cuz you disabled it, try next
+              time.
+            </div>,
+          );
+          return false;
+        }
+      }
+
       setSimulationSession({
         isActive: true,
         word: requestedWord,

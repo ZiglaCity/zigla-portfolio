@@ -38,6 +38,98 @@ type PortraitPoint = {
 const PORTRAIT_ASCII = "@#S%?*+;:,.";
 const PORTRAIT_IMAGE_PATH = "/assets/simulations/zigla.png";
 
+let portraitPointsCache: PortraitPoint[] | null = null;
+let portraitLoadState: "idle" | "loading" | "ready" | "error" = "idle";
+let portraitLoadPromise: Promise<boolean> | null = null;
+let portraitLoadError: string | null = null;
+
+function generatePortraitPoints(imageData: ImageData): PortraitPoint[] {
+  const { width: size, data } = imageData;
+  const generated: PortraitPoint[] = [];
+
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      const idx = (y * size + x) * 4;
+      const r = data[idx];
+      const g = data[idx + 1];
+      const b = data[idx + 2];
+      const a = data[idx + 3];
+      if (a < 10) continue;
+
+      const brightness = (r + g + b) / 3 / 255;
+
+      generated.push({
+        x: (x - size / 2) * 0.072,
+        y: (y - size / 2) * 0.072,
+        z: (1 - brightness) * 2.7,
+        b: brightness,
+      });
+    }
+  }
+
+  return generated;
+}
+
+export async function preloadZiglaPortraitAsset(): Promise<boolean> {
+  if (portraitLoadState === "ready" && portraitPointsCache?.length) {
+    return true;
+  }
+
+  if (portraitLoadState === "loading" && portraitLoadPromise) {
+    return portraitLoadPromise;
+  }
+
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  portraitLoadState = "loading";
+  portraitLoadError = null;
+
+  portraitLoadPromise = new Promise<boolean>((resolve) => {
+    const img = new Image();
+
+    img.onload = () => {
+      const size = 80;
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        portraitLoadState = "error";
+        portraitLoadError = "Unable to initialize portrait canvas.";
+        resolve(false);
+        return;
+      }
+
+      canvas.width = size;
+      canvas.height = size;
+      ctx.drawImage(img, 0, 0, size, size);
+
+      const imageData = ctx.getImageData(0, 0, size, size);
+      portraitPointsCache = generatePortraitPoints(imageData);
+
+      if (!portraitPointsCache.length) {
+        portraitLoadState = "error";
+        portraitLoadError = "Portrait data is empty.";
+        resolve(false);
+        return;
+      }
+
+      portraitLoadState = "ready";
+      resolve(true);
+    };
+
+    img.onerror = () => {
+      portraitLoadState = "error";
+      portraitLoadError = `Could not load ${PORTRAIT_IMAGE_PATH}`;
+      resolve(false);
+    };
+
+    img.src = PORTRAIT_IMAGE_PATH;
+  });
+
+  return portraitLoadPromise;
+}
+
 type LinRegDatum = {
   weight: number;
   horsepower: number;
@@ -708,9 +800,6 @@ export default function AsciiSimulation({
   const lastFrameTimeRef = useRef(0);
   const targetMouseRef = useRef({ x: 0, y: 0 });
   const smoothedMouseRef = useRef({ x: 0, y: 0 });
-  const portraitPointsRef = useRef<PortraitPoint[]>([]);
-  const portraitLoadedRef = useRef(false);
-  const portraitErrorRef = useRef<string | null>(null);
   const portraitAngleXRef = useRef(0);
   const portraitAngleYRef = useRef(0);
 
@@ -729,71 +818,6 @@ export default function AsciiSimulation({
       return buildDonutPoints();
     }
     return [];
-  }, [simulationKind]);
-
-  useEffect(() => {
-    if (simulationKind !== "ziglaPortrait") return;
-    if (portraitLoadedRef.current || portraitPointsRef.current.length > 0)
-      return;
-
-    let disposed = false;
-    portraitLoadedRef.current = false;
-    portraitErrorRef.current = null;
-
-    const img = new Image();
-    img.onload = () => {
-      if (disposed) return;
-
-      const size = 80;
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-      if (!ctx) {
-        portraitErrorRef.current = "Unable to initialize portrait canvas.";
-        return;
-      }
-
-      canvas.width = size;
-      canvas.height = size;
-      ctx.drawImage(img, 0, 0, size, size);
-
-      const imageData = ctx.getImageData(0, 0, size, size).data;
-      const generated: PortraitPoint[] = [];
-
-      for (let y = 0; y < size; y += 1) {
-        for (let x = 0; x < size; x += 1) {
-          const idx = (y * size + x) * 4;
-          const r = imageData[idx];
-          const g = imageData[idx + 1];
-          const b = imageData[idx + 2];
-          const a = imageData[idx + 3];
-          if (a < 10) continue;
-
-          const brightness = (r + g + b) / 3 / 255;
-
-          generated.push({
-            x: (x - size / 2) * 0.072,
-            y: (y - size / 2) * 0.072,
-            z: (1 - brightness) * 2.7,
-            b: brightness,
-          });
-        }
-      }
-
-      portraitPointsRef.current = generated;
-      portraitLoadedRef.current = true;
-    };
-
-    img.onerror = () => {
-      if (disposed) return;
-      portraitErrorRef.current = `Could not load ${PORTRAIT_IMAGE_PATH}`;
-      portraitLoadedRef.current = false;
-    };
-
-    img.src = PORTRAIT_IMAGE_PATH;
-
-    return () => {
-      disposed = true;
-    };
   }, [simulationKind]);
 
   useEffect(() => {
@@ -916,7 +940,10 @@ export default function AsciiSimulation({
           })
           .filter(
             (p) =>
-              p.x >= -20 && p.x <= width + 20 && p.y >= -20 && p.y <= height + 20,
+              p.x >= -20 &&
+              p.x <= width + 20 &&
+              p.y >= -20 &&
+              p.y <= height + 20,
           )
           .sort((a, b) => a.z - b.z);
 
@@ -939,13 +966,15 @@ export default function AsciiSimulation({
         ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
         ctx.fillRect(0, 0, width, height);
 
-        if (!portraitLoadedRef.current) {
+        if (portraitLoadState !== "ready" || !portraitPointsCache?.length) {
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
           ctx.font = "700 14px monospace";
           ctx.fillStyle = "rgba(185, 235, 215, 0.92)";
           ctx.fillText(
-            portraitErrorRef.current ?? `Loading ${PORTRAIT_IMAGE_PATH}...`,
+            portraitLoadState === "error"
+              ? "can't simulate zigla right now, cuz he disabled it, try next time."
+              : "Preparing Zigla simulation...",
             width / 2,
             height / 2,
           );
@@ -954,7 +983,7 @@ export default function AsciiSimulation({
           return;
         }
 
-        const points3D = portraitPointsRef.current;
+        const points3D = portraitPointsCache;
         const centerX = width / 2;
         const centerY = height / 2;
         const distance = 3.8;
@@ -963,8 +992,10 @@ export default function AsciiSimulation({
         const targetY = mouseX * 0.42 + Math.sin(time * 0.001) * 0.1;
         const targetX = mouseY * 0.18;
 
-        portraitAngleYRef.current += (targetY - portraitAngleYRef.current) * 0.1;
-        portraitAngleXRef.current += (targetX - portraitAngleXRef.current) * 0.1;
+        portraitAngleYRef.current +=
+          (targetY - portraitAngleYRef.current) * 0.1;
+        portraitAngleXRef.current +=
+          (targetX - portraitAngleXRef.current) * 0.1;
 
         portraitAngleYRef.current = Math.max(
           -0.6,
@@ -1134,13 +1165,13 @@ export default function AsciiSimulation({
             ? "move mouse to steer donut"
             : simulationKind === "bird"
               ? "move mouse to view the flapping bird in 3D"
-            : simulationKind === "cnn"
-              ? "move mouse to inspect cnn layers"
-              : simulationKind === "linreg"
-                ? "move mouse to inspect regression surface"
-                : simulationKind === "ziglaPortrait"
-                  ? "move mouse for slight side-to-side 3D view"
-                  : "move mouse for side-to-side depth"}
+              : simulationKind === "cnn"
+                ? "move mouse to inspect cnn layers"
+                : simulationKind === "linreg"
+                  ? "move mouse to inspect regression surface"
+                  : simulationKind === "ziglaPortrait"
+                    ? "move mouse for slight side-to-side 3D view"
+                    : "move mouse for side-to-side depth"}
         </span>
       </div>
       <div
