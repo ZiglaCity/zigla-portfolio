@@ -6,6 +6,7 @@ import { findClosest } from "@@/utils/levenshtein";
 import { blogs } from "@@/data/blogs";
 import { projects } from "@@/data/projects";
 import { useGameSession } from "./useGameSession";
+import AsciiSimulation from "./simulations/AsciiSimulation";
 
 const COMMANDS: string[] = [
   "help",
@@ -19,6 +20,7 @@ const COMMANDS: string[] = [
   "clear",
   "theme",
   "game",
+  "simulate",
   "exc",
   "quit",
   "exit",
@@ -205,6 +207,10 @@ export function useTerminal(
             </li>
             <li>
               <strong>game play &lt;id|name&gt;</strong> — start a game
+            </li>
+            <li>
+              <strong>simulate &lt;word&gt;</strong> — interactive 3D ASCII
+              simulation
             </li>
             <li>
               <strong>exc</strong> — exit current game
@@ -625,6 +631,37 @@ export function useTerminal(
           </div>,
         );
       }
+    } else if (head === "simulate") {
+      const requestedWord = arg.trim();
+
+      if (!requestedWord) {
+        pushLine(
+          <div className="text-red-400">
+            Usage: simulate &lt;word&gt;
+            <div className="text-zinc-400 text-xs mt-1">
+              Special words: <code className="text-cyan-300">donut</code>
+            </div>
+          </div>,
+        );
+        return false;
+      }
+
+      const lowerWord = requestedWord.toLowerCase();
+      const isSpecialWord = lowerWord === "donut";
+
+      pushLine(
+        <div className="font-mono text-sm mt-1">
+          <div className="text-cyan-300">
+            Initializing simulation for: <strong>{requestedWord}</strong>
+          </div>
+          <div className="text-zinc-500 text-xs mt-1">
+            {isSpecialWord
+              ? "Loaded special simulation profile."
+              : "No special profile found. Generating dynamic word model."}
+          </div>
+          <AsciiSimulation word={requestedWord} />
+        </div>,
+      );
     } else if (head === "exc") {
       if (!gameSession.isInGameMode()) {
         pushLine(
