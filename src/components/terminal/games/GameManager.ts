@@ -7,10 +7,13 @@ import {
   isGameAvailable,
 } from "./types";
 import { SnakeGame, SnakeGameState } from "./snake/SnakeGame";
+import { TetrisGame, TetrisGameState } from "./tetris/TetrisGame";
+
+type GameInstance = SnakeGame | TetrisGame;
 
 export type ActiveGame = {
   id: GameId;
-  instance: SnakeGame; // Will be union type when more games added
+  instance: GameInstance;
 };
 
 export interface GameSession {
@@ -27,7 +30,7 @@ export class GameManager {
   private onRender?: (
     lines: string[],
     statusLine: string,
-    controlsHelp: string
+    controlsHelp: string,
   ) => void;
   private onGameEnd?: (finalScore: number, isHighScore: boolean) => void;
   private onGameStart?: (gameInfo: GameInfo) => void;
@@ -37,7 +40,7 @@ export class GameManager {
     onRender?: (
       lines: string[],
       statusLine: string,
-      controlsHelp: string
+      controlsHelp: string,
     ) => void;
     onGameEnd?: (finalScore: number, isHighScore: boolean) => void;
     onGameStart?: (gameInfo: GameInfo) => void;
@@ -88,13 +91,15 @@ export class GameManager {
     this.exitGame();
 
     // Create game instance based on ID
-    let instance: SnakeGame;
+    let instance: GameInstance;
 
     switch (gameInfo.id) {
       case "snake":
         instance = new SnakeGame();
         break;
-      // Future games will be added here
+      case "tetris":
+        instance = new TetrisGame();
+        break;
       default:
         return {
           success: false,
@@ -111,18 +116,20 @@ export class GameManager {
     };
 
     // Set up state change callback for rendering
-    instance.setStateChangeCallback((state: SnakeGameState) => {
-      if (this.onRender) {
-        const lines = instance.render();
-        const statusLine = instance.getStatusLine();
-        const controlsHelp = instance.getControlsHelp();
-        this.onRender(lines, statusLine, controlsHelp);
-      }
+    instance.setStateChangeCallback(
+      (state: SnakeGameState | TetrisGameState) => {
+        if (this.onRender) {
+          const lines = instance.render();
+          const statusLine = instance.getStatusLine();
+          const controlsHelp = instance.getControlsHelp();
+          this.onRender(lines, statusLine, controlsHelp);
+        }
 
-      if (state.gameOver && this.onGameEnd) {
-        this.onGameEnd(state.score, state.score > state.highScore);
-      }
-    });
+        if (state.gameOver && this.onGameEnd) {
+          this.onGameEnd(state.score, state.score > state.highScore);
+        }
+      },
+    );
 
     instance.start();
 
@@ -238,7 +245,9 @@ export class GameManager {
     // Handle game-specific input
     switch (id) {
       case "snake":
-        return this.handleSnakeInput(instance, key);
+        return this.handleSnakeInput(instance as SnakeGame, key);
+      case "tetris":
+        return this.handleTetrisInput(instance as TetrisGame, key);
       default:
         return false;
     }
@@ -272,6 +281,45 @@ export class GameManager {
       default:
         // Return true anyway - we're in game mode, all keys are "handled"
         // (ignored but not passed through)
+        return true;
+    }
+  }
+
+  private handleTetrisInput(game: TetrisGame, key: string): boolean {
+    const normalizedKey = key.toLowerCase();
+
+    switch (normalizedKey) {
+      case "a":
+      case "arrowleft":
+        game.moveLeft();
+        return true;
+      case "d":
+      case "arrowright":
+        game.moveRight();
+        return true;
+      case "s":
+      case "arrowdown":
+        game.softDrop();
+        return true;
+      case "w":
+      case "arrowup":
+      case "x":
+        game.rotateClockwise();
+        return true;
+      case "z":
+        game.rotateCounterClockwise();
+        return true;
+      case " ":
+      case "space":
+        game.hardDrop();
+        return true;
+      case "c":
+        game.holdCurrentPiece();
+        return true;
+      case "p":
+        this.pauseGame();
+        return true;
+      default:
         return true;
     }
   }

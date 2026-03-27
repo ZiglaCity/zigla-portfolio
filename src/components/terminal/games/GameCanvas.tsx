@@ -7,13 +7,64 @@ interface GameCanvasProps {
   onExit: () => void;
 }
 
+type ControlItem = {
+  keys: string[];
+  label: string;
+};
+
+type LegendItem = {
+  symbol: string;
+  label: string;
+};
+
+const GAME_UI_CONFIG: Record<
+  string,
+  { controls: ControlItem[]; legend: LegendItem[] }
+> = {
+  snake: {
+    controls: [
+      { keys: ["W", "↑"], label: "Move Up" },
+      { keys: ["S", "↓"], label: "Move Down" },
+      { keys: ["A", "←"], label: "Move Left" },
+      { keys: ["D", "→"], label: "Move Right" },
+      { keys: ["P"], label: "Pause" },
+      { keys: ["R"], label: "Restart" },
+      { keys: ["ESC"], label: "Exit Game" },
+    ],
+    legend: [
+      { symbol: "►►", label: "Snake Head" },
+      { symbol: "██", label: "Snake Body" },
+      { symbol: "●●", label: "Food" },
+    ],
+  },
+  tetris: {
+    controls: [
+      { keys: ["A", "←"], label: "Move Left" },
+      { keys: ["D", "→"], label: "Move Right" },
+      { keys: ["S", "↓"], label: "Soft Drop" },
+      { keys: ["W", "↑", "X"], label: "Rotate CW" },
+      { keys: ["Z"], label: "Rotate CCW" },
+      { keys: ["SPACE"], label: "Hard Drop" },
+      { keys: ["C"], label: "Hold Piece" },
+      { keys: ["P"], label: "Pause" },
+      { keys: ["R"], label: "Restart" },
+      { keys: ["ESC"], label: "Exit Game" },
+    ],
+    legend: [
+      { symbol: "▓▓", label: "Active Piece" },
+      { symbol: "██", label: "Locked Block" },
+      { symbol: "░░", label: "Ghost Piece" },
+    ],
+  },
+};
+
 // Memoize the game grid to prevent unnecessary re-renders
 const GameGrid = memo(({ lines }: { lines: string[] }) => (
   <pre
     className="text-green-400 text-center select-none whitespace-pre"
     style={{
       fontFamily: "'Courier New', Consolas, monospace",
-      fontSize: "14px",
+      fontSize: "clamp(13px, 1.2vw, 18px)",
       lineHeight: "1.1",
       letterSpacing: "0",
     }}
@@ -108,7 +159,7 @@ function GameCanvas({ onExit }: GameCanvasProps) {
         manager.handleKeyInput(key);
       }
     },
-    [onExit] // Remove showGameOver from deps since we use ref
+    [onExit], // Remove showGameOver from deps since we use ref
   );
 
   useEffect(() => {
@@ -140,10 +191,11 @@ function GameCanvas({ onExit }: GameCanvasProps) {
   };
 
   const stats = parseStatus(statusLine);
+  const uiConfig = GAME_UI_CONFIG[gameInfo?.id ?? "snake"];
 
   return (
-    <div className="flex items-center justify-center h-full p-2 gap-4">
-      <div className="flex flex-col justify-center h-full w-40 shrink-0">
+    <div className="flex items-stretch justify-center h-full p-1 sm:p-2 lg:p-3 gap-2 sm:gap-3">
+      <div className="hidden lg:flex flex-col justify-center h-full w-52 shrink-0">
         {gameInfo && (
           <div className="mb-4">
             <div className="text-cyan-300 font-bold text-lg flex items-center gap-1">
@@ -173,8 +225,8 @@ function GameCanvas({ onExit }: GameCanvasProps) {
       </div>
 
       {/* Center - Game Grid */}
-      <div className="relative flex flex-col items-center">
-        <div className="bg-zinc-950 rounded-lg p-3 border-2 border-zinc-700 shadow-lg shadow-green-500/10">
+      <div className="relative flex flex-col items-center justify-center flex-1 min-w-0 min-h-0">
+        <div className="bg-zinc-950 rounded-lg p-3 sm:p-4 lg:p-5 border-2 border-zinc-700 shadow-lg shadow-green-500/10 overflow-auto max-w-full max-h-full">
           <GameGrid lines={gameLines} />
         </div>
 
@@ -212,71 +264,34 @@ function GameCanvas({ onExit }: GameCanvasProps) {
         )}
       </div>
 
-      <div className="flex flex-col justify-center h-full w-40 shrink-0">
+      <div className="flex flex-col justify-center h-full w-48 lg:w-56 shrink-0">
         <div className="mb-4">
           <div className="text-zinc-400 text-xs uppercase tracking-wider mb-2">
             Controls
           </div>
           <div className="space-y-1.5 text-xs">
-            <div className="flex items-center gap-2">
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                W
-              </kbd>
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                ↑
-              </kbd>
-              <span className="text-zinc-500">Move Up</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                S
-              </kbd>
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                ↓
-              </kbd>
-              <span className="text-zinc-500">Move Down</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                A
-              </kbd>
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                ←
-              </kbd>
-              <span className="text-zinc-500">Move Left</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                D
-              </kbd>
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                →
-              </kbd>
-              <span className="text-zinc-500">Move Right</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-zinc-700 pt-3">
-          <div className="space-y-1.5 text-xs">
-            <div className="flex items-center gap-2">
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                P
-              </kbd>
-              <span className="text-zinc-500">Pause</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-cyan-300 font-mono">
-                R
-              </kbd>
-              <span className="text-zinc-500">Restart</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <kbd className="px-1.5 py-0.5 bg-zinc-700 rounded text-red-400 font-mono">
-                ESC
-              </kbd>
-              <span className="text-zinc-500">Exit Game</span>
-            </div>
+            {uiConfig.controls.map((control) => (
+              <div
+                key={`${control.label}-${control.keys.join("-")}`}
+                className="flex items-center gap-2"
+              >
+                <div className="flex items-center gap-1">
+                  {control.keys.map((keyName) => (
+                    <kbd
+                      key={`${control.label}-${keyName}`}
+                      className={`px-1.5 py-0.5 rounded font-mono text-[11px] ${
+                        keyName === "ESC"
+                          ? "bg-zinc-700 text-red-400"
+                          : "bg-zinc-700 text-cyan-300"
+                      }`}
+                    >
+                      {keyName}
+                    </kbd>
+                  ))}
+                </div>
+                <span className="text-zinc-500">{control.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -285,18 +300,15 @@ function GameCanvas({ onExit }: GameCanvasProps) {
             Legend
           </div>
           <div className="space-y-1 text-xs font-mono">
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">►►</span>
-              <span className="text-zinc-500">Snake Head</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">██</span>
-              <span className="text-zinc-500">Snake Body</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">●●</span>
-              <span className="text-zinc-500">Food</span>
-            </div>
+            {uiConfig.legend.map((legend) => (
+              <div
+                key={`${legend.symbol}-${legend.label}`}
+                className="flex items-center gap-2"
+              >
+                <span className="text-green-400">{legend.symbol}</span>
+                <span className="text-zinc-500">{legend.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

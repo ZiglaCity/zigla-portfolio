@@ -27,7 +27,7 @@ export default function TerminalOverlay({
       ? JSON.parse(localStorage.getItem("terminalHistory") || "[]")
       : [],
     onClose,
-    open
+    open,
   );
 
   const terminalContainerRef = useRef<HTMLDivElement>(null);
@@ -55,11 +55,11 @@ export default function TerminalOverlay({
             initial={{ scale: 0.95, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
-            className="flex items-center justify-center h-full p-0 sm:p-8 lg:p-12"
+            className="flex items-center justify-center h-full p-0 sm:p-2 lg:p-4"
           >
             <div
               ref={terminalContainerRef}
-              className="w-full h-full sm:h-[80vh] sm:max-w-6xl lg:max-w-7xl bg-zinc-900/95 sm:border border-zinc-800 sm:rounded-xl shadow-2xl overflow-hidden flex flex-col"
+              className="w-full h-full sm:h-[94vh] sm:w-[96vw] sm:max-w-[1700px] bg-zinc-900/95 sm:border border-zinc-800 sm:rounded-xl shadow-2xl overflow-hidden flex flex-col"
             >
               <div className="flex items-center justify-between p-3 sm:p-3 bg-zinc-800/50 border-b border-zinc-700 shrink-0">
                 <div className="flex items-center gap-2">
@@ -95,7 +95,7 @@ export default function TerminalOverlay({
               ) : (
                 <div
                   ref={scrollRef}
-                  className="flex-1 overflow-y-auto p-3 sm:p-4 font-mono text-xs sm:text-sm text-zinc-100 min-h-0"
+                  className="flex-1 overflow-y-auto p-2 sm:p-3 font-mono text-xs sm:text-sm text-zinc-100 min-h-0"
                 >
                   {lines.map((line) => (
                     <div key={line.id} className="mb-1 break-all">
@@ -105,13 +105,13 @@ export default function TerminalOverlay({
                 </div>
               )}
 
-              <div className="flex items-center gap-2 sm:gap-3 p-3 bg-zinc-800/50 border-t border-zinc-700 shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-zinc-800/50 border-t border-zinc-700 shrink-0">
                 <span className="text-cyan-300 text-xs sm:text-sm whitespace-nowrap">
                   {isBooting
                     ? "booting..."
                     : isInGame
-                    ? "🎮 playing..."
-                    : "zigla@enzypher:~$"}
+                      ? "🎮 playing..."
+                      : "zigla@enzypher:~$"}
                 </span>
                 <input
                   ref={inputRef}
@@ -127,8 +127,8 @@ export default function TerminalOverlay({
                     isBooting
                       ? "Please wait..."
                       : isInGame
-                      ? "Use WASD/Arrows to play, ESC to exit..."
-                      : "Type a command..."
+                        ? "Use WASD/Arrows to play, ESC to exit..."
+                        : "Type a command..."
                   }
                   disabled={isBooting || isInGame}
                 />

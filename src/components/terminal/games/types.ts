@@ -41,9 +41,10 @@ export const GAMES_REGISTRY: GameInfo[] = [
   {
     id: "tetris",
     name: "Tetris",
-    description: "Classic block-stacking puzzle game (Coming Soon)",
-    controls: "Arrow keys to move/rotate, Space to drop",
-    version: "0.0.0",
+    description: "Stack falling blocks, clear lines, and chase high scores.",
+    controls:
+      "A/D or Left/Right: Move, W/X/Up: Rotate, Z: CCW, S/Down: Soft drop, Space: Hard drop, C: Hold",
+    version: "1.0.0",
   },
   {
     id: "custom",
@@ -56,7 +57,7 @@ export const GAMES_REGISTRY: GameInfo[] = [
 
 export function getGameById(id: string): GameInfo | undefined {
   return GAMES_REGISTRY.find(
-    (g) => g.id === id || g.name.toLowerCase() === id.toLowerCase()
+    (g) => g.id === id || g.name.toLowerCase() === id.toLowerCase(),
   );
 }
 
