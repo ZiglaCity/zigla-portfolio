@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 
-type SimulationKind = "donut" | "word";
+type SimulationKind = "donut" | "cnn" | "word";
 
 type Point3D = {
   x: number;
@@ -15,7 +15,172 @@ const ASCII_GLYPHS = "@#$%&*+=-:.;!~^?abcdefghijklmnopqrstuvwxyz0123456789";
 
 const SPECIAL_WORDS: Record<string, SimulationKind> = {
   donut: "donut",
+  cnn: "cnn",
 };
+
+type CnnLayer = {
+  name: string;
+  feature: string;
+  activation?: string;
+  nodes: number;
+};
+
+const CNN_LAYERS: CnnLayer[] = [
+  { name: "INPUT", feature: "28x28", nodes: 7 },
+  { name: "CONV1", feature: "3x3 x16", activation: "ReLU", nodes: 11 },
+  { name: "POOL1", feature: "2x2", nodes: 8 },
+  { name: "CONV2", feature: "3x3 x32", activation: "ReLU", nodes: 11 },
+  { name: "POOL2", feature: "2x2", nodes: 7 },
+  { name: "DENSE", feature: "128", activation: "ReLU", nodes: 9 },
+  { name: "OUTPUT", feature: "10 cls", activation: "Softmax", nodes: 5 },
+];
+
+function drawCnnSimulation(
+  ctx: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  time: number,
+  mouseX: number,
+  mouseY: number,
+): void {
+  const layers = CNN_LAYERS;
+  const layerCount = layers.length;
+  const isCompact = width < 900;
+  const marginX = Math.max(20, width * 0.055);
+  const topY = Math.max(40, height * 0.16);
+  const bottomY = Math.min(height - 72, height * 0.79);
+  const networkHeight = Math.max(140, bottomY - topY);
+  const spacingX = (width - marginX * 2) / Math.max(1, layerCount - 1);
+
+  const labelSize = Math.max(9, Math.min(13, Math.floor(width / 110)));
+  const nodeSize = Math.max(10, Math.min(16, Math.floor(width / 90)));
+  const charWidth = Math.max(6, nodeSize * 0.57);
+
+  const flow = (time * 0.0012) % (layerCount - 1);
+  const activeEdge = Math.floor(flow);
+  const edgeProgress = flow - activeEdge;
+  const activeLayer = Math.floor((time * 0.0014) % layerCount);
+
+  const nodeColumns: Array<Array<{ x: number; y: number }>> = [];
+
+  ctx.textBaseline = "top";
+
+  for (let i = 0; i < layerCount; i += 1) {
+    const layer = layers[i];
+    const x =
+      marginX +
+      i * spacingX +
+      Math.sin(time * 0.0007 + i * 0.35) * 3 +
+      mouseX * (isCompact ? 5 : 9);
+
+    const label = isCompact ? layer.name.slice(0, 5) : layer.name;
+    ctx.font = `700 ${labelSize}px monospace`;
+    ctx.fillStyle =
+      i === activeLayer
+        ? "rgba(220, 255, 236, 0.98)"
+        : "rgba(150, 205, 178, 0.9)";
+    ctx.fillText(label, x - (label.length * labelSize * 0.28) / 2, topY - 30);
+
+    const feature = isCompact ? layer.feature.replace(" ", "") : layer.feature;
+    ctx.fillStyle = "rgba(115, 170, 145, 0.9)";
+    ctx.fillText(
+      feature,
+      x - (feature.length * labelSize * 0.25) / 2,
+      topY - 16,
+    );
+
+    const nodeColumn: Array<{ x: number; y: number }> = [];
+    for (let n = 0; n < layer.nodes; n += 1) {
+      const y =
+        topY +
+        ((n + 1) / (layer.nodes + 1)) * networkHeight +
+        Math.sin(time * 0.001 + i * 0.6 + n * 0.38) * 1.8 +
+        mouseY * 3;
+
+      const isLayerActive = i === activeLayer;
+      ctx.font = `700 ${nodeSize}px monospace`;
+      ctx.fillStyle = isLayerActive
+        ? "rgba(210, 255, 230, 0.95)"
+        : "rgba(130, 185, 160, 0.82)";
+      ctx.fillText("O", x - charWidth / 2, y - nodeSize * 0.55);
+
+      nodeColumn.push({ x, y });
+    }
+
+    if (layer.activation) {
+      const actY = bottomY + 18 + Math.sin(time * 0.0014 + i) * 1.5;
+      ctx.font = `700 ${Math.max(9, labelSize - 1)}px monospace`;
+      ctx.fillStyle = "rgba(185, 245, 215, 0.88)";
+      ctx.fillText(
+        `[${layer.activation}]`,
+        x - (layer.activation.length + 2) * labelSize * 0.25,
+        actY,
+      );
+    }
+
+    nodeColumns.push(nodeColumn);
+  }
+
+  // Draw sparse but clear connection mesh between consecutive layers.
+  ctx.font = `700 ${Math.max(8, nodeSize - 2)}px monospace`;
+  for (let i = 0; i < nodeColumns.length - 1; i += 1) {
+    const left = nodeColumns[i];
+    const right = nodeColumns[i + 1];
+
+    for (let s = 0; s < left.length; s += 1) {
+      const mapped = Math.round(
+        (s / Math.max(1, left.length - 1)) * (right.length - 1),
+      );
+      const targets = [mapped - 1, mapped, mapped + 1].filter(
+        (idx) => idx >= 0 && idx < right.length,
+      );
+
+      for (const t of targets) {
+        const start = left[s];
+        const end = right[t];
+        const steps = isCompact ? 3 : 4;
+
+        for (let k = 1; k <= steps; k += 1) {
+          const r = k / (steps + 1);
+          const px = start.x + (end.x - start.x) * r;
+          const py = start.y + (end.y - start.y) * r;
+          ctx.fillStyle =
+            i === activeEdge
+              ? "rgba(170, 245, 210, 0.44)"
+              : "rgba(98, 148, 128, 0.33)";
+          ctx.fillText(".", px - 2, py - 2);
+        }
+      }
+    }
+  }
+
+  // Animated packet moving through the pipeline.
+  if (activeEdge >= 0 && activeEdge < nodeColumns.length - 1) {
+    const fromCol = nodeColumns[activeEdge];
+    const toCol = nodeColumns[activeEdge + 1];
+    const nodeIdx =
+      Math.floor(((time * 0.0042) % 1) * fromCol.length) % fromCol.length;
+    const fromNode = fromCol[nodeIdx];
+    const toIdx = Math.round(
+      (nodeIdx / Math.max(1, fromCol.length - 1)) * (toCol.length - 1),
+    );
+    const toNode = toCol[Math.max(0, Math.min(toCol.length - 1, toIdx))];
+
+    const px = fromNode.x + (toNode.x - fromNode.x) * edgeProgress;
+    const py = fromNode.y + (toNode.y - fromNode.y) * edgeProgress;
+
+    ctx.font = `700 ${Math.max(10, nodeSize)}px monospace`;
+    ctx.fillStyle = "rgba(235, 255, 240, 0.98)";
+    ctx.fillText("@", px - 3, py - nodeSize * 0.55);
+  }
+
+  const pipelineText = isCompact
+    ? "INPUT -> CONV -> POOL -> CONV -> POOL -> DENSE -> OUT"
+    : "Pipeline: input -> conv/relu -> pool -> conv/relu -> pool -> dense -> softmax";
+  ctx.font = `700 ${Math.max(9, labelSize - 1)}px monospace`;
+  ctx.fillStyle = "rgba(155, 220, 190, 0.82)";
+  ctx.fillText(pipelineText, marginX, height - 24);
+}
 
 function rotateX(point: Point3D, angle: number): Point3D {
   const cos = Math.cos(angle);
@@ -235,6 +400,12 @@ export default function AsciiSimulation({
         return;
       }
 
+      if (simulationKind === "cnn") {
+        drawCnnSimulation(ctx, width, height, time, mouseX, mouseY);
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
       const cx =
         width / 2 + (simulationKind === "donut" ? mouseX * 40 : mouseX * 70);
       const cy =
@@ -336,7 +507,9 @@ export default function AsciiSimulation({
         <span>
           {simulationKind === "donut"
             ? "move mouse to steer donut"
-            : "move mouse for side-to-side depth"}
+            : simulationKind === "cnn"
+              ? "move mouse to inspect cnn layers"
+              : "move mouse for side-to-side depth"}
         </span>
       </div>
       <div
