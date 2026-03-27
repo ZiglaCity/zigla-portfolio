@@ -2,7 +2,13 @@
 
 import { useEffect, useMemo, useRef } from "react";
 
-type SimulationKind = "donut" | "cnn" | "linreg" | "ziglaPortrait" | "word";
+type SimulationKind =
+  | "donut"
+  | "bird"
+  | "cnn"
+  | "linreg"
+  | "ziglaPortrait"
+  | "word";
 
 type Point3D = {
   x: number;
@@ -15,6 +21,7 @@ const ASCII_GLYPHS = "@#$%&*+=-:.;!~^?abcdefghijklmnopqrstuvwxyz0123456789";
 
 const SPECIAL_WORDS: Record<string, SimulationKind> = {
   donut: "donut",
+  bird: "bird",
   cnn: "cnn",
   linreg: "linreg",
   zigla: "ziglaPortrait",
@@ -556,6 +563,78 @@ function buildDonutPoints(): Point3D[] {
   return points;
 }
 
+function buildBirdPoints(flap: number): Point3D[] {
+  const points: Point3D[] = [];
+
+  // Body (ellipsoid)
+  for (let u = 0; u < Math.PI * 2; u += 0.26) {
+    for (let v = -Math.PI / 2; v <= Math.PI / 2; v += 0.32) {
+      points.push({
+        x: 28 * Math.cos(v) * Math.cos(u),
+        y: 18 * Math.sin(v),
+        z: 14 * Math.cos(v) * Math.sin(u),
+        glyph: "@",
+      });
+    }
+  }
+
+  // Head
+  for (let u = 0; u < Math.PI * 2; u += 0.36) {
+    for (let v = -Math.PI / 2; v <= Math.PI / 2; v += 0.42) {
+      points.push({
+        x: 28 + 9 * Math.cos(v) * Math.cos(u),
+        y: -8 + 9 * Math.sin(v),
+        z: 7 * Math.cos(v) * Math.sin(u),
+        glyph: "#",
+      });
+    }
+  }
+
+  // Beak
+  for (let t = 0; t <= 1; t += 0.1) {
+    const beakX = 36 + t * 18;
+    const radius = (1 - t) * 4;
+    for (let a = 0; a < Math.PI * 2; a += 0.8) {
+      points.push({
+        x: beakX,
+        y: -8 + Math.sin(a) * radius,
+        z: Math.cos(a) * radius,
+        glyph: ">",
+      });
+    }
+  }
+
+  // Wings (animated flap)
+  const wingLift = -4 - flap * 9;
+  for (const side of [-1, 1] as const) {
+    for (let u = 0; u <= 1; u += 0.06) {
+      const curve = Math.sin(u * Math.PI);
+      for (let t = -1; t <= 1; t += 0.5) {
+        points.push({
+          x: -4 + u * 62,
+          y: wingLift - curve * (10 + flap * 4) + t * 1.4,
+          z: side * (14 + u * 42 + curve * 9 + t * 3),
+          glyph: u > 0.75 ? "~" : "*",
+        });
+      }
+    }
+  }
+
+  // Tail feathers
+  for (let i = -4; i <= 4; i += 1) {
+    for (let t = 0; t <= 1; t += 0.12) {
+      points.push({
+        x: -28 - t * 24,
+        y: -2 + Math.abs(i) * 0.7 - t * 2,
+        z: i * 3.2 + t * i * 0.8,
+        glyph: "^",
+      });
+    }
+  }
+
+  return points;
+}
+
 function formatDisplayWord(word: string): string {
   const cleaned = word.replace(/\s+/g, "").slice(0, 12).toUpperCase();
   return cleaned.split("").join(" ");
@@ -808,6 +887,54 @@ export default function AsciiSimulation({
         return;
       }
 
+      if (simulationKind === "bird") {
+        const flap = Math.sin(time * 0.012);
+        const birdPoints = buildBirdPoints(flap);
+        const birdScale = 1.55;
+
+        const cx = width / 2 + mouseX * 26;
+        const cy = height / 2 + mouseY * 18;
+        const perspective = 340;
+        const rotY = time * 0.0009 + mouseX * 0.62;
+        const rotX = Math.sin(time * 0.0011) * 0.08 - mouseY * 0.3;
+
+        const projected = birdPoints
+          .map((point) => {
+            let transformed = rotateY(point, rotY);
+            transformed = rotateX(transformed, rotX);
+
+            const depth = transformed.z + perspective;
+            const scale = perspective / Math.max(40, depth);
+
+            return {
+              x: cx + transformed.x * scale * birdScale,
+              y: cy + transformed.y * scale * birdScale,
+              z: transformed.z,
+              scale,
+              glyph: transformed.glyph,
+            };
+          })
+          .filter(
+            (p) =>
+              p.x >= -20 && p.x <= width + 20 && p.y >= -20 && p.y <= height + 20,
+          )
+          .sort((a, b) => a.z - b.z);
+
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        for (const point of projected) {
+          const alpha = Math.max(0.3, Math.min(1, 0.3 + (point.scale - 0.42)));
+          const size = Math.max(9, Math.min(27, 9.8 * point.scale + 8));
+          ctx.font = `700 ${size}px monospace`;
+          ctx.fillStyle = `rgba(245, 238, 195, ${alpha})`;
+          ctx.fillText(point.glyph, point.x, point.y);
+        }
+
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
       if (simulationKind === "ziglaPortrait") {
         ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
         ctx.fillRect(0, 0, width, height);
@@ -1005,6 +1132,8 @@ export default function AsciiSimulation({
         <span>
           {simulationKind === "donut"
             ? "move mouse to steer donut"
+            : simulationKind === "bird"
+              ? "move mouse to view the flapping bird in 3D"
             : simulationKind === "cnn"
               ? "move mouse to inspect cnn layers"
               : simulationKind === "linreg"

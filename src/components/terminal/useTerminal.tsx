@@ -651,6 +651,7 @@ export function useTerminal(
             Usage: simulate &lt;word&gt;
             <div className="text-zinc-400 text-xs mt-1">
               Special words: <code className="text-cyan-300">donut</code>,{" "}
+              <code className="text-cyan-300">bird</code>,{" "}
               <code className="text-cyan-300">cnn</code>,{" "}
               <code className="text-cyan-300">linreg</code>,{" "}
               <code className="text-cyan-300">zigla</code>,{" "}
@@ -664,6 +665,7 @@ export function useTerminal(
       const lowerWord = requestedWord.toLowerCase();
       const isSpecialWord =
         lowerWord === "donut" ||
+        lowerWord === "bird" ||
         lowerWord === "cnn" ||
         lowerWord === "linreg" ||
         lowerWord === "zigla" ||
