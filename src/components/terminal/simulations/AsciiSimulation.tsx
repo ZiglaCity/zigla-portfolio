@@ -121,7 +121,17 @@ function drawWordSimulation(
   }
 }
 
-export default function AsciiSimulation({ word }: { word: string }) {
+interface AsciiSimulationProps {
+  word: string;
+  onExit?: () => void;
+  fullscreen?: boolean;
+}
+
+export default function AsciiSimulation({
+  word,
+  onExit,
+  fullscreen = false,
+}: AsciiSimulationProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
@@ -297,8 +307,28 @@ export default function AsciiSimulation({ word }: { word: string }) {
     };
   }, [displayWord, points, simulationKind]);
 
+  useEffect(() => {
+    if (!onExit) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onExit();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onExit]);
+
   return (
-    <div className="mt-2 rounded-lg border border-zinc-700 bg-black/95 overflow-hidden">
+    <div
+      className={`rounded-lg border border-zinc-700 bg-black/95 overflow-hidden ${
+        fullscreen ? "h-full" : "mt-2"
+      }`}
+    >
       <div className="flex items-center justify-between border-b border-zinc-800 px-3 py-2 text-xs text-zinc-400">
         <span>
           mode: <span className="text-cyan-300">{simulationKind}</span>
@@ -309,7 +339,10 @@ export default function AsciiSimulation({ word }: { word: string }) {
             : "move mouse for side-to-side depth"}
         </span>
       </div>
-      <div ref={wrapperRef} className="relative h-[340px] w-full">
+      <div
+        ref={wrapperRef}
+        className={`relative w-full ${fullscreen ? "h-[calc(100%-37px)]" : "h-[340px]"}`}
+      >
         <canvas ref={canvasRef} className="block h-full w-full" />
       </div>
     </div>

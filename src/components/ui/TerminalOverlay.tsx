@@ -4,6 +4,7 @@ import { useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTerminal } from "../terminal/useTerminal";
 import GameCanvas from "../terminal/games/GameCanvas";
+import AsciiSimulation from "../terminal/simulations/AsciiSimulation";
 import { X } from "lucide-react";
 
 export default function TerminalOverlay({
@@ -22,6 +23,8 @@ export default function TerminalOverlay({
     inputRef,
     isBooting,
     gameSession,
+    simulationSession,
+    exitSimulation,
   } = useTerminal(
     typeof window !== "undefined"
       ? JSON.parse(localStorage.getItem("terminalHistory") || "[]")
@@ -32,11 +35,16 @@ export default function TerminalOverlay({
 
   const terminalContainerRef = useRef<HTMLDivElement>(null);
   const isInGame = gameSession.isGameActive;
+  const isInSimulation = simulationSession.isActive;
 
   // Handle exiting game mode
   const handleGameExit = useCallback(() => {
     gameSession.exitGame();
   }, [gameSession]);
+
+  const handleSimulationExit = useCallback(() => {
+    exitSimulation();
+  }, [exitSimulation]);
 
   // Handle keyboard events for game mode - now handled by GameCanvas
   // No need for global handler here anymore
@@ -71,10 +79,18 @@ export default function TerminalOverlay({
                   {isInGame && (
                     <span className="text-green-400 animate-pulse">🎮</span>
                   )}
+                  {isInSimulation && (
+                    <span className="text-cyan-400 animate-pulse">🌀</span>
+                  )}
                   ZiglaOS Terminal
                   {isInGame && (
                     <span className="text-xs px-1.5 py-0.5 bg-green-500/20 text-green-400 rounded">
                       GAME MODE
+                    </span>
+                  )}
+                  {isInSimulation && (
+                    <span className="text-xs px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 rounded">
+                      SIMULATION MODE
                     </span>
                   )}
                 </div>
@@ -91,6 +107,14 @@ export default function TerminalOverlay({
               {isInGame ? (
                 <div className="flex-1 overflow-hidden min-h-0">
                   <GameCanvas onExit={handleGameExit} />
+                </div>
+              ) : isInSimulation ? (
+                <div className="flex-1 overflow-hidden min-h-0 p-2 sm:p-3">
+                  <AsciiSimulation
+                    word={simulationSession.word}
+                    onExit={handleSimulationExit}
+                    fullscreen
+                  />
                 </div>
               ) : (
                 <div
@@ -111,7 +135,9 @@ export default function TerminalOverlay({
                     ? "booting..."
                     : isInGame
                       ? "🎮 playing..."
-                      : "zigla@enzypher:~$"}
+                      : isInSimulation
+                        ? "🌀 simulating..."
+                        : "zigla@enzypher:~$"}
                 </span>
                 <input
                   ref={inputRef}
@@ -128,9 +154,11 @@ export default function TerminalOverlay({
                       ? "Please wait..."
                       : isInGame
                         ? "Use WASD/Arrows to play, ESC to exit..."
-                        : "Type a command..."
+                        : isInSimulation
+                          ? "Move mouse to interact, ESC to exit..."
+                          : "Type a command..."
                   }
-                  disabled={isBooting || isInGame}
+                  disabled={isBooting || isInGame || isInSimulation}
                 />
               </div>
             </div>

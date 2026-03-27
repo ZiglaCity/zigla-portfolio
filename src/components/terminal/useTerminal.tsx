@@ -6,7 +6,6 @@ import { findClosest } from "@@/utils/levenshtein";
 import { blogs } from "@@/data/blogs";
 import { projects } from "@@/data/projects";
 import { useGameSession } from "./useGameSession";
-import AsciiSimulation from "./simulations/AsciiSimulation";
 
 const COMMANDS: string[] = [
   "help",
@@ -48,6 +47,16 @@ const BOOT_MESSAGES = [
   { text: "─".repeat(40), color: "text-zinc-700" },
 ];
 
+type SimulationSessionState = {
+  isActive: boolean;
+  word: string;
+};
+
+const initialSimulationState: SimulationSessionState = {
+  isActive: false,
+  word: "",
+};
+
 export function useTerminal(
   initialHistory: string[] = [],
   onClose: () => void,
@@ -58,6 +67,8 @@ export function useTerminal(
   const [history, setHistory] = useState<string[]>(initialHistory);
   const [historyIndex, setHistoryIndex] = useState<number | null>(null);
   const [isBooting, setIsBooting] = useState(true);
+  const [simulationSession, setSimulationSession] =
+    useState<SimulationSessionState>(initialSimulationState);
   const [cachedBlogs] = useState(blogs);
   const [cachedProjects] = useState(projects);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -213,7 +224,7 @@ export function useTerminal(
               simulation
             </li>
             <li>
-              <strong>exc</strong> — exit current game
+              <strong>exc</strong> — exit current game/simulation
             </li>
             <li>
               <strong>clear</strong> — clear screen
@@ -648,22 +659,21 @@ export function useTerminal(
 
       const lowerWord = requestedWord.toLowerCase();
       const isSpecialWord = lowerWord === "donut";
-
+      setSimulationSession({
+        isActive: true,
+        word: requestedWord,
+      });
       pushLine(
-        <div className="font-mono text-sm mt-1">
-          <div className="text-cyan-300">
-            Initializing simulation for: <strong>{requestedWord}</strong>
-          </div>
-          <div className="text-zinc-500 text-xs mt-1">
-            {isSpecialWord
-              ? "Loaded special simulation profile."
-              : "No special profile found. Generating dynamic word model."}
-          </div>
-          <AsciiSimulation word={requestedWord} />
+        <div className="text-zinc-500 text-xs">
+          {isSpecialWord
+            ? "Simulation mode activated [special profile loaded]. Press ESC to exit."
+            : "Simulation mode activated [dynamic profile]. Press ESC to exit."}
         </div>,
       );
     } else if (head === "exc") {
-      if (!gameSession.isInGameMode()) {
+      if (simulationSession.isActive) {
+        setSimulationSession(initialSimulationState);
+      } else if (!gameSession.isInGameMode()) {
         pushLine(
           <div className="text-yellow-400">
             No game is currently running.
@@ -716,7 +726,7 @@ export function useTerminal(
   };
 
   const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // In game mode, input is disabled and GameCanvas handles keys
+    // In game/simulation mode, input is disabled and dedicated canvases handle keys
     // So we only need to handle terminal commands here
 
     if (e.key === "Enter") {
@@ -763,5 +773,7 @@ export function useTerminal(
     pushLine,
     isBooting,
     gameSession,
+    simulationSession,
+    exitSimulation: () => setSimulationSession(initialSimulationState),
   };
 }
