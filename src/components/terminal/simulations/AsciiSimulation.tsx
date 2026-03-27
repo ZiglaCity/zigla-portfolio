@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 
-type SimulationKind = "donut" | "cnn" | "word";
+type SimulationKind = "donut" | "cnn" | "linreg" | "word";
 
 type Point3D = {
   x: number;
@@ -16,7 +16,321 @@ const ASCII_GLYPHS = "@#$%&*+=-:.;!~^?abcdefghijklmnopqrstuvwxyz0123456789";
 const SPECIAL_WORDS: Record<string, SimulationKind> = {
   donut: "donut",
   cnn: "cnn",
+  linreg: "linreg",
 };
+
+type LinRegDatum = {
+  weight: number;
+  horsepower: number;
+  mpg: number;
+};
+
+type Vec3 = {
+  x: number;
+  y: number;
+  z: number;
+};
+
+const LINREG_DATA: LinRegDatum[] = Array.from({ length: 36 }, (_, i) => {
+  const t = i / 35;
+  const weight = 2200 + t * 3000 + Math.sin(i * 1.8) * 220;
+  const horsepower = 58 + t * 165 + Math.cos(i * 1.35) * 16;
+  const baseline = 51 - 0.0036 * weight - 0.069 * horsepower;
+  const noise = Math.sin(i * 0.9) * 2.7 + Math.cos(i * 0.55) * 1.5;
+  return {
+    weight,
+    horsepower,
+    mpg: Math.max(7, Math.min(44, baseline + noise)),
+  };
+});
+
+function drawAsciiSegment(
+  ctx: CanvasRenderingContext2D,
+  start: { x: number; y: number },
+  end: { x: number; y: number },
+  char: string,
+  color: string,
+  size: number,
+  step = 8,
+): void {
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
+  const length = Math.max(1, Math.hypot(dx, dy));
+  const samples = Math.max(2, Math.floor(length / step));
+
+  ctx.font = `700 ${size}px monospace`;
+  ctx.fillStyle = color;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  for (let i = 0; i <= samples; i += 1) {
+    const t = i / samples;
+    ctx.fillText(char, start.x + dx * t, start.y + dy * t);
+  }
+}
+
+function linRegPredict(weight: number, horsepower: number): number {
+  return 51 - 0.0036 * weight - 0.069 * horsepower;
+}
+
+function toPlotSpace(weight: number, horsepower: number, mpg: number): Vec3 {
+  const x = (horsepower - 140) / 92;
+  const z = (weight - 3600) / 1400;
+  const y = (mpg - 23) / 11;
+  return { x, y, z };
+}
+
+function projectPlotPoint(
+  point: Vec3,
+  width: number,
+  height: number,
+  yaw: number,
+  pitch: number,
+): { x: number; y: number; depth: number } {
+  const rotated = rotateX(
+    rotateY({ x: point.x, y: point.y, z: point.z, glyph: "" }, yaw),
+    pitch,
+  );
+  const perspective = 310;
+  const depthOffset = 4.1;
+  const sceneScale = 1.42;
+  const depth = rotated.z + depthOffset;
+  const scale = perspective / Math.max(1.1, depth);
+
+  return {
+    x: width * 0.53 + rotated.x * scale * sceneScale,
+    y: height * 0.62 - rotated.y * scale * sceneScale,
+    depth,
+  };
+}
+
+function drawLinRegSimulation(
+  ctx: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  time: number,
+  mouseX: number,
+  mouseY: number,
+): void {
+  const yaw = -0.62 + mouseX * 0.3 + Math.sin(time * 0.0006) * 0.06;
+  const pitch = 0.4 - mouseY * 0.23;
+  const axisSize = Math.max(10, Math.min(14, Math.floor(width / 86)));
+  const pointSize = Math.max(12, Math.min(18, Math.floor(width / 72)));
+
+  const planeWeightSteps = 13;
+  const planeHorseSteps = 11;
+
+  const planeNode = (wi: number, hi: number) => {
+    const weight = 2200 + (wi / (planeWeightSteps - 1)) * 3000;
+    const horsepower = 55 + (hi / (planeHorseSteps - 1)) * 175;
+    const mpg = linRegPredict(weight, horsepower);
+    return projectPlotPoint(
+      toPlotSpace(weight, horsepower, mpg),
+      width,
+      height,
+      yaw,
+      pitch,
+    );
+  };
+
+  // Regression plane mesh.
+  for (let wi = 0; wi < planeWeightSteps; wi += 1) {
+    for (let hi = 0; hi < planeHorseSteps - 1; hi += 1) {
+      const a = planeNode(wi, hi);
+      const b = planeNode(wi, hi + 1);
+      drawAsciiSegment(
+        ctx,
+        a,
+        b,
+        "=",
+        "rgba(120, 205, 245, 0.56)",
+        Math.max(8, axisSize),
+        8,
+      );
+    }
+  }
+  for (let hi = 0; hi < planeHorseSteps; hi += 1) {
+    for (let wi = 0; wi < planeWeightSteps - 1; wi += 1) {
+      const a = planeNode(wi, hi);
+      const b = planeNode(wi + 1, hi);
+      drawAsciiSegment(
+        ctx,
+        a,
+        b,
+        "-",
+        "rgba(175, 235, 135, 0.52)",
+        Math.max(8, axisSize),
+        8,
+      );
+    }
+  }
+
+  // Axis references.
+  const origin = projectPlotPoint(
+    toPlotSpace(2200, 55, 8),
+    width,
+    height,
+    yaw,
+    pitch,
+  );
+  const xAxis = projectPlotPoint(
+    toPlotSpace(2200, 230, 8),
+    width,
+    height,
+    yaw,
+    pitch,
+  );
+  const zAxis = projectPlotPoint(
+    toPlotSpace(5200, 55, 8),
+    width,
+    height,
+    yaw,
+    pitch,
+  );
+  const yAxis = projectPlotPoint(
+    toPlotSpace(2200, 55, 42),
+    width,
+    height,
+    yaw,
+    pitch,
+  );
+
+  drawAsciiSegment(
+    ctx,
+    origin,
+    xAxis,
+    "-",
+    "rgba(180, 210, 255, 0.72)",
+    axisSize,
+  );
+  drawAsciiSegment(
+    ctx,
+    origin,
+    zAxis,
+    "-",
+    "rgba(180, 210, 255, 0.72)",
+    axisSize,
+  );
+  drawAsciiSegment(
+    ctx,
+    origin,
+    yAxis,
+    "|",
+    "rgba(180, 210, 255, 0.72)",
+    axisSize,
+  );
+
+  ctx.font = `700 ${axisSize}px monospace`;
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+  ctx.fillStyle = "rgba(210, 240, 255, 0.92)";
+
+  const clampX = (value: number, text: string) =>
+    Math.max(6, Math.min(width - text.length * axisSize * 0.62 - 6, value));
+  const clampY = (value: number) => Math.max(14, Math.min(height - 8, value));
+
+  const hpLabel = "Horsepower";
+  const wtLabel = "Weight";
+  const mpgLabel = "MPG";
+
+  ctx.fillText(hpLabel, clampX(xAxis.x + 6, hpLabel), clampY(xAxis.y + 2));
+  ctx.fillText(wtLabel, clampX(zAxis.x + 6, wtLabel), clampY(zAxis.y + 2));
+  ctx.fillText(mpgLabel, clampX(yAxis.x + 6, mpgLabel), clampY(yAxis.y - 4));
+
+  // Data points and animated residual hints.
+  const pulse = (Math.sin(time * 0.0032) + 1) * 0.5;
+  const sampleIndex = Math.floor((time * 0.0038) % LINREG_DATA.length);
+
+  let focusMeasured: { x: number; y: number } | null = null;
+  let focusPredicted: { x: number; y: number } | null = null;
+  let focusResidual = 0;
+
+  for (let i = 0; i < LINREG_DATA.length; i += 1) {
+    const datum = LINREG_DATA[i];
+    const measured = projectPlotPoint(
+      toPlotSpace(datum.weight, datum.horsepower, datum.mpg),
+      width,
+      height,
+      yaw,
+      pitch,
+    );
+    const predicted = projectPlotPoint(
+      toPlotSpace(
+        datum.weight,
+        datum.horsepower,
+        linRegPredict(datum.weight, datum.horsepower),
+      ),
+      width,
+      height,
+      yaw,
+      pitch,
+    );
+
+    if (i % 3 === 0 || i === sampleIndex) {
+      drawAsciiSegment(
+        ctx,
+        measured,
+        predicted,
+        ":",
+        i === sampleIndex
+          ? `rgba(255, 238, 170, ${0.56 + pulse * 0.36})`
+          : "rgba(185, 185, 142, 0.34)",
+        Math.max(8, axisSize),
+        i === sampleIndex ? 6 : 9,
+      );
+    }
+
+    if (i === sampleIndex) {
+      focusMeasured = measured;
+      focusPredicted = predicted;
+      focusResidual = Math.abs(
+        datum.mpg - linRegPredict(datum.weight, datum.horsepower),
+      );
+    }
+
+    ctx.font = `700 ${pointSize}px monospace`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle =
+      i === sampleIndex
+        ? `rgba(235, 252, 255, ${0.78 + pulse * 0.22})`
+        : "rgba(130, 205, 255, 0.95)";
+    ctx.fillText("o", measured.x, measured.y);
+
+    if (i === sampleIndex) {
+      ctx.font = `700 ${Math.max(11, pointSize - 1)}px monospace`;
+      ctx.fillStyle = `rgba(255, 230, 150, ${0.72 + pulse * 0.26})`;
+      ctx.fillText("x", predicted.x, predicted.y);
+    }
+  }
+
+  if (focusMeasured && focusPredicted) {
+    const midX = (focusMeasured.x + focusPredicted.x) / 2;
+    const midY = (focusMeasured.y + focusPredicted.y) / 2;
+    ctx.font = `700 ${Math.max(10, axisSize)}px monospace`;
+    ctx.textAlign = "left";
+    ctx.textBaseline = "alphabetic";
+    ctx.fillStyle = "rgba(255, 240, 175, 0.92)";
+    ctx.fillText(`residual=${focusResidual.toFixed(2)}`, midX + 8, midY - 6);
+  }
+
+  const panelY = Math.max(12, height * 0.08);
+  ctx.font = `700 ${Math.max(10, axisSize)}px monospace`;
+  ctx.textAlign = "left";
+  ctx.textBaseline = "top";
+  ctx.fillStyle = "rgba(182, 236, 255, 0.9)";
+  ctx.fillText(
+    "LINREG MODEL: MPG = b0 + b1*Weight + b2*Horsepower",
+    14,
+    panelY,
+  );
+  ctx.fillStyle = "rgba(160, 210, 230, 0.82)";
+  ctx.fillText(
+    "o = measured, x = prediction, : = residual error",
+    14,
+    panelY + 18,
+  );
+}
 
 type CnnLayer = {
   name: string;
@@ -406,6 +720,12 @@ export default function AsciiSimulation({
         return;
       }
 
+      if (simulationKind === "linreg") {
+        drawLinRegSimulation(ctx, width, height, time, mouseX, mouseY);
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
       const cx =
         width / 2 + (simulationKind === "donut" ? mouseX * 40 : mouseX * 70);
       const cy =
@@ -509,7 +829,9 @@ export default function AsciiSimulation({
             ? "move mouse to steer donut"
             : simulationKind === "cnn"
               ? "move mouse to inspect cnn layers"
-              : "move mouse for side-to-side depth"}
+              : simulationKind === "linreg"
+                ? "move mouse to inspect regression surface"
+                : "move mouse for side-to-side depth"}
         </span>
       </div>
       <div
