@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 
-type SimulationKind = "donut" | "cnn" | "linreg" | "word";
+type SimulationKind = "donut" | "cnn" | "linreg" | "ziglaPortrait" | "word";
 
 type Point3D = {
   x: number;
@@ -17,7 +17,19 @@ const SPECIAL_WORDS: Record<string, SimulationKind> = {
   donut: "donut",
   cnn: "cnn",
   linreg: "linreg",
+  zigla: "ziglaPortrait",
+  ziglacity: "ziglaPortrait",
 };
+
+type PortraitPoint = {
+  x: number;
+  y: number;
+  z: number;
+  b: number;
+};
+
+const PORTRAIT_ASCII = "@#%*+=-:. ";
+const PORTRAIT_IMAGE_PATH = "/assets/simulations/zigla.png";
 
 type LinRegDatum = {
   weight: number;
@@ -617,6 +629,11 @@ export default function AsciiSimulation({
   const lastFrameTimeRef = useRef(0);
   const targetMouseRef = useRef({ x: 0, y: 0 });
   const smoothedMouseRef = useRef({ x: 0, y: 0 });
+  const portraitPointsRef = useRef<PortraitPoint[]>([]);
+  const portraitLoadedRef = useRef(false);
+  const portraitErrorRef = useRef<string | null>(null);
+  const portraitAngleXRef = useRef(0);
+  const portraitAngleYRef = useRef(0);
 
   const rawWord = word.trim();
   const normalizedWord = rawWord.toLowerCase();
@@ -633,6 +650,71 @@ export default function AsciiSimulation({
       return buildDonutPoints();
     }
     return [];
+  }, [simulationKind]);
+
+  useEffect(() => {
+    if (simulationKind !== "ziglaPortrait") return;
+    if (portraitLoadedRef.current || portraitPointsRef.current.length > 0)
+      return;
+
+    let disposed = false;
+    portraitLoadedRef.current = false;
+    portraitErrorRef.current = null;
+
+    const img = new Image();
+    img.onload = () => {
+      if (disposed) return;
+
+      const size = 80;
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        portraitErrorRef.current = "Unable to initialize portrait canvas.";
+        return;
+      }
+
+      canvas.width = size;
+      canvas.height = size;
+      ctx.drawImage(img, 0, 0, size, size);
+
+      const imageData = ctx.getImageData(0, 0, size, size).data;
+      const generated: PortraitPoint[] = [];
+
+      for (let y = 0; y < size; y += 1) {
+        for (let x = 0; x < size; x += 1) {
+          const idx = (y * size + x) * 4;
+          const r = imageData[idx];
+          const g = imageData[idx + 1];
+          const b = imageData[idx + 2];
+          const a = imageData[idx + 3];
+          if (a < 10) continue;
+
+          const brightness = (r + g + b) / 3 / 255;
+
+          generated.push({
+            x: (x - size / 2) * 0.072,
+            y: (y - size / 2) * 0.072,
+            z: (1 - brightness) * 2.7,
+            b: brightness,
+          });
+        }
+      }
+
+      portraitPointsRef.current = generated;
+      portraitLoadedRef.current = true;
+    };
+
+    img.onerror = () => {
+      if (disposed) return;
+      portraitErrorRef.current = `Could not load ${PORTRAIT_IMAGE_PATH}`;
+      portraitLoadedRef.current = false;
+    };
+
+    img.src = PORTRAIT_IMAGE_PATH;
+
+    return () => {
+      disposed = true;
+    };
   }, [simulationKind]);
 
   useEffect(() => {
@@ -722,6 +804,103 @@ export default function AsciiSimulation({
 
       if (simulationKind === "linreg") {
         drawLinRegSimulation(ctx, width, height, time, mouseX, mouseY);
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
+      if (simulationKind === "ziglaPortrait") {
+        ctx.fillStyle = "#eeeeee";
+        ctx.fillRect(0, 0, width, height);
+
+        if (!portraitLoadedRef.current) {
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.font = "700 14px monospace";
+          ctx.fillStyle = "rgba(20,20,20,0.85)";
+          ctx.fillText(
+            portraitErrorRef.current ?? `Loading ${PORTRAIT_IMAGE_PATH}...`,
+            width / 2,
+            height / 2,
+          );
+
+          animationRef.current = requestAnimationFrame(draw);
+          return;
+        }
+
+        const points3D = portraitPointsRef.current;
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const distance = 3.8;
+
+        // Keep portrait readable: no full spin, only subtle side-to-side 3D motion.
+        const targetY = mouseX * 0.42 + Math.sin(time * 0.001) * 0.1;
+        const targetX = mouseY * 0.18;
+
+        portraitAngleYRef.current += (targetY - portraitAngleYRef.current) * 0.1;
+        portraitAngleXRef.current += (targetX - portraitAngleXRef.current) * 0.1;
+
+        portraitAngleYRef.current = Math.max(
+          -0.6,
+          Math.min(0.6, portraitAngleYRef.current),
+        );
+        portraitAngleXRef.current = Math.max(
+          -0.24,
+          Math.min(0.24, portraitAngleXRef.current),
+        );
+
+        const angleY = portraitAngleYRef.current;
+        const angleX = portraitAngleXRef.current;
+
+        const cosY = Math.cos(angleY);
+        const sinY = Math.sin(angleY);
+        const cosX = Math.cos(angleX);
+        const sinX = Math.sin(angleX);
+
+        const zBuffer = new Float32Array(width * height);
+        zBuffer.fill(-Infinity);
+
+        const projectionScale = Math.min(width, height) * 1.08;
+        const charSize = Math.max(7, Math.min(12, Math.floor(width / 95)));
+
+        ctx.font = `700 ${charSize}px monospace`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        for (const point of points3D) {
+          // Rotate around Y with mouse X influence.
+          const x1 = point.x * cosY - point.z * sinY;
+          const z1 = point.x * sinY + point.z * cosY;
+
+          // Rotate around X with mouse Y influence.
+          const y1 = point.y * cosX - z1 * sinX;
+          const z2 = point.y * sinX + z1 * cosX;
+
+          const scale = 1 / (z2 + distance);
+          const sx = Math.floor(centerX + x1 * scale * projectionScale);
+          const sy = Math.floor(centerY + y1 * scale * projectionScale);
+
+          if (sx < 0 || sx >= width || sy < 0 || sy >= height) continue;
+
+          const zIndex = sy * width + sx;
+          if (z2 <= zBuffer[zIndex]) continue;
+
+          zBuffer[zIndex] = z2;
+
+          const charIndex = Math.max(
+            0,
+            Math.min(
+              PORTRAIT_ASCII.length - 1,
+              Math.floor(point.b * (PORTRAIT_ASCII.length - 1)),
+            ),
+          );
+          const char = PORTRAIT_ASCII[charIndex];
+          if (char === " ") continue;
+
+          const alpha = Math.min(1, 0.28 + (1 - point.b) * 0.75);
+          ctx.fillStyle = `rgba(12, 12, 12, ${alpha})`;
+          ctx.fillText(char, sx, sy);
+        }
+
         animationRef.current = requestAnimationFrame(draw);
         return;
       }
@@ -831,7 +1010,9 @@ export default function AsciiSimulation({
               ? "move mouse to inspect cnn layers"
               : simulationKind === "linreg"
                 ? "move mouse to inspect regression surface"
-                : "move mouse for side-to-side depth"}
+                : simulationKind === "ziglaPortrait"
+                  ? "move mouse for slight side-to-side 3D view"
+                  : "move mouse for side-to-side depth"}
         </span>
       </div>
       <div
