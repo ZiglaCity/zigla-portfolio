@@ -28,7 +28,7 @@ type PortraitPoint = {
   b: number;
 };
 
-const PORTRAIT_ASCII = "@#%*+=-:. ";
+const PORTRAIT_ASCII = "@#S%?*+;:,.";
 const PORTRAIT_IMAGE_PATH = "/assets/simulations/zigla.png";
 
 type LinRegDatum = {
@@ -809,14 +809,14 @@ export default function AsciiSimulation({
       }
 
       if (simulationKind === "ziglaPortrait") {
-        ctx.fillStyle = "#eeeeee";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
         ctx.fillRect(0, 0, width, height);
 
         if (!portraitLoadedRef.current) {
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
           ctx.font = "700 14px monospace";
-          ctx.fillStyle = "rgba(20,20,20,0.85)";
+          ctx.fillStyle = "rgba(185, 235, 215, 0.92)";
           ctx.fillText(
             portraitErrorRef.current ?? `Loading ${PORTRAIT_IMAGE_PATH}...`,
             width / 2,
@@ -894,10 +894,9 @@ export default function AsciiSimulation({
             ),
           );
           const char = PORTRAIT_ASCII[charIndex];
-          if (char === " ") continue;
 
           const alpha = Math.min(1, 0.28 + (1 - point.b) * 0.75);
-          ctx.fillStyle = `rgba(12, 12, 12, ${alpha})`;
+          ctx.fillStyle = `rgba(170, 255, 215, ${alpha})`;
           ctx.fillText(char, sx, sy);
         }
 
