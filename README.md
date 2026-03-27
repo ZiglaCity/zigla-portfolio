@@ -1,120 +1,146 @@
 # Zigla City Portfolio
 
-**URL:** [https://ziglacity.tech](https://ziglacity.tech)  
-**Author:** Solomon Dzah  
-**Role:** Software Engineer | AI/ML Developer | Cybersecurity Enthusiast
+Some people build a simple HTML/CSS portfolio and call it a day.
 
----
+Me?
 
-## Overview
+I picked Next.js, built a terminal vibe, added an OS-like experience, wired in interactive games, then created simulation modes for things like CNNs, linear regression, a donut, a 3D bird, and an ASCII portrait.
 
-This is the personal portfolio of Solomon Dzah, showcasing professional skills, projects, blogs, and contact information. The portfolio is built using **Next.js 16+ (App Router)**, React, and Tailwind CSS, and is fully optimized for **SEO, Open Graph, Twitter Cards, and structured data**. The site is mobile-responsive and designed for performance and accessibility.
+And yes, there is a dedicated space where I write about life, goals, tech, funny moments, and whatever is on my mind.
 
----
+Because I build what I want.
 
-## Features
+## Live Website
 
-- **Server-Side Rendering (SSR) and Static Site Generation (SSG)** for SEO and performance
-- **Dynamic metadata per page** (title, description, keywords, Open Graph, Twitter Cards)
-- **JSON-LD structured data** for enhanced search results
-- **Manifest and favicon** for PWA compatibility and browser integration
-- **Mobile-responsive layout** with modern UI/UX
-- **Pages included:**
-  - Home (`/`) — hero, about, skills, experience sections
-  - Projects (`/projects`) — showcases portfolio projects
-  - Blogs (`/blogs`) — articles and technical insights
-  - Contact (`/contact`) — contact form and social links
+- Main site: [https://ziglacity.tech](https://ziglacity.tech)
+- Home: [https://ziglacity.tech/](https://ziglacity.tech/)
+- Projects: [https://ziglacity.tech/projects](https://ziglacity.tech/projects)
+- Blogs: [https://ziglacity.tech/blogs](https://ziglacity.tech/blogs)
+- Contact: [https://ziglacity.tech/contact](https://ziglacity.tech/contact)
 
----
+## What This Portfolio Includes
 
-## Installation
+- Next.js 16 App Router architecture
+- SEO-focused metadata, Open Graph, Twitter cards, sitemap, robots, JSON-LD
+- Terminal-like interactive interface (ZiglaOS style)
+- Content pages for projects, blogs, experience, and contact
+- Game mode with playable terminal games
+- Simulation mode with special word profiles
 
-### Prerequisites
+## Terminal Features
 
-- Node.js >= 20
+Terminal supports commands like:
+
+- help
+- about
+- experience
+- projects
+- blogs
+- open
+- read
+- search
+- clear
+- theme
+- game
+- simulate
+- exc
+- quit / exit / close
+
+## Simulation Mode
+
+Run simulation mode with:
+
+```bash
+simulate <word>
+```
+
+Special words currently supported:
+
+- donut
+- bird
+- cnn
+- linreg
+- zigla
+- ziglacity
+
+What they do:
+
+- donut: 3D ASCII torus simulation
+- bird: large 3D ASCII bird with flapping wings
+- cnn: layered neural network flow visualization
+- linreg: 3D linear regression scene with plane and residuals
+- zigla / ziglacity: mouse-controlled 3D ASCII portrait mode
+
+Detailed simulation notes:
+
+- [docs/terminal-simulations.md](docs/terminal-simulations.md)
+
+## Site Pages and Code Paths
+
+- App root pages: [src/app](src/app)
+- Home page: [src/app/page.tsx](src/app/page.tsx)
+- Projects page: [src/app/projects/page.tsx](src/app/projects/page.tsx)
+- Blogs page: [src/app/blogs/page.tsx](src/app/blogs/page.tsx)
+- Contact page: [src/app/contact/page.tsx](src/app/contact/page.tsx)
+- Terminal logic: [src/components/terminal](src/components/terminal)
+- Simulations engine: [src/components/terminal/simulations/AsciiSimulation.tsx](src/components/terminal/simulations/AsciiSimulation.tsx)
+- Games engine: [src/components/terminal/games](src/components/terminal/games)
+
+## Tech Stack
+
+- Framework: Next.js 16+
+- UI: React 19 + Tailwind CSS
+- Animation: Framer Motion
+- Icons: Lucide React
+- Language: TypeScript
+- Hosting: Vercel
+
+## Local Setup
+
+Prerequisites:
+
+- Node.js 20+
 - npm or yarn
 
-### Clone and Install
+Clone and install:
 
 ```bash
 git clone https://github.com/ZiglaCity/zigla-portfolio.git
 cd zigla-portfolio
 npm install
-# or
-yarn install
 ```
 
-### Development
+Run dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-- Runs the project locally at `http://localhost:3000`
-- Hot-reloading enabled for development
-
-### Production Build
+Production build:
 
 ```bash
 npm run build
 npm start
-# or
-yarn build
-yarn start
 ```
-
-- Creates an optimized production build ready for deployment
-
----
 
 ## Deployment
 
-The portfolio is deployed on Vercel: [https://ziglacity.tech](https://ziglacity.tech)
+Deployed on Vercel:
 
-- Ensure environment is Node.js >= 20
-- Vercel automatically handles SSR/SSG
-- The project includes **manifest.json**, **favicon**, and **SEO-ready metadata**
+- [https://ziglacity.tech](https://ziglacity.tech)
 
----
+## Author
 
-## SEO & Social Media Optimization
+Solomon Dzah
 
-- **Metadata:** Unique `title`, `description`, and `keywords` for each page
-- **Open Graph & Twitter Cards:** Optimized for link previews
-- **JSON-LD Schema:** `Person` schema included for search engines
-- **Sitemap:** Auto-generated using `next-sitemap`
-- **robots.txt:** Guides search engine crawlers
+- Software Engineer
+- AI/ML Developer
+- Cybersecurity Enthusiast
 
-**Tested with:**
+## Final Note
 
-- Google Rich Results Test
-- Twitter Card Validator
-- Open Graph Preview
+This project is a portfolio, playground, and personal expression space in one place.
 
----
+If you came here for a boring template, wrong repo.
 
-## Technologies Used
-
-- **Framework:** Next.js 16+ (App Router)
-- **Styling:** Tailwind CSS, custom CSS
-- **Fonts:** Inter (via Google Fonts)
-- **State Management:** React hooks for client components
-- **SEO:** Metadata, Open Graph, Twitter Cards, JSON-LD
-- **Hosting:** Vercel
-
----
-
-## Contributing
-
-This is a personal portfolio; contributions are not expected. However, feedback is welcome.
-
-- For any issues or improvements, open a GitHub issue.
-- Pull requests must be well-documented and maintain code consistency.
-
----
-
-## License
-
-This project is for personal portfolio purposes. All code is owned by Solomon Dzah.
+If you came here for personality, systems thinking, weird ideas, and clean execution, welcome.
