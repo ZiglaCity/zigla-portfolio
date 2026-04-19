@@ -38,7 +38,9 @@ html.dark {
 body {
   background: rgb(var(--background));
   color: rgb(var(--foreground));
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .blog-header {
@@ -110,7 +112,9 @@ body {
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
 .blog-content a:hover {
@@ -220,4 +224,77 @@ body {
   margin-top: 1rem;
   font-size: 0.875rem;
   color: rgb(var(--muted));
+}
+
+.blog-content .blog-lead {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.55;
+  color: rgb(var(--foreground));
+  margin-bottom: 1.25rem;
+}
+
+.blog-content .timeline-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.blog-content .timeline-list li {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(var(--foreground), 0.12);
+  border-radius: 0.7rem;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 224, 255, 0.11),
+    rgba(var(--foreground), 0.03)
+  );
+  color: rgb(var(--foreground));
+}
+
+.blog-content .callout-card {
+  margin: 1.75rem 0;
+  padding: 1rem 1.15rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(0, 224, 255, 0.3);
+  background: linear-gradient(
+    145deg,
+    rgba(0, 224, 255, 0.1),
+    rgba(var(--foreground), 0.04)
+  );
+}
+
+.blog-content .callout-card p {
+  margin-bottom: 0.7rem;
+}
+
+.blog-content .callout-card p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-content .blog-visual {
+  margin: 2rem 0;
+  border: 1px solid rgba(var(--foreground), 0.12);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: rgba(var(--foreground), 0.02);
+}
+
+.blog-content .blog-visual img {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+
+.blog-content .blog-visual figcaption {
+  padding: 0.8rem 1rem;
+  font-size: 0.875rem;
+  color: rgb(var(--muted));
+  border-top: 1px solid rgba(var(--foreground), 0.1);
+}
+
+.blog-content .status-table th {
+  white-space: nowrap;
 }
