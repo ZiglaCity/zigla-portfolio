@@ -3073,6 +3073,191 @@ function recurse() {
       </article>
     `,
   },
+  {
+    id: 45,
+    slug: "i-accidentally-became-a-background-character",
+    title: "I Accidentally Became a Background Character",
+    date: "April 19, 2026",
+    image: "/assets/blogs/background-character.png",
+    tags: ["Life", "Personal", "Humor", "Exams", "Comeback"],
+    excerpt:
+      "I vanished into NPC mode, got cooked by exams, fumbled momentum, and still found a way to laugh through the chaos.",
+    readTime: "9 min read",
+    content: `
+        <article class="story-post">
+          <p class="blog-lead">Holy shit… where have I been?</p>
+
+          <blockquote>“Oh me? Just hanging around.” — yeah, at this point I might as well be Beetlejuice. Not the scary one… the useless one. Just… present. Existing. Loading… buffering… no output.</blockquote>
+
+          <p>Because tell me why I’ve been moving like a regular human being lately???</p>
+          <p>Like what do normal people even do?</p>
+
+          <ul class="timeline-list">
+            <li>Exams in 3 days → vibes.</li>
+            <li>Contest in 10 minutes → laptop not even ON.</li>
+            <li>Brain → “we’ll figure it out live.”</li>
+          </ul>
+
+          <p>Meanwhile me — a supposed “serious” guy — just sitting there like:</p>
+
+          <blockquote>
+            “Yeah… I’ll lock in tomorrow.”<br />
+            Tomorrow:<br />
+            “Let’s not rush greatness.”
+          </blockquote>
+
+          <p>Now my colleagues think I’m actually trash 😭</p>
+          <p>Meanwhile I’ve touched top 5, top 10 before…</p>
+          <p>Now I’m top nothing.</p>
+          <p>This is easily my worst form ever.</p>
+
+          <p>But we don’t take accountability here.</p>
+          <p>Burnout, come here.</p>
+          <p>Yes, YOU.</p>
+          <p>You’re holding this L today.</p>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/top-contest-performer.jpg" alt="Top contest performer moment during grind season" loading="lazy" />
+            <figcaption>From top performer runs to low-form phases, the arc is always part of the story.</figcaption>
+          </figure>
+
+          <h2>Reset Attempt</h2>
+          <p>But on a serious note, I knew I was cooked.</p>
+          <p>Energy levels? Finished.</p>
+          <p>Brain? Overdraft.</p>
+          <p>Life? Multiple tabs open, all playing different audio.</p>
+          <p>So I tried to reset — started going to the library, trying to fix academics because… yeah… we were suffering academically.</p>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/me-at-library.jpg" alt="Studying at the library to reset and focus" loading="lazy" />
+            <figcaption>Library mode: fewer excuses, more recovery reps.</figcaption>
+          </figure>
+
+          <h3>Unexpected Plot Twist</h3>
+          <p>And then…</p>
+          <p>I was forced to talk to this lady 💀</p>
+          <p>Now don’t get it twisted — it was actually a good conversation. She was talking about not having a boyfriend and all that.</p>
+          <p>Me internally:</p>
+
+          <blockquote>“Hmm… God is this a sign or are you just testing me again?”</blockquote>
+
+          <p>Relax 😂 I’m joking… kinda.</p>
+          <p>But yeah, I liked her vibe a bit, so I started talking to her more. We even had history — same software engineering group and all that. Solid foundation. Networking. Synergy. Agile communication.</p>
+          <p>At first, everything was smooth.</p>
+          <p>She was like:</p>
+
+          <blockquote>“I want to be like you in the future.”</blockquote>
+
+          <p>Me:</p>
+
+          <blockquote>“Ah 🙂 say less.”</blockquote>
+
+          <p>Life was sweet.</p>
+          <p>UNTIL…</p>
+          <p>One night.</p>
+          <p>Conversation took a turn.</p>
+          <p>My brother… the requirements document changed.</p>
+          <p>She started listing expectations like she was hiring for a Senior Husband Engineer (10+ years experience):</p>
+
+          <ol>
+            <li>Must be very rich 💀</li>
+            <li>Must not be lazy</li>
+            <li>Must not ask wife to cook or wash</li>
+          </ol>
+
+          <p>I said…</p>
+          <p>Wait…</p>
+          <p>So after grinding my entire life…</p>
+          <p>fighting bugs, life, and Ghanaian internet…</p>
+          <p>I’ll come home and still… outsource happiness???</p>
+          <p>Ah.</p>
+          <p>I respect it though — she was standing on business.</p>
+          <p>But me too, I stand on my own business.</p>
+
+          <div class="callout-card">
+            <p>So I quietly withdrew from the market.</p>
+            <p>No noise.</p>
+            <p>No press release.</p>
+            <p>Just:</p>
+            <p><strong>“We are no longer moving.”</strong></p>
+          </div>
+
+          <h2>Academic Damage Report</h2>
+          <p>Anyway… how did this blog turn into relationship analysis???</p>
+          <p>Let’s refocus 😭</p>
+          <p>Exams are currently cooking me.</p>
+          <p>We’ve written 5 papers:</p>
+
+          <ul>
+            <li>2 went well ✅</li>
+            <li>The rest… we thank God in advance 🙏😂</li>
+          </ul>
+
+          <p>I’m not failing ooo… but at this point, I’ve entered:</p>
+          <blockquote>“God, you saw me in the exam hall” mode.</blockquote>
+
+          <p>We’ve got 2 left:</p>
+
+          <table class="status-table">
+            <thead>
+              <tr>
+                <th>Remaining Papers</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Discrete Math</td>
+                <td>Critical mission</td>
+              </tr>
+              <tr>
+                <td>Mini Project</td>
+                <td>High focus required</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Especially Discrete Math…</p>
+          <p>Because how do you claim you're a math wizard…</p>
+          <p>and then your transcript is showing B+???</p>
+          <p>That’s disrespectful.</p>
+          <p>We have to correct that error.</p>
+
+          <h2>Builder Mode Still Alive</h2>
+          <p>On the bright side…</p>
+          <p>I’ve been building something crazy.</p>
+          <p>A multi-role, multi-branch Veterinary System SaaS — solo.</p>
+          <p>Yes. Alone. By myself. Me and my demons.</p>
+          <p>We’re like 90% done. Tomorrow we’re doing testing with my boss at the clinic.</p>
+          <p>So if anything goes wrong…</p>
+          <p>just know I’ll be updating my CV immediately 😭</p>
+          <p>Pray for me.</p>
+
+          <h2>Comeback Protocol</h2>
+          <p>But yeah…</p>
+          <p>There’s this quote:</p>
+
+          <blockquote>Form is temporary, class is permanent.</blockquote>
+
+          <p>Right now?</p>
+          <p>Form: missing.</p>
+          <p>Class?</p>
+          <p>Still somewhere in the cloud… syncing… slowly.</p>
+
+          <p>Once I clear some of this mental clutter…</p>
+          <p>I’m coming back.</p>
+          <p>Harder.</p>
+          <p>Sharper.</p>
+          <p>More dangerous.</p>
+
+          <p>Anyway…</p>
+          <p>If you see me outside looking unserious,</p>
+          <p>just know…</p>
+          <p>the comeback is under construction.</p>
+          <p>Pray for me 😅😭</p>
+        </article>
+      `,
+  },
 ];
 
 export const getBlogs = () => blogs;
