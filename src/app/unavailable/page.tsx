@@ -3,7 +3,7 @@ import UnavailableProjectLinkPage from "@@/components/ui/UnavailableProjectLinkP
 type RawSearchParams = Record<string, string | string[] | undefined>;
 
 type UnavailablePageProps = {
-  searchParams?: RawSearchParams | Promise<RawSearchParams>;
+  searchParams?: Promise<RawSearchParams>;
 };
 
 const firstValue = (value?: string | string[]) => {
