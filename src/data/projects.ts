@@ -25,6 +25,24 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "La Veterinary Hospital",
+    categories: ["Full-Stack", "Business", "Client Project", "Website"],
+    description:
+      "Management system and website for La Veterinary Hospital in Accra. Built integrated role-based dashboards across two branches, covering appointment booking, vet assignment, consultation workflow, invoicing, payment at reception, and invoice printing, with inventory tracking.",
+    image: ["/assets/projects/la-veterinary.png"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Tailwind CSS",
+      "Role-Based Access",
+    ],
+    github: "#",
+    demo: "https://www.lavertinaryhos.com/",
+    featured: true,
+  },
+  {
+    id: 3,
     title: "Misszay Importation Hub",
     categories: ["Full-Stack", "Business", "Client Project"],
     description:
@@ -39,7 +57,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "Spicy Thrifts POS",
     categories: ["Full-Stack", "Retail", "Business", "Client Project"],
     description:
@@ -51,7 +69,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "SafestCode",
     categories: ["Security Tools", "AI/ML"],
     description:
@@ -66,7 +84,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 5,
+    id: 6,
     title: "LMS",
     categories: ["Desktop App", "Full-Stack"],
     description: "Full-featured Library Management System for Universities.",
@@ -77,7 +95,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 6,
+    id: 7,
     title: "ProxyPhish",
     categories: ["CyberOps"],
     description:
@@ -89,7 +107,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 7,
+    id: 8,
     title: "ZTube",
     categories: ["Desktop App", "Full-Stack"],
     description:
@@ -104,7 +122,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 8,
+    id: 9,
     title: "Zigly",
     categories: ["Full-Stack", "System Design", "Website"],
     description:
@@ -116,7 +134,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 9,
+    id: 10,
     title: "Focus Drain",
     categories: ["Chrome Extension"],
     description:
@@ -127,7 +145,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 10,
+    id: 11,
     title: "CropDoc",
     categories: ["AI/ML"],
     description:
@@ -139,7 +157,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 11,
+    id: 12,
     title: "ScreenRecorder",
     categories: ["Desktop App"],
     description: "Lightweight screen recording tool with quick share options.",
@@ -150,7 +168,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 12,
+    id: 13,
     title: "Prosper Constructions Ltd",
     categories: ["Website"],
     description:
@@ -162,7 +180,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 13,
+    id: 14,
     title: "Neural Task Manager",
     categories: ["AI/ML", "WIP"],
     description:
