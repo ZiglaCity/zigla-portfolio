@@ -30,6 +30,14 @@ export default function ProjectsPage() {
       : project.image[1] || project.image[0];
   };
 
+  const isUnavailableLink = (value?: string | null) => {
+    return !value || value.trim() === "" || value === "#";
+  };
+
+  const getUnavailableLink = (projectName: string, type: "code" | "demo") => {
+    return `/unavailable?project=${encodeURIComponent(projectName)}&type=${type}`;
+  };
+
   const getCategoryIcon = (categories: string[]) => {
     const cat = categories[0];
     switch (cat) {
@@ -174,26 +182,44 @@ export default function ProjectsPage() {
 
                   <div className="flex space-x-3">
                     <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={
+                        isUnavailableLink(project.github)
+                          ? getUnavailableLink(project.title, "code")
+                          : project.github
+                      }
+                      target={
+                        isUnavailableLink(project.github) ? undefined : "_blank"
+                      }
+                      rel={
+                        isUnavailableLink(project.github)
+                          ? undefined
+                          : "noopener noreferrer"
+                      }
                       className="flex items-center px-4 py-2 bg-[rgb(var(--card-border))] text-[rgb(var(--foreground))] rounded-lg hover:bg-[rgb(var(--muted))]/20 transition-colors text-sm"
                     >
                       <Github className="w-4 h-4 mr-2" />
                       Code
                     </a>
 
-                    {project.demo && project.demo !== "#" && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors text-sm"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </a>
-                    )}
+                    <a
+                      href={
+                        isUnavailableLink(project.demo)
+                          ? getUnavailableLink(project.title, "demo")
+                          : project.demo!
+                      }
+                      target={
+                        isUnavailableLink(project.demo) ? undefined : "_blank"
+                      }
+                      rel={
+                        isUnavailableLink(project.demo)
+                          ? undefined
+                          : "noopener noreferrer"
+                      }
+                      className="flex items-center px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors text-sm"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Demo
+                    </a>
                   </div>
                 </div>
               </div>
