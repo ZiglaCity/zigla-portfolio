@@ -3258,6 +3258,370 @@ function recurse() {
         </article>
       `,
   },
+  {
+    id: 46,
+    slug: "my-first-ever-in-person-hackathon-experience-and-why-we-definitely-shouldve-won",
+    title:
+      "My First Ever In-Person Hackathon Experience (And Why We Definitely Should’ve Won😭)",
+    date: "May 23, 2026",
+    image: "/assets/blogs/hackathon-venue.png",
+    tags: ["Life", "Hackathon", "AI", "Teamwork", "Projects"],
+    excerpt:
+      "How we almost built a startup in 48 hours, touched absolutely zero grass, and somehow still survived.",
+    readTime: "10 min read",
+    content: `
+        <article class="hackathon-story">
+          <p><em>Or how we almost built a startup in 48 hours, touched absolutely zero grass, and somehow still survived.</em></p>
+
+          <hr />
+
+          <p>Aside from chess, there’s one thing I genuinely love almost as much — <strong>hackathons</strong>.</p>
+          <p>And I mean <em>love</em> love.</p>
+          <p>The type where I can sit for hours watching random university students build ridiculous projects from scratch, pitch them like billion-dollar startups, and somehow survive on almost no sleep.</p>
+          <p>For the longest time, I always wanted to be part of that energy.</p>
+          <p>Not the “watching from YouTube” version.</p>
+          <p>The real thing.</p>
+          <p>The pressure.</p>
+          <p>The chaos.</p>
+          <p>The bugs.</p>
+          <p>The “why is npm installing for 47 business days?” moments.</p>
+          <p>The <em>cinema</em>.</p>
+          <p>And finally…</p>
+          <p>I got my chance.</p>
+          <p>But before we get there, let me quickly embarrass myself with my hackathon history 😭.</p>
+
+          <h2>The Two Online Hackathons Before This</h2>
+          <p>Technically, this wasn’t my first hackathon.</p>
+          <p>It was my first <strong>in-person</strong> one.</p>
+          <p>Before this, I had participated in exactly <strong>two online hackathons</strong>.</p>
+          <p>The first one?</p>
+          <p>I honestly don’t even remember 😭.</p>
+          <p>I was still in first year and basically joined my seniors as a random NPC member.</p>
+          <p>I was just happy to be there.</p>
+          <p>No thoughts.</p>
+          <p>No pressure.</p>
+          <p>Just vibes.</p>
+          <p>The second one though?</p>
+          <p>That one was actually serious.</p>
+          <p>We built a mobile app for farmers that could detect crop diseases and help them learn more about the diseases affecting their crops.</p>
+          <p>I handled the backend for that project (yes, backend Zigla existed before the frontend addiction😌).</p>
+          <p>The project turned out really cool.</p>
+          <p>Shoutout to the lead for writing about it because without him, I’d probably forget half the details.</p>
+          <p>You can read more about it here:</p>
+          <p><a href="https://medium.com/@stephenazongo77/building-a-context-aware-crop-disease-detection-app-for-ghanaian-farmers-dbbc99cec888?utm_source=chatgpt.com" target="_blank" rel="noreferrer noopener">The crop disease detection project blog</a></p>
+          <p>But anyway…</p>
+          <p>Let’s get to the real chaos.</p>
+
+          <h2>Enter: The DesignPxD Vibe Coding Hackathon</h2>
+          <p>My first ever in-person hackathon.</p>
+          <p>The <strong>DesignPxD Vibe Coding Hackathon</strong>.</p>
+          <p>A two-day event running from <strong>8th–9th May</strong>.</p>
+          <p>The schedule said we were supposed to arrive by <strong>8:30 AM</strong>.</p>
+          <p>Now…</p>
+          <p>If you know me, then you already know something important:</p>
+          <p><strong>Zigla doesn’t follow time. Time follows Zigla😂</strong></p>
+          <p><em>Okay relax, I was late.</em></p>
+          <p>Again.</p>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/hackathon-first-impression.jpg" alt="Hackathon venue and registration area" loading="lazy" />
+            <figcaption>First impressions: badges, laptops, and the kind of energy that only shows up before sleep deprivation kicks in.</figcaption>
+          </figure>
+
+          <p>When I got there, I sat next to one of my gees.</p>
+          <p>Then somehow, during team formation, destiny decided to cook because I ended up in the same team with him.</p>
+          <p>Shoutout <strong>@Chief</strong> 😭🔥</p>
+          <p>Plus two other first-year students.</p>
+          <p>And honestly?</p>
+          <p>That team combination turned out elite.</p>
+
+          <h2>“Wait… This Is Actually Possible”</h2>
+          <p>Since it was a <strong>vibe coding hackathon</strong>, one of the organizers was teaching participants how to get the best out of AI.</p>
+          <p>Honestly, it was a pretty good session.</p>
+          <p>He demoed building a student platform where people could track assignments, quizzes, deadlines and all that.</p>
+          <p>Cool idea.</p>
+          <p>But then one lady asked a very dangerous question:</p>
+          <blockquote>“What if we make it work with our university platform?”</blockquote>
+          <p>And immediately everyone basically went:</p>
+          <blockquote>“Yeah… that’s probably not possible.”</blockquote>
+          <p>Because obviously schools, integrations, permissions, bureaucracy, suffering, etc.</p>
+          <p>Question closed.</p>
+          <p>Conversation finished.</p>
+          <p>But me?</p>
+          <p>As I sat there quietly…</p>
+          <p>I already knew:</p>
+          <blockquote>“Nah bro… this is absolutely possible😅”</blockquote>
+          <p>I just didn’t say anything.</p>
+          <p>Because respectfully…</p>
+          <p><strong>we had already found our hackathon project idea😭</strong></p>
+
+          <h2>The Birth of Project Nadia</h2>
+          <p>We were asked to come up with project ideas.</p>
+          <p>So naturally…</p>
+          <p>I started investigating.</p>
+          <p>Our school LMS uses <strong>Sakai</strong>, an open-source platform.</p>
+          <p>And once I heard that?</p>
+          <p>Yeah…</p>
+          <p>I entered detective mode.</p>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/devtools-sakai.png" alt="Project Nadia planning and devtools investigation" loading="lazy" />
+            <figcaption>Somewhere between architecture notes and browser tabs, the project finally started feeling real.</figcaption>
+          </figure>
+
+          <p>First stop:</p>
+          <p><strong>Browser DevTools → Network tab</strong></p>
+          <p>I logged into the LMS and started watching requests like I was in a hacking movie.</p>
+          <p>Suddenly:</p>
+          <p>Endpoints.</p>
+          <p>Useful endpoints.</p>
+          <p>More endpoints.</p>
+          <p>Things started connecting.</p>
+          <p>Then later…</p>
+          <p>Boom.</p>
+          <p>I discovered the actual open-source API documentation.</p>
+          <p>And bro…</p>
+          <p>That thing had everything.</p>
+          <p>Assignments.</p>
+          <p>Quizzes.</p>
+          <p>Notifications.</p>
+          <p>Grades.</p>
+          <p>User information.</p>
+          <p>Basically the entire academic stress package 😭.</p>
+          <p>And somehow…</p>
+          <p>The same lady who asked the impossible question earlier accidentally inspired our project.</p>
+          <p>So @Chief decided:</p>
+          <blockquote>“We’re naming it after her.”</blockquote>
+          <p>And that’s how <strong>Project Nadia</strong> was born.</p>
+          <p>Honestly?</p>
+          <p>Fire name.</p>
+
+          <h2>So What Exactly Is Project Nadia?</h2>
+          <p>Imagine this:</p>
+          <p>You connect your university LMS to our platform.</p>
+          <p>Then even when you’re offline…</p>
+          <p>You still get updates.</p>
+          <p>SMS reminders.</p>
+          <p>Deadline warnings.</p>
+          <p>Assignment notifications.</p>
+          <p>Grade updates.</p>
+          <p>Academic alerts.</p>
+          <p>Basically:</p>
+          <blockquote><strong>A platform designed to stop students from accidentally ruining their semester😭</strong></blockquote>
+          <p>Because if you’re anything like me…</p>
+          <p>Missing assignments is somehow an Olympic sport.</p>
+          <p>And right now?</p>
+          <p>My grades are already bleeding enough😂😭</p>
+          <p>So trust me:</p>
+          <p>I need this project too.</p>
+          <p>Badly.</p>
+
+          <h2>Day 1 Wrapped</h2>
+          <p>That wrapped up <strong>Day 1</strong>.</p>
+          <p>Now for Day 2…</p>
+          <p>Where everything became absolute chaos.</p>
+
+          <h2>Day 2: “We Have a Plan” (We Did Not😭)</h2>
+          <p>Since it was a vibe coding hackathon…</p>
+          <p>I decided to do what any responsible engineer would do:</p>
+          <p><strong>Master plan everything.</strong></p>
+          <p>I mapped the architecture.</p>
+          <p>The backend.</p>
+          <p>The frontend.</p>
+          <p>The whole flow.</p>
+          <p>Then I used AI to generate super detailed implementation prompts for everything.</p>
+          <p>Frontend?</p>
+          <p>Done.</p>
+          <p>Backend?</p>
+          <p>Done.</p>
+          <p>Architecture?</p>
+          <p>Done.</p>
+          <p>I sent the frontend prompt to <strong>@Chief</strong>.</p>
+          <p>Simple instruction:</p>
+          <blockquote>“Build the frontend like the backend already exists.”</blockquote>
+          <p>Easy.</p>
+          <p>Very clear.</p>
+          <p>No confusion.</p>
+          <p>Right?</p>
+          <p>…</p>
+          <p>Right?</p>
+          <p>😭</p>
+
+          <p>I Arrive Late Again (Please Don’t Judge Me)</p>
+          <p>So yes.</p>
+          <p>I arrived late.</p>
+          <p>Again.</p>
+          <p>When I got there…</p>
+          <p>I expected to see frontend progress.</p>
+          <p>Nice UI.</p>
+          <p>Pages cooking.</p>
+          <p>Everything beautiful.</p>
+          <p>Instead?</p>
+          <p>I saw <strong>@Chief building the backend</strong> 😭😭</p>
+          <p>BROOOOO.</p>
+          <p>WHAT HAPPENED TO THE PLAN?</p>
+          <p>I literally said:</p>
+          <blockquote>“Pretend the backend already exists!”</blockquote>
+          <p>Because the prompt was a master prompt 😭</p>
+          <p>But somehow…</p>
+          <p>After fighting bugs, confusion, suffering, and probably emotional damage…</p>
+          <p>Things started moving.</p>
+          <p>Barely.</p>
+
+          <h2>30 Minutes Before Presentation…</h2>
+          <p>Let me paint the picture.</p>
+          <p>We had:</p>
+          <p>❌ No finished product</p>
+          <p>❌ Broken Sakai syncing</p>
+          <p>❌ Chaos everywhere</p>
+          <p>And the craziest part?</p>
+          <p>We hadn’t even run:</p>
+          <pre class="hackathon-code"><code class="language-bash">npm install</code></pre>
+          <p>Yet 😭😭😭</p>
+          <p>Because our AI was still cooking.</p>
+          <p>Then at some point…</p>
+          <p>We had to restart from scratch.</p>
+          <p>At this point, survival mode activated.</p>
+          <p>New strategy:</p>
+          <p><strong>Forget the product. Sell the vision😌</strong></p>
+          <p>We made our other two teammates focus entirely on creating solid slides.</p>
+          <p>Because our real plan now was:</p>
+          <blockquote>“We’re pitching the idea, not the implementation😭”</blockquote>
+          <p>And honestly?</p>
+          <p>That was a genius pivot.</p>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/presentation-mode.jpg" alt="Presentation Mode" loading="lazy" />
+            <figcaption>Presentation Mode: Chief himself doing his thing</figcaption>
+          </figure>
+
+          <h2>Presentation Mode</h2>
+          <p>But then…</p>
+          <p>By pure miracle…</p>
+          <p>The frontend actually came alive.</p>
+          <p>Like actually alive.</p>
+          <p>Not fully.</p>
+          <p>Not properly.</p>
+          <p>But alive 😭</p>
+          <p>The Sakai sync still refused to cooperate though.</p>
+          <p>So we basically showed:</p>
+          <blockquote><strong>The login page™</strong></blockquote>
+          <p>And prayed.</p>
+
+          <h2>Enter @Chief: Master of Communication</h2>
+          <p>Now listen.</p>
+          <p>I don’t know what type of powers this guy has.</p>
+          <p>But @Chief can sell <strong>anything</strong>.</p>
+          <p>Bro can confidently explain unfinished software and suddenly you start believing it’ll change the world 😭.</p>
+          <p>His communication skills?</p>
+          <p>Elite.</p>
+          <p>Actually unfair.</p>
+          <p>So he stepped up.</p>
+          <p>Presented.</p>
+          <p>Cooked.</p>
+          <p>And somehow…</p>
+          <p>Everything went incredibly well.</p>
+          <p>Like genuinely well.</p>
+          <p>We walked off feeling:</p>
+          <blockquote>“Yeah… we cooked.”</blockquote>
+
+          <h2>Did We Win?</h2>
+          <p>Funny story.</p>
+          <p>The winners weren’t announced 😭</p>
+          <p>But between me and you?</p>
+          <p>Yeah…</p>
+          <p>It was definitely us😌</p>
+          <p>(Respectfully.)</p>
+
+          <h2>What Happens Next?</h2>
+          <p>This is actually the exciting part.</p>
+          <p>Because unlike most hackathon projects that disappear forever…</p>
+          <p>We actually plan to <strong>finish Project Nadia</strong>.</p>
+          <p>And use it ourselves next semester.</p>
+          <p>Because I’m genuinely tired of missing stuff on the LMS 😭</p>
+          <p>We’ve already got more ideas planned:</p>
+          <ul>
+            <li>AI assistance for assignments</li>
+            <li>Smart reminders for uploaded resources</li>
+            <li>Resource summaries</li>
+            <li>Better academic tracking</li>
+            <li>Assignment submissions directly from the platform</li>
+          </ul>
+          <p>And the crazy idea?</p>
+          <p>Potentially allowing AI to help complete certain tasks and submit them <em>if the student allows it.</em></p>
+          <p>Will it be easy?</p>
+          <p>Absolutely not.</p>
+          <p>Is it possible?</p>
+          <p>Honestly…</p>
+          <p>Yeah.</p>
+          <p>Very possible.</p>
+          <p>Hard?</p>
+          <p>Definitely.</p>
+          <p>But doable.</p>
+          <p>And if we pull it off?</p>
+          <p>That thing could genuinely become useful for students.</p>
+          
+          <p>Including me…</p>
+          <p>Because academically?</p>
+          <p>Brother we are fighting for our lives right now😂😭</p>
+          
+          <h3>Final UI Gallery</h3>
+          <p>Here’s the finished Nadia UI in its most important surfaces — the landing page, dashboard, and notifications page.</p>
+
+          <div class="nadia-gallery">
+            <figure class="nadia-gallery-item">
+              <img src="/assets/blogs/nadia-landing.png" alt="Nadia landing page final UI" loading="lazy" />
+              <figcaption>Landing Experience</figcaption>
+            </figure>
+            <figure class="nadia-gallery-item">
+              <img src="/assets/blogs/nadia-dashboard.png" alt="Nadia dashboard final UI" loading="lazy" />
+              <figcaption>Dashboard Overview</figcaption>
+            </figure>
+            <figure class="nadia-gallery-item">
+              <img src="/assets/blogs/nadia-notifications.png" alt="Nadia notifications page final UI" loading="lazy" />
+              <figcaption>Smart Notifications</figcaption>
+            </figure>
+            <figure class="nadia-gallery-item nadia-gallery-item--mobile">
+              <img src="/assets/blogs/nadia-mobile.png" alt="Nadia mobile final UI" loading="lazy" />
+              <figcaption>Mobile Experience</figcaption>
+            </figure>
+          </div>
+          
+          <h2>Hackathon Food Review (Very Important)</h2>
+          <p>Overall?</p>
+          <p>The hackathon was actually amazing.</p>
+          <p>I’d rate it a solid:</p>
+          <p><strong>9/10</strong></p>
+          <p>Only reason it’s not 10?</p>
+          <p>Day 1 food.</p>
+          <p>It just wasn’t my thing.</p>
+          <p>People liked it though.</p>
+          <p>So maybe I’m just picky 😭</p>
+          <p>But Day 2?</p>
+          <p>Oh.</p>
+          <p>Day 2 cooked.</p>
+          <p><strong>Chicken feast.</strong></p>
+          <p>And if there’s one thing Black people don’t joke with…</p>
+          <p>It’s chicken😂🍗</p>
+          <p>That alone healed morale.</p>
+
+          <h2>Final Thoughts</h2>
+          <p>Would I go for another hackathon?</p>
+          <p>Absolutely.</p>
+          <p>In fact…</p>
+          <p>Now I want <em>more</em>.</p>
+          <p>Because there’s something ridiculously fun about building under pressure with people who are equally crazy enough to try impossible ideas.</p>
+          <p>This one taught me something important too:</p>
+          <p>Sometimes the “impossible” idea is actually very possible.</p>
+          <p>You just have to be curious enough to investigate.</p>
+          <p>Also…</p>
+          <p>Maybe I should start arriving on time😭</p>
+          <p>But no promises.</p>
+          <p>Until next time,</p>
+          <p><strong>Pray for Project Nadia😅</strong></p>
+        </article>
+      `,
+  },
 ];
 
 export const getBlogs = () => blogs;
