@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import {
   Calendar,
@@ -12,6 +12,7 @@ import {
   Facebook,
   Copy,
   Check,
+  X,
   // MessageCircle,
 } from "lucide-react";
 import { getBlogBySlug } from "@@/data/blogs";
@@ -21,6 +22,10 @@ import Image from "next/image";
 
 export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
   const [copied, setCopied] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
   const params = useParams();
   const slug = params?.slug || slug_ || "";
 
@@ -41,28 +46,76 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
   const shareOnTwitter = () => {
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        shareText
+        shareText,
       )}&url=${encodeURIComponent(shareUrl)}`,
-      "_blank"
+      "_blank",
     );
   };
 
   const shareOnLinkedIn = () => {
     window.open(
       `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-        shareUrl
+        shareUrl,
       )}`,
-      "_blank"
+      "_blank",
     );
   };
 
   const shareOnFacebook = () => {
     window.open(
       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-        shareUrl
+        shareUrl,
       )}`,
-      "_blank"
+      "_blank",
     );
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setLightboxImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (!lightboxImage) {
+      return;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [lightboxImage]);
+
+  const normalizeImageSrc = (src: string) => {
+    try {
+      return new URL(src).pathname;
+    } catch {
+      return src;
+    }
+  };
+
+  const openLightbox = (src: string, alt: string) => {
+    setLightboxImage({ src: normalizeImageSrc(src), alt });
+  };
+
+  const handleContentImageClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const target = event.target as HTMLElement;
+    const imageElement = target.closest("img") as HTMLImageElement | null;
+
+    if (!imageElement) {
+      return;
+    }
+
+    openLightbox(imageElement.src, imageElement.alt || blog?.title || "Image");
   };
 
   // const shareOnTelegram = () => {
@@ -187,17 +240,24 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
 
         {blog.image && (
           <div
-            className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative w-full"
+            className="blog-hero-image max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative w-full"
             style={{ aspectRatio: "16 / 10" }}
           >
-            <Image
-              src={blog.image}
-              alt={blog.title}
-              fill
-              className="rounded-xl border border-[rgb(var(--card-border))] object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
-              priority
-            />
+            <button
+              type="button"
+              onClick={() => openLightbox(blog.image, blog.title)}
+              className="group block h-full w-full"
+              aria-label={`Open ${blog.title} image`}
+            >
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                fill
+                className="rounded-xl border border-[rgb(var(--card-border))] object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
+                priority
+              />
+            </button>
           </div>
         )}
 
@@ -208,10 +268,47 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
               <div
                 dangerouslySetInnerHTML={{ __html: blog.content }}
                 className="blog-content"
+                onClick={handleContentImageClick}
               />
             </div>
           </div>
         </div>
+
+        {lightboxImage && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-md"
+            role="dialog"
+            aria-modal="true"
+            aria-label={lightboxImage.alt}
+            onClick={() => setLightboxImage(null)}
+          >
+            <div
+              className="relative w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[rgb(var(--background))] shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setLightboxImage(null)}
+                className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white transition-colors hover:bg-black/80"
+                aria-label="Close image viewer"
+              >
+                <X className="h-5 w-5" />
+              </button>
+
+              <div className="flex max-h-[92vh] w-full items-center justify-center bg-black/95 p-3 sm:p-4">
+                <Image
+                  src={lightboxImage.src}
+                  alt={lightboxImage.alt}
+                  width={2200}
+                  height={1400}
+                  className="h-auto max-h-[88vh] w-auto max-w-[92vw] rounded-xl object-contain"
+                  sizes="(max-width: 768px) 92vw, 92vw"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="bg-[rgb(var(--card-bg))] py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
