@@ -3421,6 +3421,11 @@ function recurse() {
           <p>Now for Day 2…</p>
           <p>Where everything became absolute chaos.</p>
 
+          <figure class="blog-visual">
+            <img src="/assets/blogs/hackathon-brainstorming.jpg" alt="Figuring things out..." loading="lazy" />
+            <figcaption>Figuring things out, during our little fun moments</figcaption>
+          </figure>
+
           <h2>Day 2: “We Have a Plan” (We Did Not😭)</h2>
           <p>Since it was a vibe coding hackathon…</p>
           <p>I decided to do what any responsible engineer would do:</p>
