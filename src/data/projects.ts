@@ -53,7 +53,7 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "TypeScript", "Hubtel", "Supabase", "Tailwind CSS"],
     github: "#",
-    demo: "https://misszay-importation-hub.vercel.app",
+    demo: "https://misszaymall.com",
     featured: true,
   },
   {
