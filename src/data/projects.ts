@@ -17,8 +17,15 @@ export const projects: Project[] = [
     categories: ["Messaging / Security", "Full-Stack"],
     description:
       "End-to-end encrypted chat application where messages are securely stored and transmitted as cypher text, ensuring complete privacy and confidentiality.",
-    image: ["/assets/projects/enzypher1.png"],
-    tags: ["Next.js", "TypeScript", "WebSocket", "Encryption", "Supabase"],
+    image: ["/assets/projects/enzypher.png"],
+    tags: [
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "WebSocket",
+      "Encryption",
+      "Supabase",
+    ],
     github: "https://github.com/ziglacity/enzypher",
     demo: "https://enzypher.vercel.app",
     featured: true,
@@ -58,6 +65,30 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: "Ourday Santa",
+    categories: ["Full-Stack", "School Management", "Event Management"],
+    description:
+      "All-in-one school and event management platform that connects parents, children, and schools during school events. Parents can order food for their children, manage child profiles, and stay connected with teacher and event activities.",
+    image: ["/assets/projects/ourday-santa.png"],
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    github: "#",
+    demo: "https://ourdaysanta.com",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "CMH - Campus Market Hub",
+    categories: ["Full-Stack", "Marketplace", "Academic Project"],
+    description:
+      "Campus Market Hub is a marketplace platform for University of Cape Coast students to buy and sell items on campus. Built to support a friend's project work with product listings, student commerce flows, and a polished marketplace experience.",
+    image: ["/assets/projects/cmh.png"],
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    github: "https://github.com/ziglacity/cmh",
+    demo: "https://cmh-ucc.vercel.app/",
+    featured: true,
+  },
+  {
+    id: 6,
     title: "Spicy Thrifts POS",
     categories: ["Full-Stack", "Retail", "Business", "Client Project"],
     description:
@@ -69,7 +100,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 5,
+    id: 7,
     title: "SafestCode",
     categories: ["Security Tools", "AI/ML"],
     description:
@@ -84,7 +115,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 6,
+    id: 8,
     title: "LMS",
     categories: ["Desktop App", "Full-Stack"],
     description: "Full-featured Library Management System for Universities.",
@@ -95,7 +126,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 7,
+    id: 9,
     title: "ProxyPhish",
     categories: ["CyberOps"],
     description:
@@ -107,7 +138,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 8,
+    id: 10,
     title: "ZTube",
     categories: ["Desktop App", "Full-Stack"],
     description:
@@ -122,7 +153,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 9,
+    id: 11,
     title: "Zigly",
     categories: ["Full-Stack", "System Design", "Website"],
     description:
@@ -134,7 +165,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 10,
+    id: 12,
     title: "Focus Drain",
     categories: ["Chrome Extension"],
     description:
@@ -145,7 +176,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 11,
+    id: 13,
     title: "CropDoc",
     categories: ["AI/ML"],
     description:
@@ -157,7 +188,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 12,
+    id: 14,
     title: "ScreenRecorder",
     categories: ["Desktop App"],
     description: "Lightweight screen recording tool with quick share options.",
@@ -168,7 +199,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 13,
+    id: 15,
     title: "Prosper Constructions Ltd",
     categories: ["Website"],
     description:
@@ -180,7 +211,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 14,
+    id: 16,
     title: "Neural Task Manager",
     categories: ["AI/ML", "WIP"],
     description:
@@ -198,10 +229,14 @@ export const categories = [
   "Security Tools",
   "AI/ML",
   "Full-Stack",
+  "Marketplace",
+  "School Management",
+  "Event Management",
   "DevOps",
   "Desktop App",
   "Chrome Extension",
   "Messaging / Security",
+  "Academic Project",
   "WIP",
   "Website",
 ];
