@@ -65,6 +65,25 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: "Jenny's Cosmetics",
+    categories: ["Full-Stack", "E-Commerce", "Business", "Client Project"],
+    description:
+      "E-commerce cosmetics and skincare platform built for a client at AgbeyTech. Designed to support product browsing, skincare consultation, wholesale ordering, curated categories, and a polished shopping experience for customers across Ghana.",
+    image: ["/assets/projects/jennyscosmetics.webp"],
+    tags: [
+      "Next.js",
+      "Node.js",
+      "Express",
+      "TypeScript",
+      "E-Commerce",
+      "Tailwind CSS",
+    ],
+    github: "#",
+    demo: "https://www.jennyscosmetics.com/",
+    featured: true,
+  },
+  {
+    id: 5,
     title: "Ourday Santa",
     categories: ["Full-Stack", "School Management", "Event Management"],
     description:
@@ -76,7 +95,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 5,
+    id: 6,
     title: "CMH - Campus Market Hub",
     categories: ["Full-Stack", "Marketplace", "Academic Project"],
     description:
@@ -88,7 +107,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 6,
+    id: 7,
     title: "Spicy Thrifts POS",
     categories: ["Full-Stack", "Retail", "Business", "Client Project"],
     description:
@@ -100,7 +119,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 7,
+    id: 8,
     title: "SafestCode",
     categories: ["Security Tools", "AI/ML"],
     description:
@@ -115,7 +134,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 8,
+    id: 9,
     title: "LMS",
     categories: ["Desktop App", "Full-Stack"],
     description: "Full-featured Library Management System for Universities.",
@@ -126,7 +145,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 9,
+    id: 10,
     title: "ProxyPhish",
     categories: ["CyberOps"],
     description:
@@ -138,7 +157,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 10,
+    id: 11,
     title: "ZTube",
     categories: ["Desktop App", "Full-Stack"],
     description:
@@ -153,7 +172,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 11,
+    id: 12,
     title: "Zigly",
     categories: ["Full-Stack", "System Design", "Website"],
     description:
@@ -165,7 +184,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 12,
+    id: 13,
     title: "Focus Drain",
     categories: ["Chrome Extension"],
     description:
@@ -176,7 +195,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 13,
+    id: 14,
     title: "CropDoc",
     categories: ["AI/ML"],
     description:
@@ -188,7 +207,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 14,
+    id: 15,
     title: "ScreenRecorder",
     categories: ["Desktop App"],
     description: "Lightweight screen recording tool with quick share options.",
@@ -199,7 +218,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 15,
+    id: 16,
     title: "Prosper Constructions Ltd",
     categories: ["Website"],
     description:
@@ -211,7 +230,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 16,
+    id: 17,
     title: "Neural Task Manager",
     categories: ["AI/ML", "WIP"],
     description:
@@ -229,6 +248,7 @@ export const categories = [
   "Security Tools",
   "AI/ML",
   "Full-Stack",
+  "E-Commerce",
   "Marketplace",
   "School Management",
   "Event Management",
