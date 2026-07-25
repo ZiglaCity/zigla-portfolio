@@ -38,16 +38,17 @@ export default function About() {
           </div>
           <p className="text-[rgb(var(--muted))] leading-relaxed mb-3 text-sm md:text-base">
             Some people know me as <strong>Solomon Dzah</strong> — calm,
-            observant, and grounded. The guy who listens before building, who
-            believes the best solutions come from understanding deeply before
-            typing.
+            observant, and deeply analytical. I listen before speaking, study
+            before building, and believe the best solutions begin with
+            understanding the "why" before the "how."
           </p>
           <p className="text-[rgb(var(--muted))] leading-relaxed text-sm md:text-base">
-            A2SV taught me that debugging isn’t just about fixing code — it’s
-            about understanding systems, people, and how design impacts trust.
+            I enjoy untangling complex problems, reasoning through them
+            patiently, and finding solutions that are thoughtful, elegant, and
+            built to last. To me, great engineering begins with clarity of
+            thought, not speed of execution.
           </p>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -64,12 +65,17 @@ export default function About() {
           </div>
           <p className="text-[rgb(var(--muted))] leading-relaxed mb-3 text-sm md:text-base">
             Others know me as <strong>Zigla City</strong> — the midnight
-            architect. The one fusing creativity with precision, caffeine with
-            clarity, and chaos with control.
+            architect. The one who blends creativity with precision, caffeine
+            with clarity, and chaos with control.
           </p>
           <p className="text-[rgb(var(--muted))] leading-relaxed text-sm md:text-base">
-            In my world, systems don’t just function — they think, adapt, and
-            protect. Every design choice is guided by purpose and security.
+            Curiosity is my fuel, and versatility is my playground. Whether it's
+            designing systems, solving unfamiliar problems, or diving into
+            entirely new technologies, I enjoy adapting, learning, and finding
+            my place wherever I go.
+          </p>
+          <p className="text-[rgb(var(--muted))] leading-relaxed text-sm md:text-base">
+            "One encrypted byte at a time."
           </p>
         </motion.div>
       </div>
@@ -89,11 +95,13 @@ export default function About() {
           </h2>
         </div>
         <blockquote className="text-base md:text-lg italic leading-relaxed text-[rgb(var(--muted))] border-l-4 border-cyan-500 dark:border-cyan-400 pl-6">
-          “I don’t just write code — I spark systems to think. Every keystroke
-          is a ripple in the Enzyphic ecosystem, where security meets
-          creativity, and chaos turns into clarity. Each project is a dialogue
-          between what exists and what could exist, a place where curiosity,
-          discipline, and imagination collide.”
+          "The fun isn't just in getting the code to work — it's in
+          understanding why it works, making it better, and knowing someone else
+          can pick it up months later without wanting to fight me.
+          <br />
+          <br />
+          Curiosity keeps me awake. Discipline gets the work shipped. Everything
+          else is just part of the process."
         </blockquote>
       </motion.div>
 

@@ -30,18 +30,8 @@ export default function Hero() {
         transition={{ delay: 0.25, duration: 0.7 }}
         className="mt-6 text-lg md:text-xl leading-relaxed text-[rgb(var(--muted))]"
       >
-        I’m a software engineer, cybersecurity enthusiast, and AI explorer. I
-        craft systems that don’t just work — they think, adapt, and protect.
-        Currently pursuing{" "}
-        <strong className="text-[rgb(var(--foreground))]/80 font-semibold">
-          Computer Science at the University of Ghana
-        </strong>
-        , I’ve built scalable platforms, excelled in competitive programming
-        with{" "}
-        <strong className="text-[rgb(var(--foreground))]/80 font-semibold">
-          A2SV
-        </strong>
-        , and bring a security-first mindset to every project.
+        I build scalable software, solve algorithmic problems, and design
+        systems that are reliable, secure, and built to last.
       </motion.p>
 
       <motion.p
@@ -50,8 +40,12 @@ export default function Hero() {
         transition={{ delay: 0.35, duration: 0.7 }}
         className="mt-4 text-sm md:text-base text-[rgb(var(--muted))]"
       >
-        My approach combines technical mastery, design thinking, and practical
-        experience to turn ideas into reliable, elegant, and impactful software.
+        Currently studying{" "}
+        <strong className="text-[rgb(var(--foreground))]/80 font-semibold">
+          Computer Science at the University of Ghana
+        </strong>
+        , I'm fascinated by backend engineering, distributed systems, and
+        turning ambitious ideas into products people genuinely enjoy using.
       </motion.p>
 
       <motion.div
@@ -68,10 +62,10 @@ export default function Hero() {
         </button>
 
         <button
-          onClick={() => scrollTo("skills")}
+          onClick={() => scrollTo("projects")}
           className=" underline text-sm transition-colors text-[rgb(var(--muted))] hover:text-[rgb(var(--foreground))] "
         >
-          View Skills
+          Explore My Work
         </button>
       </motion.div>
     </motion.section>

@@ -243,15 +243,19 @@ export function useTerminal(
       pushLine(
         <div className="prose prose-invert text-sm">
           <p>
-            Hey, I’m <strong>ZiglaCity</strong> or <strong>Solomon Dzah</strong>{" "}
-            if we're being formal. I build intelligent, secure, and scalable
-            systems.
+            Hey, I'm <strong>ZiglaCity</strong> or <strong>Solomon Dzah</strong>{" "}
+            if we're being formal. I build scalable software, solve algorithmic
+            problems, and design systems that are reliable, secure, and built
+            to last.
           </p>
           <p>
-            A CS student @ University of Ghana. Currently grinding A2SV,
-            shipping AgbeyTech, cooking Enzypher and some other projects...
+            Currently studying Computer Science at the University of Ghana. I'm
+            fascinated by backend engineering, distributed systems, and turning
+            ambitious ideas into products people genuinely enjoy using.
           </p>
-          <p className="mt-2 italic">"Innovation Over Imitation, Always!"</p>
+          <p className="mt-2 italic">
+            "Quiet foundations for loud ideas."
+          </p>
         </div>,
       );
     } else if (head === "experience") {

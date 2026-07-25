@@ -20,7 +20,7 @@ export default function Page() {
         <ThemeToggle />
         <div
           ref={containerRef}
-          className="h-screen overflow-y-auto scroll-smooth snap-y snap-mandatory"
+          className="h-screen overflow-y-auto scroll-smooth"
         >
           <SectionWrapper id="hero">
             <Hero />
