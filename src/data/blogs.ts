@@ -3627,6 +3627,235 @@ function recurse() {
         </article>
       `,
   },
+  {
+    id: 47,
+    slug: "the-confidence-bug-i-didnt-mean-to-install",
+    title: "The Confidence Bug I Didn't Mean to Install",
+    date: "July 25, 2026",
+    image: "/assets/blogs/the-confidence-bug.png",
+    tags: ["Life", "Personal", "Confidence", "Campus", "Real Talk"],
+    excerpt:
+      "I thought I was debugging my love life. Turns out I was patching my self-esteem.",
+    readTime: "6 min read",
+    content: `
+        <article class="confidence-bug-story">
+          <blockquote>"I thought I was debugging my love life. Turns out I was patching my self-esteem."</blockquote>
+
+          <p>If you had told me two weeks ago that I'd willingly walk around campus with a girl for over an hour, sit under a tree talking, and somehow leave with more confidence than relationship advice, I would've laughed and gone back to debugging somebody else's code.</p>
+          <p>But here we are.</p>
+          <p>Apparently life has its own deployment schedule.</p>
+
+          <h2>Chapter 1: The Three-Year Side Quest</h2>
+          <p>When I got into university, I accidentally gave myself a mission.</p>
+          <p>Not because I hated relationships.</p>
+          <p>Not because I thought love was a distraction.</p>
+          <p>Mostly because I looked at my GPA, my GitHub, and my bank account and thought...</p>
+          <blockquote>"Yeah... let's fix these first."</blockquote>
+          <p>So for about three years, I buried myself in coursework, programming, competitive programming, client projects, and the occasional identity crisis whenever my code worked for absolutely no reason.</p>
+          <p>I wasn't avoiding girls.</p>
+          <p>I just wasn't looking.</p>
+          <p>Looking back...</p>
+          <p>That was probably the right decision for me.</p>
+
+          <h2>Then a Bus Stop Happened</h2>
+          <p>Funny how life never sends you an Outlook calendar invite.</p>
+          <p>I got off the bus on my way to campus.</p>
+          <p>Saw someone I hadn't really spoken to in years.</p>
+          <p>For the sake of this story, let's call her <strong>Miss X</strong>.</p>
+          <p>We hadn't really talked since Level 100.</p>
+          <p>She smiled from a distance.</p>
+          <p>Waited for me so we could cross together.</p>
+          <p>I said,</p>
+          <blockquote>"I still have your number. I'll text you."</blockquote>
+          <p>Internally I was like...</p>
+          <blockquote>"Brother Solomon... you've just volunteered yourself."</blockquote>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/confidence-bug-bus-stop.png" alt="A campus bus stop moment that starts the confidence bug story" loading="lazy" />
+            <figcaption>Sometimes the whole update starts with a bus stop, a smile, and your internal system suddenly requesting admin permissions.</figcaption>
+          </figure>
+
+          <h2>WhatsApp Is Dangerous</h2>
+          <p>I don't know what they put inside WhatsApp.</p>
+          <p>One minute you're saying,</p>
+          <blockquote>"Hey."</blockquote>
+          <p>The next minute you're explaining your life philosophy to someone at 1:00 AM.</p>
+          <p>Within two days...</p>
+          <p>We had somehow skipped all the software updates.</p>
+          <p>No "favorite color."</p>
+          <p>No "what's your hobby?"</p>
+          <p>Straight into...</p>
+          <blockquote>"Why me?"</blockquote>
+          <p>Respectfully...</p>
+          <p>That's a terrifying question.</p>
+          <p>Because now every answer sounds like you're applying for a scholarship.</p>
+          <p>She asked...</p>
+          <blockquote>"There are a lot of beautiful girls on Legon. Why Miss X?"</blockquote>
+          <p>At that moment I realized...</p>
+          <p>No script.</p>
+          <p>No backup plan.</p>
+          <p>This one was on me.</p>
+          <p>So I answered honestly.</p>
+          <p>No pickup lines.</p>
+          <p>No recycled Instagram captions.</p>
+          <p>Just the truth.</p>
+          <p>Surprisingly...</p>
+          <p>Honesty works.</p>
+          <p>Who knew?</p>
+
+          <h2>The Green Flag I Didn't Expect</h2>
+          <p>One thing that stood out wasn't even the flirting.</p>
+          <p>It was the questions.</p>
+          <p>She asked about my intentions.</p>
+          <p>She asked what I actually wanted.</p>
+          <p>Then she asked something that made me pause.</p>
+          <blockquote>"I hope there is no physical intimacy."</blockquote>
+          <p>She later explained why.</p>
+          <p>She had previously told me a story about another guy whose intentions weren't genuine.</p>
+          <p>She simply wanted to know whether she was walking into the same situation again.</p>
+          <p>Honestly?</p>
+          <p>I respected that.</p>
+          <p>If someone trusts you enough to tell you their boundaries, the least you can do is respect them.</p>
+          <p>Besides...</p>
+          <p>I'm studying Computer Science.</p>
+          <p>The only thing I'm trying to touch is production code.</p>
+
+          <h2>We Had To Meet</h2>
+          <p>Notice the wording.</p>
+          <p>She didn't say,</p>
+          <blockquote>"Would you like to meet?"</blockquote>
+          <p>She said,</p>
+          <blockquote>"We have to meet."</blockquote>
+          <p>Apparently my application had advanced to the interview stage.</p>
+          <p>She asked me to choose the location.</p>
+          <p>Restaurant?</p>
+          <p>Too formal.</p>
+          <p>Department?</p>
+          <p>Too weird.</p>
+          <p>So I settled on...</p>
+          <p>Walking around campus.</p>
+          <p>Best decision ever.</p>
+          <p>Walking removes the pressure.</p>
+          <p>Nobody's awkwardly staring across a table wondering who should speak next.</p>
+          <p>If conversation pauses...</p>
+          <p>You just admire a tree and pretend that's what you were doing all along.</p>
+
+          <h2>Then My Entire Plan Collapsed</h2>
+          <p>I got to the meeting point.</p>
+          <p>Saw Miss X.</p>
+          <p>Great.</p>
+          <p>Then...</p>
+          <p>I saw two other ladies standing with her.</p>
+          <p>Not great.</p>
+          <p>Meanwhile...</p>
+          <p>One of my friends had accepted the highly prestigious role of FBI Field Agent.</p>
+          <p>His assignment?</p>
+          <p>Spy on me.</p>
+          <p>Take pictures.</p>
+          <p>Gather evidence.</p>
+          <p>For reasons I still don't understand.</p>
+          <p>So now my brain had to process two emergencies at once.</p>
+          <p>Three ladies.</p>
+          <p>One undercover photographer.</p>
+          <p>The CPU overheated.</p>
+          <p>Naturally...</p>
+          <p>I turned around and left.</p>
+          <p>A few minutes later I came back and explained that one of my guys had decided my private life deserved documentary coverage.</p>
+          <p>She laughed.</p>
+          <p>Then explained that the girls had simply walked with her from class.</p>
+          <p>The committee dispersed.</p>
+          <p>The interview resumed.</p>
+
+          <h2>Under a Tree</h2>
+          <p>We walked around campus.</p>
+          <p>Talked.</p>
+          <p>Laughed.</p>
+          <p>Eventually found a tree and sat beneath it.</p>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/confidence-bug-tree-talk.png" alt="Two students sitting under a campus tree having an honest conversation" loading="lazy" />
+            <figcaption>No fancy setup. Just shade, awkward pauses, honest answers, and my overthinking slowly losing permissions.</figcaption>
+          </figure>
+
+          <p>Looking back...</p>
+          <p>That's probably my favorite part.</p>
+          <p>No expensive restaurant.</p>
+          <p>No perfectly planned setup.</p>
+          <p>Just two people having the conversation they'd already started over text.</p>
+          <p>And somewhere between the jokes...</p>
+          <p>The awkward pauses...</p>
+          <p>And me trying not to overthink every sentence...</p>
+          <p>I forgot I was supposed to be nervous.</p>
+
+          <h2>The Most Mature Conversation</h2>
+          <p>A few days later she told me something I genuinely appreciated.</p>
+          <p>She'd been thinking.</p>
+          <p>She wasn't sure she'd be able to do all the stereotypical "girlfriend duties."</p>
+          <p>She takes school seriously.</p>
+          <p>She didn't want to promise constant attention if she realistically couldn't give it.</p>
+          <p>At first I thought,</p>
+          <blockquote>"Well... that's not in the relationship tutorial."</blockquote>
+          <p>Then I realized...</p>
+          <p>That's actually maturity.</p>
+          <p>It's easy to promise everything when emotions are high.</p>
+          <p>It's much harder to say,</p>
+          <blockquote>"This is realistically what I can offer."</blockquote>
+          <p>I respected that.</p>
+          <p>A lot.</p>
+
+          <h2>Then Something Weird Happened</h2>
+          <p>Nothing magical.</p>
+          <p>Nobody handed me confidence.</p>
+          <p>I didn't suddenly become the main character.</p>
+          <p>But...</p>
+          <p>Something shifted.</p>
+          <p>I noticed I could talk to girls without mentally preparing a TED Talk beforehand.</p>
+          <p>I could walk around campus without staring exclusively at the ground like I was searching for lost coins.</p>
+          <p>I could actually hold conversations without constantly wondering,</p>
+          <blockquote>"Am I being weird?"</blockquote>
+          <p>Turns out...</p>
+          <p>Confidence isn't downloaded.</p>
+          <p>It's compiled.</p>
+          <p>Every uncomfortable thing you survive becomes another successful build.</p>
+
+          <figure class="blog-visual">
+            <img src="/assets/blogs/confidence-bug-final-build.png" alt="A student at a laptop reflecting as confidence builds from small pieces of evidence" loading="lazy" />
+            <figcaption>Confidence wasn't downloaded. It compiled quietly while I was just trying not to overthink.</figcaption>
+          </figure>
+
+          <h2>The Bug I Didn't Mean to Install</h2>
+          <p>Here's the funny part.</p>
+          <p>I thought this whole experience was about getting into a relationship.</p>
+          <p>It wasn't.</p>
+          <p>It was about proving something to myself.</p>
+          <p>That I could express interest.</p>
+          <p>Have difficult conversations.</p>
+          <p>Respect boundaries.</p>
+          <p>Meet someone in person.</p>
+          <p>Be myself.</p>
+          <p>And survive without spontaneously combusting.</p>
+          <p>That last one was huge.</p>
+
+          <h2>Final Commit</h2>
+          <p>If you've read this far expecting a guide on how to "get the girl,"</p>
+          <p>Sorry.</p>
+          <p>I'm still trying to figure out why my friend thought paparazzi duty was necessary.</p>
+          <p>But I did learn something.</p>
+          <p>Sometimes life changes because of spectacular moments.</p>
+          <p>More often...</p>
+          <p>It changes because someone smiled at a bus stop.</p>
+          <p>And before you know it...</p>
+          <p>You're not just getting to know another person.</p>
+          <p>You're meeting a version of yourself that had been hiding behind overthinking all along.</p>
+
+          <pre class="hackathon-code"><code class="language-bash">git commit -m "Fix confidence issue"
+
+✔ 1 file changed
++ Self-esteem
+- Excessive overthinking</code></pre>
+        </article>
+      `,
+  },
 ];
 
 export const getBlogs = () => blogs;
