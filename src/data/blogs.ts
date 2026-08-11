@@ -3856,6 +3856,422 @@ function recurse() {
         </article>
       `,
   },
+  {
+    id: 48,
+    slug: "the-friend-who-pushed-me-to-my-absolute-limits",
+    title: "The Friend Who Pushed Me to My Absolute Limits",
+    date: "August 11, 2026",
+    image: "/assets/blogs/priceless-friendship.png",
+    tags: ["Life", "Friendship", "Competitive Programming", "Chess", "Growth"],
+    excerpt:
+      "A story about registration, LeetCode, chess, typing, A2SV, and the friend who quietly became my benchmark for what was possible.",
+    readTime: "14 min read",
+    content: `
+      <article class="friendship-rivalry-story">
+        <p>There are some people you meet in university and become friends with because you share a course.</p>
+        <p>There are others you meet because you happen to sit next to them.</p>
+        <p>And then there are the people who somehow turn into <strong>your benchmark for what is possible</strong>.</p>
+        <p>For me, that person was Newton.</p>
+        <p>And the funny thing is, I didn't meet him because of competitive programming, chess, Rust, React, or any of the things we've spent years competing over.</p>
+        <p>I met him because I needed help with <strong>registration</strong>. 😂</p>
+
+        <hr />
+
+        <h2>The Registration Guy</h2>
+        <p>It was Level 100.</p>
+        <p>I was still trying to figure out university life, courses, registration, people, everything. At some point, I needed help with the registration process, and this guy happened to be around.</p>
+        <p>So naturally, I asked him for help.</p>
+        <p>Eventually, I asked for his name.</p>
+        <blockquote>"Isaac Newton."</blockquote>
+        <p>I probably should have taken the name as a warning.</p>
+        <p>Because as I got to know him, I realized this guy was operating on a completely different difficulty setting.</p>
+        <p>We were both Level 100 students, but while I was still figuring out what I was doing with my life, Newton had already solved something like <strong>500 LeetCode problems</strong>.</p>
+        <p>Five hundred.</p>
+        <p>I hadn't even tried one.</p>
+        <p>He was building things in React. He was experimenting with Rust. He was building libraries. He was doing all these things that, at the time, made me wonder whether I had somehow accidentally enrolled in university with people who had already completed the tutorial.</p>
+        <p>Meanwhile, I was still very much in my <strong>"let me figure this programming thing out"</strong> era. 😂</p>
+        <p>I could code. I wasn't a complete beginner.</p>
+        <p>But there was a difference between <em>knowing how to code</em> and being the kind of person who voluntarily wakes up and thinks:</p>
+        <blockquote>"Hmm. I wonder what happens if I implement this data structure in Rust."</blockquote>
+        <p>That was Newton.</p>
+        <p>And then one day, he gave me a LeetCode problem.</p>
+        <p>That was my first ever attempt at solving one.</p>
+        <p>I was still Level 100.</p>
+        <p>I didn't know it then, but that was one of those tiny moments that looks completely ordinary when it happens and becomes important only after you look backward.</p>
+        <p>Because Newton didn't just give me a problem.</p>
+        <p><strong>He gave me a new standard.</strong></p>
+
+        <hr />
+
+        <h2>The First Competition</h2>
+        <p>University has a funny way of turning friendships into competitions without anybody officially declaring a competition.</p>
+        <p>You compare grades.</p>
+        <p>You compare projects.</p>
+        <p>You compare who solved something first.</p>
+        <p>Someone mentions a programming problem and suddenly both of you are opening your laptops.</p>
+        <p>Someone discovers a new tool and suddenly the other person wants to try it.</p>
+        <p>Nobody says:</p>
+        <blockquote>"We are competing."</blockquote>
+        <p>But somehow you know.</p>
+        <p>😂</p>
+        <p>Academically, we were already close.</p>
+        <p>At one point, his GPA was around <strong>3.95</strong>, while mine was <strong>3.88</strong>.</p>
+        <p>So even in academics, there was this tiny gap that made you think:</p>
+        <blockquote><em>Okay. Interesting. Very interesting.</em></blockquote>
+        <p>And I used to perch at his place as a non-resident, too.</p>
+        <p>So imagine the environment.</p>
+        <p>You walk into your friend's place to hang out, and instead of finding somebody watching football or doing absolutely nothing, there's a man somewhere solving problems and building software.</p>
+        <p>At some point you either start participating or accept that you are about to become background decoration.</p>
+        <p>I chose participation. 😂</p>
+
+        <hr />
+
+        <h2>LeetCode Became a Battlefield</h2>
+        <p>That first LeetCode problem wasn't some magical moment where I instantly became a competitive programmer.</p>
+        <p>Absolutely not.</p>
+        <p>There was a learning curve.</p>
+        <p>A very real one.</p>
+        <p>But once I got into it, something clicked.</p>
+        <p>I started solving problems.</p>
+        <p>Then more problems.</p>
+        <p>Then harder problems.</p>
+        <p>And eventually, the guy who had introduced me to LeetCode became one of the people I could actually sit down with and compete against.</p>
+        <p>That became one of the funniest parts of our friendship.</p>
+        <p>We would give each other problems.</p>
+        <p>Sometimes one of us would find something interesting and send it to the other person.</p>
+        <p>Sometimes we'd be working on the same thing and one of us would suddenly disappear because we had figured something out.</p>
+        <p>Sometimes we'd disagree about an approach.</p>
+        <p>And sometimes the disagreement wasn't even about the problem anymore.</p>
+        <p>It became:</p>
+        <blockquote>"No, your approach is worse."<br />"How?"<br />"Because."<br />"That's not an explanation."<br />"You'll understand eventually."</blockquote>
+        <p>😂</p>
+        <p>We disagree on a <strong>lot</strong> of things.</p>
+        <p>And that's probably one of the reasons the friendship works.</p>
+        <p>We're not constantly agreeing just because we're friends.</p>
+        <p>If anything, being around someone who thinks differently forces you to examine your own reasoning.</p>
+        <p>And Newton was one of the first people around me who consistently made me do that.</p>
+
+        <hr />
+
+        <h2>The Chess Side Quest</h2>
+        <p>Then there was chess.</p>
+        <p>This is where things became unnecessarily funny.</p>
+        <p>When I first met Newton, he was around <strong>1800-rated</strong> on Chess.com.</p>
+        <p>I was around <strong>300</strong>.</p>
+        <p>Three hundred.</p>
+        <p>That wasn't a rivalry.</p>
+        <p>That was a tutorial level. 😭</p>
+        <p>He had already been playing since 2022.</p>
+        <p>I started in 2024.</p>
+        <p>And somehow, despite the enormous rating gap, our chess history became one of the funniest parts of the friendship.</p>
+        <p>My first board-game experience was actually against him.</p>
+        <p>And somehow, I won <strong>2-0</strong>.</p>
+        <p>To this day, I don't know exactly how that happened.</p>
+        <p>Neither does he.</p>
+        <p>Then there was another game when I was around 1200.</p>
+        <p>I managed to beat him again.</p>
+        <p>The funniest part?</p>
+        <p>My internet was terrible.</p>
+        <p>I was playing on an <strong>Itel A33</strong>.</p>
+        <p>So while Newton was presumably trying to calculate variations, I was also fighting a second opponent:</p>
+        <p><strong>the network.</strong></p>
+        <p>And somehow the network lost too. 😂</p>
+        <p>Over time, I kept improving.</p>
+        <p>300 became 500.</p>
+        <p>500 became 800.</p>
+        <p>800 became 1200.</p>
+        <p>1200 became 1600.</p>
+        <p>And now I'm around <strong>1800</strong>.</p>
+        <p>The guy who once looked impossibly far ahead suddenly became someone I could actually stand across a chessboard from.</p>
+        <p>That's what growth does.</p>
+        <p>Sometimes you don't notice it because you're too busy climbing.</p>
+        <p>Then one day you look backward and realize:</p>
+        <blockquote><strong>"Wait... when did I get here?"</strong></blockquote>
+
+        <hr />
+
+        <h2>A2SV: The Arena</h2>
+        <p>Then came <strong>A2SV in early 2025</strong>.</p>
+        <p>And this was where everything somehow collided.</p>
+        <p>Coding.</p>
+        <p>Competitive programming.</p>
+        <p>Problem solving.</p>
+        <p>Egos.</p>
+        <p>Leaderboards.</p>
+        <p>Sleep deprivation.</p>
+        <p>Probably questionable amounts of caffeine.</p>
+        <p>It felt like university had accidentally turned into an anime tournament arc.</p>
+        <p>The competitive programming leaderboard became our new battlefield.</p>
+        <p>And there were three names that stood out.</p>
+        <p>There was me.</p>
+        <p>There was Newton.</p>
+        <p>And then there was the <strong>Third-Year Titan</strong>.</p>
+        <p>The Titan was sitting above us with a rating in the <strong>2000s</strong>.</p>
+        <p>I was around the <strong>1850s</strong>, sitting at <strong>2nd</strong>.</p>
+        <p>Newton was around the <strong>1750s</strong>, sitting at <strong>3rd</strong>.</p>
+        <p>And suddenly the guy who had introduced me to LeetCode was sitting directly behind me on the leaderboard.</p>
+        <p>That was a pretty funny development.</p>
+        <p>Because if you had told Level 100 me that this was going to happen, I probably would've laughed.</p>
+        <p>At the time, I was just trying to understand what LeetCode even was.</p>
+        <p>Now we're both near the top of an A2SV competitive programming leaderboard.</p>
+
+        <hr />
+
+        <h2>The Day We Both Became Number One</h2>
+        <p>Then came one of my favorite moments.</p>
+        <p>There was a competitive programming contest during camp.</p>
+        <p>I finished.</p>
+        <p>I checked the leaderboard.</p>
+        <p><strong>1st place.</strong></p>
+        <p>Finally.</p>
+        <p>Victory.</p>
+        <p>Main-character moment.</p>
+        <p>I was probably feeling myself a little. 😂</p>
+        <p>Then I scrolled.</p>
+        <p>And there it was.</p>
+        <p><strong>Newton.</strong></p>
+        <p>Also <strong>1st</strong>.</p>
+        <p>Two #1s.</p>
+        <p>A tie.</p>
+        <p>Like Codeforces had decided that one protagonist wasn't enough.</p>
+        <p>And the funniest part?</p>
+        <p><strong>The Titan wasn't even in that contest.</strong></p>
+        <p>So for one glorious moment, the Rust guy and the guy he had introduced to LeetCode were standing together at the top.</p>
+        <p>No boss above us.</p>
+        <p>No third-year monster.</p>
+        <p>Just two Level 100 friends who had somehow ended up sharing first place in a competitive programming contest.</p>
+        <p>For a brief moment, the rivalry became a team-up.</p>
+        <p>Then, presumably, the anime writers remembered the plot and put us back on opposite sides. 😂</p>
+
+        <hr />
+
+        <h2>The Typing Arc</h2>
+        <p>Then there was typing.</p>
+        <p>Because apparently competing in academics, programming, chess, and competitive programming wasn't enough.</p>
+        <p>We also had to compete over <strong>how fast our fingers could move</strong>.</p>
+        <p>When we started, Newton was already typing at around <strong>90+ WPM</strong>.</p>
+        <p>I was somewhere around <strong>30-40 WPM</strong>.</p>
+        <p>Thirty.</p>
+        <p>To.</p>
+        <p>Forty.</p>
+        <p>At that point, watching Newton type probably felt like watching somebody use a cheat code.</p>
+        <p>I'd be looking at the keyboard like:</p>
+        <blockquote>"Wait, where is the comma?"</blockquote>
+        <p>Meanwhile this guy is already halfway through the paragraph.</p>
+        <p>But once again, I started practicing.</p>
+        <p>And practicing.</p>
+        <p>And practicing.</p>
+        <p>Eventually, the gap disappeared.</p>
+        <p>Now we're both fighting around <strong>120+ WPM</strong>.</p>
+        <p>At some point, it stopped being:</p>
+        <blockquote>"How fast can you type?"</blockquote>
+        <p>and became:</p>
+        <blockquote>"How much faster can you get than me?"</blockquote>
+        <p>Which is probably the most accurate description of our friendship.</p>
+        <p>One person improves.</p>
+        <p>The other notices.</p>
+        <p>The other improves.</p>
+        <p>The first person notices.</p>
+        <p>And suddenly neither person is allowed to remain comfortable. 😂</p>
+
+        <hr />
+
+        <h2>The Rust Shogun</h2>
+        <p>Of course, I can't tell this story without acknowledging the fact that Newton is genuinely <strong>him</strong> in some areas.</p>
+        <p>The dude has been coding for years.</p>
+        <p>He programs in <strong>Rust</strong>.</p>
+        <p>He has built projects, libraries, systems and all sorts of things that are still outside the territory I'm comfortable claiming mastery over.</p>
+        <p>There are areas of programming where I can confidently say:</p>
+        <p><strong>Newton is ahead of me.</strong></p>
+        <p>And honestly?</p>
+        <p>That's useful.</p>
+        <p>Because having someone around who is better than you at something is one of the fastest ways to discover how much more there is to learn.</p>
+        <p>I've had the privilege of learning from him.</p>
+        <p>I've also had the privilege of eventually becoming good enough to challenge him in other areas.</p>
+        <p>That's the sweet spot.</p>
+        <p>He pushes me.</p>
+        <p>I push him.</p>
+        <p>Sometimes one of us wins.</p>
+        <p>Sometimes the other wins.</p>
+        <p>Sometimes we both end up staring at a problem wondering why we voluntarily chose computer science.</p>
+        <p>😂</p>
+
+        <hr />
+
+        <h2>And Then There Was the Ego Arc</h2>
+        <p>Naturally, with this much competition, there had to be banter.</p>
+        <p>At one point, we got into one of those ridiculous conversations where neither person was willing to surrender.</p>
+        <p>Newton eventually hit me with:</p>
+        <blockquote><strong>"You don't know my real strength."</strong></blockquote>
+        <p>Which is an absolutely insane sentence to say in a friendship that already has a documented chess history, competitive programming leaderboards, typing statistics and enough screenshots to build a small court case.</p>
+        <p>😂</p>
+        <p>The conversation got even funnier.</p>
+        <p>Eventually, he deleted his messages.</p>
+        <p>I knew exactly what had happened.</p>
+        <p>I told him:</p>
+        <blockquote><strong>"Haha, I knew you were going to delete your messages."</strong></blockquote>
+        <p>And he came back with:</p>
+        <blockquote><strong>"I change my mind easily."</strong></blockquote>
+        <p>Then:</p>
+        <blockquote><strong>"It's one thing arguing with someone. It's another thing teaching them."</strong></blockquote>
+        <p>And finally:</p>
+        <blockquote><strong>"I know those things but I doubt you do."</strong></blockquote>
+        <p>At this point, I realized we had somehow transformed a normal conversation into an anime dialogue scene.</p>
+        <p>There was no longer a chat.</p>
+        <p>There was a <strong>battle of philosophies</strong>.</p>
+        <p>😂</p>
+        <p>But honestly, that whole episode says something about our friendship too.</p>
+        <p>We argue.</p>
+        <p>We challenge each other.</p>
+        <p>We disagree.</p>
+        <p>Sometimes we're both convinced we're right.</p>
+        <p>And occasionally, one of us has to quietly disappear from the battlefield before the situation becomes ridiculous.</p>
+        <p>Sometimes that disappearance involves deleting messages.</p>
+        <p>I will not elaborate. 😂</p>
+
+        <hr />
+
+        <h2>The AmaliTech Chapter</h2>
+        <p>And just when I thought the story had already accumulated enough side quests, we got another one.</p>
+        <p>A few weeks ago, both of us applied for <strong>AmaliTech</strong>.</p>
+        <p>We've applied for different opportunities together before, but this one gave us another chance to see where all the years of work had taken us.</p>
+        <p>I took the assessment.</p>
+        <p><strong>497/600.</strong></p>
+        <p>Newton got:</p>
+        <p><strong>512/600.</strong></p>
+        <p>Of course.</p>
+        <p>Bro saw my score and said:</p>
+        <blockquote>"Let me just stay 15 points ahead so the rivalry remains interesting."</blockquote>
+        <p>😂</p>
+        <p>But both of us were called for interviews.</p>
+        <p>And that's the part I really like.</p>
+        <p>Because this wasn't about one person beating the other.</p>
+        <p>We both made it through.</p>
+        <p>We both sat in front of interviewers.</p>
+        <p>We both got the feeling that the people on the other side of the table were genuinely impressed by what we'd built and what we knew.</p>
+        <p>Two Level 100 students who had once been figuring things out.</p>
+        <p>Two guys who had spent years throwing problems at each other.</p>
+        <p>Two people who had competed over grades, coding, typing, chess and basically every measurable thing available.</p>
+        <p>Now we're sitting in professional interviews.</p>
+        <p>That's a different kind of scoreboard.</p>
+
+        <hr />
+
+        <h2>Looking Back</h2>
+        <p>Sometimes I think about that Level 100 version of myself.</p>
+        <p>The guy who met Newton during registration.</p>
+        <p>The guy who hadn't solved a LeetCode problem yet.</p>
+        <p>The guy who was typing at 30-40 WPM while his friend was already above 90.</p>
+        <p>The guy who looked at an 1800-rated chess player and probably thought:</p>
+        <blockquote><strong>"Yeah, I'm never getting there."</strong></blockquote>
+        <p>And then I look at where we are now.</p>
+        <p>I'm around <strong>1800 in chess</strong>.</p>
+        <p>We're both fighting around <strong>120+ WPM</strong>.</p>
+        <p>We've competed in A2SV.</p>
+        <p>We've both taken first place in the same competitive programming contest.</p>
+        <p>We've built projects together.</p>
+        <p>We've given each other problems to solve.</p>
+        <p>We've argued over technical decisions.</p>
+        <p>We've disagreed over things that had absolutely nothing to do with technology.</p>
+        <p>We've helped each other.</p>
+        <p>We've competed.</p>
+        <p>We've learned.</p>
+        <p>And somehow, through all of that, we've remained friends.</p>
+        <p>That's the part that matters most to me.</p>
+        <p>Because this isn't really a story about <strong>beating Newton</strong>.</p>
+        <p>It's not even really a story about <strong>catching up to Newton</strong>.</p>
+        <p>It's about what happens when you meet someone who makes you realize that your current limits aren't necessarily your real limits.</p>
+
+        <hr />
+
+        <h2>The Friend Who Wouldn't Let Me Stay Average</h2>
+        <p>I think everybody needs someone like that.</p>
+        <p>Not necessarily someone who is better than you at everything.</p>
+        <p>That would be exhausting. 😂</p>
+        <p>But someone who is good enough at something to make you think:</p>
+        <blockquote><em>"Wait... I could actually get much better at this."</em></blockquote>
+        <p>Someone who gives you a problem and doesn't immediately solve it for you.</p>
+        <p>Someone who challenges your reasoning.</p>
+        <p>Someone who can tell you when your solution is bad.</p>
+        <p>Someone you can compete with without secretly wanting them to fail.</p>
+        <p>Someone whose success makes you want to improve instead of making you feel threatened.</p>
+        <p>Newton has been that person for me.</p>
+        <p>He was ahead when we met.</p>
+        <p>And in some things, he's still ahead.</p>
+        <p>In other things, I've caught up.</p>
+        <p>In some things, I've probably passed him.</p>
+        <p>And I'm sure there are areas where he'll eventually humble me again. 😂</p>
+        <p>That's okay.</p>
+        <p>Because the goal was never to permanently stay ahead of each other.</p>
+        <p>The goal was to keep moving.</p>
+
+        <hr />
+
+        <h2>From Registration to Here</h2>
+        <p>And that's probably the funniest part of the entire story.</p>
+        <p>I met this guy because I needed help with university registration.</p>
+        <p>I asked his name.</p>
+        <p>He said <strong>Isaac Newton</strong>.</p>
+        <p>I had no idea that this random Level 100 student standing there helping me register would eventually become the guy who would introduce me to LeetCode, challenge me academically, compete with me in programming, destroy me in typing before I caught up, stand across chessboards from me, build projects with me, argue with me about technical decisions, give me problems when I thought I was done for the day, and somehow become one of the people who pushed me furthest.</p>
+        <p>We started with registration.</p>
+        <p>Then came LeetCode.</p>
+        <p>Then projects.</p>
+        <p>Then academics.</p>
+        <p>Then chess.</p>
+        <p>Then typing.</p>
+        <p>Then A2SV.</p>
+        <p>Then competitions.</p>
+        <p>Then interviews.</p>
+        <p>And somehow, after all these years, we're still here.</p>
+        <p>The picture we took recently makes that even funnier to me.</p>
+        <p>Because looking at it, we just look like two guys standing on a road.</p>
+        <p>Nothing dramatic.</p>
+        <p>No leaderboard.</p>
+        <p>No chessboard.</p>
+        <p>No Codeforces contest.</p>
+        <p>No LeetCode problem.</p>
+        <p>No GPA spreadsheet.</p>
+        <p>Just two friends.</p>
+        <p>But behind that picture is a ridiculous amount of competition, arguments, collaboration, late-night problem solving, random challenges, wins, losses, growth and countless moments where one of us made the other think:</p>
+        <blockquote><strong>"Okay. I need to get better."</strong></blockquote>
+        <p>And maybe that's what a great friendship actually looks like.</p>
+        <p>Not someone who lets you stay comfortable.</p>
+        <p>Not someone who always agrees with you.</p>
+        <p>Not someone who is always ahead.</p>
+        <p>But someone who keeps making you ask:</p>
+        <blockquote><strong>"What if I can go further?"</strong></blockquote>
+        <p>I started university trying to figure things out.</p>
+        <p>Somewhere along the way, I met a guy who made me want to figure out <strong>more</strong>.</p>
+        <p>And honestly?</p>
+        <p>I'm glad I asked for help with that registration.</p>
+        <p>Because I didn't just meet someone who helped me register for university.</p>
+        <p><strong>I met one of the people who helped me level up in it.</strong> 🫡</p>
+
+        <hr />
+
+        <h3>And the story isn't finished.</h3>
+        <p>We're still competing.</p>
+        <p>Still giving each other problems.</p>
+        <p>Still disagreeing over things.</p>
+        <p>Still trying to type faster.</p>
+        <p>Still trying to solve harder problems.</p>
+        <p>Still trying to beat each other at chess.</p>
+        <p>Still applying for opportunities.</p>
+        <p>Still building.</p>
+        <p>Still learning.</p>
+        <p>Still occasionally talking enough trash to make a perfectly normal conversation feel like a tournament arc. 😂</p>
+        <p>The ratings will change.</p>
+        <p>The leaderboards will change.</p>
+        <p>The technologies will change.</p>
+        <p>The numbers will change.</p>
+        <p>But I think one thing will remain the same:</p>
+        <blockquote><strong>If I start getting too comfortable, Newton will probably show up with another problem.</strong></blockquote>
+        <p>And I'll probably solve it.</p>
+        <p>Or at least try.</p>
+        <p>Because apparently, that's what we do. 👽🫡</p>
+      </article>
+    `,
+  },
 ];
 
 export const getBlogs = () => blogs;
