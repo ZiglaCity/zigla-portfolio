@@ -276,36 +276,34 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
 
         {lightboxImage && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-transparent p-2 backdrop-blur-sm sm:p-4"
             role="dialog"
             aria-modal="true"
             aria-label={lightboxImage.alt}
             onClick={() => setLightboxImage(null)}
           >
             <div
-              className="relative w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[rgb(var(--background))] shadow-2xl"
+              className="relative flex h-full w-full items-center justify-center"
               onClick={(event) => event.stopPropagation()}
             >
               <button
                 type="button"
                 onClick={() => setLightboxImage(null)}
-                className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white transition-colors hover:bg-black/80"
+                className="absolute right-2 top-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgb(var(--card-border))] bg-[rgb(var(--background))]/85 text-[rgb(var(--foreground))] shadow-lg transition-colors hover:bg-[rgb(var(--background))]"
                 aria-label="Close image viewer"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              <div className="flex max-h-[92vh] w-full items-center justify-center bg-black/95 p-3 sm:p-4">
-                <Image
-                  src={lightboxImage.src}
-                  alt={lightboxImage.alt}
-                  width={2200}
-                  height={1400}
-                  className="h-auto max-h-[88vh] w-auto max-w-[92vw] rounded-xl object-contain"
-                  sizes="(max-width: 768px) 92vw, 92vw"
-                  priority
-                />
-              </div>
+              <Image
+                src={lightboxImage.src}
+                alt={lightboxImage.alt}
+                width={2400}
+                height={1800}
+                className="max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)] object-contain sm:max-h-[calc(100vh-2rem)] sm:max-w-[calc(100vw-2rem)]"
+                sizes="100vw"
+                priority
+              />
             </div>
           </div>
         )}

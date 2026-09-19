@@ -3573,20 +3573,20 @@ function recurse() {
           <h3>Final UI Gallery</h3>
           <p>Here’s the finished Nadia UI in its most important surfaces — the landing page, dashboard, and notifications page.</p>
 
-          <div class="nadia-gallery">
-            <figure class="nadia-gallery-item">
+          <div class="story-gallery">
+            <figure class="story-gallery-item">
               <img src="/assets/blogs/nadia-landing.png" alt="Nadia landing page final UI" loading="lazy" />
               <figcaption>Landing Experience</figcaption>
             </figure>
-            <figure class="nadia-gallery-item">
+            <figure class="story-gallery-item">
               <img src="/assets/blogs/nadia-dashboard.png" alt="Nadia dashboard final UI" loading="lazy" />
               <figcaption>Dashboard Overview</figcaption>
             </figure>
-            <figure class="nadia-gallery-item">
+            <figure class="story-gallery-item">
               <img src="/assets/blogs/nadia-notifications.png" alt="Nadia notifications page final UI" loading="lazy" />
               <figcaption>Smart Notifications</figcaption>
             </figure>
-            <figure class="nadia-gallery-item nadia-gallery-item--mobile">
+            <figure class="story-gallery-item story-gallery-item--mobile">
               <img src="/assets/blogs/nadia-mobile.png" alt="Nadia mobile final UI" loading="lazy" />
               <figcaption>Mobile Experience</figcaption>
             </figure>
@@ -3963,6 +3963,20 @@ function recurse() {
         <p>That was a tutorial level. 😭</p>
         <p>He had already been playing since 2022.</p>
         <p>I started in 2024.</p>
+        <div class="story-gallery story-gallery--chess">
+          <figure class="story-gallery-item">
+            <img src="/assets/blogs/friendship-first-chess-game.png" alt="The first chess game between ZiglaCity and Isaac Newton" loading="lazy" />
+            <figcaption>The first board-game experiment</figcaption>
+          </figure>
+          <figure class="story-gallery-item">
+            <img src="/assets/blogs/friendship-early-chess-matches.png" alt="A set of early chess games between ZiglaCity and Isaac Newton" loading="lazy" />
+            <figcaption>The rematches began</figcaption>
+          </figure>
+          <figure class="story-gallery-item story-gallery-item--portrait">
+            <img src="/assets/blogs/friendship-chess-rating.png" alt="ZiglaCity chess profile showing a 1800-plus rating" loading="lazy" />
+            <figcaption>From 300 to around 1800</figcaption>
+          </figure>
+        </div>
         <p>And somehow, despite the enormous rating gap, our chess history became one of the funniest parts of the friendship.</p>
         <p>My first board-game experience was actually against him.</p>
         <p>And somehow, I won <strong>2-0</strong>.</p>
@@ -4006,6 +4020,10 @@ function recurse() {
         <p>There was me.</p>
         <p>There was Newton.</p>
         <p>And then there was the <strong>Third-Year Titan</strong>.</p>
+        <figure class="blog-visual">
+          <img src="/assets/blogs/friendship-a2sv-group-rank.png" alt="A2SV Ghana group ranking showing ZiglaCity and Newton near the top" loading="lazy" />
+          <figcaption>The A2SV leaderboard made the friendly rivalry visible.</figcaption>
+        </figure>
         <p>The Titan was sitting above us with a rating in the <strong>2000s</strong>.</p>
         <p>I was around the <strong>1850s</strong>, sitting at <strong>2nd</strong>.</p>
         <p>Newton was around the <strong>1750s</strong>, sitting at <strong>3rd</strong>.</p>
@@ -4042,6 +4060,10 @@ function recurse() {
         <p>Just two Level 100 friends who had somehow ended up sharing first place in a competitive programming contest.</p>
         <p>For a brief moment, the rivalry became a team-up.</p>
         <p>Then, presumably, the anime writers remembered the plot and put us back on opposite sides. 😂</p>
+        <figure class="blog-visual">
+          <img src="/assets/blogs/friendship-a2sv-round-8.png" alt="A2SV Ghana Round 8 standings showing ZiglaCity in first place" loading="lazy" />
+          <figcaption>One of those contests where the scoreboard finally told the story.</figcaption>
+        </figure>
 
         <hr />
 
@@ -4067,6 +4089,10 @@ function recurse() {
         <blockquote>"How fast can you type?"</blockquote>
         <p>and became:</p>
         <blockquote>"How much faster can you get than me?"</blockquote>
+        <figure class="blog-visual">
+          <img src="/assets/blogs/friendship-typing-129-wpm.gif" alt="A typing test recording showing ZiglaCity typing at 129 words per minute" loading="lazy" />
+          <figcaption>The typing arc eventually reached 129 WPM in a 30-second test.</figcaption>
+        </figure>
         <p>Which is probably the most accurate description of our friendship.</p>
         <p>One person improves.</p>
         <p>The other notices.</p>
@@ -4177,6 +4203,16 @@ function recurse() {
         <p>We've competed.</p>
         <p>We've learned.</p>
         <p>And somehow, through all of that, we've remained friends.</p>
+        <div class="story-gallery story-gallery--memories">
+          <figure class="story-gallery-item">
+            <img src="/assets/blogs/friendship-dsa-cup-award.jpeg" alt="ZiglaCity and Isaac Newton posing with their DSA Cup award" loading="lazy" />
+            <figcaption>A win worth documenting</figcaption>
+          </figure>
+          <figure class="story-gallery-item story-gallery-item--portrait">
+            <img src="/assets/blogs/friendship-photo.png" alt="ZiglaCity and Newton smiling together outdoors" loading="lazy" />
+            <figcaption>Just two friends, after all the competition</figcaption>
+          </figure>
+        </div>
         <p>That's the part that matters most to me.</p>
         <p>Because this isn't really a story about <strong>beating Newton</strong>.</p>
         <p>It's not even really a story about <strong>catching up to Newton</strong>.</p>

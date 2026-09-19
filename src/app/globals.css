@@ -415,71 +415,71 @@ body {
   scroll-margin-top: 6rem;
 }
 
-.blog-content .nadia-gallery {
+.blog-content .story-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin: 2.5rem 0;
+  gap: 1rem;
+  margin: 3rem 0;
+  padding: 0.75rem;
+  border: 1px solid rgba(var(--foreground), 0.1);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(145deg, rgba(0, 246, 255, 0.08), transparent 48%),
+    rgba(var(--foreground), 0.035);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
 }
 
 @media (max-width: 768px) {
-  .blog-content .nadia-gallery {
+  .blog-content .story-gallery {
     grid-template-columns: 1fr;
+    padding: 0.5rem;
   }
 }
 
-.blog-content .nadia-gallery-item {
+.blog-content .story-gallery-item {
   margin: 0;
   position: relative;
-  overflow: hidden;
-  border-radius: 1.4rem;
+  min-width: 0;
+  border-radius: 1rem;
   isolation: isolate;
 
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #10151a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.15),
-    0 25px 80px rgba(0, 0, 0, 0.2);
+    0 10px 28px rgba(0, 0, 0, 0.16),
+    0 20px 55px rgba(0, 0, 0, 0.12);
 
   transition:
-    transform 250ms ease,
-    box-shadow 250ms ease,
-    border-color 250ms ease;
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
 }
 
-/* slight randomness = more gallery feel */
-.blog-content .nadia-gallery-item:nth-child(odd) {
-  transform: rotate(-1deg);
-}
-
-.blog-content .nadia-gallery-item:nth-child(even) {
-  transform: rotate(1deg);
-}
-
-.blog-content .nadia-gallery-item:hover {
-  transform: translateY(-8px) rotate(0deg);
-
-  border-color: rgba(0, 246, 255, 0.25);
+.blog-content .story-gallery-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 246, 255, 0.4);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.22),
-    0 40px 90px rgba(0, 246, 255, 0.12);
+    0 20px 45px rgba(0, 0, 0, 0.22),
+    0 25px 70px rgba(0, 246, 255, 0.1);
 }
 
-.blog-content .nadia-gallery-item img {
+.blog-content .story-gallery-item img {
   width: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
-  aspect-ratio: 16 / 10;
-  background: #111;
-  border-radius: inherit;
+  margin: 0;
+  border: 0;
+  border-radius: 0.85rem 0.85rem 0 0;
+  background: #10151a;
   cursor: zoom-in;
 }
 
-.blog-content .nadia-gallery-item--mobile img {
+.blog-content .story-gallery-item--mobile img,
+.blog-content .story-gallery-item--portrait img {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  height: auto;
 }
 
 .blog-hero-image button {
@@ -491,19 +491,30 @@ body {
   box-shadow: 0 0 0 3px rgba(0, 246, 255, 0.4);
 }
 
-.blog-content .nadia-gallery-item figcaption {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-
-  font-size: 0.85rem;
+.blog-content .story-gallery-item figcaption {
+  position: static;
+  display: block;
+  min-height: 3.25rem;
+  padding: 0.85rem 1rem 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
   font-weight: 600;
-  color: white;
+  color: rgb(var(--foreground));
+  background: rgba(var(--foreground), 0.035);
+}
 
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.blog-content .story-gallery--chess,
+.blog-content .story-gallery--memories {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.blog-content .story-gallery--memories {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+  .blog-content .story-gallery--chess,
+  .blog-content .story-gallery--memories {
+    grid-template-columns: 1fr;
+  }
 }
