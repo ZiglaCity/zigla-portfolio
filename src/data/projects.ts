@@ -45,11 +45,23 @@ export const projects: Project[] = [
       "Role-Based Access",
     ],
     github: "#",
-    demo: "https://www.lavertinaryhos.com/",
+    demo: "#",
     featured: true,
   },
   {
     id: 3,
+    title: "Dermal Skin",
+    categories: ["E-Commerce", "Business", "Client Project", "Website"],
+    description:
+      "A Ghana-focused skincare and body-care storefront designed around thoughtful everyday routines, product discovery, wholesale shopping, and reliable delivery across the country.",
+    image: ["/assets/projects/dermalskin.png"],
+    tags: ["Next.js", "TypeScript", "E-Commerce", "Skincare", "Tailwind CSS"],
+    github: "#",
+    demo: "https://www.dermalskingh.com/",
+    featured: true,
+  },
+  {
+    id: 4,
     title: "Misszay Importation Hub",
     categories: ["Full-Stack", "Business", "Client Project"],
     description:
@@ -64,7 +76,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "Jenny's Cosmetics",
     categories: ["Full-Stack", "E-Commerce", "Business", "Client Project"],
     description:
@@ -76,7 +88,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 5,
+    id: 6,
     title: "Ourday Santa",
     categories: ["Full-Stack", "School Management", "Event Management"],
     description:
@@ -88,7 +100,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 6,
+    id: 7,
     title: "Hostel AI Pro",
     categories: ["Full-Stack", "AI/ML", "Academic Project"],
     description:
@@ -106,7 +118,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 7,
+    id: 8,
     title: "ZTube",
     categories: ["Desktop App", "Full-Stack"],
     description:
@@ -121,7 +133,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 8,
+    id: 9,
     title: "LMS",
     categories: ["Desktop App", "Full-Stack"],
     description: "Full-featured Library Management System for Universities.",
@@ -132,7 +144,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 9,
+    id: 10,
     title: "SafestCode",
     categories: ["Security Tools", "AI/ML"],
     description:
@@ -147,7 +159,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 10,
+    id: 11,
     title: "CMH - Campus Market Hub",
     categories: ["Full-Stack", "Marketplace", "Academic Project"],
     description:
@@ -159,7 +171,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 11,
+    id: 12,
     title: "Spicy Thrifts POS",
     categories: ["Full-Stack", "Retail", "Business", "Client Project"],
     description:
@@ -171,7 +183,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 12,
+    id: 13,
     title: "ProxyPhish",
     categories: ["CyberOps"],
     description:
@@ -183,7 +195,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 13,
+    id: 14,
     title: "Zigly",
     categories: ["Full-Stack", "System Design", "Website"],
     description:
@@ -195,7 +207,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 14,
+    id: 15,
     title: "Focus Drain",
     categories: ["Chrome Extension"],
     description:
@@ -206,7 +218,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 15,
+    id: 16,
     title: "CropDoc",
     categories: ["AI/ML"],
     description:
@@ -218,7 +230,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 16,
+    id: 17,
     title: "ScreenRecorder",
     categories: ["Desktop App"],
     description: "Lightweight screen recording tool with quick share options.",
@@ -229,7 +241,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 17,
+    id: 18,
     title: "Prosper Constructions Ltd",
     categories: ["Website"],
     description:
@@ -241,7 +253,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 18,
+    id: 19,
     title: "Neural Task Manager",
     categories: ["AI/ML", "WIP"],
     description:
