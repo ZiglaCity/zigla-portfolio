@@ -245,17 +245,15 @@ export function useTerminal(
           <p>
             Hey, I'm <strong>ZiglaCity</strong> or <strong>Solomon Dzah</strong>{" "}
             if we're being formal. I build scalable software, solve algorithmic
-            problems, and design systems that are reliable, secure, and built
-            to last.
+            problems, and design systems that are reliable, secure, and built to
+            last.
           </p>
           <p>
             Currently studying Computer Science at the University of Ghana. I'm
             fascinated by backend engineering, distributed systems, and turning
             ambitious ideas into products people genuinely enjoy using.
           </p>
-          <p className="mt-2 italic">
-            "Quiet foundations for loud ideas."
-          </p>
+          <p className="mt-2 italic">"One encrypted byte at a time."</p>
         </div>,
       );
     } else if (head === "experience") {
@@ -267,7 +265,8 @@ export function useTerminal(
             mentorship.
           </div>
           <div>
-            • <strong>Merrylow — Co-founder</strong> — Production platform
+            • <strong>Merrylow — Backend & DevOps Engineer</strong> — Production
+            platform
           </div>
           <div>
             • <strong>Enzypher — In stealth</strong> — Encrypted Chat

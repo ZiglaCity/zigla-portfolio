@@ -13,7 +13,7 @@ export const journeys = [
   },
   {
     title: "A2SV — Competitive Programming & System Design Trainee",
-    period: "2025 – Present",
+    period: "2025 – May 2026",
     description: `Selected into the A2SV (African to Silicon Valley) program — one of the few Level-200 CS students in the cohort. Ranked 2nd among Level-300 and 400 students in several algorithmic and system design contests. Solved 500+ LeetCode problems, built confidence in data structures, and gained deep experience in collaborative engineering challenges.`,
     focus: [
       "Algorithms",
