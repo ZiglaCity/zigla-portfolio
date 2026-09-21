@@ -499,8 +499,8 @@ body {
   font-size: 0.82rem;
   line-height: 1.35;
   font-weight: 600;
-  color: rgb(var(--foreground));
-  background: rgba(var(--foreground), 0.035);
+  color: rgba(255, 255, 255, 0.94);
+  background: #10151a;
 }
 
 .blog-content .story-gallery--chess,

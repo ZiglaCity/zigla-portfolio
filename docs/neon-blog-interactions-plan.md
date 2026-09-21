@@ -30,7 +30,8 @@ Add dynamic blog interactions without changing the current authoring model:
 - The same device, browser, IP address, or visitor may generate multiple views.
 - There is no view deduplication.
 - The client sends one view request after the blog detail component mounts. Refreshing or revisiting sends another request.
-- Basic request throttling still protects the endpoint from an abusive tight loop without deduplicating normal reads.
+- Every accepted view request creates a view event; there is no cooldown or visitor deduplication.
+- Basic request throttling still protects the endpoint from an abusive tight loop.
 
 ### Reactions
 

@@ -117,24 +117,10 @@ export async function recordBlogView(slug: string, fingerprint: string) {
   assertBlogExists(slug);
   await enforceInteractionRateLimit(`${fingerprint}:${slug}`, "views");
   const database = getDatabase();
-  const rows = await database`
-    insert into blog_view_cooldowns
-      (blog_slug, request_fingerprint_hash, last_view_at)
-    values
-      (${slug}, ${fingerprint}, now())
-    on conflict (blog_slug, request_fingerprint_hash)
-    do update set last_view_at = now()
-    where blog_view_cooldowns.last_view_at <= now() - interval '10 minutes'
-    returning id
+  await database`
+    insert into blog_view_events (blog_slug, request_fingerprint_hash)
+    values (${slug}, ${fingerprint})
   `;
-
-  const cooldownRows = rows as unknown as Record<string, unknown>[];
-  if (cooldownRows.length > 0) {
-    await database`
-      insert into blog_view_events (blog_slug, request_fingerprint_hash)
-      values (${slug}, ${fingerprint})
-    `;
-  }
 
   const countRows = await database`
     select count(*)::int as count
