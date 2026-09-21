@@ -1,13 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getBlogInteractions } from "@@/lib/blog/blog-interactions.service";
+import { getRequestFingerprint } from "@@/lib/security/request-fingerprint";
 
 export async function GET(
-  _request: Request,
+  request: NextRequest,
   { params }: { params: Promise<{ slug: string }> },
 ) {
   try {
     const { slug } = await params;
-    return NextResponse.json(await getBlogInteractions(slug));
+    return NextResponse.json(
+      await getBlogInteractions(slug, getRequestFingerprint(request)),
+    );
   } catch (error) {
     if (error instanceof Error && error.message === "BLOG_NOT_FOUND") {
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });

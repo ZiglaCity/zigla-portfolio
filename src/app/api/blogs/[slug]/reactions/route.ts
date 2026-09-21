@@ -22,16 +22,18 @@ export async function POST(
       );
     }
 
-    const reactions = await recordBlogReaction(
+    const reactionUpdate = await recordBlogReaction(
       slug,
       getRequestFingerprint(request),
       parsed.data.reactionType,
     );
-    await notifyNewBlogReaction({
-      slug,
-      reactionType: parsed.data.reactionType,
-    });
-    return NextResponse.json({ reactions }, { status: 201 });
+    if (reactionUpdate.action !== "removed") {
+      await notifyNewBlogReaction({
+        slug,
+        reactionType: parsed.data.reactionType,
+      });
+    }
+    return NextResponse.json(reactionUpdate, { status: 200 });
   } catch (error) {
     if (error instanceof Error && error.message === "BLOG_NOT_FOUND") {
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });

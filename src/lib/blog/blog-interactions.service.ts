@@ -21,6 +21,12 @@ export type BlogComment = {
 
 export type ReactionCounts = Record<ReactionType, number>;
 
+export type ReactionUpdate = {
+  reactions: ReactionCounts;
+  viewerReaction: ReactionType | null;
+  action: "added" | "changed" | "removed";
+};
+
 export function assertBlogExists(slug: string) {
   if (!isValidBlogSlug(slug) || !getBlogBySlug(slug)) {
     throw new Error("BLOG_NOT_FOUND");
@@ -39,10 +45,10 @@ function mapComment(row: Record<string, unknown>): BlogComment {
   };
 }
 
-export async function getBlogInteractions(slug: string) {
+export async function getBlogInteractions(slug: string, fingerprint: string) {
   assertBlogExists(slug);
   const database = getDatabase();
-  const [commentRows, viewRows, reactionRows] = await Promise.all([
+  const [commentRows, viewRows, reactionRows, viewerRows] = await Promise.all([
     database`
       select id, blog_slug, display_name, body, image_url, status, created_at
       from blog_comments
@@ -59,6 +65,13 @@ export async function getBlogInteractions(slug: string) {
       from blog_reaction_events
       where blog_slug = ${slug}
       group by reaction_type
+    `,
+    database`
+      select reaction_type
+      from blog_reaction_events
+      where blog_slug = ${slug}
+        and request_fingerprint_hash = ${fingerprint}
+      limit 1
     `,
   ]);
 
@@ -81,6 +94,9 @@ export async function getBlogInteractions(slug: string) {
     views: Number(viewResult[0]?.count ?? 0),
     comments: (commentRows as Record<string, unknown>[]).map(mapComment),
     reactions,
+    viewerReaction:
+      ((viewerRows as unknown as Record<string, unknown>[])[0]
+        ?.reaction_type as ReactionType | undefined) ?? null,
   };
 }
 
@@ -156,15 +172,38 @@ export async function recordBlogReaction(
   assertBlogExists(slug);
   await enforceInteractionRateLimit(`${fingerprint}:${slug}`, "reactions");
   const database = getDatabase();
-  await database`
-    insert into blog_reaction_events
-      (blog_slug, reaction_type, request_fingerprint_hash)
-    values
-      (${slug}, ${reactionType}, ${fingerprint})
-    on conflict (blog_slug, request_fingerprint_hash)
-    where request_fingerprint_hash is not null
-    do update set reaction_type = excluded.reaction_type
+  const currentRows = await database`
+    select reaction_type
+    from blog_reaction_events
+    where blog_slug = ${slug}
+      and request_fingerprint_hash = ${fingerprint}
+    limit 1
   `;
+  const currentReaction =
+    ((currentRows as unknown as Record<string, unknown>[])[0]?.reaction_type as
+      | ReactionType
+      | undefined) ?? null;
+
+  let action: ReactionUpdate["action"];
+  if (currentReaction === reactionType) {
+    await database`
+      delete from blog_reaction_events
+      where blog_slug = ${slug}
+        and request_fingerprint_hash = ${fingerprint}
+    `;
+    action = "removed";
+  } else {
+    await database`
+      insert into blog_reaction_events
+        (blog_slug, reaction_type, request_fingerprint_hash)
+      values
+        (${slug}, ${reactionType}, ${fingerprint})
+      on conflict (blog_slug, request_fingerprint_hash)
+      where request_fingerprint_hash is not null
+      do update set reaction_type = excluded.reaction_type
+    `;
+    action = currentReaction ? "changed" : "added";
+  }
 
   const rows = await database`
     select reaction_type, count(*)::int as count
@@ -183,5 +222,9 @@ export async function recordBlogReaction(
     const type = String(row.reaction_type) as ReactionType;
     if (type in reactions) reactions[type] = Number(row.count);
   }
-  return reactions;
+  return {
+    reactions,
+    viewerReaction: action === "removed" ? null : reactionType,
+    action,
+  } satisfies ReactionUpdate;
 }

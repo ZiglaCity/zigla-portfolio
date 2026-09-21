@@ -1,7 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Sparkles, X } from "lucide-react";
+import {
+  ArrowRight,
+  Megaphone,
+  MessageCircle,
+  SmilePlus,
+  X,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 const ANNOUNCEMENT_STORAGE_KEY = "zigla-blog-interactions-announcement-v1";
@@ -74,7 +80,7 @@ export default function BlogFeatureAnnouncement() {
             <div className="p-6 sm:p-8">
               <div className="flex items-start justify-between gap-6">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-400/10 text-cyan-500">
-                  <Sparkles className="h-5 w-5" aria-hidden="true" />
+                  <Megaphone className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <button
                   type="button"
@@ -114,7 +120,7 @@ export default function BlogFeatureAnnouncement() {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-cyan-500" />
+                  <SmilePlus className="mt-0.5 h-5 w-5 shrink-0 text-cyan-500" />
                   <div>
                     <p className="text-sm font-semibold text-[rgb(var(--foreground))]">
                       React in a second

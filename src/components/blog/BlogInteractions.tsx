@@ -33,7 +33,10 @@ type InteractionResponse = {
   views: number;
   comments: Comment[];
   reactions: ReactionCounts;
+  viewerReaction: ReactionKey | null;
 };
+
+type ReactionKey = (typeof REACTIONS)[number]["key"];
 
 const emptyReactions: ReactionCounts = {
   like: 0,
@@ -48,6 +51,7 @@ export default function BlogInteractions({ slug }: { slug: string }) {
     views: 0,
     comments: [],
     reactions: emptyReactions,
+    viewerReaction: null,
   });
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -155,12 +159,17 @@ export default function BlogInteractions({ slug }: { slug: string }) {
       );
       const result = (await response.json()) as {
         reactions?: ReactionCounts;
+        viewerReaction?: ReactionKey | null;
         error?: string;
       };
-      if (!response.ok || !result.reactions) {
+      if (!response.ok || !result.reactions || !("viewerReaction" in result)) {
         throw new Error(result.error || "Unable to record reaction");
       }
-      setData((current) => ({ ...current, reactions: result.reactions! }));
+      setData((current) => ({
+        ...current,
+        reactions: result.reactions!,
+        viewerReaction: result.viewerReaction ?? null,
+      }));
     } catch (reactionError) {
       setMessage(
         reactionError instanceof Error
@@ -195,7 +204,12 @@ export default function BlogInteractions({ slug }: { slug: string }) {
             key={key}
             onClick={() => void submitReaction(key)}
             disabled={Boolean(reacting) || loading}
-            className="inline-flex items-center gap-2 rounded-full border border-[rgb(var(--card-border))] bg-[rgb(var(--card-bg))] px-3 py-2 text-sm text-[rgb(var(--muted))] transition hover:border-cyan-400/60 hover:text-cyan-500 disabled:cursor-not-allowed disabled:opacity-60"
+            aria-pressed={data.viewerReaction === key}
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm transition disabled:cursor-not-allowed disabled:opacity-60 ${
+              data.viewerReaction === key
+                ? "border-cyan-500 bg-cyan-500/12 text-cyan-600 shadow-[inset_0_-2px_0_rgba(6,182,212,0.75)] dark:text-cyan-300"
+                : "border-[rgb(var(--card-border))] bg-[rgb(var(--card-bg))] text-[rgb(var(--muted))] hover:border-cyan-400/60 hover:text-cyan-500"
+            }`}
             aria-label={`React ${label}`}
           >
             {reacting === key ? (
@@ -210,6 +224,15 @@ export default function BlogInteractions({ slug }: { slug: string }) {
           </button>
         ))}
       </div>
+      {data.viewerReaction ? (
+        <p className="mt-3 text-xs text-[rgb(var(--muted))]">
+          Your reaction:{" "}
+          <span className="font-semibold text-[rgb(var(--foreground))]">
+            {data.viewerReaction}
+          </span>
+          . Click it again to remove it.
+        </p>
+      ) : null}
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
         <form
