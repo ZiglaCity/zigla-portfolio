@@ -5,6 +5,7 @@ import {
 } from "@@/lib/blog/blog-interactions.service";
 import { reactionInputSchema } from "@@/lib/blog/blog-interactions.validation";
 import { getRequestFingerprint } from "@@/lib/security/request-fingerprint";
+import { notifyNewBlogReaction } from "@@/lib/mail/blog-notifications";
 
 export async function POST(
   request: NextRequest,
@@ -26,6 +27,10 @@ export async function POST(
       getRequestFingerprint(request),
       parsed.data.reactionType,
     );
+    await notifyNewBlogReaction({
+      slug,
+      reactionType: parsed.data.reactionType,
+    });
     return NextResponse.json({ reactions }, { status: 201 });
   } catch (error) {
     if (error instanceof Error && error.message === "BLOG_NOT_FOUND") {

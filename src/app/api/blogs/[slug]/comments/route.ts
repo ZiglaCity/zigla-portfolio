@@ -5,6 +5,7 @@ import {
 } from "@@/lib/blog/blog-interactions.service";
 import { commentInputSchema } from "@@/lib/blog/blog-interactions.validation";
 import { getRequestFingerprint } from "@@/lib/security/request-fingerprint";
+import { notifyNewBlogComment } from "@@/lib/mail/blog-notifications";
 
 export async function POST(
   request: NextRequest,
@@ -45,6 +46,11 @@ export async function POST(
         body: parsed.data.body,
       },
     );
+    await notifyNewBlogComment({
+      slug,
+      displayName: comment.displayName,
+      body: comment.body,
+    });
     return NextResponse.json({ comment }, { status: 201 });
   } catch (error) {
     if (error instanceof Error && error.message === "BLOG_NOT_FOUND") {
