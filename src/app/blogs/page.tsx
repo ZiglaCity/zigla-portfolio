@@ -7,6 +7,7 @@ import { getBlogs, getAllTags } from "@@/data/blogs";
 import ClientWrapper from "@@/components/ClientWrapper";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
 import ParticleCanvas from "@@/components/ui/ParticleCanvas";
+import BlogFeatureAnnouncement from "@@/components/blog/BlogFeatureAnnouncement";
 
 export default function BlogsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +20,7 @@ export default function BlogsPage() {
   const MAX_TAGS_DISPLAYED = 10;
 
   const filteredAndSortedBlogs = useMemo(() => {
-    let filtered = blogs.filter((blog) => {
+    const filtered = blogs.filter((blog) => {
       const matchesSearch =
         blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -55,6 +56,7 @@ export default function BlogsPage() {
   return (
     <ClientWrapper>
       <div className="min-h-screen bg-[rgb(var(--background))] py-16">
+        <BlogFeatureAnnouncement />
         <ParticleCanvas />
         <ThemeToggle />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -18,6 +18,7 @@ import {
 import { getBlogBySlug } from "@@/data/blogs";
 import ClientWrapper from "@@/components/ClientWrapper";
 import ThemeToggle from "@@/components/ui/ThemeToggle";
+import BlogInteractions from "@@/components/blog/BlogInteractions";
 import Image from "next/image";
 
 export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
@@ -270,6 +271,7 @@ export default function BlogPostClient({ slug_ }: { slug_?: string | null }) {
                 className="blog-content"
                 onClick={handleContentImageClick}
               />
+              <BlogInteractions slug={blog.slug} />
             </div>
           </div>
         </div>
