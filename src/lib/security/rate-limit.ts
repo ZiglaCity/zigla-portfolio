@@ -46,15 +46,24 @@ export async function consumeRateLimit(key: string, action: RateLimitAction) {
   );
   const expiresAt = new Date(windowStart.getTime() + window.milliseconds);
 
-  const rows = await database`
-    insert into interaction_rate_limit_buckets
-      (bucket_key, action, window_start, request_count, expires_at)
-    values
-      (${key}, ${action}, ${windowStart}, 1, ${expiresAt})
-    on conflict (bucket_key, action, window_start)
-    do update set request_count = interaction_rate_limit_buckets.request_count + 1
-    returning request_count
-  `;
+  let rows;
+  try {
+    rows = await database`
+      insert into interaction_rate_limit_buckets
+        (bucket_key, action, window_start, request_count, expires_at)
+      values
+        (${key}, ${action}, ${windowStart}, 1, ${expiresAt})
+      on conflict (bucket_key, action, window_start)
+      do update set request_count = interaction_rate_limit_buckets.request_count + 1
+      returning request_count
+    `;
+  } catch (error) {
+    console.error("Persistent interaction rate limit unavailable:", error);
+    return {
+      ...memoryResult,
+      remaining: Math.max(0, window.limit - 1),
+    };
+  }
 
   const resultRows = rows as unknown as Record<string, unknown>[];
   const requestCount = Number(resultRows[0]?.request_count ?? 1);

@@ -180,13 +180,15 @@ export async function recordBlogReaction(
     action = "removed";
   } else {
     await database`
+      delete from blog_reaction_events
+      where blog_slug = ${slug}
+        and request_fingerprint_hash = ${fingerprint}
+    `;
+    await database`
       insert into blog_reaction_events
         (blog_slug, reaction_type, request_fingerprint_hash)
       values
         (${slug}, ${reactionType}, ${fingerprint})
-      on conflict (blog_slug, request_fingerprint_hash)
-      where request_fingerprint_hash is not null
-      do update set reaction_type = excluded.reaction_type
     `;
     action = currentReaction ? "changed" : "added";
   }

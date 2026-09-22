@@ -83,8 +83,8 @@ export default function FloatingNav({
   };
 
   return (
-    <div className="fixed right-4 top-4 z-50 flex flex-col items-end gap-4 sm:right-6 sm:top-6">
-      <div className="flex items-center gap-3">
+    <div className="pointer-events-none fixed right-4 top-4 z-50 flex flex-col items-end gap-4 sm:right-6 sm:top-6">
+      <div className="pointer-events-auto flex items-center gap-3">
         <motion.button
           type="button"
           whileHover={{ scale: 1.06 }}
@@ -161,7 +161,7 @@ export default function FloatingNav({
       </motion.div>
 
       {isHome && (
-        <div className="flex flex-col gap-2">
+        <div className="pointer-events-auto flex flex-col gap-2">
           {HOME_SECTIONS.map((section, index) => (
             <button
               type="button"

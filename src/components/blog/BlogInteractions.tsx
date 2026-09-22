@@ -61,9 +61,12 @@ export default function BlogInteractions({ slug }: { slug: string }) {
   const [honeypot, setHoneypot] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState(false);
+  const [retryKey, setRetryKey] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
+    setLoading(true);
+    setError(false);
 
     const loadInteractions = async () => {
       try {
@@ -101,7 +104,7 @@ export default function BlogInteractions({ slug }: { slug: string }) {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, retryKey]);
 
   const submitComment = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -197,7 +200,7 @@ export default function BlogInteractions({ slug }: { slug: string }) {
         </p>
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="relative z-10 mt-6 flex flex-wrap gap-2 pointer-events-auto">
         {REACTIONS.map(({ key, label, icon: Icon }) => (
           <button
             type="button"
@@ -205,10 +208,10 @@ export default function BlogInteractions({ slug }: { slug: string }) {
             onClick={() => void submitReaction(key)}
             disabled={Boolean(reacting) || loading}
             aria-pressed={data.viewerReaction === key}
-            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm transition disabled:cursor-not-allowed disabled:opacity-60 ${
+            className={`inline-flex min-h-11 touch-manipulation select-none items-center gap-2 rounded-full border px-3 py-2 text-sm transition-[background-color,border-color,box-shadow,color,transform] duration-150 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 ${
               data.viewerReaction === key
                 ? "border-cyan-500 bg-cyan-500/12 text-cyan-600 shadow-[inset_0_-2px_0_rgba(6,182,212,0.75)] dark:text-cyan-300"
-                : "border-[rgb(var(--card-border))] bg-[rgb(var(--card-bg))] text-[rgb(var(--muted))] hover:border-cyan-400/60 hover:text-cyan-500"
+                : "border-[rgb(var(--card-border))] bg-[rgb(var(--card-bg))] text-[rgb(var(--muted))] hover:border-cyan-400/60 hover:bg-cyan-400/5 hover:text-cyan-500"
             }`}
             aria-label={`React ${label}`}
           >
@@ -224,6 +227,18 @@ export default function BlogInteractions({ slug }: { slug: string }) {
           </button>
         ))}
       </div>
+      {error ? (
+        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/5 px-4 py-3 text-sm text-[rgb(var(--muted))]">
+          <span>Live blog activity is temporarily unavailable.</span>
+          <button
+            type="button"
+            onClick={() => setRetryKey((current) => current + 1)}
+            className="font-semibold text-cyan-600 hover:text-cyan-500 dark:text-cyan-300"
+          >
+            Retry
+          </button>
+        </div>
+      ) : null}
       {data.viewerReaction ? (
         <p className="mt-3 text-xs text-[rgb(var(--muted))]">
           Your reaction:{" "}

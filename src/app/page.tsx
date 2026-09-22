@@ -15,13 +15,10 @@ export default function Page() {
 
   return (
     <ClientWrapper>
-      <div className="relative min-h-screen overflow-hidden">
+      <div className="relative min-h-screen overflow-x-hidden">
         <ParticleCanvas />
         <ThemeToggle />
-        <div
-          ref={containerRef}
-          className="h-screen overflow-y-auto scroll-smooth"
-        >
+        <div ref={containerRef} className="min-h-screen scroll-smooth">
           <SectionWrapper id="hero">
             <Hero />
           </SectionWrapper>
